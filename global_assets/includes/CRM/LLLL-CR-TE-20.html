@@ -1,0 +1,861 @@
+<!-- my code2 -->
+
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-lg-6 col-xs-2">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                                <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display:none; margin-right:8px;">Delete</a>
+                                <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display:none; margin-right:8px;">Update</a>
+                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- create from -->
+                    <!--Form layout-->
+                    <div class="card-body">
+                        <div class="row">
+                            <!--1st column started-->
+                            <div class="col-lg-12">
+                                <div class="card-header header-elements-inline">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">Teamplate Name&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="ContactOwnerId" value="FIT">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">Lead Source&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <select class="form-control" id="LeadSourceId">
+                                                        <option value="Select" selected>--Select--</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">  First Name&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="FirstNameId">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">  Last Name&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="LastNameId">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label"> Account Name&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <select class="form-control" id="AccpuntNameId">
+                                                        <option value="Select" selected>--Select--</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label"> Email&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="EmailId">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row  offset-1">
+                                                <label class="col-lg-4 col-form-label">  Title&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="TitleId">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row  offset-1">
+                                                <label class="col-lg-4 col-form-label"> Phone&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="PhoneId">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">Department&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="DepartmentId">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label"> Other Phone&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="otherphoneId">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">  Home Phone&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="HomePhoneId">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label"> Mobile&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="MobileId">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">  Fax&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="FaxId">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">  Assistant&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="AssistantId">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">  Date Of Birth&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="date" class="form-control" id="DobId">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label"> Reports To&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="ReportId">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label"> Assist Phone&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="AssistPhoneId">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label"> Email OptOut&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="checkbox" class="form-control" id="EmailOptOutId">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label"> Skype Id&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="SkypeId">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">  Secondary Email&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="SecondaryEmailId">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label"> Mailing City&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="MailingCityId">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">WhatsApp No&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="WhatsAppId">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">  Mailing Street &nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="MailingStreetId">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">Other City&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="OtherCityId">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">Mailing State&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <select class="form-control" id="MailingStateId">
+                                                        <option value="Select" selected>--Select--</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label"> Other Street&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="OtherStreetId">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">Other Zip&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="OtherZipId">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label"> Other State&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <select class="form-control" id="OtherStateId">
+                                                        <option value="Select" selected>--Select--</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label">Mailing Zip&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="MailingZipId">
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label"> Other Country&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <select class="form-control" id="OtherCoutryId">
+                                                        <option value="Select" selected>--Select--</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label"> Mailing country&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <select class="form-control" id="MailingCountryId">
+                                                        <option value="Select" selected>--Select--</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row offset-1">
+                                                <label class="col-lg-4 col-form-label"> Discription&nbsp;:</label>
+                                                <div class="col-lg-6">
+                                                    <textarea type="text" class="form-control" id="DiscriptionId"></textarea>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+   
+
+
+    <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/js-cookie/js.cookie.js"></script>
+    <script src="../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+    <!-- Argon JS -->
+    <script src="../assets/js/argon.js?v=1.2.0"></script>
+    <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+
+    <!-- Argon Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+    <!--model link-->
+
+    <script src="../Model/CrmContact.js" type="text/javascript"></script>
+
+    <!--sidebar code-->
+    <script>
+                $(document).ready(function () {
+
+                    $('#content').load("Sidebar.html");
+
+                });</script>
+
+
+    <!--dropdown list-->
+
+    <script type="text/javascript">
+                $(function () {
+                    debugger
+                    GetParameterType('LDS');
+                    GetParameterType('ST');
+                    GetParameterType('CR');
+
+
+                });
+                //create first function for getparameretertypeid
+                function GetParameterType(parametertype) {
+                   /* alert(parametertype);*/
+                    debugger
+                    var cccd = localStorage.getItem('CCAC');
+                    $.ajax({
+                        type: "GET",
+                        url: URLPowerAPI +'/api/PBXMLParameter/GetParameterTypeID',
+                        dataType: "json",
+                        contentType: "application/json",
+                        data: {
+                            PARTYPE: parametertype,
+                            cccd: cccd
+                        },
+                        async: false,
+
+                        success: function (res) {
+                           /* alert(JSON.stringify(res));*/
+                            var abc = res;
+                            //alert(JSON.stringify(abc));
+                            //alert(parametertype);
+                            GetDropDown(abc, parametertype);
+
+                        }
+
+                    });
+                }
+
+
+                //second function for dropdown
+                function GetDropDown(parameter, parametertype) {
+                    debugger
+
+
+                    var cccd = localStorage.getItem('CCAC');
+                    $.ajax({
+                        type: "GET",
+                        url: URLPowerAPI +'/api/PBXMLParametercode/GetAllActiveParameterCodes',
+                        dataType: "json",
+                        contentType: "application/json",
+
+                        data: {
+                            PARTYPEID: parameter,
+                            cccd: cccd
+                        },
+                        async: false,
+
+                        success: function (res) {
+
+                            $.each(res, function (data, value) {
+                                if (parametertype == 'LDS') {
+                                    $("#LeadSourceId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                                }
+                                else if (parametertype == 'ST') {
+
+                                    $("#MailingStateId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                                    $("#OtherStateId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                                }
+                                else if (parametertype == 'CR') {
+                                    $("#OtherCoutryId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                                    $("#MailingCountryId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                                }
+                            })
+                        }
+
+                    });
+                }
+    </script>
+    <script type="text/javascript">
+                $(function () {
+                    debugger
+                    var cccd = localStorage.getItem('CCAC');
+
+                    $.ajax
+                        ({
+
+                            url: URLPowerAPI +'/api/PBXMLAccounts/GetAllCustomer',
+                            type: 'GET',
+                            dataType: 'json',
+                            contentType: 'application/json ; charset = utf-8',
+                            data:
+                            {
+                                cccd: cccd
+
+                            },
+
+                            success: function (res) {
+                                //alert("Data inside ajax...!!!")
+                                //alert(JSON.stringify(res));
+                                $.each(res, function (index, value) {
+                                    $("#AccpuntNameId").append($("<option></option>").val(value.ClId).html(value.Name));
+
+
+
+                                });
+                            }
+
+                        });
+
+                });
+
+
+
+    </script>
+
+
+    <!--Add and  edit api-->
+
+    <script type="text/javascript">
+                function Groupfunction() {
+                    // alert("in function");
+                    debugger
+                    var url1 = window.location.href;
+                    var arr = url1.split('=');
+                    console.log(url1.length)
+
+                    if (arr.length > 1) {
+                        var mode = url1.split("=")[2];
+                        var AccNo1 = url1.split("=")[1];
+                        var index = (AccNo1).indexOf('&');
+                        var AccNo = AccNo1.substring(0, index);
+
+                    }
+
+                    var cccd = localStorage.getItem('CCAC');
+
+                    var LeadSourceName = $("#LeadSourceId option:selected").text();
+                    var LeadSourceNo = $("#LeadSourceId option:selected").val();
+                    var AccountName = $("#AccpuntNameId option:selected").text();
+                    var AccountNo = $("#AccpuntNameId option:selected").val();
+                    /*alert("AccountNo" + AccountNo);*/
+                    var MailingStateName = $("#MailingStateId option:selected").text();
+                    var MailingStateNo = $("#MailingStateId option:selected").val();
+                    var OtherCountryName = $("#OtherCoutryId option:selected").text();
+                    var OtherCountryNo = $("#OtherCoutryId option:selected").val();
+                    var OtherStateName = $("#OtherStateId option:selected").text();
+                    var OtherStateNo = $("#OtherStateId option:selected").val();
+                    var MailingCountryName = $("#MailingCountryId option:selected").text();
+                    var MailingCountryNo = $("#MailingCountryId option:selected").val();
+                    var CurrentDate = new Date();
+                    var curndate = CurrentDate.toISOString().replace('Z', '');
+                    var status = "A";
+
+
+                    //storesession value
+                    var UId;
+                    var Username;
+                    var Createdsystem;
+                    var Createdate;
+
+                    if (mode == 'edit') {
+                        AccNo = AccNo,
+                            UId = sessionStorage.getItem('uid');
+                        Username = sessionStorage.getItem('username');
+                        Createdsystem = sessionStorage.getItem('createdsystem');
+                        Createdate = sessionStorage.getItem('createddate');
+                    }
+                    else {
+                        AccNo = localStorage.getItem('MaxContactNo');
+                        UId = localStorage.getItem('UID');
+                        Username = localStorage.getItem('UName');
+                        Createdsystem = 'PowerSuit'
+                        Createdate = curndate;
+                    }
+
+                    var parameter = {
+
+                        ContactNo: AccNo,
+                        ContactOwnerName: "FIT",
+                        ContactOwner: UId,
+                        LeadSourceName: LeadSourceName,
+                        LeadSourceNo: LeadSourceNo,
+                        AccountName: AccountName,
+                        AccountNo: AccountNo,
+                        MailingStateName: MailingStateName,
+                        MailingStateNo: MailingStateNo,
+                        OtherStateName: OtherStateName,
+                        OtherStateNo: OtherStateNo,
+                        OtherCountryName: OtherCountryName,
+                        OtherCountryNo: OtherCountryNo,
+                        MailingCountryName: MailingCountryName,
+                        MailingCountryNo: MailingCountryNo,
+                        FirstName: $("#FirstNameId").val(),
+                        LastName: $("#LastNameId").val(),
+                        Email: $("#EmailId").val(),
+                        Title: $("#TitleId").val(),
+                        Phone: $("#PhoneId").val(),
+
+                        Department: $("#DepartmentId").val(),
+                        OtherPhone: $("#otherphoneId").val(),
+                        HomePhone: $("#HomePhoneId").val(),
+                        Mobile: $("#MobileId").val(),
+                        Fax: $("#FaxId").val(),
+                        Assistant: $("#AssistantId").val(),
+                        ReportsTo: $("#ReportId").val(),
+                        DOB: $("#DobId").val(),
+                        AssPhone: $("#AssistPhoneId").val(),
+                        EmailOptOut: $("#EmailOptOutId").val(),
+                        SkypeID: $("#SkypeId").val(),
+                        SecondaryEmail: $("#SecondaryEmailId").val(),
+                        MailingCity: $("#MailingCityId").val(),
+                        WhatsappNo: $("#WhatsAppId").val(),
+                        MailingStrt: $("#MailingStreetId").val(),
+                        OtherCity: $("#OtherCityId").val(),
+                        OtherStrt: $("#OtherStreetId").val(),
+                        OtherZip: $("#OtherZipId").val(),
+                        MailingZip: $("#MailingZipId").val(),
+                        Description: $("#DiscriptionId").val(),
+                        CCCD: cccd,
+                        STATUS: status,
+                        CREATEDSYSTEM: Createdsystem,
+                        LASTUPDATEDSYSTEM: 'PowerSuit',
+                        UID: UId,
+                        USERNAME: Username,
+                        LUID: UId,
+                        LUSERNAME: Username,
+                        CREATEDDATE: Createdate,
+                        LASTUPDATEDDATE: curndate
+                    }
+                    return parameter
+                }
+                $("#savebtnid").click(function () {
+
+                    // alert("ghggg");
+                    var addgroupparameter = Groupfunction();
+                    // alert(addcostcatparameter + "json");
+                    debugger
+                    $.ajax
+                        ({
+                            type: 'POST',
+                            url: URLPowerAPI +'/api/PBXMLContact/AddPBXMLContacts',
+                            dataType: 'JSON',
+                            data: JSON.stringify(addgroupparameter),
+
+                            contentType: 'application/json ; charset = utf-8',
+
+                            success: function (data, textStatus, xhr) {
+
+                                alert('Customer registered successfully');
+                                window.location.href = "LLLL-CR-CN-50.shtml";
+                            },
+                            error: function (xhr, textStatus, errorThrown) {
+                                alert("You entered some invalid fields...! Fill the details again...");
+                            }
+                        });
+
+                    return;
+
+                });
+
+                $("#updatebtnID").click(function () {
+                    debugger
+                    var addgroupparameter = Groupfunction();
+                    $.ajax
+                        ({
+                            type: 'POST',
+                            url: URLPowerAPI +'/api/PBXMLContact/EditPBXMLContacts',
+                            dataType: 'JSON',
+                            data: JSON.stringify(addgroupparameter),
+                            contentType: 'application/json ; charset = utf-8',
+
+                            success: function (data, textStatus, xhr) {
+                                alert('Customer registered successfully');
+                                window.location.href = "LLLL-CR-CN-50.shtml";
+                            },
+                            error: function (xhr, textStatus, errorThrown) {
+                                alert("You entered some invalid fields...! Fill the details again...");
+                            }
+                        });
+                    return;
+
+                });
+    </script>
+
+    <!--GET by id API-->
+    <script>
+                $(document).ready(function () {
+                    debugger
+                    set_MainHeaderName();
+                    var url1 = window.location.href;
+                    var mode = url1.split("=")[2];
+                    var Id1 = url1.split("=")[1];
+                    var index = (Id1).indexOf('&');
+                    var Id = Id1.substring(0, index);
+                    var cccd = localStorage.getItem('CCAC');
+                    //alert(mode);
+                   /* alert(Id);*/
+
+                    if (mode == 'edit') {
+                        $.ajax({
+                            type: 'GET',
+                            url: URLPowerAPI +'/api/PBXMLContact/GetPBXMLContactsByID',
+                            dataType: 'JSON',
+                            contentType: 'application/json ; charset = utf-8',
+                            //data: JSON.stringify(groupname),
+                            data: {
+                                cccd: cccd,
+                                ContactNo: Id
+                            },
+
+                            success: function (data) {
+
+
+                              /*  alert(JSON.stringify(data));*/
+                                ObjCrmContact = data;
+                               /* alert(JSON.stringify(ObjCrmContact));*/
+
+                                $("#ContactOwnerId").val(ObjCrmContact.ContactOwnerName);
+                                // alert(ObjCrmContact.NAME);
+                                $('#LeadSourceId option:selected').text(ObjCrmContact.LeadSourceName);
+                                $('#AccpuntNameId option:selected').text(ObjCrmContact.AccountName);
+                                $('#MailingStateId option:selected').text(ObjCrmContact.MailingStateName);
+                                $('#OtherStateId option:selected').text(ObjCrmContact.OtherStateName);
+                                $('#OtherCoutryId option:selected').text(ObjCrmContact.OtherCountryName);
+                                $('#MailingCountryId option:selected').text(ObjCrmContact.MailingCountryName);
+
+                                //$('#LeadSourceId option:selected').text(ObjCrmContact.LeadSourceNo);
+                                //$('#AccpuntNameId option:selected').text(ObjCrmContact.AccountNo);
+                                //$('#MailingStateId option:selected').text(ObjCrmContact.MailingStateNo);
+                                //$('#OtherStateId option:selected').text(ObjCrmContact.OtherStateNo);
+                                //$('#OtherCoutryId option:selected').text(ObjCrmContact.OtherCountryNo);
+                                //$('#MailingCountryId option:selected').text(ObjCrmContact.MailingCountryNo);
+                                // alert("ADDLALLOCTYPE" + ObjCrmContact.ADDLALLOCTYPE);
+                                $("#FirstNameId").val(ObjCrmContact.FirstName);
+                                $("#LastNameId ").val(ObjCrmContact.LastName);
+                                $("#EmailId").val(ObjCrmContact.Email);
+                                $("#TitleId").val(ObjCrmContact.Title);
+                                $("#PhoneId").val(ObjCrmContact.Phone);
+                                $("#DepartmentId").val(ObjCrmContact.Department);
+                                $("#otherphoneId").val(ObjCrmContact.OtherPhone);
+                                $("#HomePhoneId").val(ObjCrmContact.HomePhone);
+                                $("#MobileId").val(ObjCrmContact.Mobile);
+                                $("#FaxId").val(ObjCrmContact.Fax);
+                                $("#AssistantId").val(ObjCrmContact.Assistant);
+                                $("#ReportId").val(ObjCrmContact.ReportsTo);
+                                $("#DobId").val(ObjCrmContact.DOB);
+                                $("#AssistPhoneId").val(ObjCrmContact.AssPhone);
+                                $("#EmailOptOutId").val(ObjCrmContact.EmailOptOut);
+                                $("#SkypeId").val(ObjCrmContact.SkypeID);
+                                $("#SecondaryEmailId").val(ObjCrmContact.SecondaryEmail);
+                                $("#MailingCityId").val(ObjCrmContact.MailingCity);
+                                $("#WhatsAppId").val(ObjCrmContact.WhatsappNo);
+                                $("#MailingStreetId").val(ObjCrmContact.MailingStrt);
+                                $("#OtherCityId").val(ObjCrmContact.OtherCity);
+                                $("#OtherStreetId").val(ObjCrmContact.OtherStrt);
+                                $("#OtherZipId").val(ObjCrmContact.OtherZip);
+                                $("#MailingZipId").val(ObjCrmContact.MailingZip);
+                                $("#DiscriptionId").val(ObjCrmContact.Description);
+
+
+                                sessionStorage.setItem('uid', ObjCrmContact.UID);
+                                sessionStorage.setItem('username', ObjCrmContact.USERNAME);
+                                sessionStorage.setItem('createdsystem', ObjCrmContact.CREATEDSYSTEM);
+                                sessionStorage.setItem('createddate', ObjCrmContact.CREATEDDATE);
+                                sessionStorage.setItem('lastupdatedate', ObjCrmContact.LASTUPDATEDDATE);
+
+                            },
+
+                        });
+                    }
+                    $("#deletebtnID").show();
+                    $("#updatebtnID").show();
+                    $("#savebtnid").hide();
+
+
+                    $("#deletebtnID").click(function () {
+                        debugger
+                        var urls = window.location.href;
+                        debugger
+                        //alert(urls);
+                        var cccd = localStorage.getItem('CCAC');
+                        var group = Id;
+
+                        $.ajax({
+                            url: URLPowerAPI +'/api/PBXMLContact/DeletePBXMLContacts',
+                            type: 'GET',
+                            dataType: 'JSON',
+                            data: {
+                                cccd: cccd,
+                                ContactNo: group
+
+                            },
+
+                            contentType: 'application/json ; charset = utf-8',
+                            success: function (data, textStatus, xhr) {
+                                alert("PBXMLCostcategory deleted successfully");
+                                window.location.href = "LLLL-CR-CN-50.shtml";
+
+                            },
+                            error: function (xhr, textStatus, errorThrown) {
+                                alert("You entered wrong password...! Fill the details again...");
+                            }
+                        });
+                    });
+
+                });
+
+    </script>
+    <script>
+        function set_MainHeaderName() {
+            $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">CRM</span> - Template');
+            $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>CRM</a><span class="breadcrumb-item active">Template</span>');
+        };
+    </script>
+
+
+
+
+

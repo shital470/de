@@ -1,0 +1,672 @@
+﻿<div class="row justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display: none; margin-right: 8px;">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display: none; margin-right: 8px;">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <form action="#">
+                    <div class="row">
+                        <div class="col-lg-12" style="background-color: whitesmoke; margin-right: 45px; height: 30px; padding-left: 80px;">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <h5>Information</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Name&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="NameID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Under&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="UnderID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12" style="background-color: whitesmoke; margin-right: 45px; height: 30px; padding-left: 80px;">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <h5>Mailing Details</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Mailing Name&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="MNameID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">State&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="StateID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Address&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="AddressID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Pincode&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="PincodeID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">City&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="CountryID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Mobile&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="MobileID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12" style="background-color: whitesmoke; margin-right: 45px; height: 30px; padding-left: 80px;">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <h5>Primary Contact Details</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Name&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="CNameID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Email-ID&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="EmailID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Phone&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="PhoneID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">CC(if Any)&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="CCID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Fax&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="FaxID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="collapse show">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Web Site&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="WebSiteID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+<!--add edit api-->
+
+<script>
+    function AddEditfunction() {
+        debugger
+        /*  alert("in fuctiin");*/
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+            var mode = url1.split("=")[2];
+            var Itcd1 = url1.split("=")[1];
+            var index = (Itcd1).indexOf('&');
+            var Itcd = Itcd1.substring(0, index);
+
+        }
+        var urls = window.location.href;
+        var cccd = localStorage.getItem('CCAC');
+
+
+        var STATENAME = $("#StateID option:selected").text();
+        var STATENO = $("#StateID option:selected").val();
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+        var status = "A";
+
+
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            Itcd = Itcd,
+                UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = sessionStorage.getItem('createddate');
+        }
+        //else {
+        //    Itcd = localStorage.getItem('MaxClNo');
+        //    UId = localStorage.getItem('UID');
+        //    Username = localStorage.getItem('UName');
+        //    Createdsystem = 'LimtlessCRM';
+        //    Createdate = curndate;
+        //}
+
+
+        /*var  abc =$()*/
+        // alert("in parameters");
+
+        var parameter =
+        {
+
+            AccNo: Itcd,
+            LEDGERNAME: $("#NameID").val(),
+            NAME: $("#NameID").val(),
+            RESERVEDNAME: $("#NameID").val(),
+            PARENT: 'Sundry Debtors',
+            HASEDDCITY: $("#CountryID").val(),
+            SALESTAXNUMBER: $("#SalesManId").val(),
+            ADDRESS: $("#AddressID").val(),
+            PINCODE: $("#PincodeID").val(),
+           LEDGERPHONE: $("#TelNoId").val(),
+            LEDGERFAX: $("#FaxId").val(),
+            MAILINGNAME: $("#MNameID").val(),
+            STATENAME: STATENAME,
+          /*  OPENINGBALANCE: $("#CreditAllotId").val(),*/
+
+            VATDEALERTYPE: "",
+            EXCISELEDGERCLASSIFICATION: "",
+            EXCISEDUTYTYPE: "",
+            EXCISENATUREOFPURCHASE: "",
+            LEDGERFBTCATEGORY: "",
+
+            ISBILLWISEON: 'Yes',
+            ISCOSTCENTRESON: 'No',
+            ISINTERESTON: 'No',
+            ALLOWINMOBILE: 'No',
+            ISCOSTTRACKINGON: 'No',
+            ISBENEFICIARYCODEON: 'No',
+            ISEXPORTONVCHCREATE: 'No',
+            PLASINCOMEEXPENSE: 'No',
+            ISUPDATINGTARGETID: 'No',
+            ASORIGINAL: 'Yes',
+            ISCONDENSED: 'No',
+            AFFECTSSTOCK: 'No',
+            ISRATEINCLUSIVEVAT: 'No',
+            FORPAYROLL: 'No',
+            ISABCENABLED: 'No',
+            ISCREDITDAYSCHKON: 'No',
+            INTERESTONBILLWISE: 'No',
+            OVERRIDEINTEREST: 'No',
+            OVERRIDEADVINTEREST: 'No',
+            USEFORVAT: 'No',
+            IGNORETDSEXEMPT: 'No',
+            ISTCSAPPLICABLE: 'No',
+            ISTDSAPPLICABLE: 'No',
+            ISFBTAPPLICABLE: 'No',
+            ISGSTAPPLICABLE: 'No',
+            ISEXCISEAPPLICABLE: 'No',
+            ISTDSEXPENSE: 'No',
+            ISEDLIAPPLICABLE: 'No',
+            ISRELATEDPARTY: 'No',
+            USEFORESIELIGIBILITY: 'No',
+            ISINTERESTINCLLASTDAY: 'No',
+            APPROPRIATETAXVALUE: 'No',
+            ISBEHAVEASDUTY: 'No',
+            INTERESTINCLDAYOFADDITION: 'No',
+            INTERESTINCLDAYOFDEDUCTION: 'No',
+            ISOTHTERRITORYASSESSEE: 'No',
+            IGREMISMATCHWITHWARNING: 'No',
+            USEASTIONALBANK: 'No',
+            OVERRIDECREDITLIMIT: 'No',
+            ISAGAINSTFORMC: 'No',
+            ISCHEQUEPRINTINGENABLED: 'Yes',
+            ISPAYUPLOAD: 'No',
+            ISPAYBATCHONLYSAL: 'No',
+            ISBNFCODESUPPORTED: 'No',
+            ALLOWEXPORTWITHERRORS: 'No',
+            ISTRANSPORTER: 'No',
+            USEFORTIONALITC: 'No',
+            ISECOMMOPERATOR: 'No',
+            OVERRIDEBASEDONREALIZATION: 'No',
+            SHOWINPAYSLIP: 'No',
+            USEFORGRATUITY: 'No',
+            ISTDSPROJECTED: 'No',
+            FORSERVICETAX: 'No',
+            ISINPUTCREDIT: 'No',
+            ISEXEMPTED: 'No',
+            ISABATEMENTAPPLICABLE: 'No',
+            ISSTXPARTY: 'No',
+            ISSTXNONREALIZEDTYPE: 'No',
+            ISUSEDFORCVD: 'No',
+            LEDBELONGSTONONTAXABLE: 'No',
+            ISEXCISEMERCHANTEXPORTER: 'No',
+            ISPARTYEXEMPTED: 'No',
+            ISSEZPARTY: 'No',
+            TDSDEDUCTEEISSPECIALRATE: 'No',
+            ISECHEQUESUPPORTED: 'No',
+            ISEDDSUPPORTED: 'No',
+            HASECHEQUEDELIVERYMODE: 'No',
+            HASECHEQUEDELIVERYTO: 'No',
+            HASECHEQUEPRINTLOCATION: 'No',
+            HASECHEQUEPAYABLELOCATION: 'No',
+            HASEDDDELIVERYMODE: 'No',
+            HASEDDDELIVERYTO: 'No',
+            HASEDDPRINTLOCATION: 'No',
+            HASEDDBANKLOCATION: 'No',
+            ISEBANKINGENABLED: 'No',
+            ISEXPORTFILEENCRYPTED: 'No',
+            ISBATCHENABLED: 'No',
+            ISPRODUCTCODEBASED: 'No',
+            HASEDDCITY: 'No',
+            HASECHEQUECITY: 'No',
+            ISFILENAMEFORMATSUPPORTED: 'No',
+            HASCLIENTCODE: 'No',
+            PAYINSISBATCHAPPLICABLE: 'No',
+            PAYINSISFILENUMAPP: 'No',
+            ISSALARYTRANSGROUPEDFORBRS: 'No',
+            ISEBANKINGSUPPORTED: 'No',
+            ISSCBUAE: 'No',
+            ISBANKSTATUSAPP: 'No',
+            ISSALARYGROUPED: 'No',
+            USEFORPURCHASETAX: 'No',
+            AUDITED: 'No',
+
+            SORTPOSITION: 1000,
+            ALTERID: 627,
+            SERVICETAXDETAILSLIST: "",
+            LBTREGNDETAILSLIST: "",
+            VATDETAILSLIST: "",
+            SALESTAXCESSDETAILSLIST: "",
+            //LANGUAGENAMELIST={
+            //    NAME: "",
+            //    LANGUAGEID: "",
+            //},
+            //<LANGUAGENAMELIST>
+            //    <NAMELIST TYPE="String">
+            //        <NAME>AARTI Enterprises Vasind</NAME>
+            //    </NAMELIST>
+            //    <LANGUAGEID> 1033</LANGUAGEID>
+            //</LANGUAGENAMELIST>
+            XBRLDETAILLIST: "",
+            AUDITDETAILSLIST: "",
+            SCHVIDETAILSLIST: "",
+            EXCISETARIFFDETAILSLIST: "",
+            TCSCATEGORYDETAILSLIST: "",
+            TDSCATEGORYDETAILSLIST: "",
+            SLABPERIODLIST: "",
+            GRATUITYPERIODLIST: "",
+            ADDITIONALCOMPUTATIONSLIST: "",
+            EXCISEJURISDICTIONDETAILSLIST: "",
+            EXCLUDEDTAXATIONSLIST: "",
+            BANKALLOCATIONSLIST: "",
+            PAYMENTDETAILSLIST: "",
+            BANKEXPORTFORMATSLIST: "",
+            BILLALLOCATIONSLIST: "",
+            INTERESTCOLLECTIONLIST: "",
+            LEDGERCLOSINGVALUESLIST: "",
+            LEDGERAUDITCLASSLIST: "",
+            OLDAUDITENTRIESLIST: "",
+            TDSEXEMPTIONRULESLIST: "",
+            DEDUCTINSAMEVCHRULESLIST: "",
+            LOWERDEDUCTIONLIST: "",
+            STXABATEMENTDETAILSLIST: "",
+            LEDMULTIADDRESSLISTLIST: "",
+            STXTAXDETAILSLIST: "",
+            CHEQUERANGELIST: "",
+            DEFAULTVCHCHEQUEDETAILSLIST: "",
+            ACCOUNTAUDITENTRIESLIST: "",
+            AUDITENTRIESLIST: "",
+            AUTOBRSCONFIGSLIST: "",
+            BANKURENTRIESLIST: "",
+            DEFAULTCHEQUEDETAILSLIST: "",
+            DEFAULTOPENINGCHEQUEDETAILSLIST: "",
+            CANCELLEDPAYALLOCATIONSLIST: "",
+            ECHEQUEPRINTLOCATIONLIST: "",
+            ECHEQUEPAYABLELOCATIONLIST: "",
+            EDDPRINTLOCATIONLIST: "",
+            EDDPAYABLELOCATIONLIST: "",
+            AVAILABLETRANSACTIONTYPESLIST: "",
+            LEDPAYINSCONFIGSLIST: "",
+            TYPECODEDETAILSLIST: "",
+            FIELDVALIDATIONDETAILSLIST: "",
+            INPUTCRALLOCSLIST: "",
+            TCSMETHODOFCALCULATIONLIST: "",
+            GSTCLASSFNIGSTRATESLIST: "",
+            EXTARIFFDUTYHEADDETAILSLIST: "",
+            VOUCHERTYPEPRODUCTCODESLIST: "",
+
+            CCCD: cccd,
+            STATUS: status,
+            CREATEDSYSTEM: Createdsystem,
+            LASTUPDATEDSYSTEM: Createdsystem,
+            UID: UId,
+            USERNAME: Username,
+            LUID: UId,
+            LUSERNAME: Username,
+            CREATEDDATE: Createdate,
+            LASTUPDATEDDATE: curndate
+        }
+        //var obj1 = {
+        //    dividend: "3",
+        //    divisor: "4"
+        //}
+
+        var ContactDeatils = {
+
+            ContactNo: "0",
+            ContactOwnerName: "FIT",
+            ContactOwner: UId,
+            LeadSourceName: "",
+            LeadSourceNo: "0",
+            AccountName: "",
+            AccountNo: "0",
+            SalutationName: "",
+            SalutationNo: "0",
+            MailingStateName: "",
+            MailingStateNo: "0",
+            OtherStateName: STATENAME,
+            OtherStateNo: STATENO,
+            OtherCountryName: "",
+            OtherCountryNo: "0",
+            MailingCountryName: "",
+            MailingCountryNo: "0",
+            FirstName: $("#CNameID").val(),
+            LastName: "",
+            Email: $("#EmailID").val(),
+            Title: "",
+            Phone: $("#PhoneID").val(),
+            Department: "",
+            OtherPhone: $("#PhoneID").val(),
+            HomePhone: $("#PhoneID").val(),
+            Mobile: $("#PhoneID").val(),
+            Fax: $("#FaxID").val(),
+            Assistant: "",
+            ReportsTo: "",
+            DOB: "",
+            AssPhone: $("#PhoneID").val(),
+            EmailOptOut: "",
+            SkypeID: "",
+            SecondaryEmail: $("#EmailID").val(),
+            MailingCity: "",
+            WhatsappNo: $("#PhoneID").val(),
+            MailingStrt: "",
+            OtherCity: "",
+            OtherStrt: "",
+            OtherZip: "",
+            MailingZip: "",
+            Description: "",
+            CCCD: cccd,
+            STATUS: status,
+            CREATEDSYSTEM: Createdsystem,
+            LASTUPDATEDSYSTEM: Createdsystem,
+            UID: UId,
+            USERNAME: Username,
+            LUID: UId,
+            LUSERNAME: Username,
+            CREATEDDATE: Createdate,
+            LASTUPDATEDDATE: curndate,
+            LastUpdatedBy: UId,
+            CreatedBy: UId
+        }
+
+        return { parameter, ContactDeatils };
+        //return parameter;
+        //return ContactDeatils;
+
+    }
+
+  
+
+    $("#updatebtnID").click(function () {
+        var UpdateParameter = AddEditfunction();
+        localStorage.setItem("UpdateParameter", JSON.stringify(UpdateParameter));
+
+        //$.ajax({
+        //    type: 'POST',
+        //    url: URLPowerAPI + '/api/PBXMLContact/EditPBXMLContacts',
+        //    dataType: 'JSON',
+        //    data: JSON.stringify(ContactDeatils),
+
+        //    contentType: 'application/json ; charset = utf-8',
+
+        //    success: function (data, textStatus, xhr) {
+
+        //        //alert('Customer registered successfully');
+        //        //window.location.href = "LLLL-CR-CN-50.shtml";
+        //    },
+        //});
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLLedger/EditPBXMLLedger',
+                dataType: 'JSON',
+                data: JSON.stringify(UpdateParameter),
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+                    alert('Customer registered successfully');
+                    window.location.href = "LLLL-CR-CU-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+        return;
+    });
+
+
+</script>
+
+<!--GET by id API-->
+<script>
+    $(document).ready(function () {
+
+        debugger
+
+
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var AccNo1 = url1.split("=")[1];
+        var index = (AccNo1).indexOf("&");
+        var AccNo = AccNo1.substring(0, index);
+        var cccd = localStorage.getItem('CCAC');
+        // alert(AccNo);
+
+        if (mode == 'edit') {
+            $.ajax({
+                type: 'GET',
+                url: URLPowerAPI + '/api/PBXMLLedger/GetPBXMLLedgerById',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: cccd,
+                    AccNo: AccNo
+                },
+
+
+                success: function (data) {
+                    /* alert(JSON.stringify(data));*/
+                    //data = data;
+
+
+
+
+                    $("#NameID").val(data.LEDGERNAME);
+                    $("#UnderID").val(data.PARENT);
+                    $("#MNameID").val(data.MAILINGNAME);
+                    $("#AddressID").val(data.ADDRESS)
+                    $("#CountryID").val(data.HASEDDCITY);
+                    $("#PincodeID").val(data.PINCODE);
+                    $("#StateID").val(data.STATENAME);
+                    $("#MobileID").val(data.LEDGERPHONE);
+                    $("#CustomerGrpId").val("CUSTOMER")
+
+
+
+                    $("#CNameID").val(data.ContactOwnerName);
+                    $("#EmailID").val(data.MAILINGNAME);
+                    $("#PhoneID").val(data.LEDGERMOBILE);
+                    $("#FaxID").val(data.LEDGERFAX);
+                    $("#WebSiteID").val(data.WEBSITE);
+
+
+                    sessionStorage.setItem('uid', data.UID);
+                    sessionStorage.setItem('username', data.USERNAME);
+                    sessionStorage.setItem('createdsystem', data.CREATEDSYSTEM);
+                    sessionStorage.setItem('createddate', data.CREATEDDATE);
+                    sessionStorage.setItem('lastupdatedate', data.LASTUPDATEDDATE);
+
+                },
+
+            });
+
+        }
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+
+
+        $("#deletebtnID").click(function () {
+            debugger
+            var urls = window.location.href;
+            debugger
+            //alert(urls);
+            var cccd = localStorage.getItem('CCAC');
+            var group = AccNo;
+
+            $.ajax({
+                url: URLPowerAPI + '/api/PBXMLLedger/DeletePBXMLLedger',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    AccNo: group
+
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                success: function (data, textStatus, xhr) {
+                    alert("PBXMLCostcategory deleted successfully");
+                    window.location.href = "LLLL-CR-CU-50.shtml";
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+
+    });
+
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">CRM</span> - Account - Customer');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>CRM</a><span class="breadcrumb-item active">Account - Customer</span>');
+    };
+</script>
+

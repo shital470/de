@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>PowerBooks - Limitless</title>
+	<!-- encryption links -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+	<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+	<!-- google jquery cdn -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="../../../../global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/all.min.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+	<!-- Core JS files -->
+	<script src="../../../../global_assets/js/main/jquery.min.js"></script>
+	<script src="../../../../global_assets/js/main/bootstrap.bundle.min.js"></script>
+	<!-- /core JS files -->
+	<!-- Theme JS files -->
+	<script src="assets/js/app.js"></script>
+	<!-- /theme JS files -->
+
+	<script>
+		DEBUG = true;
+		if (DEBUG = true) {
+			window.alert = function () { };
+
+
+		};
+		const URLPowerAPI = 'https://www.powerbooks.in/powerapi';
+		const URLPowerCashAPI = 'https://www.powerbooks.in/powercashapi';
+
+	</script>
+</head>
+
+<body>
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-expand-lg navbar-dark navbar-static">
+		<div class="navbar-brand ml-2 ml-lg-0">
+			<a href="index.html" class="d-inline-block">
+				<img src="../../../../global_assets/images/logo_light.png" alt="">
+			</a>
+		</div>
+
+		<div class="d-flex justify-content-end align-items-center ml-auto">
+			<ul class="navbar-nav flex-row">
+				<li class="nav-item">
+					<a href="#" class="navbar-nav-link">
+						<i class="icon-lifebuoy"></i>
+						<span class="d-none d-lg-inline-block ml-2">Support</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="navbar-nav-link">
+						<i class="icon-user-plus"></i>
+						<span class="d-none d-lg-inline-block ml-2">Register</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="navbar-nav-link">
+						<i class="icon-user-lock"></i>
+						<span class="d-none d-lg-inline-block ml-2">Login</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /main navbar -->
+	<!-- Page content -->
+	<div class="page-content pt-0">
+		<!-- Main content -->
+		<div class="content-wrapper">
+			<!-- Content area -->
+			<div class="content">
+				<!-- Loader -->
+				<div class="card-overlay" id="loader1" style="display:none;"><i class="icon-spinner4 spinner"></i></div>
+
+				<div class="content d-flex justify-content-center align-items-center">
+
+					<!-- Login form -->
+				
+						<div class="card mb-0">
+							<div class="card-body">
+								<div class="text-center mb-3">
+									<i class="icon-reading icon-2x text-secondary border-secondary border-3 rounded-pill p-3 mb-3 mt-1"></i>
+									<h5 class="mb-0">Login to your account</h5>
+									<span class="d-block text-muted">Enter your credentials below</span>
+								</div>
+
+								<div class="form-group form-group-feedback form-group-feedback-left">
+									<input type="text" class="form-control" id="userId" placeholder="Username" required>
+									<div class="form-control-feedback">
+										<i class="icon-user text-muted"></i>
+									</div>
+								</div>
+
+								<div class="form-group form-group-feedback form-group-feedback-left">
+									<input type="password" class="form-control" id="passwordId" placeholder="Password" onclick="requiredusername()" required>
+									<div class="form-control-feedback">
+										<i class="icon-lock2 text-muted"></i>
+									</div>
+								</div>
+								<div class="form-group form-group-feedback form-group-feedback-left" id="Company_input" style="display:none;">
+									<!-- <input type="text" id="ComNameId" class="form-control" placeholder="Company"> -->
+									<select name="" class="form-control" id="ComNameId"></select>
+									<div class="form-control-feedback">
+										<i class="icon-lock2 text-muted"></i>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<button type="submit" class="btn btn-primary btn-block" id="SingId">Sign in</button>
+								</div>
+
+								<div class="text-center">
+									<a href="login_password_recover.html">Forgot password?</a>
+								</div>
+							</div>
+						</div>
+					
+					<!-- /login form -->
+
+
+				</div>
+
+
+			</div>
+			<!-- /content area -->
+		</div>
+		<!-- /main content -->
+	</div>
+	<!-- /page content -->
+	<!-- /page content -->
+	<!-- Footer -->
+	<div class="navbar navbar-expand-lg navbar-light border-bottom-0 border-top">
+		<div class="text-center d-lg-none w-100">
+			<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+				<i class="icon-unfold mr-2"></i>
+				Footer
+			</button>
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-footer">
+			<span class="navbar-text">
+				&copy; 2015 - 2018. <a href="#">Limitless Web App Kit</a> by <a href="https://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
+			</span>
+
+			<ul class="navbar-nav ml-lg-auto">
+				<li class="nav-item"><a href="https://kopyov.ticksy.com/" class="navbar-nav-link" target="_blank"><i class="icon-lifebuoy mr-2"></i> Support</a></li>
+				<li class="nav-item"><a href="https://demo.interface.club/limitless/docs/" class="navbar-nav-link" target="_blank"><i class="icon-file-text2 mr-2"></i> Docs</a></li>
+				<li class="nav-item"><a href="https://themeforest.net/item/limitless-responsive-web-application-kit/13080328?ref=kopyov" class="navbar-nav-link font-weight-semibold"><span class="text-pink"><i class="icon-cart2 mr-2"></i> Purchase</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- /footer -->
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+		});
+		//function company_name() {
+		//	if (document.getElementById('userId').value == 'FIT') {
+		//		document.getElementById('Company_input').style.display = 'block';
+		//	}
+		//	else {
+		//		document.getElementById('Company_input').style.display = 'none';
+		//	}
+		//}
+		
+
+		$('#userId').change(function () {
+
+			debugger
+			/*$("#ComNameId").html('');*/
+			document.getElementById('ComNameId').innerHTML = '';
+			var username1 = $('#userId').val();
+			if (username1 == '') {
+				username1 = 'None';
+			}
+			$.ajax
+				({
+					async: false,
+					url: URLPowerAPI + '/api/PBXCompany/GetAllCompaniesByUName',
+					type: 'GET',
+					dataType: 'json',
+					data: {
+						username: username1
+					},
+
+					success: function (res) {
+						alert(res);
+
+
+						$.each(res, function (index, value) {
+							debugger
+
+							$("#ComNameId").append($("<option></option>").val(value.CCCD).html(value.CCNM));
+
+						});
+						//alert($('#ComNameId option').length);
+
+						if ($('#ComNameId option').length != 0) {
+
+							$('#Company_input').attr("style", "display:block")
+
+						}
+						else {
+							$('#Company_input').attr("style", "display:none")
+						}
+					}
+
+				}
+			
+			);
+			return;
+		});
+
+		function getcompany(cccd) {
+
+			debugger
+			 $.ajax({
+
+				async: false,
+				type: 'GET',
+				url: URLPowerAPI + '/api/PBXCompany/GetPBXCompany',
+				dataType: 'JSON',
+				contentType: 'application/json ; charset = utf-8',
+				//data: JSON.stringify(groupname),
+				data: {
+					cccd: cccd
+
+				},
+
+				contentType: 'application/json ; charset = utf-8',
+				success: function (APIdata) {
+					alert(APIdata);
+					var data = APIdata[0];
+					//alert('SHITALLLLLLLL' + JSON.stringify(data));
+					//alert('jvjkdfghkd' + data.CCNM);
+					//sessionStorage.setItem('test', 'newnew'),
+					localStorage.setItem('CCAC', data.CCCD),
+						// alert('bjdshfksdh' + APIdata.CCCD);
+						//alert('testing'+sessionStorage.getItem('test'));
+						localStorage.setItem('CCCD', data.CCCD + data.FinancialYrFrom.substring(0, 4)),
+
+						localStorage.setItem('CCNM', data.CCNM),
+						localStorage.setItem('Maintain', data.Maintain),
+						localStorage.setItem('FinancialYrFrom', data.FinancialYrFrom);
+
+					//alert('testing' + localStorage.getItem('CCNM'));
+
+
+
+				},
+
+
+			});
+			//alert(localStorage.getItem('CCCD'));
+			return;
+		}</script>
+	<script>
+
+		function Monthyearfunction() {
+			debugger
+			var d = new Date();
+			var n = d.getMonth();
+			var y = (d.getFullYear() - 1) + "-04-01";
+			var y1 = (d.getFullYear()) + "-03-31";
+			var y2 = (d.getFullYear()) + "-04-01";;
+			var y3 = (d.getFullYear() + 1) + "-03-31";;
+			if (n <= 3) {
+
+				sessionStorage.setItem("lastname", "y");
+
+			}
+			//if (Convert.ToInt32(DateTime.Now.Month.ToString()) <= 3) {
+			//    Session["Session_Fromdate"] = "01/04/" + Convert.ToString(Convert.ToInt32(DateTime.Now.Year.ToString()) - 1);
+			//    Session["Session_Todate"] = "31/03/" + Convert.ToString(Convert.ToInt32(DateTime.Now.Year.ToString()));
+			//}
+			//else {
+			//    Session["Session_Fromdate"] = "01/04/" + DateTime.Now.Year.ToString();
+			//    Session["Session_Todate"] = "31/03/" + Convert.ToString(Convert.ToInt32(DateTime.Now.Year.ToString()) + 1);
+			//}
+
+		}
+	</script>
+	<script>
+
+
+
+		$("#SingId").click(function () {
+			debugger
+			alert("infunction")
+
+            var username = $("#userId").val();
+			var password = $("#passwordId").val();
+    
+			var ccnm = $("#ComNameId option:selected").text();
+
+			var d = new Date();
+			var n = d.getMonth() + 1;
+			var y = (d.getFullYear() - 1) + "-04-01";
+			var y1 = (d.getFullYear()) + "-03-31";
+			var y2 = (d.getFullYear()) + "-04-01";
+			var y3 = (d.getFullYear() + 1) + "-03-31";
+			if (n <= 3) {
+
+				localStorage.setItem('Fromdate', y);
+				localStorage.setItem('Todate', y1);
+			}
+			else {
+				localStorage.setItem('Fromdate', y2);
+				localStorage.setItem('Todate', y3);
+			}
+			//alert(localStorage.getItem('Fromdate'));
+			//alert(localStorage.getItem('Todate'));
+
+
+
+			//alert(ccnm);
+			 $.ajax({
+
+				async: false,
+				type: 'GET',
+				url: URLPowerAPI + '/api/PBUser/GetPowerSuiteLogin',
+				dataType: 'JSON',
+				contentType: 'application/json ; charset = utf-8',
+				//data: JSON.stringify(groupname),
+                 data:  {
+
+					ccnm: ccnm,
+					userid: username,
+					password: password
+				},
+                
+				contentType: 'application/json ; charset = utf-8',
+				success: function (data) {
+					alert(data);
+					debugger
+					//alert(JSON.stringify(data));
+                  
+					if ((data.UserID == username) && (data.UPassword == password)) {
+						//alert(data.UPassword);
+
+						//var pswd = data.UPassword;
+						//                  var hash = CryptoJS.MD5(pswd);
+						//data.UPassword = hash;
+
+
+						localStorage.setItem('data', JSON.stringify(data)),
+							//alert(data.UPassword);
+							/*alert(hash.toString());*/
+
+
+							localStorage.setItem('UID', data.UID),
+							localStorage.setItem('UName', data.UName),
+							console.log(data.CCCD);
+						//alert(data.CCCD);
+
+						getcompany(data.CCCD);
+
+						window.location.href = "index.html";
+						/*return false;*/
+                      
+					}
+					else {
+						alert("user password is incorrect")
+                        window.location.href = "#";
+					}
+
+				},
+
+			});
+			//alert("Data inside function")
+			return;
+		});
+
+	</script>
+</body>
+</html>

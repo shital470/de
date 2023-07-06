@@ -1,0 +1,485 @@
+﻿<div class="row justify-content-center">
+
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="LLLL-IV-SQ-50.shtml" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none" id="deletebtnID">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;display:none" onclick="edit_record();" id="updatebtnID">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">
+                                Name&nbsp;:
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="NameID">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Part No.&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="partId">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Group&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="RefID">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">catagory&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="CatID">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Closing Balance&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="ClosingbalanceID">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">closing value&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="closingvalueID">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Cost Price&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="CostpriceID">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Std. Selling Price&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="CurrentBalanceID">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Costing Method&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="CostingmethodID">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Market Value Method&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="MarketvaluemethodID">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h6 class="text-left" style="background-color:whitesmoke">Purchase</h6>
+                    <div class="table-responsive">
+                        <div>
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col" class="sort">Date</th>
+                                        <th scope="col" class="sort">Party Name</th>
+                                        <th scope="col" class="sort">Qty</th>
+                                        <th scope="col" class="sort">Rate	</th>
+                                        <th scope="col" class="sort">Disc%</th>
+                                        <th scope="col" class="sort">Amount</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="PurchID">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <div>
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <hr class="my-3">
+                    <h6 class="text-left" style="background-color:whitesmoke">Godown</h6>
+
+                    <div class="table-responsive">
+                        <div>
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col" class="sort">Godown</th>
+                                        <th scope="col" class="sort">Batch</th>
+                                        <th scope="col" class="sort">Qty</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="GodownID">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+
+                    <h6 class="text-left" style="background-color:whitesmoke">Sales</h6>
+                    <div class="table-responsive">
+                        <div>
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col" class="sort">Date</th>
+                                        <th scope="col" class="sort">Party Name</th>
+                                        <th scope="col" class="sort">Qty.</th>
+                                        <th scope="col" class="sort">Rate</th>
+                                        <th scope="col" class="sort">Disc%</th>
+                                        <th scope="col" class="sort">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="salesID">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <hr class="my-3">
+                    <h6 class="text-left" style="background-color:whitesmoke">Category</h6>
+
+                    <div class="table-responsive">
+
+                        <div>
+                            <table class="table align-items-center table-flush" id="catID">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col" class="sort">Item Name</th>
+                                        <th scope="col" class="sort">Quantity</th>
+                                        <th scope="col" class="sort">Cost</th>
+                                        <th scope="col" class="sort">Sales Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="catbID">
+                                </tbody>
+                                <tfoot class="py-4" id="testdiv">
+                                    <tr>
+                                        <td>
+                                        <nav aria-label="...">
+                                            <ul class="pagination justify-content-end mb-0">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" tabindex="-1">
+                                                        <i class="fas fa-angle-left"></i>
+                                                        <span class="sr-only">Previous</span>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item active">
+                                                    <a class="page-link" href="#">1</a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">2</a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">
+                                                        <i class="fas fa-angle-right"></i>
+                                                        <span class="sr-only">Next</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                            </td>
+                                        </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var url1 = window.location.href;
+        var mode = url1.split("=")[1];
+        var index = (mode).indexOf('&');
+        var itcd = mode.substring(0, index);
+        var cccd = localStorage.getItem('CCCD');
+        set_firsttable(cccd, itcd);
+        getvariable(itcd);
+        set_MainHeaderName();
+    });
+    function getvariable(val) {
+        var itcd = val;
+        var cccd = localStorage.getItem('CCAC');
+        debugger
+        $.ajax
+            ({
+                async: false,
+                url:URLPowerAPI +'/api/PBXMLStockItem/GetPBXMLStockItemsById',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd,
+                    Itcd: itcd
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data) {
+                    $("#loader1").hide();
+
+                    var voucherno = data.NAME;
+                    $("#NameID").val(voucherno);
+
+                    var parent = data.PARENT;
+                    $("#RefID").val(parent);
+
+                    var catgory = data.CATEGORY;
+                    $("#CatID").val(catgory);
+
+                    var ratvat = data.RATEOFVAT;
+                    $("#closingvalueID").val(ratvat);
+                }
+            });
+    };
+    function set_firsttable(val, val1) {
+        debugger
+        var cccd = val;
+        var itcd = val1;
+        $.ajax
+            ({
+                async: false,
+                url: 'https://www.powerbooks.in/powerapi/api/PBXMLVStockQuery/GetAllStkQueryPurcase',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd,
+                    Itcd: itcd
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data) {
+                    $("#loader1").hide();
+                    var dataobj = data;
+                    var itgr = dataobj.ItGr;
+                    $.each(data, function (index, value) {
+                        var strResult;
+                        $.each(data, function (index, data) {
+                            strResult += "<tr scope='row'><th>"+ data.DATE + "</th><td>"
+                                + data.Name + "</td><td>"
+                                + data.Qty + "</td><td>"
+                                + data.Rate + " " + data.Unit + "</td><td>"
+                                + "-" + "</td><td>"
+                                + data.Amount + "</td><tr>"
+                        });
+                        $("#PurchID").html(strResult);
+                    });
+                }
+            });
+        set_secondtable(cccd, itcd);
+    };
+    function set_secondtable(val, val1) {
+        debugger
+        var cccd = val;
+        var itcd = val1;
+        $.ajax
+            ({
+                async: false,
+                url: 'https://www.powerbooks.in/powerapi/api/PBXMLVStockQuery/GetAllStkQueryCategory',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd,
+                    Itcd: itcd
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (groups) {
+                    $("#loader1").hide();
+                    var maxcount = Math.max.apply(Math, groups.map(function (o) { return o.ItCD }));
+                    localStorage.setItem('MaxAccNo', maxcount + 1)
+
+                    var total = groups.length;
+                    console.log(total);
+
+                    if (total > 6) {
+                        var pageTotal = Math.ceil(total / 10);
+                        console.log(pageTotal);
+                        var j = 0;
+                        var grp;
+                        var i = 1;
+                        j = i + 1;
+                        grp = groups.slice(i * 6, (i + 1) * 10);
+                        console.log('checking ' + i * 10, (i + 1) * 10);
+                        console.log(j);
+                        console.log(grp);
+                    }
+                    if (pageTotal == null) {
+                        strResult += "<div class='//alert-danger '>data is not defined</div>";
+                    }
+                    groups = groups.slice(0, 6)
+                    $.each(groups, function (index, value) {
+                        var strResult;
+                        $.each(groups, function (index, data) {
+                            strResult += "<tr scope='row'><th>" + data.ItDescp + "</a></th><td>"
+                                + data.Qty + "</td><td>"
+                                + data.Cost + "</td><td>"
+                                + data.Sales + "</td><tr>"
+                        });
+                        $("#catbID").html(strResult);
+                    });
+                }
+            });
+            set_thirdtable(cccd, itcd);
+    };
+    //$("#testdiv").on('click', 'a', function () {
+    //    debugger
+    //    var url1 = window.location.href;
+    //    var mode = url1.split("=")[1];
+    //    var index = (mode).indexOf('&');
+    //    var itcd = mode.substring(0, index);
+    //    var cccd = localStorage.getItem('CCCD');
+    //    var myval = $(this).text();
+    //    $.ajax({
+    //        type: 'GET',
+    //        url: 'https://www.powerbooks.in/powerapi/api/PBXMLVStockQuery/GetAllStkQueryCategory',
+    //        dataType: 'JSON',
+    //        contentType: 'application/json ; charset = utf-8',
+    //        data:
+    //        {
+    //            cccd: cccd,
+    //            Itcd: itcd
+    //        },
+    //        success: function (groups) {
+    //            var total = groups.length;
+    //            if (total > 6) {
+    //                var val = myval;
+    //                var i = val - 1;
+    //                console.log('ival=' + i);
+    //                grp = groups.slice(i * 6, (i + 1) * 10);
+    //                console.log('checkinglili ' + i * 6, (i + 1) * 10);
+    //                console.log(grp);
+    //                if (groups == null) {
+    //                    strResult += "<div class='//alert-danger '>data is not defined</div>";
+    //                }
+    //                var strResult;
+    //                groups = groups.slice(i * 6, (i + 1) * 10)
+    //                $.each(groups, function (index, data) {
+    //                    strResult += "<tr scope='row'><th>" + data.ItDescp + "</th><td>"
+    //                        + data.Qty + "</td><td>"
+    //                        + data.Cost + "</td><td>"
+    //                        + data.Sales + "</td><tr>"
+    //                });
+    //                ("#catbID").html(strResult);
+    //            }
+    //        }
+
+    //    });
+    //});
+    function set_thirdtable(val, val1) {
+        debugger
+        var cccd = val;
+        var itcd = val1;
+        $.ajax
+            ({
+                async: false,
+                url: 'https://www.powerbooks.in/powerapi/api/PBXMLVStockQuery/GetAllStkQueryGodown',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd,
+                    Itcd: itcd
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data) {
+                    $("#loader1").hide();
+                    $.each(data, function (index, value) {
+                        var strResult;
+                        $.each(data, function (index, data) {
+                            strResult += "<tr scope='row'><th>" + data.Godown + "</th><td>"
+                                + data.batch + "</td><td>"
+                                + data.Units + "</td></tr>"
+                        });
+                        $("#GodownID").html(strResult);
+                    });
+                }
+            });
+    };
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Distribution</span> - Inventory Voucher - Stock Query');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Distribution</a><span class="breadcrumb-item active">Inventory Voucher / Stock Query</span>');
+    };
+</script>

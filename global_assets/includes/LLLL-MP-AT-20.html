@@ -1,0 +1,353 @@
+﻿
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-xs-2">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="margin-right: 8px; display: none;">Delete</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="margin-right: 8px; display: none;">Update</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Form layout-->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <!--1st column started-->
+                                            
+                                            <div class="col-lg-6">
+                                                <div class="collapse show">
+                                                    <form action="#">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Name&nbsp;:</label>
+                                                            <div class="col-lg-5">
+                                                                <input type="text" class="form-control" id="AttendProdNameId">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Attends Types&nbsp;:</label>
+                                                            <div class="col-lg-5">
+                                                                <select class="form-control " id="AttendstypeId" >
+                                                                    <option value="Select" selected>--Select--</option>
+                                                                    <option value="1">Attendance/Leave with Pay</option>
+                                                                    <option value="2">Leave without Pay</option>
+                                                                    <option value="3">Production</option>
+                                                                    <option value="4">User Defined Calendar Type</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        <!--2nd column started-->
+                                        <div class="col-lg-6">
+                                            <div class="collapse show">
+                                                    <form action="#">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Under&nbsp;:</label>
+                                                            <div class="col-lg-5">
+                                                                <select class="form-control " id="AttendProdUnderId" >
+                                                                    <option value="Select" selected>--Select--</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Period Type&nbsp;:</label>
+                                                            <div class="col-lg-5">
+                                                                <input type="text" class="form-control" id="AttendPeriodId">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                 
+
+
+               
+                <!--dropdown list-->
+                <script type="text/javascript">
+                    $(function () {
+                        debugger
+                        var cccd = localStorage.getItem('CCAC');
+                        $.ajax({
+                            type: "GET",
+                            url: URLPowerAPI+"/api/PBXMLVAttendence/GetAllPBXMLVAttendence",
+                            dataType: "json",
+                            contentType: "application/json",
+                            data:
+                            {
+                                cccd: cccd
+                            },
+                            beforeSend: function () {
+                                $("#loader1").show();
+                            },
+                            success: function (res) {
+                                $("#loader1").hide();
+                                $.each(res, function (data, value) {
+
+                                    $("#AttendProdUnderId").append($("<option></option>").val(value.AttendanceId).html(value.ATTENDANCETYPE));
+                                })
+                            }
+
+                        });
+
+                    });
+
+                </script>
+
+                <!--Add Api/Save button-->
+                <script>
+                    function attendprodfunction() {
+                        debugger
+                        var url1 = window.location.href;
+                        var arr = url1.split('=');
+                        console.log(url1.length)
+
+                        if (arr.length > 1) {
+                            var mode = url1.split("=")[3];
+                            var AttendanceId1 = url1.split("=")[1];
+                            var index = (AttendanceId1).indexOf('&');
+                            var AttendanceId = AttendanceId1.substring(0, index);
+
+                        }
+                        var urls = window.location.href;
+                        var cccd = localStorage.getItem('CCAC');
+
+                        var parent = $("#AttendProdUnderId option:selected").text();
+                        var attendtype = $("#AttendstypeId option:selected").text();
+                        var CurrentDate = new Date();
+                        var curndate = CurrentDate.toISOString().replace('Z', '');
+                        var status = "A";
+
+
+                        //storesession value
+                        var UId;
+                        var Username;
+                        var Createdsystem;
+                        var Createdate;
+
+                        if (mode == 'edit') {
+                            AttendanceId = AttendanceId,
+                                UId = sessionStorage.getItem('uid');
+                            Username = sessionStorage.getItem('username');
+                            Createdsystem = sessionStorage.getItem('createdsystem');
+                            Createdate = sessionStorage.getItem('createddate');
+                        }
+                        else {
+                            AttendanceId = localStorage.getItem('MaxAttendanceId');
+                            UId = localStorage.getItem('UID');
+                            Username = localStorage.getItem('UName');
+                            Createdsystem = 'PowerSuit';
+                            Createdate = curndate;
+                        }
+
+
+                        /*var  abc =$()*/
+                        // alert("in parameters");
+
+                        var parameter =
+                        {
+                            AttendanceId: AttendanceId,
+                            NAME: $("#AttendProdNameId").val(),
+                            ATTENDANCEPERIOD: $("#AttendPeriodId").val(),
+                            //EMAILID: $("#emailid").val(),
+                            PARENT: parent,
+                            ATTENDANCEPRODUCTIONTYPE: attendtype,
+                            CCCD: cccd,
+                            STATUS: status,
+                            CREATEDSYSTEM: Createdsystem,
+                            LASTUPDATEDSYSTEM: 'PowerSuit',
+                            UID: UId,
+                            USERNAME: Username,
+                            LUID: localStorage.getItem('UID'),
+                            LUSERNAME: localStorage.getItem('UName'),
+                            CREATEDDATE: Createdate,
+                            LASTUPDATEDDATE: curndate
+                        }
+                        //alert(JSON.stringify(parameter));
+                        return parameter;
+                        // alert(NAME + "name");
+
+                    }
+
+                    $("#savebtnid").click(function () {
+
+                        // alert("ghggg");
+                        var AttProdparameter = attendprodfunction();
+                        // alert(addcostcatparameter + "json");
+                        debugger
+                        $.ajax
+                            ({
+                                type: 'POST',
+                                url: URLPowerAPI+'/api/PBXMLAttendence/AddPBXMLAttendence',
+                                dataType: 'JSON',
+                                data: JSON.stringify(AttProdparameter),
+                                contentType: 'application/json ; charset = utf-8',
+                                beforeSend: function () {
+                                    $("#loader1").show();
+                                },
+                                success: function (data, textStatus, xhr) {
+
+                                    alert('Added successfully');
+                                    $("#loader1").hide();
+                                    window.location.href = "LLLL-MP-AT-50.shtml";
+                                },
+                                error: function (xhr, textStatus, errorThrown) {
+                                    alert("You entered some invalid fields...! Fill the details again...");
+                                }
+                            });
+
+                        return;
+
+                    });
+
+                    $("#updatebtnID").click(function () {
+
+                        var AttProdparameter = attendprodfunction();
+                        $.ajax
+                            ({
+                                type: 'POST',
+                                url: URLPowerAPI+'/api/PBXMLAttendence/EditPBXMLAttendence',
+                                dataType: 'JSON',
+                                data: JSON.stringify(AttProdparameter),
+                                contentType: 'application/json ; charset = utf-8',
+                                beforeSend: function () {
+                                    $("#loader1").show();
+                                },
+                                success: function (data, textStatus, xhr) {
+                                    alert(' Updated successfully');
+                                    $("#loader1").hide();
+                                    window.location.href = "LLLL-MP-AT-50.shtml";
+                                },
+                                error: function (xhr, textStatus, errorThrown) {
+                                    alert("You entered some invalid fields...! Fill the details again...");
+                                }
+                            });
+                        return;
+                    });
+
+
+                </script>
+
+                <!--GET API-->
+                <script>
+                    $(document).ready(function () {
+                        debugger
+                        set_MainHeaderName();
+                        var url1 = window.location.href;
+                        var mode = url1.split("=")[2];
+                        var AttendanceId1 = url1.split("=")[1];
+                        var index = (AttendanceId1).indexOf('&');
+                        var AttendanceId = AttendanceId1.substring(0, index);
+                        var cccd = localStorage.getItem('CCAC');
+                        //alert(mode);
+
+
+                        if (mode == 'edit') {
+                            $.ajax({
+                                type: 'GET',
+                                url: URLPowerAPI+'/api/PBXMLAttendence/GetPBXmlAttdProdTypesById',
+                                dataType: 'JSON',
+                                contentType: 'application/json ; charset = utf-8',
+                                //data: JSON.stringify(groupname),
+                                data: {
+                                    cccd: cccd,
+                                    AttendanceId: AttendanceId
+                                },
+
+                                contentType: 'application/json ; charset = utf-8',
+                                beforeSend: function () {
+                                    $("#loader1").show();
+                                },
+                                success: function (data) {
+                                    // alert(JSON.stringify(data));
+                                    $("#loader1").hide();
+                                    ObjAttendance = data;
+                                    //alert(JSON.stringify(ObjAttendance));
+
+
+
+
+
+                                    $("#AttendProdNameId").val(ObjAttendance.NAME);
+                                    $('#AttendProdUnderId option:selected').text(ObjAttendance.PARENT);
+                                    $("#AttendPeriodId").val(ObjAttendance.ATTENDANCEPERIOD);
+                                    $('#AttendstypeId option:selected').text(ObjAttendance.ATTENDANCEPRODUCTIONTYPE);
+
+                                    //alert(data.NAME);
+
+                                    sessionStorage.setItem('uid', ObjAttendance.UID);
+                                    sessionStorage.setItem('username', ObjAttendance.USERNAME);
+                                    sessionStorage.setItem('createdsystem', ObjAttendance.CREATEDSYSTEM);
+                                    sessionStorage.setItem('createddate', ObjAttendance.CREATEDDATE);
+                                    sessionStorage.setItem('lastupdatedate', ObjAttendance.LASTUPDATEDDATE);
+
+
+
+                                },
+
+                            });
+
+
+                        }
+
+                        $("#deletebtnID").show();
+                        $("#updatebtnID").show();
+                        $("#savebtnid").hide();
+
+
+
+
+                        $("#deletebtnID").click(function () {
+                            debugger
+                            var url1 = window.location.href;
+                            var mode = url1.split("=")[1];
+                            var AttendanceType1 = url1.split("=")[2];
+                            var index = (AttendanceType1).indexOf('&');
+                            var AttendanceType = AttendanceType1.substring(0, index);
+                            var cccd = localStorage.getItem('CCAC');
+
+                            $.ajax({
+                                url: URLPowerAPI+'/api/PBXMLAttendence/DeletePBXMLAttendence',
+                                type: 'GET',
+                                dataType: 'JSON',
+                                data: {
+                                    cccd: cccd,
+                                    AttendanceType: AttendanceType
+
+                                },
+
+                                contentType: 'application/json ; charset = utf-8',
+                                beforeSend: function () {
+                                    $("#loader1").show();
+                                },
+                                success: function (data, textStatus, xhr) {
+                                    alert("Deleted successfully");
+                                    $("#loader1").hide();
+                                    window.location.href = "LLLL-MP-AT-50.shtml";
+
+                                },
+                                error: function (xhr, textStatus, errorThrown) {
+                                    alert("You entered wrong password...! Fill the details again...");
+                                }
+                            });
+                        });
+                    });
+
+                    function set_MainHeaderName() {
+                        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Payroll Info - Attendance/Production Groups');
+                        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Payroll Info / Attendance/Production Groups</span>');
+                    };
+                </script>
+

@@ -1,0 +1,373 @@
+						<div class="row justify-content-center">
+							<div class="col">
+								<div class="card">
+									<div class="card-header">
+										<div class="row">
+											<div class="col-lg-6 col-xs-2">
+											</div>
+											<div class="col-lg-6">
+												<a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+												<a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" id="deletebtnID">Delete</a>
+												<a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px; display: none;" id="updatebtnID">Update</a>
+												<a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+											</div>
+										</div>
+									</div>
+
+									<!--Form layout-->
+									<div class="card-body">
+										<div class="row">
+											<!--1st column started-->
+											
+											<div class="col-lg-6">
+												<div class="collapse show">
+													<form action="#">
+														<div class="form-group row">
+															<label class="col-lg-5 offset-1 col-form-label">Name&nbsp;:</label>
+															<div class="col-lg-5">
+																<input type="text" class="form-control" id="scenarios-username">
+															</div>
+														</div>
+
+														<div class="form-group row">
+															<label class="col-lg-5 offset-1 col-form-label">Includes Actuals&nbsp;:</label>
+															<div class="col-lg-5 col-form-label">
+																<div class="custom-control custom-switch custom-control-inline">
+																	<input type="radio" class="custom-control-input" name="IncludesActualsId" id="YesIncludesActualsId">
+																	<label class="custom-control-label" for="YesIncludesActualsId">Yes</label>
+																</div>
+																<div class="custom-control custom-switch custom-control-inline">
+																	<input type="radio" class="custom-control-input" name="IncludesActualsId" id="NoIncludesActualsId">
+																	<label class="custom-control-label" for="NoIncludesActualsId">No</label>
+																</div>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+
+										<!--2nd column started-->
+										<div class="col-lg-6">
+											<div class="collapse show">
+													<form action="#">
+														<div class="form-group row">
+															<label class="col-lg-5 offset-1 col-form-label">Exclude Inventory Tracking Calculation&nbsp;:</label>
+															<div class="col-lg-5 col-form-label">
+																<div class="custom-control custom-switch custom-control-inline">
+																	<input type="radio" class="custom-control-input" name="InventoryCalculationId" id="YesInventoryCalculationId">
+																	<label class="custom-control-label" for="YesInventoryCalculationId">Yes</label>
+																</div>
+																<div class="custom-control custom-switch custom-control-inline">
+																	<input type="radio" class="custom-control-input" name="InventoryCalculationId" id="NoInventoryCalculationId">
+																	<label class="custom-control-label" for="NoInventoryCalculationId">No</label>
+																</div>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-lg-5 offset-1 col-form-label">Exclude Forex Gain/Loss Calculation&nbsp;:</label>
+															<div class="col-lg-5 col-form-label">
+																<div class="custom-control custom-switch custom-control-inline">
+																	<input type="radio" class="custom-control-input" name="GainLossCalculationId" id="YesGainLossCalculationId">
+																	<label class="custom-control-label" for="YesGainLossCalculationId">Yes</label>
+																</div>
+																<div class="custom-control custom-switch custom-control-inline">
+																	<input type="radio" class="custom-control-input" name="GainLossCalculationId" id="NoGainLossCalculationId">
+																	<label class="custom-control-label" for="NoGainLossCalculationId">No</label>
+																</div>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+
+     <!--popup script-->
+
+
+
+    <!--add update delete-->
+    <!--<script>
+        $(document).ready(function () {
+            debugger
+            scenariofunction();
+
+
+        });
+    </script>-->
+
+
+    <script>
+        function scenariofunction() {
+            debugger
+            var url1 = window.location.href;
+            var arr = url1.split('=');
+            console.log(url1.length)
+
+            if (arr.length > 1) {
+                var mode = url1.split("=")[2];
+                var BUDGETSRL = url1.split("=")[1];
+                //alert(BUDGETSRL);
+                var index = (BUDGETSRL).indexOf('&');
+                var BUDGETSRL1 = BUDGETSRL.substring(0, index);
+               // alert(BUDGETSRL1);
+            }
+            var urls = window.location.href;
+            var cccd = localStorage.getItem('CCAC');
+
+            if ($("#YesInventoryCalculationId").prop("checked")) {
+                var InvTrcCal = "Yes"
+            }
+            else {
+                var InvTrcCal = "No"
+            }
+
+
+            if ($("#YesGainLossCalculationId").prop("checked")) {
+                var gainlosscal = "Yes"
+            }
+            else {
+                var gainlosscal = "No"
+            }
+
+            var IncludesAct = 'Yes';
+            //var category = $("#CategoryValueId option:selected").text();
+            //var parent = $("#UnderValueId option:selected").text();
+            var CurrentDate = new Date();
+            var curndate = CurrentDate.toISOString().replace('Z', '');
+            var status = "A";
+
+            //storesession value
+            //storesession value
+            var UId;
+            var Username;
+            var Createdsystem;
+            var Createdate;
+
+            if (mode == 'edit') {
+                BUDGETSRL = BUDGETSRL1,
+                    UId = sessionStorage.getItem('uid');
+                Username = sessionStorage.getItem('username');
+                Createdsystem = sessionStorage.getItem('createdsystem');
+                Createdate = sessionStorage.getItem('createddate');
+            }
+            else {
+                BUDGETSRL = localStorage.getItem('MaxBUDGETSRLNo');
+                UId = localStorage.getItem('UID');
+                Username = localStorage.getItem('UName');
+                Createdsystem = 'PowerSuit';
+                Createdate = curndate;
+            }
+
+
+            /*var  abc =$()*/
+            // alert("in parameters");
+
+            var parameter =
+            {
+                BUDGETSRL: BUDGETSRL,
+                NAME: $("#scenarios-username").val(),
+                //EMAILID: $("#emailid").val(),
+                USEACTUALS: IncludesAct,
+                EXCLUDETRACKING: InvTrcCal,
+                EXCLUDEFOREX: gainlosscal,
+                ISSCENARIO:'Yes',
+                cccd: cccd,
+                STATUS: status,
+                CREATEDSYSTEM: Createdsystem,
+                LASTUPDATEDSYSTEM: 'PowerSuit',
+                UID: UId,
+                USERNAME: Username,
+                LUID: localStorage.getItem('UID'),
+                LUSERNAME: localStorage.getItem('UName'),
+                CREATEDDATE: Createdate,
+                LASTUPDATEDDATE: curndate
+            }
+            //alert(JSON.stringify(parameter));
+            return parameter;
+            // alert(NAME + "name");
+
+        }
+
+        $("#savebtnid").click(function () {
+
+            // alert("ghggg");
+            var addscenarioparameter = scenariofunction();
+            // alert(addcostcatparameter + "json");
+            debugger
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: URLPowerAPI+'/api/PBXMLBudget/AddPBXMLBudgetScenario',
+                    dataType: 'JSON',
+                    data: JSON.stringify(addscenarioparameter),
+                    contentType: 'application/json ; charset = utf-8',
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data, textStatus, xhr) {
+
+                        alert('Registered successfully');
+                        $("#loader1").hide();
+                        window.location.href = "LLLL-MA-SC-50.shtml";
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                 alert("You entered some invalid fields...! Fill the details again...");
+                    }
+                });
+
+            return;
+
+        });
+
+        $("#updatebtnID").click(function () {
+
+            var addscenarioparameter = scenariofunction();
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: URLPowerAPI+'/api/PBXMLBudget/EditPBXMLBudgetScenario',
+                    dataType: 'JSON',
+                    data: JSON.stringify(addscenarioparameter),
+                    contentType: 'application/json ; charset = utf-8',
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data, textStatus, xhr) {
+                        alert(' Updated successfully');
+                        $("#loader1").hide();
+                        window.location.href = "LLLL-MA-SC-50.shtml";
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                       alert("You entered some invalid fields...! Fill the details again...");
+                    }
+                });
+            return;
+        });
+
+
+    </script>
+
+    <!--GET API-->
+    <script>
+        $(document).ready(function () {
+            debugger
+            set_MainHeaderName();
+            var url1 = window.location.href;
+            var mode = url1.split("=")[2];
+            var VaribalId1 = url1.split("=")[1];
+            var index = (VaribalId1).indexOf("&");
+            var BUDGETSRL = VaribalId1.substring(0, index);
+            var cccd = localStorage.getItem('CCAC')
+            // alert(VaribalId);
+
+            if (mode == 'edit') {
+                $.ajax({
+                    type: 'GET',
+                    url: URLPowerAPI+'/api/PBXMLBudget/GetPBXMLBudgetById',
+                    dataType: 'JSON',
+                    contentType: 'application/json ; charset = utf-8',
+                    //data: JSON.stringify(groupname),
+                    data: {
+                        cccd: cccd,
+                        BUDGETSRL: BUDGETSRL
+                    },
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data) {
+                        ObjScenario = data;
+                        $("#loader1").hide();
+
+                        $("#scenarios-username").val(ObjScenario.NAME);
+                        // alert("actuals" + ObjScenario.USEACTUALS);
+                        // alert("exclude" + ObjScenario.EXCLUDETRACKING);
+
+
+
+                        if (ObjScenario.USEACTUALS == 'Yes') {
+                            $("#YesIncludesActualsId").attr('checked', 'checked');
+                            //alert("insideactualsyes" + ObjScenario.USEACTUALS);
+                        }
+                        else {
+                            $("#NoIncludesActualsId").attr('checked', 'checked');
+                            //alert("insideactualsno" + ObjScenario.USEACTUALS);
+                        }
+
+                        if (ObjScenario.EXCLUDETRACKING == 'Yes') {
+                            $("#YesInventoryCalculationId").attr('checked', 'checked');
+                        } else {
+                            $("#NoInventoryCalculationId").attr('checked', 'checked');
+                        }
+
+                        if (ObjScenario.EXCLUDEFOREX == 'Yes') {
+                            $("#YesGainLossCalculationId").attr('checked', 'checked');
+                        }
+                        else {
+                            $("#NoGainLossCalculationId").attr('checked', 'checked');
+                        }
+
+                        sessionStorage.setItem('uid', ObjScenario.UID);
+                        sessionStorage.setItem('username', ObjScenario.USERNAME);
+                        sessionStorage.setItem('createdsystem', ObjScenario.CREATEDSYSTEM);
+                        sessionStorage.setItem('createddate', ObjScenario.CREATEDDATE);
+                        sessionStorage.setItem('lastupdatedate', ObjScenario.LASTUPDATEDDATE);
+
+                    },
+
+                });
+            }
+            $("#deletebtnID").show();
+            $("#updatebtnID").show();
+            $("#savebtnid").hide();
+
+
+            $("#deletebtnID").click(function () {
+                debugger
+                var url1 = window.location.href;
+                var mode = url1.split("=")[2];
+                var VaribalId1 = url1.split("=")[1];
+                var index = (VaribalId1).indexOf("&");
+                var BUDGETSRL = VaribalId1.substring(0, index);
+                var cccd = localStorage.getItem('CCAC')
+
+                $.ajax({
+                    url: URLPowerAPI+'/api/PBXMLBudget/DeletePBXMLBudget',
+                    type: 'GET',
+                    dataType: 'JSON',
+                    data: {
+                        cccd: cccd,
+                        BUDGETSRL: BUDGETSRL
+
+                    },
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    contentType: 'application/json ; charset = utf-8',
+                    success: function (data, textStatus, xhr) {
+                        alert("Deleted successfully");
+                        $("#loader1").hide();
+                        window.location.href = "LLLL-MA-SC-50.shtml";
+
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                    }
+                });
+            });
+
+        });
+
+         function set_MainHeaderName() {
+            $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Account Info - Scenario ');
+            $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Account Info / Scenario </span>');
+        };
+
+        
+    </script>
+    
+

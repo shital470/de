@@ -1,0 +1,490 @@
+<div class="row justify-content-center">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-xs-2">
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                                                    <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display: none; margin-right: 8px;">Delete</a>
+                                                    <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display: none; margin-right: 8px;">Update</a>
+                                                    <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--Form layout-->
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-6" style="">
+                                                    <div class=" row">
+                                                        <label class="col-lg-5 offset-1 col-form-label">Name&nbsp;:</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="text" class="form-control" id="PayHeadNameId">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <!--<div class="row">
+                                                <div class="col-lg-12">
+                                                    <h5 class="" style="background-color: whitesmoke">Pay Head Information</h5>
+                                                </div>
+                                            </div>-->
+                                            <h5 class="" style="background-color: whitesmoke; margin-right:45px">Pay Head Information</h5>
+                                            <div class="row">
+                                                <!--1st column started-->
+
+                                                <div class="col-lg-6">
+                                                    <div class="collapse show">
+                                                        <form action="#">
+
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Pay Head Type&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <select class="form-control" id="PayHeadTypID">
+                                                                        <option value="Select" selected>--Select--</option>
+                                                                        <option value="1">Not Applicable</option>
+                                                                        <option value="2">Bonus</option>
+                                                                        <option value="3">Deductions From Employees</option>
+                                                                        <option value="4">Earnings for Employees</option>
+                                                                        <option value="5">Employees' Statutory Deductions</option>
+                                                                        <option value="6">Employer's Statutory Contribution</option>
+                                                                        <option value="7">Gratuity</option>
+                                                                        <option value="8">Loans and Advances</option>
+                                                                        <option value="9">Reimbursements to Employees</option>
+                                                                        <option value="0">Tax paid by Employer on Perquisites</option>
+                                                                        <option value="10">Employer's Other Charges</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Affect Net Salary&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <select class="form-control" id="PayHeadAffectNetSalaryID">
+                                                                        <option value="Select" selected>--Select--</option>
+                                                                        <option value="0" id="affectNoid">No</option>
+                                                                        <option value="1" id="affectYesid">Yes</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Currency Of Ledger&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <input type="text" class="form-control" id="PayHeadCurencyOfLedg">
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+
+                                                <!--2nd column started-->
+                                                <div class="col-lg-6">
+                                                    <div class="collapse show">
+                                                        <form action="#">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Calculation Type&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <select class="form-control" id="PayHeadCalTYId">
+                                                                        <option value="Select" selected>--Select--</option>
+                                                                        <option value="1">As Computed Value</option>
+                                                                        <option value="2">As User Defined</option>
+                                                                        <option value="3">Flat Rate</option>
+                                                                        <option value="4">On Attendance</option>
+                                                                        <option value="5">On Production</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Under&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <select class="form-control" id="PayHeadUnderID">
+                                                                        <option value="Select" selected>--Select--</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Use For Gratuity&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <select class="form-control" id="PayHeadUseOfGratuityId">
+                                                                        <option value="Select" selected>--Select--</option>
+                                                                        <option value="1">Yes</option>
+                                                                        <option value="2">No</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Set/Alter Income Tax Details&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <select class="form-control" id="PayHeadSetAltIncTaxDetlsID">
+                                                                        <option value="Select" selected>--Select--</option>
+                                                                        <option value="1">Yes</option>
+                                                                        <option value="2">No</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                      
+
+                    <!--net salary javascript-->
+                    <script>
+
+                        function showDiv(divId, element) {
+                            document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
+                        }
+
+                        prodtyperowid
+
+                    </script>
+                    <script>
+                        function showDiv1(divId1, divId11, element) {
+                            document.getElementById(divId1).style.display = element.value == 1 ? 'block' : 'none';
+                            document.getElementById(divId11).style.display = element.value == 1 ? 'block' : 'none';
+                        }
+                        function showDiv2(divId2, divIdtwo, element) {
+                            document.getElementById(divId2).style.display = element.value == 2 ? 'block' : 'none';
+                            document.getElementById(divIdtwo).style.display = element.value == 2 ? 'block' : 'none';
+
+
+                        }
+                        function showDiv3(divId3, divId33, element) {
+                            document.getElementById(divId3).style.display = element.value == 3 ? 'block' : 'none';
+                            document.getElementById(divId33).style.display = element.value == 3 ? 'block' : 'none';
+                        }
+                        function showDiv4(divId4, element) {
+                            document.getElementById(divId4).style.display = element.value == 4 ? 'flex' : 'none';
+                        }
+
+                        function showDiv5(divId5, element) {
+                            document.getElementById(divId5).style.display = element.value == 5 ? 'flex' : 'none';
+                        }
+                    </script>
+
+                    <!--sidebar code-->
+                    
+                    <!--dropdown list-->
+
+                    <script type="text/javascript">
+                        $(function () {
+                            debugger
+                            var cccd = localStorage.getItem('CCAC');
+                            $.ajax({
+                                type: "GET",
+                                url: URLPowerAPI+"/api/PBXMLVAttendence/GetAllPBXMLVAttendence",
+                                dataType: "json",
+                                contentType: "application/json",
+                                data: {
+                                    cccd: cccd
+                                },
+                                beforeSend: function () {
+                                    $("#loader1").show();
+                                },
+                                success: function (res) {
+                                    //alert(JSON.stringify(res));
+                                    $("#loader1").hide();
+                                    $.each(res, function (data, value) {
+
+                                        $("#AttendanceLeaveId").append($("<option></option>").val(value.AttendanceId).html(value.ATTENDANCETYPE));
+
+                                    })
+                                }
+
+                            });
+
+                        });
+
+                    </script>
+
+                    <script type="text/javascript">
+                        $(function () {
+                            debugger
+                            var cccd = localStorage.getItem('CCAC');
+                            $.ajax({
+                                type: "GET",
+                                url: URLPowerAPI+"/api/PBXMLVGroups/GetAllPBXMLVGroup",
+                                dataType: "json",
+                                contentType: "application/json",
+                                data: {
+                                    cccd: cccd
+                                },
+                                beforeSend: function () {
+                                    $("#loader1").show();
+                                },
+                                success: function (res) {
+                                    $("#loader1").hide();
+                                    $.each(res, function (data, value) {
+
+                                        $("#PayHeadUnderID").append($("<option></option>").val(value.AccNo).html(value.GROUP));
+
+                                    })
+                                }
+
+                            });
+
+                        });
+
+                    </script>
+                    <!--Save Button/Add API-->
+
+                    <script>
+                        function payheadfunction() {
+                            debugger
+                            var url1 = window.location.href;
+                            var arr = url1.split('=');
+                            console.log(url1.length)
+
+                            if (arr.length > 1) {
+                                var mode = url1.split("=")[2];
+                                var PayheadId1 = url1.split("=")[1];
+                                var index = (PayheadId1).indexOf('&');
+                                var PayheadId = PayheadId1.substring(0, index);
+
+                            }
+
+                            var cccd = localStorage.getItem('CCAC');
+
+                            var payheadtype = $("#PayHeadTypID option:selected").text();
+                            var under = $("#PayHeadUnderID option:selected").text();
+                            var usedforgratuty = $("#PayHeadUseOfGratuityId option:selected").text();
+                            var affectnetsal = 'No';
+                            var intaxdet = 'No';
+                            var caltype = $("#PayHeadCalTYId option:selected").text();
+                            var calperiod = $("#PayHeadCalPeriodId option:selected").text();
+                            var CurrentDate = new Date();
+                            var curndate = CurrentDate.toISOString().replace('Z', '');
+
+                            var status = "A";
+
+
+                            //storesession value
+                            var UId;
+                            var Username;
+                            var Createdsystem;
+                            var Createdate;
+
+                            if (mode == 'edit') {
+                                PayheadId = PayheadId,
+                                    UId = sessionStorage.getItem('uid');
+                                Username = sessionStorage.getItem('username');
+                                Createdsystem = sessionStorage.getItem('createdsystem');
+                                Createdate = sessionStorage.getItem('createddate');
+                            }
+                            else {
+                                PayheadId = localStorage.getItem('MaxPayheadId');
+                                UId = localStorage.getItem('UID');
+                                Username = localStorage.getItem('UName');
+                                Createdsystem = 'PowerSuit';
+                                Createdate = curndate;
+                            }
+
+                            var parameter = {
+                                PayheadId: PayheadId,
+                                RESERVEDNAME: $("#PayHeadNameId").val(),
+                                NAME: $("#PayHeadNameId").val(),
+                                PAYSLIPNAME: $("#PayslipNameId").val(),
+                                FORPAYROLL: 'Yes',
+                                PAYTYPE: payheadtype,
+                                PARENT: under,
+                                CURRENCYNAME: $("#PayHeadCurencyOfLedg").val(),
+                                CALCULATIONTYPE: caltype,
+                                CALCULATIONPERIOD: calperiod,
+                                CCCD: cccd,
+                                STATUS: status,
+                                CREATEDSYSTEM: Createdsystem,
+                                LASTUPDATEDSYSTEM: 'PowerSuit',
+                                UID: UId,
+                                USERNAME: Username,
+                                LUID: localStorage.getItem('UID'),
+                                LUSERNAME: localStorage.getItem('UName'),
+                                CREATEDDATE: Createdate,
+                                LASTUPDATEDDATE: curndate
+                            }
+                            return parameter
+                        }
+                        $("#savebtnid").click(function () {
+
+                            // alert("ghggg");
+                            var addpayheadparameter = payheadfunction();
+                            // alert(addcostcatparameter + "json");
+                            debugger
+                            $.ajax
+                                ({
+                                    type: 'POST',
+                                    url: URLPowerAPI+'/api/PBXMLPayHead/AddPBXMLPayHead',
+                                    dataType: 'JSON',
+                                    data: JSON.stringify(addpayheadparameter),
+
+                                    contentType: 'application/json ; charset = utf-8',
+                                    beforeSend: function () {
+                                        $("#loader1").show();
+                                    },
+                                    success: function (data, textStatus, xhr) {
+
+                                        alert('Added successfully');
+                                        $("#loader1").hide();
+                                        window.location.href = "LLLL-MP-PH-50.html";
+                                    },
+                                    error: function (xhr, textStatus, errorThrown) {
+                                        alert("You entered some invalid fields...! Fill the details again...");
+                                    }
+                                });
+
+                            return;
+
+                        });
+
+                        $("#updatebtnID").click(function () {
+                            debugger
+                            var addpayheadparameter = payheadfunction();
+                            $.ajax
+                                ({
+                                    type: 'POST',
+                                    url: URLPowerAPI+'/api/PBXMLPayHead/EditPBXMLPayHead',
+                                    dataType: 'JSON',
+                                    data: JSON.stringify(addpayheadparameter),
+                                    contentType: 'application/json ; charset = utf-8',
+                                    beforeSend: function () {
+                                        $("#loader1").show();
+                                    },
+                                    success: function (data, textStatus, xhr) {
+                                        alert('Updated successfully');
+                                        $("#loader1").hide();
+                                        window.location.href = "LLLL-MP-PH-50.shtml";
+                                    },
+                                    error: function (xhr, textStatus, errorThrown) {
+                                        alert("You entered some invalid fields...! Fill the details again...");
+                                    }
+                                });
+                            return;
+
+                        });
+                    </script>
+
+                    <!--GET API-->
+                    <script>
+                        $(document).ready(function () {
+                            debugger
+                            set_MainHeaderName();
+                            var url1 = window.location.href;
+                            var mode = url1.split("=")[2];
+                            var Id1 = url1.split("=")[1];
+                            var index = (Id1).indexOf('&');
+                            var Id = Id1.substring(0, index);
+                            var cccd = localStorage.getItem('CCAC');
+                            //alert(mode);
+                            //alert(Id);
+
+                            if (mode == 'edit') {
+                                $.ajax({
+                                    type: 'GET',
+                                    url: URLPowerAPI+'/api/PBXMLPayHead/GetPBXMLPayHeadById',
+                                    dataType: 'JSON',
+                                    contentType: 'application/json ; charset = utf-8',
+                                    //data: JSON.stringify(groupname),
+                                    data: {
+                                        cccd: cccd,
+                                        PayheadId: Id
+                                    },
+
+                                    contentType: 'application/json ; charset = utf-8',
+                                    beforeSend: function () {
+                                        $("#loader1").show();
+                                    },
+                                    success: function (data) {
+                                        $("#loader1").hide();
+                                        //alert(JSON.stringify(data));
+                                        ObjPayHeads = data;
+                                        // alert('jnjnjn' + EmpGrp);
+
+
+                                        //  alert(JSON.stringify(ObjPayHeads));
+
+
+                                        $("#PayHeadNameId").val(ObjPayHeads.PAYSLIPNAME);
+                                        $("#PayHeadCurencyOfLedg").val(ObjPayHeads.CURRENCYNAME);
+                                        $("#PayHeadCalcTypID").val(ObjPayHeads.CALCULATIONTYPE);
+                                        $('#PayHeadTypID option:selected').text(ObjPayHeads.PAYTYPE);
+                                        $('#PayHeadUnderID option:selected').text(ObjPayHeads.PARENT);
+
+                                        //alert(data.NAME);
+                                        $('#PayHeadUseOfGratuityId option:selected').text(ObjPayHeads.USEFORGRATUITY);
+                                        $("#PayslipNameId").val(ObjPayHeads.PAYSLIPNAME);
+                                        $('#PayHeadSetAltIncTaxDetlsID option:selected').text(ObjPayHeads.PARENT);
+                                        $('#PayHeadCalTYpeId option:selected').text(ObjPayHeads.CALCULATIONTYPE);
+                                        $('#PayHeadCalPeriodId option:selected').text(ObjPayHeads.CALCULATIONPERIOD);
+
+
+                                        sessionStorage.setItem('uid', ObjPayHeads.UID);
+                                        // alert(ObjPayHeads.UID+"uid");
+                                        sessionStorage.setItem('username', ObjPayHeads.USERNAME);
+                                        sessionStorage.setItem('createdsystem', ObjPayHeads.CREATEDSYSTEM);
+                                        sessionStorage.setItem('createddate', ObjPayHeads.CREATEDDATE);
+                                        sessionStorage.setItem('lastupdatedate', ObjPayHeads.LASTUPDATEDDATE);
+
+
+
+
+                                    },
+
+                                });
+
+
+                            }
+
+                            $("#deletebtnID").show();
+                            $("#updatebtnID").show();
+                            $("#savebtnid").hide();
+
+
+
+
+                            $("#deletebtnID").click(function () {
+                                var url1 = window.location.href;
+                                var mode = url1.split("=")[2];
+                                var Id1 = url1.split("=")[1];
+                                var index = (Id1).indexOf('&');
+                                var Id = Id1.substring(0, index);
+                                var cccd = localStorage.getItem('CCAC');
+                                $.ajax({
+                                    url: URLPowerAPI+'/api/PBXMLPayHead/DeletePBXMLPayHead',
+                                    type: 'GET',
+                                    dataType: 'JSON',
+                                    data: {
+                                        cccd: cccd,
+                                        PayheadId: Id
+
+                                    },
+
+                                    contentType: 'application/json ; charset = utf-8',
+                                    beforeSend: function () {
+                                        $("#loader1").show();
+                                    },
+                                    success: function (data, textStatus, xhr) {
+                                        alert("Deleted successfully");
+                                        $("#loader1").hide();
+                                        window.location.href = "LLLL-MP-PH-50.shtml";
+
+                                    },
+                                    error: function (xhr, textStatus, errorThrown) {
+                                        alert("You entered wrong password...! Fill the details again...");
+                                    }
+                                });
+                            });
+                        });
+
+                        function set_MainHeaderName() {
+                            $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Payroll Info - Pay Heads');
+                            $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Payroll Info / Pay Heads</span>');
+                        };
+                    </script>
+
+

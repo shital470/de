@@ -1,0 +1,1047 @@
+
+<div class="row justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px;" id="cancelbtnid">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px; display: none;" id="deletebtnID">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px; display: none;" id="updatebtnID">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+
+            <div class="card-body">
+                <h5 class="" style="background-color: whitesmoke">Add Employee Master</h5>
+                <div class="row">
+                    <!--1st column started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Category&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="CategoryId">
+                                            <option value="1">--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Department&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="DepartmentId">
+                                            <option value="1">--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Date of Resignation / Retirement&nbsp;:</label>
+                                    <div class="input-group col-lg-5">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                        <input type="text" class="form-control daterange-single" id="EmployeeDORID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Reason For Leaving&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="ReasonId">
+                                            <option value="1">--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Remarks&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="RemarksID">
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--2nd col started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Employee Name&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <input type="text" class="form-control" id="EmployeeNameID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Date of Joining&nbsp;:</label>
+                                    <div class="input-group col-lg-5">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                        <input type="text" class="form-control daterange-single" id="DateOfJoiningId">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Define Salary Details&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="DefineSalDetId" id="YesDefineSalDetId" data-toggle="modal" data-target="#EmpDetails_modal">
+                                            <label class="custom-control-label" for="YesDefineSalDetId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="DefineSalDetId" id="NoDefineSalDetId">
+                                            <label class="custom-control-label" for="NoDefineSalDetId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Provide Bank Deatils ?&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="ProvideId" id="YesProvideId" data-toggle="modal" data-target="#BankDetails_modal">
+                                            <label class="custom-control-label" for="YesProvideId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="ProvideId" id="NoProvideId">
+                                            <label class="custom-control-label" for="NoProvideId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Notes&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="NotesID">
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+                    <!--2nd column started-->
+
+                </div>
+
+                <!--mailing Details-->
+
+                <h5 class="" style="background-color: whitesmoke">General Info</h5>
+                <div class="row">
+                    <!--1st MD column started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Employee Number &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="EmployeeNoID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Designation &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="DesignationId">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Function &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="FunctionID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Location &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="LocationId">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Gender &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="GenderId">
+                                            <option>--Select--</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Date of Birth &nbsp;:</label>
+                                    <div class="input-group col-lg-5">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                        <input type="text" class="form-control daterange-single" id="DOBID">
+                                    </div>
+                                </div>
+
+
+
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--2nd md col started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Contact No &nbsp;: </label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="ContactNoID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Email ID &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="EmailID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Blood Group &nbsp;:</label>
+
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="BloodGroupId">
+                                            <option>--Select--</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Father/ Mother Name &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="FatMomNameId">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Spouse Name &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="SpouseNameId">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Address&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <textarea class="form-control" id="ADDRESSid">
+                                        </textarea>
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!--Statutory Details  Details-->
+
+                <h5 class="" style="background-color: whitesmoke">Statutory Details</h5>
+                <div class="row">
+                    <!--1st MD column started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Income Tax No(PAN) Tax No(PAN) &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="IcomeTaxID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">PF Account Number &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="PFAccId">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">EPS Account Number &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="EPSAccID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">PF Date of Joining &nbsp;:</label>
+                                    <div class="input-group col-lg-5">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                        <input type="text" class="form-control daterange-single" id="PFDateJID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">PF Date of Relieving &nbsp;:</label>
+                                    <div class="input-group col-lg-5">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                        <input type="text" class="form-control daterange-single" id="PFDateRID">
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--2nd md col started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">PR Account Number &nbsp;: </label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="PRAccID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">ESI Number:&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="ESIID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">ESI Dispensary Name &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="ESINameID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Aadhaar Number&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="AadhaarNoId">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Universal Account Number(UAN) &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="UniversalNoID">
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!--Passport Details  Details-->
+
+
+                <h5 class="" style="background-color: whitesmoke">Passport & Details</h5>
+                <div class="row">
+                    <!--1st MD column started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Passport Number &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="PassportNoID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Country Of Issue&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="CountryOfIssueId">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Passport Expiry Date&nbsp;:</label>
+                                    <div class="input-group col-lg-5">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                        <input type="text" class="form-control daterange-single" id="PPExpDateJID">
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--2nd md col started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Visa Number&nbsp;: </label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="VisaID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Visa Expiry Date &nbsp;:</label>
+                                    <div class="input-group col-lg-5">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                        <input type="text" class="form-control daterange-single" id="VisaExpDateRID">
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!--Contract Details Details-->
+
+                <h5 class="" style="background-color: whitesmoke">Contract Details</h5>
+                <div class="row">
+                    <!--1st MD column started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Work Permit Number &nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="WorkPermitNoID">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Contract Start Date&nbsp;:</label>
+                                    <div class="input-group col-lg-5">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                        <input type="text" class="form-control daterange-single" id="ContractStartDateJID">
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--2nd md col started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Contract Expiry Date &nbsp;:</label>
+                                    <div class="input-group col-lg-5">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                        <input type="text" class="form-control daterange-single" id="ContractExpDateRID">
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--EmpDetails_Modal-->
+
+
+<div id="EmpDetails_modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-form-label col-lg-12" style="text-align:center">Employee  Details</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Name&nbsp; :</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Emp_DetNameID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Under &nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Emp_DetUnderID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Effective From&nbsp; :</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Emp_DetEffectiveID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Start Type &nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="Emp_StartTypeId">
+                                        <option value="1">--Select--</option>
+                                        <option value="2">Copy from Employee Group</option>
+                                        <option value="3">Copy from Parent Value</option>
+                                        <option value="4">Start Afresh</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Pay Head&nbsp; :</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="Emp_PayHeadId">
+                                        <option value="1">--Select--</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Pay Head Type &nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="Emp_PayTypeId">
+                                        <option value="1">--Select--</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Calculation Type&nbsp; :</label>
+                                <div class="col-lg-6">
+
+                                    <select class="form-control" id="Emp_CalTypeID">
+                                        <option value="1">--Select--</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Computed On &nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="Emp_ComputedID">
+                                        <option value="1">--Select--</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Rate&nbsp; :</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Emp_RateID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Per&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Emp_PerID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 offset-5">
+                            <button id="PopupAddBtnId1">ADD</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12" style="padding-right: 0px;padding-left: 0px;">
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-flush">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col" class="sort" data-sort="name" style="padding-right: 0px;padding-left: 0px;"> row No</th>
+                                            <th scope="col" class="sort" data-sort="budget" style="padding-right: 0px;padding-left: 0px;">Effective From</th>
+                                            <th scope="col" class="sort" data-sort="name" style="padding-right: 0px;padding-left: 0px;">Rate </th>
+                                            <th scope="col" class="sort" data-sort="name" style="padding-right: 0px;padding-left: 0px;">Pay Head</th>
+                                            <th scope="col" class="sort" data-sort="budget" style="padding-right: 0px;padding-left: 0px;">Per</th>
+                                            <th scope="col" class="sort" data-sort="budget" style="padding-right: 0px;padding-left: 0px;">Calculation Type</th>
+                                            <th scope="col" class="sort" data-sort="budget" style="padding-right: 0px;padding-left: 0px;">Computed On</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody class="list" id="tableid">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--BankDetails_modal-->
+
+
+<div id="BankDetails_modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-form-label col-lg-6" style="text-align:center">  Bank Details For </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Bank_DetID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Bank Name&nbsp; :</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Bank_DetNameID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Branch &nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Bank_BranchID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Account No&nbsp; :</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Bank_AccNoID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> IFS code&nbsp; :</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Bank_IFSCodeID">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> MICR Code No&nbsp; :</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Bank_MICRCodeID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Transaction Type  &nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="TransactionTypeId">
+                                        <option value="1">--Select--</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+<!-- <add api data/ save button> -->
+<script>
+    function Empfunction() {
+        debugger
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+            var mode = url1.split("=")[2];
+            var group1 = url1.split("=")[1];
+            var index = (group1).indexOf('&');
+            var group = group1.substring(0, index);
+
+        }
+        var urls = window.location.href;
+        // var cccd = localStorage.getItem('CCAC');
+        var cccd = localStorage.getItem('CCAC');
+        if ($("#EmployeeSalDtlsYesID").prop("checked")) {
+            var saldel = "Yes"
+        }
+        else {
+            var saldel = "No"
+        }
+
+
+        if ($("#EmployeeProvideDtlsYesID").prop("checked")) {
+            var bankdel = "Yes"
+        }
+        else {
+            var bankdel = "No"
+        }
+
+        var category = $("#EmployeeCatID option:selected").text();
+        var department = $("#EmployeeDeptID option:selected").text();
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+        var status = "A";
+
+
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            group = group,
+                UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = sessionStorage.getItem('createddate');
+        }
+        else {
+            group = localStorage.getItem('MaxEmpNoNo');
+            UId = localStorage.getItem('UID');
+            Username = localStorage.getItem('UName');
+            Createdsystem = 'PowerSuit';
+            Createdate = curndate;
+        }
+
+
+        /*var  abc =$()*/
+        // alert("in parameters");
+
+        var parameter =
+        {
+            EmpNo: group,
+            NAME: $("#EmployeeNameID").val(),
+            CATEGORY: category,
+            PARENT: department,
+            DESIGNATION: $("#DesignationId").val(),
+            //EMAILID: $("#emailid").val(),
+            // ALLOCATEREVENUE: Revenue,
+            //ALLOCATENONREVENUE: JobCosting,
+            CCCD: cccd,
+            STATUS: status,
+            CREATEDSYSTEM: Createdsystem,
+            LASTUPDATEDSYSTEM: 'PowerSuit',
+            UID: UId,
+            USERNAME: Username,
+            LUID: localStorage.getItem('UID'),
+            LUSERNAME: localStorage.getItem('UName'),
+            CREATEDDATE: Createdate,
+            LASTUPDATEDDATE: curndate
+        }
+        //alert(JSON.stringify(parameter));
+        return parameter;
+        // alert(NAME + "name");
+
+    }
+
+    $("#savebtnid").click(function () {
+
+        // alert("ghggg");
+        var addempcatparameter = Empfunction();
+        // alert(addcostcatparameter + "json");
+        debugger
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLEmployee/AddPBXMLEmployee',
+                dataType: 'JSON',
+                data: JSON.stringify(addempcatparameter),
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data, textStatus, xhr) {
+
+                    alert('Customer registered successfully');
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MP-EM-50.html";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+
+        return;
+
+    });
+
+    $("#updatebtnID").click(function () {
+
+        var addempcatparameter = Empfunction();
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLEmployee/EditPBXMLEmployee',
+                dataType: 'JSON',
+                data: JSON.stringify(addempcatparameter),
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data, textStatus, xhr) {
+                    alert('Updated successfully');
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MP-EM-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+        return;
+    });
+
+
+</script>
+
+<!--GET API-->
+<script>
+    $(document).ready(function () {
+        debugger
+        set_MainHeaderName();
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var Id1 = url1.split("=")[1];
+        var index = (Id1).indexOf('&');
+        var empno = Id1.substring(0, index);
+        var cccd = localStorage.getItem('CCAC');
+        //  alert(cccd + "CCAC");
+        //var cccd = 'GIN00000';
+        //alert(mode);
+        //alert(empno);
+
+        if (mode == 'edit') {
+            $.ajax({
+                type: 'GET',
+                url: URLPowerAPI + '/api/PBXMLEmployee/GetPBXMLEmployeeById',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: cccd,
+                    empno: empno
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data) {
+                    $("#loader1").hide();
+                    //  alert(JSON.stringify(data));
+
+                    employeeobj = data;
+                    //lert('jnjnjn' + EmpGrp);
+
+
+                    //alert(JSON.stringify(employeeobj));
+
+
+                    $("#EmployeeNameID").val(employeeobj.NAME);
+                    // alert(employee.NAME + "name");
+                    $('#EmployeeCatID option:selected').text(employeeobj.CATEGORY);
+
+                    $('#EmployeeDeptID option:selected').text(employeeobj.PARENT);
+                    $("#EmployeeID").val(employeeobj.EmpNo);
+                    $("#DesignationId").val(employeeobj.DESIGNATION);
+
+                    //if (employee.ALLOCATENONREVENUE == 'Yes') {
+                    //    $("#YesNonRevenueId").attr('checked', 'checked');
+                    //} else {
+                    //    $("#NoNonRevenueId").attr('checked', 'checked');
+                    //}
+
+                    sessionStorage.setItem('uid', employeeobj.UID);
+                    // alert(ObjPayHeads.UID+"uid");
+                    sessionStorage.setItem('username', employeeobj.USERNAME);
+                    sessionStorage.setItem('createdsystem', employeeobj.CREATEDSYSTEM);
+                    sessionStorage.setItem('createddate', employeeobj.CREATEDDATE);
+                    sessionStorage.setItem('lastupdatedate', employeeobj.LASTUPDATEDDATE);
+
+
+                },
+
+            });
+
+
+        }
+
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+        $("#savebtnid").hide();
+
+
+
+
+        $("#deletebtnID").click(function () {
+            var urls = window.location.href;
+            debugger
+            //alert(urls);
+            var url1 = window.location.href;
+            var mode = url1.split("=")[2];
+            var Id1 = url1.split("=")[1];
+            var index = (Id1).indexOf('&');
+            var empno = Id1.substring(0, index);
+            var cccd = localStorage.getItem('CCAC');
+
+            $.ajax({
+                url: URLPowerAPI + '/api/PBXMLEmployeeGroup/DeletePBXMLEmployeeGroup',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    EmpNo: empno
+
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data, textStatus, xhr) {
+                    alert("Deleted successfully");
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MP-EM-50.shtml";
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+    });
+
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Payroll Info - Employees');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Payroll Info / Employees</span>');
+    };
+</script>
+

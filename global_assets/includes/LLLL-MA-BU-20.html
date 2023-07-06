@@ -1,0 +1,962 @@
+
+<div class="row justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none" id="deletebtnID">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none" id="updatebtnID">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+
+            <div class="card-body">
+                <div class="row">
+                    <!--1st column started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Name&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="Budgets-username">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Under&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="underValueId">
+                                            <option value="Select" selected>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">From&nbsp;:</label>
+                                    <div class="input-group col-lg-5">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                        <input type="text" class="form-control daterange-single" id="FromDateID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">To&nbsp;:</label>
+                                    <div class="input-group col-lg-5">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                        <input type="text" class="form-control daterange-single" id="ToDateID">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--2nd column started-->
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Group&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="GroupId" onchange="myGroupFunction()">
+                                            <option value="Select" selected>--Select--</option>
+                                            <option value="1">Yes</option>
+                                            <option value="2">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Ledger&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="LedgersId" onchange="myLedgerFunction()">
+                                            <option value="Select" selected>--Select--</option>
+                                            <option value="1">Yes</option>
+                                            <option value="2">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">CostCenter&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="CostCentresId" onchange="mycostFunction()">
+                                            <option value="Select" selected>--Select--</option>
+                                            <option value="1">Yes</option>
+                                            <option value="2">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Is Scenario&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="IsScenarioId" id="YesIsScenarioId">
+                                            <label class="custom-control-label" for="YesIsScenarioId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="IsScenarioId" id="NoIsScenarioId">
+                                            <label class="custom-control-label" for="NoIsScenarioId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Group model-->
+<div id="Group_Modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-lg modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-form-label col-lg-6">Groups Budgets Under&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Group-username">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-3">From&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="GPopUpFromId">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-3">To&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="GPopUpToId">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                            <label class="col-form-label col-lg-12" style="text-align:center">Tax Details</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Account Name&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Cost Centre&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                            <label class="col-form-label col-lg-12" style="text-align:center">Tax Type</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Type Of Budget&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Amount&nbsp;:</label>
+                                <div class="col-lg-5 row">
+                                    <input type="text" class="form-control" id="AmmID">
+                                </div>
+                                <div class="col-lg-1 row">
+                                    <label class="col-form-label">%</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Group modal -->
+<!--Ledger model-->
+<div id="Ledger_Modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-form-label col-lg-6">Ledger Budgets Under&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Ledger-username">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-3">From&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    
+                                    <input type="text" class="form-control" id="LPopUpFromId">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-3">To&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="LPopUpToId">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                            <label class="col-form-label col-lg-12" style="text-align:center">Tax Details</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Account Name&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Cost Centre&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                            <label class="col-form-label col-lg-12" style="text-align:center">Tax Type</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Type Of Budget&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Amount&nbsp;:</label>
+                                <div class="col-lg-5 row">
+                                    <input type="text" class="form-control" id="AmmID">
+                                </div>
+                                <div class="col-lg-1 row">
+                                    <label class="col-form-label">%</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--CostCenter model-->
+<div id="BudgetthirdModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-form-label col-lg-6">Cost Center Budgets Under&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="PopUpGrpName">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-3">From&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="PopUpFromId">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-3">To&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="PopUpToId">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                            <label class="col-form-label col-lg-12" style="text-align:center">Tax Details</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Account Name&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Cost Centre&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                            <label class="col-form-label col-lg-12" style="text-align:center">Tax Type</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Type Of Budget&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Amount&nbsp;:</label>
+                                <div class="col-lg-5 row">
+                                    <input type="text" class="form-control" id="AmmID">
+                                </div>
+                                <div class="col-lg-1 row">
+                                    <label class="col-form-label">%</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--popup script-->
+<!--list of  cost center  popup mode jsl-->
+
+
+<script>
+    function myGroupFunction() {
+        debugger
+        var x = document.getElementById("GroupId").value;
+
+        if (x == 1) {
+
+
+          
+            $('#Group_Modal').modal("show");
+            $("#Group-username").val($("#Budgets-username").val());
+            $("#GPopUpFromId").val($("#FromDateID").val());
+            $("#GPopUpToId").val($("#ToDateID").val());
+        }
+
+    }
+    function myLedgerFunction() {
+        debugger
+        var x = document.getElementById("LedgersId").value;
+
+        if (x == 1) {
+
+            $('#Ledger_Modal').modal("show");
+            $("#Ledger-username").val($("#Budgets-username").val());
+            $("#LPopUpFromId").val($("#FromDateID").val());
+            $("#LPopUpToId").val($("#ToDateID").val());
+        }
+        }
+
+    
+    function mycostFunction() {
+        debugger
+        var x = document.getElementById("CostCentresId").value;
+
+        if (x == 1) {
+
+
+            $('#BudgetthirdModal').modal("show");
+            $("#PopUpGrpName").val($("#Budgets-username").val());
+            $("#PopUpFromId").val($("#FromDateID").val());
+            $("#PopUpToId").val($("#ToDateID").val());
+        }
+
+    }
+
+</script>
+
+<!--model dropdown-->
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/PBXMLVGroups/GetAllPBXMLVGroup',
+                type: 'GET',
+                dataType: 'json',
+                data:
+                {
+                    cccd: cccd
+
+
+                },
+                success: function (res) {
+                    //alert("Data inside ajax...!!!")
+
+
+                    $.each(res, function (index, value) {
+
+                        $("#GrpAccNameId").append($("<option></option>").val(value.AccNo).html(value.GROUP));
+                    });
+
+
+                }
+
+
+
+
+            }
+
+            );
+
+    });
+
+
+
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCCD');
+        var fromdt = '20070401';
+        var todt = '20080331';
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/PBXMLVLedgerList/GetAllPBXMLVLedgerList',
+                type: 'GET',
+                dataType: 'json',
+                data:
+                {
+                    cccd: cccd,
+                    fromdt: fromdt,
+                    todt: todt
+
+                },
+                success: function (res) {
+                    //alert("Data inside ajax...!!!")
+
+
+                    $.each(res, function (index, value) {
+
+                        $("#LedAccNameId").append($("<option></option>").val(value.AccNo).html(value.LEDGERNAME));
+                    });
+
+
+                }
+
+
+
+
+            }
+
+            );
+
+    });
+
+
+
+</script>
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCCD');
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/PBXMLVCostCenter/GetAllPBXMLVCostCenter',
+                type: 'GET',
+                dataType: 'json',
+                data:
+                {
+                    cccd: cccd
+
+
+                },
+                success: function (res) {
+                    // alert("Data inside ajax...!!!")
+
+
+                    $.each(res, function (index, value) {
+
+                        $("#GrpCostCenId").append($("<option></option>").val(value.CostCd).html(value.COSTCENTRE));
+                        $("#LedCostCetId").append($("<option></option>").val(value.CostCd).html(value.COSTCENTRE));
+                        $("#thirdCostCetId").append($("<option></option>").val(value.CostCd).html(value.COSTCENTRE));
+
+                    });
+
+
+                }
+
+
+
+
+            }
+
+            );
+
+    });
+
+
+
+</script>
+<!--sidebar-->
+<!--drop doen list-->
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/PBXMLVBudget/GetAllPBXMLVBudget',
+                type: 'GET',
+                dataType: 'json',
+                data:
+                {
+                    cccd: cccd
+
+
+                },
+                success: function (res) {
+                    // alert("Data inside ajax...!!!")
+
+
+                    $.each(res, function (index, value) {
+
+                        $("#underValueId").append($("<option></option>").val(value.BUDGETSRL).html(value.NAME));
+                        // $("#GrpBudgetId").append($("<option></option>").val(value.BUDGETSRL).html(value.PARENT));
+                    });
+
+
+                }
+
+
+
+
+            }
+
+            );
+
+    });
+
+
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        debugger
+        //$('#design_viewArea').attr("style", "display:none! important");
+        Budgetfunction();
+
+
+    });
+</script>
+<!--save update-->
+<script>
+    function Budgetfunction() {
+        debugger
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+            var mode = url1.split("=")[2];
+            var BUDGETSRL = url1.split("=")[1];
+            var index = (BUDGETSRL).indexOf('&');
+            var BUDGETSRL1 = BUDGETSRL.substring(0, index);
+
+        }
+        var urls = window.location.href;
+        var cccd = localStorage.getItem('CCAC');
+
+        if ($("#YesIsScenarioId").prop("checked")) {
+            var scenario = "Yes"
+        }
+        else {
+            var scenario = "No"
+        }
+
+
+
+
+        var under = $("#underValueId option:selected").text();
+        var group = $("#GroupselectdId option:selected").text();
+        var ledger = $("#LedgersId option:selected").text();
+        var costcenter = $("#CostCentresId option:selected").text();
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+        var status = "A";
+
+
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            BUDGETSRL = BUDGETSRL1,
+                UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = sessionStorage.getItem('createddate');
+        }
+        else {
+            BUDGETSRL = localStorage.getItem('MaxBUDGETSRLNo');
+            UId = localStorage.getItem('UID');
+            Username = localStorage.getItem('UName');
+            Createdsystem = 'PowerSuit';
+            Createdate = curndate;
+        }
+
+
+        /*var  abc =$()*/
+        // alert("in parameters");
+
+        var parameter =
+        {
+            BUDGETSRL: BUDGETSRL,
+            NAME: $("#Budgets-username").val(),
+            //EMAILID: $("#emailid").val(),
+            ISSCENARIO: scenario,
+            PARENT: under,
+            CCCD: cccd,
+            STATUS: status,
+            CREATEDSYSTEM: Createdsystem,
+            LASTUPDATEDSYSTEM: 'PowerSuit',
+            UID: UId,
+            USERNAME: Username,
+            LUID: localStorage.getItem('UID'),
+            LUSERNAME: localStorage.getItem('UName'),
+            CREATEDDATE: Createdate,
+            LASTUPDATEDDATE: curndate
+        }
+        //alert(JSON.stringify(parameter));
+        return parameter;
+        // alert(NAME + "name");
+
+    }
+
+    $("#savebtnid").click(function () {
+
+        // alert("ghggg");
+        var addbudgetparameter = Budgetfunction();
+        // alert(addcostcatparameter + "json");
+        debugger
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLBudget/AddPBXMLBudgetScenario',
+                dataType: 'JSON',
+                data: JSON.stringify(addbudgetparameter),
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data, textStatus, xhr) {
+
+                    alert('Added successfully');
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MA-BU-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+
+        return;
+
+    });
+
+    $("#updatebtnID").click(function () {
+
+        var addbudgetparameter = Budgetfunction();
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLBudget/EditPBXMLBudgetScenario',
+                dataType: 'JSON',
+                data: JSON.stringify(addbudgetparameter),
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data, textStatus, xhr) {
+                    alert(' Updated successfully');
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MA-BU-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+        return;
+    });
+
+
+</script>
+<!--GET API-->
+<script>
+    $(document).ready(function () {
+        debugger
+        // $('#design_viewArea').attr("style", "display:none! important");
+        set_MainHeaderName();
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var BUDGETSRL1 = url1.split("=")[1];
+        var index = (BUDGETSRL1).indexOf("&");
+        var BUDGETSRL = BUDGETSRL1.substring(0, index);
+        //  alert(BUDGETSRL);
+
+        if (mode == 'edit') {
+            $.ajax({
+                type: 'GET',
+                url: URLPowerAPI + '/api/PBXMLBudget/GetPBXMLBudgetById',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: localStorage.getItem('CCAC'),
+                    BUDGETSRL: BUDGETSRL
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+
+                success: function (data) {
+                    ObjBudgets = data;
+                    $("#loader1").hide();
+
+                    $("#Budgets-username").val(ObjBudgets.NAME);
+                    //alert("objname" + ObjBudgets.NAME);
+
+
+                    $('#underValueId option:selected').text(ObjBudgets.PARENT);
+                    //alert("objname" + ObjBudgets.PARENT);
+
+
+                    if (ObjBudgets.ISSCENARIO == 'Yes') {
+                        $("#YesIsScenarioId").attr('checked', 'checked');
+                    } else {
+                        $("#NoIsScenarioId").attr('checked', 'checked');
+                    }
+
+                    sessionStorage.setItem('uid', ObjBudgets.UID);
+                    sessionStorage.setItem('username', ObjBudgets.USERNAME);
+                    sessionStorage.setItem('createdsystem', ObjBudgets.CREATEDSYSTEM);
+                    sessionStorage.setItem('createddate', ObjBudgets.CREATEDDATE);
+                    sessionStorage.setItem('lastupdatedate', ObjBudgets.LASTUPDATEDDATE);
+
+                },
+
+            });
+        }
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+        $("#savebtnid").hide();
+
+
+        $("#deletebtnID").click(function () {
+            debugger
+            var url1 = window.location.href;
+            var BUDGETSRL1 = url1.split("=")[1];
+            var index = (BUDGETSRL1).indexOf("&");
+            var BUDGETSRL = BUDGETSRL1.substring(0, index);
+            var cccd = localStorage.getItem('CCAC');
+
+            // alert(BUDGETSRL);
+
+            $.ajax({
+                url: URLPowerAPI + '/api/PBXMLBudget/DeletePBXMLBudget',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    BUDGETSRL: BUDGETSRL
+
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data, textStatus, xhr) {
+                    alert(" Deleted successfully");
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MA-BU-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+
+    });
+
+</script>
+<script>
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Account Info - Budget');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Account Info / Budget</span>');
+    };
+
+
+</script>
+
+
+
+<!--<script type="text/javascript">
+    $(function () {
+
+
+        $.ajax
+            ({
+
+                url: https: //www.powerbooks.in/powerapi/api/PBXMLVBudget/GetAllPBXMLVBudget?cccd=hbansode',
+                type: 'GET',
+                dataType: 'json',
+
+                success: function (res) {
+                    alert("Data inside ajax...!!!")
+
+
+                    $.each(res, function (index, value) {
+
+                        $("#UnderValueId").append($("<option></option>").val(value.AccNo).html(value.GROUP));
+
+
+                    });
+
+
+                }
+
+
+
+
+            }
+
+            );
+
+    });
+
+
+
+</script>-->
+<!--calender js-->
+<!--<script src="https: //code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https: //code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script>
+
+
+    $(function () {
+        $(".datepicker").datepicker({
+            dateFormat: "mm/dd/yy",
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            autoclose: true,
+            changeMonth: true,
+            changeYear: true,
+            //gotoCurrent: true,
+        });
+    });
+</script>-->
+<!--dropdownscript-->

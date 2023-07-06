@@ -1,0 +1,14 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+ <!--#include file="./includes/header.html"-->
+<body>
+	 <!--#include file="./includes/sidebar.html"-->
+    <!--#include file="./includes/MainContent_header2.html"-->
+		<!-- content-inner class here is optional recheck its css and also check in sidebar.html about that and then set it -->
+		<!--#include file="../../../../global_assets/includes/CRM/LLLL-CR-CS-20.html"-->
+	
+
+
+	<!--#include file="./includes/footer.html"-->
+</body> 
+</html>

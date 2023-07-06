@@ -1,0 +1,289 @@
+﻿
+      
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-xs-2">
+                                                <h4><span class="card-title">Trial Balance</span></h4>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="configbtnid">Configure</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="emailbtnid">Email</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="exportbtnid">Export</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="printbtnid">Print</a>
+                                            </div>
+                                        </div>
+                                        <hr class="my-3">
+
+                                        <!--Form layout-->
+                                        <div class="card-body">
+                                            <div class="collapse show">
+                                                <form action="#">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 ">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label">Form&nbsp;:</label>
+                                                                <div class="input-group col-lg-9">
+                                                                    <span class="input-group-prepend">
+                                                                        <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                                                    </span>
+                                                                    <input type="text" class="form-control daterange-single" id="FormID">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label">To&nbsp;:</label>
+                                                                <div class="input-group col-lg-9">
+                                                                    <span class="input-group-prepend">
+                                                                        <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                                                    </span>
+                                                                    <input type="text" class="form-control daterange-single" id="ToID">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="DetailBtnId">Detailed</a>
+                                                            <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="SearchBtnId" onclick="getallfunction(); return false;">Search</a>
+                                                        </div>
+                                                        <hr class="my-3">
+
+                                                        <div class="table-responsive">
+                                                            <table class="table align-items-center table-flush">
+                                                                <thead class="thead-light">
+                                                                    <tr>
+                                                                        <th scope="col" class="sort"> Particulars</th>
+                                                                        <th scope="col" class="sort">Opening Balance</th>
+                                                                        <th scope="col" class="sort"></th>
+                                                                        <th scope="col" class="sort">Debit</th>
+                                                                        <th scope="col" class="sort">Credit</th>
+                                                                        <th scope="col" class="sort">Closing Balance</th>
+                                                                        <th scope="col" class="sort"></th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody class="list" id="exam">
+                                                                </tbody>
+                                                                <tr>
+                                                                    <th scope="col" class="sort">Grand Total</th>
+                                                                    <th scope="col" class="sort"> </th>
+                                                                    <th scope="col" class="sort" id="drcr"></th>
+                                                                    <th scope="col" class="sort" id="DebitId"> </th>
+                                                                    <th scope="col" class="sort" id="CredittId"> </th>
+                                                                    <th scope="col" class="sort" id="drcrclsid"></th>
+
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+
+
+                                                        <div class="table-responsive">
+                                                            <table class="table align-items-center table-flush">
+                                                                <thead class="thead-light">
+
+                                                                </thead>
+
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   
+            <!-- /main content -->
+        <!-- /page content -->
+        <!--popup script-->
+
+        <script>
+
+            function DrCrFunction(amount) {
+
+
+                var drcr;
+                if (amount < 0) {
+                    drcr = 'Cr';
+
+                }
+                else {
+                    drcr = 'Dr';
+                }
+                return drcr;
+
+            };
+
+
+            function DrCrclsFunction(Clsamount) {
+
+
+                var drcr;
+                if (Clsamount < 0) {
+                    Clsdrcr = 'Cr';
+                }
+                else {
+                    Clsdrcr = 'Dr';
+                }
+                return Clsdrcr;
+
+            };
+            function abs(amount) {
+
+
+                var amount1;
+                if (amount < 0) {
+                    amount1 = amount * -1;
+                }
+                else {
+                    amount1 = amount;
+                }
+                return amount1;
+
+            };
+
+
+        </script>
+        <script>
+
+            //if value.split(".")[1].length > 2 {
+            //    if (isNaN(parseFloat(this.value))) return;
+            //    this.value = parseFloat(this.value).toFixed(2);
+            //}
+           // return value;
+             //   }
+
+        </script>
+        <script>
+            var num = 2364767;
+            function separatNUM(numb) {
+                debugger
+                var str = numb.toString().split(".");
+                str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                return parseFloat(str.join("."));
+            }
+        </script>
+        <script>
+
+
+            //function separator(numb) {
+            //    debugger
+            //    return parseFloat(numb.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+
+            //    //var str = numb.toString().split(".");
+            //    //str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            //    //return (str);
+            //    //return parseFloat(str.join("."));
+            //}
+
+
+        </script>
+        <script>
+            /*search date function*/
+            function functnfrom() {
+                var fromdate = document.getElementById("FormID").value;
+                var fdate = fromdate.replace(/[-,-]/g, "");
+                return fdate
+            };
+
+            function functnto() {
+                var todate = document.getElementById("ToID").value;
+                var tdate = todate.replace(/[-,-]/g, "");
+                return tdate
+            };
+        </script>
+
+
+        <!--local stroge date function-->
+
+        <script>
+            function getallfunction() {
+
+                const from = document.getElementById("FormID").value;
+                const to = document.getElementById("ToID").value;
+                var urlfrom1 = localStorage.getItem('Fromdate');
+                var urlto1 = localStorage.getItem('Todate');
+                var urlfrom;
+                var urlto;
+                if (from == "" && to == "") {
+                    $('#FormID').val(urlfrom1);
+                    $('#ToID').val(urlto1)
+                    urlfrom = functnfrom();
+                    urlto = functnto();
+                }
+                else {
+                    urlfrom = functnfrom();
+                    urlto = functnto();
+                }
+                var cccd = localStorage.getItem('CCCD');
+
+                $.ajax({
+                    async: false,
+                    url: URLPowerAPI+'/api/PBXMLVTrialView/GetAllTrialConView',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    //data: JSON.stringify(groupname),
+                    data:
+                    {
+                        cccd: cccd,
+                        from: urlfrom,
+                        to: urlto,
+                        sessid: "shital"
+                    },
+
+                    success: function (data, textStatus, xhr) {
+                        // alert(JSON.stringify(data));
+
+                        var strResult;
+                        var DebitTotal = 0;
+                        var Credittotal = 0;
+
+                        $.each(data, function (index, group) {
+
+                            strResult += "<tr scope='row'><th><a href=TrialBalSubGrp.html?GROUPS=" + group.Accno + "&from=" + urlfrom + "&to=" + urlto + ">" + group.LEDGERNAME + "</a></th><td>"
+                                + abs(group.OpDrAmt - group.OpCrAmt) + "</td><td>"
+                                + DrCrFunction(group.OpDrAmt - group.OpCrAmt) + "</td><td>"
+                                + group.TotDrAmt.toFixed(2) + "</td><td>"
+                                + group.TotCrAmt + "</td><td>"
+                                + group.closebalance.toFixed(3) + "</td><td>"
+                                + DrCrclsFunction(group.OpDrAmt - group.OpCrAmt + group.TotDrAmt - group.TotCrAmt) + "</td><tr>";
+
+                            DebitTotal = DebitTotal + group.TotDrAmt;
+                            Credittotal = Credittotal + group.TotCrAmt;
+
+
+                        });
+                        $("#exam").html(strResult);
+                        var trcrop = DrCrFunction(DebitTotal)
+                        DebitTotal = abs(DebitTotal)
+                        var totalDebal = DebitTotal.toFixed(2);
+                        $("#DebitId").html(totalDebal);
+                        $("#drcr").html(trcrop);
+
+
+
+                        var trcrcls = DrCrclsFunction(Credittotal)
+                        //alert(trcrcls)
+                        Credittotal = abs(Credittotal)
+                        var totalCrbal = Credittotal.toFixed();
+                        $("#CredittId").html(totalCrbal);
+                        $("#drcrclsid").html(trcrcls);
+                    }
+
+                });
+
+
+            }
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                getallfunction();
+
+
+            });
+        </script>

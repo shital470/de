@@ -1,0 +1,123 @@
+﻿
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-xs-2">
+                                                <h4><span class="card-title">Sales Register</span></h4>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="configbtnid">Configure</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="emailbtnid">Email</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="exportbtnid">Export</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="printbtnid">Print</a>
+                                            </div>
+                                        </div>
+                                        <hr class="my-3">
+
+                                        <!--Form layout-->
+                                        <div class="card-body">
+                                            <div class="collapse show">
+                                                <form action="#">
+                                                    <div class="table-responsive">
+                                                        <table class="table align-items-center table-flush">
+                                                            <thead class="thead-light">
+                                                                <tr>
+                                                                    <th scope="col" class="sort">Date</th>
+                                                                    <th scope="col" class="sort">Particulars </th>
+                                                                    <th scope="col" class="sort">Vch Type</th>
+                                                                    <th scope="col" class="sort">Vch No</th>
+                                                                    <th scope="col" class="sort" id="">Debit </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="list" id="exam1">
+                                                            </tbody>
+                                                            <tr>
+                                                                <th scope="col" class="sort">Group Total</th>
+                                                                <th scope="col" class="sort" id="creditaid"></th>
+                                                                <th scope="col" class="sort" id="DebitTotid"></th>
+                                                                <th scope="col" class="sort" id="closebalId"></th>
+                                                                <th scope="col" class="sort" id="debitid"></th>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </form>
+                                                <hr style="border-bottom: 1px solid #4E8CCF;margin:10px;" />
+                                                <hr class="my-3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  
+
+    <!-- /page content -->
+    <!--popup script-->
+
+    <script type="text/javascript">
+
+        function getallfunction() {
+            debugger
+            var cccd = localStorage.getItem('CCCD');
+            var url1 = window.location.href;
+            var mode = url1.split("=")[1];
+
+            //  alert(mode1);
+            var index = (mode).indexOf('&');
+            var month = mode.substring(0, index);
+            alert(month);
+
+            var year = url1.split("=")[2];
+            alert(year);
+
+            alert(year);
+            $.ajax({
+                async: false,
+                url: URLPowerAPI+'/api/PBXMLVSalesRegister/GetAllSalesRegiMonthDet',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data:
+                {
+                    cccd: cccd,
+                    month: month,
+                    year: year
+
+                },
+
+                success: function (data, textStatus, xhr) {
+                    alert(JSON.stringify(data));
+
+                    var strResult;
+                    var debit = 0;
+                    debugger
+                    $.each(data, function (index, group) {
+                        strResult += "<tr scope='row'><th><a href=?&Accno=" + group.Accno + "> " + group.InvDate + "</a></th><td>"
+                            + group.Name + "</td><td>"
+                            + group.VchType + "</td><td>"
+                            + group.InvNo + "</td><td>"
+                            + parseFloat(group.Debit).toFixed(2) + "</td> </tr>";
+
+                        debit = debit + parseFloat(group.Debit);
+                    });
+
+                    $("#exam1").html(strResult);
+                    debit = debit.toFixed(2);
+                    $("#debitid").html(debit);
+                }
+
+            });
+        };
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            debugger
+            getallfunction();
+
+
+        });
+    </script>
+

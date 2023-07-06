@@ -1,0 +1,545 @@
+﻿<div class="row justify-content-center">
+
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="LLLL-AV-CO-50.shtml" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none" id="deletebtnID">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" onclick="edit_record();" id="updatebtnID">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+            <div class="card-body">
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">No&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="vouchernoID">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Cost center&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="costcenetelistID">
+                                    <option value="Select" selected>Not Applicable</option>
+                                    <!--<option value="Select1">Cash</option>
+                                    <option value="Select1">Salary Payable</option>
+                                    <option value="Select1">State Bank of India</option>-->
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Account&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="accID" onchange="getval();">
+                                    <option value="Select" selected>--select--</option>
+                                    <!--<option value="Select1">Not Applicable</option>
+                                    <option value="Select1">PRIMARY</option>-->
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Date&nbsp;:</label>
+                            <div class="input-group col-lg-6">
+                                <span class="input-group-prepend">
+                                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                </span>
+                                <input type="text" class="form-control daterange-single" id="voucherDateID">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Current Balance&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="CurrentBalanceID">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Narration&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <textarea class="form-control" id="narrationId"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <hr class="my-3">
+
+                <div class="row" style="border-top: 0px solid black; margin: 0px; height: 50px;">
+                    <div class="col-md-2 offset-md-10" style="padding:3px;">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" id="donebtnid" onclick="hide_led();">
+                            Done
+                        </a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="ledgeerbtnid" onclick="Add_Led();">Add ledger</a>
+
+                    </div>
+                </div>
+                <div id="Led_row" style="display:none;">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="form-group row offset-1">
+                                <label class="col-3 col-form-label">Particulars&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="Particular_ID">
+                                    </select>
+                                    <!--<input type="text" class="form-control" id="Particular_ID">-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="form-group row">
+                                <label class="col-3 col-form-label">amount&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Amnt_ID">
+                                </div>
+                                <div class="col-2 offset-1">
+                                    <input type="button" class="btn btn-sm btn-primary" style="display:none;" value="Update" id="Update_btn">
+                                    <input type="button" class="btn btn-sm btn-primary" style="display:none;" value="Add" id="Add_btn">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col" class="sort">Row No</th>
+                                    <th scope="col" class="sort">Particulars</th>
+                                    <th scope="col" class="sort">Amount</th>
+                                    <th scope="col" class="sort">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list" id="Ld_list">
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td class="text-right" colspan="2">Total Amount</td>
+                                    <td colspan="2"><input class="form-control col-4" type="text" style="border:1px solid #ddd !important;" id="TotalAmountID"></td>
+
+                                </tr>
+
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!--<hr style="color:black; margin-top:0px;" />
+                <div class="row">
+                    <div class="col-md-7 offset-5">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Total Amount: </label>
+                            </div>
+                            <div class="col-md-4 group-">
+                                <input type="text" id="TotalAmountID">
+                            </div>
+                            <div class="col-md-4" style="padding-right:0px;padding-Left:0px;">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>-->
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- MOdals Code IF there's any -->
+<!-- /MOdals Code IF there's any -->
+
+
+
+
+<script>
+    //function abs(amount) {
+    //    debugger
+
+    //    var amount1;
+    //    if (amount < 0) {
+    //        amount1 = amount * -1;
+    //    }
+    //    else {
+    //        amount1 = amount;
+    //    }
+    //    return amount1;
+
+    //};
+
+
+    $(document).ready(function () {
+        debugger
+        //var url1 = window.location.href;
+        //var arr = url1.split('=');
+        //console.log(url1.length)
+
+        //if (arr.length < 1) {
+        //    var xyz = localStorage.getItem('MaxVoucherNo');
+        //    $('#vouchernoID').val(xyz);
+        //}
+        var VoucherNo = localStorage.getItem('MaxVoucherNo');
+        if (VoucherNo == null || VoucherNo == "") {
+
+            $('#vouchernoID').val("0");
+        }
+        else {
+            $('#vouchernoID').val(VoucherNo);
+        }
+
+
+        //alert('xyz' + VoucherNo);
+    });
+
+    $(document).ready(function () {
+
+
+        debugger
+        set_MainHeaderName();
+        var url1 = window.location.href;
+        var mode = url1.split("=")[1];
+        var index = (mode).indexOf('&');
+        var trkey = mode.substring(0, index);
+        //alert("Ssaws" + trkey);
+
+        $("#updatebtnID").show();
+        $("#deletebtnID").show();
+        $("#savebtnid").hide();
+
+
+        var cccd = localStorage.getItem('CCCD');
+        //var costceneter = $("#costcenetelistID option:selected").text();
+
+
+        $.ajax({
+            async: false,
+            url: URLPowerAPI + '/api/PBXMLAccounting/GetPBXMLAccounting',
+            type: 'GET',
+            dataType: 'json',
+            contentType: 'application/json ; charset = utf-8',
+
+            data:
+            {
+                cccd: cccd,
+                trkey: trkey
+
+            },
+
+            success: function (data, textStatus, xhr) {
+                // alert(JSON.stringify(data));
+                // data.push('status', 'bb');
+                //data.STATUS = 'bb';
+
+                localStorage.setItem('helllo', JSON.stringify(data));
+
+                //alert(JSON.stringify(data.ALLLEDGERENTRIESLIST[1]));
+                //alert(data.ALLLEDGERENTRIESLIST[1]);
+
+
+                localStorage.setItem('new1', JSON.stringify(data));
+                var Obj = data.ALLLEDGERENTRIESLIST;
+                Get_global(data, Obj); // to make global var
+
+                var strResult;
+                var dataobj = data;
+                //alert(JSON.stringify(dataobj));
+                // $('#costcenetelistID option:selected').text(dataobj.costceneter);
+                var voucherno = dataobj.VOUCHERNUMBER;
+                $("#vouchernoID").val(voucherno);
+                var ledgerlist = dataobj.ALLLEDGERENTRIESLIST;
+                //alert(JSON.stringify(ledgerlist.LEDGERNAME));
+                $('#accID option:selected').val(ledgerlist.LEDGERNAME);
+
+                var date = dataobj.DATE;
+                var year = date.substring(0, 4);
+                var mon = date.substring(4, 6);
+                var day = date.substring(6, 8);
+                year = year;
+                mon = mon;
+                var date1 = day + '-' + mon + '-' + year;
+                //alert(date1 + "date");
+                $('#voucherDateID').val(date1);
+                //$('#costcenetelistID').val(PARTYLEDGERNAME);
+                debugger
+                $("#accID").append($("<option selected></option>").html(dataobj.PARTYLEDGERNAME));
+                //$('#Ld_list').append($('<tr><td>"' + dataobj.LEDSRL + '</td><td>' + dataobj.LEDGERNAME + '</td><td>' + dataobj.AMOUNT + '</td><td>' + Edit + '&nbsp;' + Delete + '"</td></tr>'));
+
+
+
+
+
+
+                var naration = dataobj.NARRATION;
+                $("#narrationId").val(naration);
+
+                //alert(newclsbal);
+                var amounttot = 0;
+                var listobj = dataobj.ALLLEDGERENTRIESLIST;
+                var count = listobj.length;
+                //  alert(count + "count");
+
+                //$.each(listobj, function (index, group) {
+                //    if (group.LEDSRL < count) {
+
+
+                //        strResult += "<tr scope='row'><th ><a href=TrialBalLedger.html?Accno=" + group.Accno + "> " + group.LEDSRL + "</a></th><td>"
+                //            + group.LEDGERNAME + "</td><td>"
+                //            + parseFloat(abs(group.AMOUNT)).toFixed(2) + "</td><td>"
+                //            + group.LEDGERNAME + "</td><tr>";
+
+                //        //alert(group.AMOUNT);
+                //        // $("#accID").append($("<option></option>").val(value.CostCd).html(value.COSTCENTRE));
+                //        amounttot = parseFloat(amounttot) + parseFloat(group.AMOUNT);
+                //        //alert(amounttot);
+                //        //  debittotal = debittotal + group.CrAmt;
+                //    }
+
+                //});
+                //$("#exam").html(strResult);
+                //var amounttot1 = parseFloat(abs(amounttot)).toFixed(2);
+
+                //$("#opbalId1").val(amounttot1);
+
+            }
+
+        });
+        Set_Table();
+    });
+
+    function Set_Table() {
+        debugger
+        var html = '';
+        var Total_amt = 0;
+        var amt = 0;
+        obj1.forEach((item, index) => {
+            if ($('#accID option:selected').text() != item.LEDGERNAME) {
+                amt = parseFloat(Math.abs(item.AMOUNT)).toFixed(2)
+                //alert('hii'+amt)
+                Total_amt = (parseFloat(Total_amt) + parseFloat(amt)).toFixed(2);
+                //alert(Total_amt);
+                html += `<tr>
+                                    <td> ${index}</td>
+                                     <td>  ${item.LEDGERNAME} </td>
+                                     <td>  ${parseFloat(Math.abs(item.AMOUNT)).toFixed(2)} </td>
+                                     <td>
+                                            <button class="btn btn-sm btn-info" onclick="Edit_Led('${item.LEDGERNAME}');">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+
+                                    </tr>`;
+
+            }
+        });
+
+        $('#Ld_list').html(html);
+        $('#TotalAmountID').val(Total_amt);
+    }
+    var data1;
+    var obj1;
+    function Get_global(value, value1) {
+        data1 = value;
+        obj1 = value1;
+    }
+    //dropdown value
+
+    var cccd = localStorage.getItem('CCCD');
+    $(function () {
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/PBXMLVCostCenter/GetAllPBXMLVCostCenter',
+                type: 'GET',
+                dataType: 'json',
+
+                data:
+                {
+                    cccd: cccd
+
+                },
+
+                success: function (res) {
+                    $.each(res, function (index, value) {
+                        $("#costcenetelistID").append($("<option></option>").val(value.CostCd).html(value.COSTCENTRE));
+
+                    });
+                }
+            }
+            );
+    });
+
+
+    var cccd = localStorage.getItem('CCCD');
+    $(function () {
+        debugger
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/AccMst/GetAllBnkCashVoucher',
+                type: 'GET',
+                dataType: 'json',
+
+                data:
+                {
+                    cccd: cccd
+
+
+                },
+
+
+                success: function (res) {
+                    localStorage.setItem('new', JSON.stringify(res));
+                    $.each(res, function (index, value) {
+
+                        $("#accID").append($("<option></option>").val(value.AccNo).html(value.LEDGERNAME));
+
+                    });
+                }
+
+            }
+
+            );
+
+    });
+
+    //get all ledgers in particular
+    $.get(URLPowerAPI + '/api/PBXMLVLedgers/GetAllPBXMLVLedger?cccd=PDEL00002011',  // url
+        function (data, textStatus, jqXHR) {  // success callback
+            //alert('status: ' + textStatus + ', data:' + data);
+            //localStorage.setItem('HII2', JSON.stringify(data) );
+            $.each(data, function (index, value) {
+                $("#Particular_ID").append($("<option></option>").val(value.AccNo).html(value.LEDGERNAME));
+            });
+        });
+    //http  s://www.powerbooks.in/PowerAPI/api/PBXMLVLedgers/GetAllPBXMLVLedger?cccd=PDEL00002011
+    var val_no;
+    function Edit_Led(Value) {
+        debugger
+        $('#Led_row').css("display", "block");
+        $('#Add_btn').css("display", "none");
+        $('#Update_btn').css("display", "block");
+
+
+
+        obj1.forEach((item, index) => {
+            if (Value == item.LEDGERNAME) {
+                $("#Particular_ID").append($("<option selected ></option>").val(-item.LEDSRL).html(item.LEDGERNAME));
+                $('#Amnt_ID').val(item.AMOUNT);
+                val_no = item.LEDSRL;
+            }
+
+        });
+    }
+    function Delete_Led() {
+
+    }
+    function getval() {
+        //var e = document.getElementById("accID");
+        //value3 = e.options[e.selectedIndex].text;
+        //alert(value3);
+        var bb = $('#accID option:selected').text();
+        //alert(bb);
+    }
+    function Add_Led() {
+        $('#Led_row').css("display", "block");
+        $('#donebtnid').css("display", "block");
+        $('#ledgeerbtnid').css("display", "none");
+        $('#Update_btn').css("display", "none");
+        $('#Add_btn').css("display", "block");
+        $("#Particular_ID").val('');
+        $('#Amnt_ID').val('');
+    }
+    function hide_led() {
+        var x = document.getElementById("Led_row");
+        var y = document.getElementById("donebtnid");
+        var z = document.getElementById("ledgeerbtnid");
+        if (x.style.display === "") {
+            x.style.display = "block";
+        }
+        else {
+            x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "block";
+        }
+    }
+    $("#Update_btn").click(function () {
+
+        debugger
+        Value = val_no;
+        obj1.forEach((item, index) => {
+            if (Value == item.LEDSRL) {
+                item.LEDGERNAME = $('#Particular_ID option:selected').text();
+                item.AMOUNT = $('#Amnt_ID').val();
+
+            }
+
+        });
+        Set_Table();
+    });
+
+    function edit_record() {
+        debugger
+        data1.VOUCHERNUMBER = $('#vouchernoID').val();
+        data1.PARTYLEDGERNAME = $('#accID option:selected').text();
+        data1.EFFECTIVEDATE = $('#voucherDateID').val();
+        data1.NARRATION = $('#narrationId').val();
+        data1.ALLLEDGERENTRIESLIST = obj1;
+        obj1.AMOUNT = $("#Amnt_ID").val();
+        obj1.LEDGERNAME = $('#Particular_ID option:selected').text();
+        datas = JSON.stringify(data1);
+        $.ajax({
+
+            url: 'https://www.powerbooks.in/powerapi/api/PBXMLAccounting/EditPBXMLAccounting',
+            type: 'POST',
+            dataType: 'JSON',
+            contentType: 'application/json ; charset = utf-8',
+            data: datas,
+
+            success: function () {
+                window.location.href = 'LLLL-AV-CO-50.shtml';
+
+            }
+        });
+    }
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Distribution</span> - Statement Of Inventory - Statistics');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Distribution</a><span class="breadcrumb-item active">Statement Of Inventory / Statistics</span>');
+    }
+</script>

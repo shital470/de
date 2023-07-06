@@ -1,0 +1,596 @@
+
+                    <!-- main content code -->
+						<div class="row justify-content-center">
+							<div class="col">
+								<div class="card">
+									
+                                    <div id="table_area">
+                                        <table class="table " id="CrdtNt_tbl">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Date</th>
+                                                    <th scope="col">Particulars</th>
+                                                    <th scope="col">Vch No</th>
+                                                    <th scope="col">Debit Amount</th>
+                                                    <th scope="col">Credit Amount</th>
+                                                    <th colspan="2" scope="col">Persisted View</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="CrdtNt_tbody">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- cards views -->
+                                    <div class="content">
+                                        <div id="Square_thumbs" style="display:none;">
+                                            <div class="mb-3">
+                                                <h6 class="mb-0 font-weight-semibold">
+                                                    Views
+                                                </h6>
+                                                <span class="text-muted d-block">Different Types of <code>Users</code> Views</span>
+                                            </div>
+                                            <div class="row" id="Square_thumbs_data">
+
+                                            </div>
+                                            <div class="dataTables_paginate paging_simple" id="pagination_sec">
+                                                page: <span id="page"></span>
+                                                <a class="paginate_button previous " aria-controls="DataTables_Table_1" data-dt-idx="0" tabindex="-1" href="javascript:prevPage()" id="btn_prev">← Prev</a>
+                                                <a class="paginate_button next" aria-controls="DataTables_Table_1" data-dt-idx="1" tabindex="0" href="javascript:nextPage()" id="btn_next">Next →</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /cards views -->
+
+
+								</div>
+							</div>
+						</div>	
+                     <!-- /main content code -->
+                
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            debugger
+            get_trcode();
+            set_MainHeaderName();
+            get_usersdata();
+
+        });
+        var Trcode;
+        function get_trcode() {
+            debugger
+            Trcode = $("#trcode_select option:selected").val();
+            //alert(Trtype);
+            if (Trcode == undefined) {
+                Trcode = "01";
+                return Trcode;
+
+            }
+            get_usersdata();
+        }
+        function get_usersdata() {
+            debugger
+            var TrType = "JV";
+            var TrCode = Trcode;
+            var cccd = localStorage.getItem('CCCD');
+            $.ajax({
+                async:'false',
+                url: URLPowerAPI+'/api/PBXMLVAccounting/GetAllPBXMLAccounting',
+                type: 'GET',
+                dataType: 'json',
+                data:
+                {
+                    cccd: cccd,
+                    trtype: TrType,
+                    trcode: TrCode
+                },
+                beforeSend: function () {     
+                    $("#loader1").show();
+                },
+                success: function (data) {
+                    debugger
+                    $("#loader1").hide();
+                    //alert(JSON.stringify(data));
+                    get_global(data);
+                }
+            });
+        }
+        var data;
+
+        function get_global(val) {
+            data = val;
+            get_design_view();
+        }
+        function get_design_view() {
+            var design_no = document.getElementById('design_view').value;
+            if (design_no > 0 && design_no < 5) {
+                document.getElementById('Square_thumbs').style.display = 'none';
+                document.getElementById('table_area').style.display = 'block';
+                bindtoDatatable(data, design_no);
+            }
+            else {
+                document.getElementById('table_area').style.display = 'none';
+                document.getElementById('Square_thumbs').style.display = 'block';
+                var value1 = 1;
+                getResponse(data, value1);
+                changePage(1);
+            }
+        }
+        function bindtoDatatable(data, num_value) {
+
+            $('#CrdtNt_tbl').dataTable().fnDestroy();
+
+            // condition
+            if (num_value == 1) {
+
+                buttons = [
+                    {
+                        text: 'Create',
+                        className: 'btn btn-light',
+                        attr: {
+                            title: 'Create',
+                            id: 'Create_Btn'
+                        },
+                        action: function (e, dt, node, config) {
+                            parent.location = 'LLLL-AV-JV-20.shtml'
+                        }
+
+                        // set background color to "#033C73" and text color to "#FFFFFF"
+                    },
+                ];
+                select = false;
+
+            }
+            else if (num_value == 2) {
+                buttons = {
+                    dom: {
+                        button: {
+                            className: 'btn btn-light'
+                        }
+                    },
+                    buttons: [
+                        {
+                            text: 'Create',
+                            className: 'btn btn-light',
+                            attr: {
+                                title: 'Create',
+                                id: 'Create_Btn',
+
+                            },
+                            action: function (e, dt, node, config) {
+                                parent.location = 'LLLL-AV-JV-20.shtml'
+                            }
+
+                            //
+                        },
+
+                        { extend: 'copyHtml5' },
+                        { extend: 'csvHtml5' },
+                        { extend: 'excelHtml5' },
+
+                        { extend: 'pdfHtml5' },
+                        {
+                            extend: 'print',
+                            text: 'Print',
+                            // title :'Hitech Private Limited.'
+                        }
+
+                    ],
+
+                };
+                select = false;
+            }
+            else if (num_value == 3) {
+
+                buttons = [
+                    {
+                        text: 'Create',
+                        className: 'btn btn-light',
+                        attr: {
+                            title: 'Create',
+                            id: 'Create_Btn'
+                        },
+                        action: function (e, dt, node, config) {
+                            parent.location = 'LLLL-AV-JV-20.shtml'
+                        }
+
+                        // set background color to "#033C73" and text color to "#FFFFFF"
+                    },
+                    {
+                        extend: 'print',
+                        text: '<i class="icon-printer mr-2"></i> Print table',
+                        className: 'btn btn-light',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        extend: 'colvis',
+                        text: '<i class="icon-three-bars"></i>',
+                        className: 'btn btn-light btn-icon dropdown-toggle'
+                    }
+                ];
+                select = false;
+
+            }
+            else if (num_value == 4) {
+
+                buttons = {
+                    buttons: [
+                        {
+                            text: 'Create',
+                            className: 'btn btn-light',
+                            attr: {
+                                title: 'Create',
+                                id: 'Create_Btn'
+                            },
+                            action: function (e, dt, node, config) {
+                                parent.location = 'LLLL-AV-JV-20.shtml'
+                            }
+
+                            // set background color to "#033C73" and text color to "#FFFFFF"
+                        },
+                        {
+                            extend: 'print',
+                            className: 'btn btn-light',
+                            text: '<i class="icon-printer mr-2"></i> Print all'
+                        },
+                        {
+                            extend: 'print',
+                            className: 'btn btn-light',
+                            text: '<i class="icon-checkmark3 mr-2"></i> Print selected',
+                            exportOptions: {
+                                modifier: {
+                                    selected: true
+                                }
+                            }
+                        }
+                    ],
+                };
+                select = true;
+
+            }
+
+            var table = $('#CrdtNt_tbl').dataTable({
+
+                buttons: buttons,
+                select: select,
+                stateSave: true,
+
+
+                "bAutoWidth": false,
+                "aaData": data,
+                'columns': [
+                    {
+                        'data': 'DATE',
+                        /*'defaultContent': '<i>Not set</i>',*/
+                        "render": function (data, type, datas) {
+                            if (type === 'display') {
+                                var text = datas['DATE'];
+                                var result1 = text.substring(0, 4);
+                                var result2 = text.substring(4, 6);
+                                var result3 = text.substring(6, 8);
+                                var result = result3 + '-' + result2 + '-' + result1;
+                                data = "<a href='LLLL-AV-JV-20.shtml?TRKEY=" + datas['VOUCHERKEY'] + "&mode=edit' >" + result + "  </a>"
+                            }
+                            return data;
+
+                        }
+                    },
+                    { 'data': 'PaidTo' },
+                    { 'data': 'VOUCHERNUMBER' },
+                    {
+                        'data': 'DrAmt',
+                        "render": function (data, type, datas) {
+                            if (type === 'display') {
+                                data = datas.DrAmt;
+                                data = formatter.format(data);
+                            }
+                            return data;
+
+                        }
+                    },
+                    {
+                        'data': 'CrAmt',
+                        "render": function (data, type, datas) {
+                            if (type === 'display') {
+                                data = datas.CrAmt;
+                                data = formatter.format(data);
+                            }
+                            return data;
+
+                        }
+                    },
+                    { 'data': 'PERSISTEDVIEW' },
+                    
+                ],
+                /*used to solve the error caused maybe dues to null or undefined values*/
+                columnDefs: [{
+                    "defaultContent": "-",
+                    "targets": "_all"
+                },
+                    {
+                        targets: [3, 4],
+                        className: 'text-right',
+
+
+                    }
+                ],
+                "initComplete": function (settings, json) {
+                    var html1 = $("div.dataTables_length").html();
+                    //<label><span>Show:</span> <select name="" aria-controls="" class="custom-select"><option value="CV">Contra</option></select></label>
+                    var html = `
+                          <table  class="float-right" id='code_table'>
+                            <tbody>
+                                <tr>   
+                                    <td>
+                                        <select onchange='get_trcode();' class="custom-select"  id="trcode_select" name="" aria-controls=""><option selected value="01">Journal</option></select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>   `;
+                    $(html).insertBefore('#CrdtNt_tbl_length')
+
+                },
+            })
+            $('#trcode_select option[value=' + Trcode + ']').prop('selected', true);
+        }
+
+        //
+
+        var objJson;
+        var current_page;
+        function getResponse(response, value) {
+            objJson = response;
+            current_page = value;
+        }
+
+        //get current_page value from directly api coz it was conducting problem whenwever taking second page and changing view was taking 2 for initial page
+        /*var current_page = 1;*/
+        var records_per_page = 10;
+        function changePage(page) {
+            debugger
+
+            var btn_next = document.getElementById("btn_next");
+            var btn_prev = document.getElementById("btn_prev");
+            var listing_table = document.getElementById("Square_thumbs_data");
+            var page_span = document.getElementById("page");
+            var Design_no = document.getElementById('design_view').value;
+            // Validate page
+            if (page < 1) page = 1;
+            if (page > numPages(objJson)) page = numPages(objJson);
+
+            listing_table.innerHTML = "";
+            if (objJson.length === 0) {
+
+                listing_table.innerHTML = "<div class='media text-muted'>No Existing Users</div>";
+                document.getElementById('pagination_sec').style.display = 'none';
+
+            }
+            for (var i = (page - 1) * records_per_page; i < (page * records_per_page) && i < objJson.length; i++) {
+
+                if (Design_no == '5') {
+                    listing_table.innerHTML += `
+                                    <div class="col-xl-3 col-sm-6">
+                                        <div class="card">
+                                            <div class="card-img-actions">
+                                                <img class="card-img-top img-fluid" src="../../../../global_assets/images/placeholders/FIT.jpg" alt="">
+                                                <div class="card-img-actions-overlay card-img-top">
+                                                    <a href="#" class="btn btn-outline-white border-2 btn-icon rounded-pill">
+                                                        <i class="icon-plus3"></i>
+                                                    </a>
+                                                    <a href="user_pages_profile.html" class="btn btn-outline-white border-2 btn-icon rounded-pill ml-2">
+                                                        <i class="icon-link"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="card-body text-center">
+                                                <h6 class="font-weight-semibold mb-0">${objJson[i].NAME}</h6>
+                                                <span class="d-block text-muted">${objJson[i].PARENT}</span>
+
+                                                <div class="list-icons list-icons-extended mt-3">
+                                                    <a href="#" class="list-icons-item" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a>
+                                                    <a href="#" class="list-icons-item" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a>
+                                                    <a href="#" class="list-icons-item" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>	`;
+                }
+                else if (Design_no == '6') {
+                    listing_table.innerHTML += `
+                                    <div class="col-xl-3 col-sm-6">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <div class="card-img-actions d-inline-block mb-3">
+                                            <img class="img-fluid rounded-circle" src="../../../../global_assets/images/placeholders/FIT.jpg" width="170" height="170" alt="">
+                                            <div class="card-img-actions-overlay card-img rounded-circle">
+                                                <a href="#" class="btn btn-outline-white border-2 btn-icon rounded-pill">
+                                                    <i class="icon-plus3"></i>
+                                                </a>
+                                                <a href="user_pages_profile.html" class="btn btn-outline-white border-2 btn-icon rounded-pill ml-2">
+                                                    <i class="icon-link"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <h6 class="font-weight-semibold mb-0">${objJson[i].NAME}</h6>
+                                        <span class="d-block text-muted">${objJson[i].PARENT}</span>
+
+                                        <div class="list-icons list-icons-extended mt-3">
+                                            <a href="#" class="list-icons-item" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a>
+                                            <a href="#" class="list-icons-item" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a>
+                                            <a href="#" class="list-icons-item" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>	`;
+
+                }
+                else if (Design_no == '7') {
+                    listing_table.innerHTML += `
+                                    <div class="col-xl-3 col-lg-6">
+                                <div class="card card-body">
+                                    <div class="media">
+                                        <div class="mr-3">
+                                            <a href="#">
+                                                <img src="../../../../global_assets/images/placeholders/FIT.jpg" class="rounded" width="38" height="38" alt="">
+                                            </a>
+                                        </div>
+
+                                        <div class="media-body">
+                                            <div class="font-weight-semibold">${objJson[i].NAME}</div>
+                                            <span class="text-muted">${objJson[i].PARENT}</span>
+                                        </div>
+
+                                        <div class="ml-3 align-self-center">
+                                            <span class="badge badge-mark bg-success border-success"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>	`;
+                }
+                else if (Design_no == '8') {
+                    listing_table.innerHTML += `
+                                    <div class="col-xl-3 col-lg-6">
+                                <div class="card card-body">
+                                    <div class="media">
+                                        <div class="mr-3">
+                                            <a href="#">
+                                                <img src="../../../../global_assets/images/placeholders/FIT.jpg" class="rounded-circle" width="42" height="42" alt="">
+                                            </a>
+                                        </div>
+
+                                        <div class="media-body">
+                                            <h6 class="mb-0">${objJson[i].NAME}</h6>
+                                            <span class="text-muted">${objJson[i].PARENT}</span>
+                                        </div>
+
+                                        <div class="ml-3 align-self-center">
+                                            <div class="list-icons">
+                                                <div class="dropdown">
+                                                    <a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a href="#" class="dropdown-item"><i class="icon-comment-discussion"></i> Start chat</a>
+                                                        <a href="#" class="dropdown-item"><i class="icon-phone2"></i> Make a call</a>
+                                                        <a href="#" class="dropdown-item"><i class="icon-mail5"></i> Send mail</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a href="#" class="dropdown-item"><i class="icon-statistics"></i> Statistics</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>	`;
+                }
+                else if (Design_no == '9') {
+                    listing_table.innerHTML += `
+                                   <div class="col-xl-3 col-lg-6">
+                                <div class="card card-body">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <div class="media-title font-weight-semibold">${objJson[i].NAME}</div>
+                                            <span class="text-muted">${objJson[i].PARENT}</span>
+                                        </div>
+
+                                        <div class="ml-3">
+                                            <a href="#">
+                                                <img src="../../../../global_assets/images/placeholders/FIT.jpg" class="rounded-circle" width="42" height="42" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>	`;
+
+                }
+                else if (Design_no == '10') {
+                    listing_table.innerHTML += `<div class="col-xl-3 col-lg-6">
+                                <div class="card card-body">
+                                    <div class="media">
+                                        <div class="mr-3">
+                                            <a href="#">
+                                                <img src="../../../../global_assets/images/placeholders/FIT.jpg" class="rounded-circle" width="44" height="44" alt="">
+                                            </a>
+                                        </div>
+
+                                        <div class="media-body">
+                                            <h6 class="media-title">${objJson[i].NAME}</h6>
+                                            <div class="list-icons">
+                                                <a href="#" class="list-icons-item" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a>
+                                                <a href="#" class="list-icons-item" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a>
+                                                <a href="#" class="list-icons-item" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="ml-3 align-self-center">
+                                            <div class="list-icons">
+                                                <div class="dropdown">
+                                                    <a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a href="#" class="dropdown-item"><i class="icon-comment-discussion"></i> Start chat</a>
+                                                        <a href="#" class="dropdown-item"><i class="icon-phone2"></i> Make a call</a>
+                                                        <a href="#" class="dropdown-item"><i class="icon-mail5"></i> Send mail</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a href="#" class="dropdown-item"><i class="icon-statistics"></i> Statistics</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+`
+                }
+            }
+            page_span.innerHTML = page + "/" + numPages(objJson);
+
+            if (page == 1) {
+
+                $('#btn_prev').addClass('disabled');
+
+            } else {
+
+                $('#btn_prev').removeClass('disabled');
+
+            }
+
+            if (page == numPages(objJson)) {
+
+                $("#btn_next").addClass('disabled');
+            } else {
+
+                $("#btn_next").removeClass('disabled');
+            }
+        }
+        function prevPage() {
+            debugger
+            if (current_page > 1) {
+                current_page--;
+                changePage(current_page);
+            }
+        }
+
+        function nextPage() {
+            debugger
+
+            if (current_page < numPages(objJson)) {
+                debugger
+                current_page++;
+                changePage(current_page, objJson);
+            }
+        }
+
+
+        function numPages(objJson) {
+            debugger
+            /*alert(objJson)*/
+            return Math.ceil(objJson.length / records_per_page);
+        }
+
+        function set_MainHeaderName() {
+            $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Finance</span> - Account Voucher - Journal Voucher List');
+            $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Finance</a><span class="breadcrumb-item active">Account Voucher / Journal Voucher List</span>');
+        };
+    </script>

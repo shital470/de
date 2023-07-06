@@ -1,0 +1,219 @@
+﻿<div class="row justify-content-center">
+
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a class="btn btn-sm btn-primary float-right" style="margin-right:8px;">View</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+            <div class="card-body">
+                <div class="row">
+                <div class="col-lg-4">
+                    <div class="table-responsive">
+                        <div>
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col" class="sort">Types Of Accounts</th>
+                                        <th scope="col" class="sort">Count</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="typesofaccID">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-lg-3">
+                    <div class="table-responsive">
+                        <div>
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col" class="sort">Alphabet</th>
+                                        <th scope="col" class="sort">Count</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="alphaID">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="table-responsive">
+                        <div>
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col" class="sort" id="1col"></th>
+                                        <th scope="col" class="sort" id="2col"></th>
+                                        <th scope="col" class="sort" id="3col"></th>
+                                </thead>
+                                <tbody id="colflusgID">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var cccd = localStorage.getItem('CCCD');
+        set_firsttable(cccd);
+        set_MainHeaderName();
+    });
+    function set_firsttable(val) {
+        debugger
+        var cccd = val;
+        $.ajax
+            ({
+                async: false,
+                url: URLPowerAPI +'/api/PBXMLVStatistics/StatementsOfAccountsStatistcsAccounts',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data) {
+                    $("#loader1").hide();
+                    var maxcount = Math.max.apply(Math, data.map(function (o) { return o.ItCD }));
+                    localStorage.setItem('MaxAccNo', maxcount + 1)
+
+                    var total = data.length;
+                    console.log(total);
+
+                    if (total > 10) {
+                        var pageTotal = Math.ceil(total / 10);
+                        console.log(pageTotal);
+                        var j = 0;
+                        var grp;
+                        var i = 1;
+                        j = i + 1;
+                        grp = data.slice(i * 10, (i + 1) * 10);
+                        console.log('checking ' + i * 10, (i + 1) * 10);
+                        console.log(j);
+                        console.log(grp);
+                    }
+                    if (pageTotal == null) {
+                        strResult += "<div class='//alert-danger '>data is not defined</div>";
+                    }
+                    //groups = data.slice(0, 10)
+                    $.each(data, function (index, value) {
+                        var strResult;
+                        $.each(data, function (index, data) {
+                            strResult += "<tr scope='row'><th><a href='?BUDGETSRL=" + data.Mode.replace(/\s+/g,'') + "&mode=edit" + "'>" + data.Mode + "</a></th><td>"
+                                + data.CNT + "</td><tr>"
+                        });
+                        $("#typesofaccID").html(strResult);
+                    });
+                }
+            });
+        set_secondtable(cccd);
+    };
+    function set_secondtable(val) {
+        debugger
+        var cccd = val;
+        $.ajax
+            ({
+                async: false,
+                url: URLPowerAPI +'/api/PBXMLVStatisticCount/GetLedgersCountByAlphabet',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (groups) {
+                    $("#loader1").hide();
+                    var maxcount = Math.max.apply(Math, groups.map(function (o) { return o.ItCD }));
+                    localStorage.setItem('MaxAccNo', maxcount + 1)
+
+                    var total = groups.length;
+                    console.log(total);
+
+                    if (total > 10) {
+                        var pageTotal = Math.ceil(total / 10);
+                        console.log(pageTotal);
+                        var j = 0;
+                        var grp;
+                        var i = 1;
+                        j = i + 1;
+                        grp = groups.slice(i * 10, (i + 1) * 10);
+                        console.log('checking ' + i * 10, (i + 1) * 10);
+                        console.log(j);
+                        console.log(grp);
+                    }
+                    if (pageTotal == null) {
+                        strResult += "<div class='//alert-danger '>data is not defined</div>";
+                    }
+                    //groups = groups.slice(0, 10)
+                    $.each(groups, function (index, value) {
+                        var strResult;
+                        $.each(groups, function (index, data) {
+                            strResult += "<tr scope='row'><th>" + data.Alphabet + "</a></th><td>"
+                                + data.MCount + "</td><tr>"
+                        });
+                        $("#alphaID").html(strResult);
+                    });
+                }
+            });
+        set_thirdtable(cccd);
+    };
+    function set_thirdtable(val) {
+        debugger
+        var cccd = val;
+        $.ajax
+            ({
+                async: false,
+                url: 'https://www.powerbooks.in/powerapi/api/PBXMLVStockQuery/GetAllStkQueryGodown',    
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd,
+                    Itcd: itcd
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data) {
+                    $("#loader1").hide();
+                    $.each(data, function (index, value) {
+                        var strResult;
+                        $.each(data, function (index, data) {
+                            strResult += "<tr scope='row'><th>" + data.Godown + "</th><td>"
+                                + data.batch + "</td><td>"
+                                + data.Units + "</td></tr>"
+                        });
+                        $("#colflusgID").html(strResult);
+                    });
+                }
+            });
+    };
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Distribution</span> - Inventory Voucher - Stock Query');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Distribution</a><span class="breadcrumb-item active">Inventory Voucher / Stock Query</span>');
+    };
+</script>

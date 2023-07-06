@@ -1,0 +1,407 @@
+
+						<div class="row justify-content-center">
+							<div class="col">
+								<div class="card">
+									<div class="card-header">
+										<div class="row">
+											<div class="col-lg-6 col-xs-2">
+											</div>
+											<div class="col-lg-6">
+												<a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+												<a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" id="deletebtnID">Delete</a>
+												<a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" id="updatebtnID">Update</a>
+												<a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+											</div>
+										</div>
+									</div>
+
+									<!--Form layout-->
+									<div class="card-body">
+										<div class="row">
+											<!--1st column started-->
+											
+											<div class="col-lg-6">
+												<div class="collapse show">
+													<form action="#">
+														<div class="form-group row">
+															<label class="col-lg-5 offset-1 col-form-label">Name&nbsp;:</label>
+															<div class="col-lg-5">
+																<input type="text" class="form-control" id="CurrenciesNameId">
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-lg-5 offset-1 col-form-label">Symbol&nbsp;:</label>
+															<div class="col-lg-5">
+																<input type="text" class="form-control" id="SymbolId">
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-lg-5 offset-1 col-form-label">Formal Name&nbsp;:</label>
+															<div class="col-lg-5">
+																<input type="text" class="form-control" id="FormalNameId">
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-lg-5 offset-1 col-form-label">Number Of Decimal Places&nbsp;:</label>
+															<div class="col-lg-5">
+																<input type="text" class="form-control" id="DecimalPlacesId">
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-lg-5 offset-1 col-form-label">Show Ammount in millions&nbsp;:</label>
+															<div class="col-lg-5 col-form-label">
+																<div class="custom-control custom-switch custom-control-inline">
+																	<input type="radio" class="custom-control-input" name="MillionsAmtId" id="YesMillionsAmtId">
+																	<label class="custom-control-label" for="YesMillionsAmtId">Yes</label>
+																</div>
+																<div class="custom-control custom-switch custom-control-inline">
+																	<input type="radio" class="custom-control-input" name="MillionsAmtId" id="NoMillionsAmtId">
+																	<label class="custom-control-label" for="NoMillionsAmtId">No</label>
+																</div>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+
+										<!--2nd column started-->
+										<div class="col-lg-6">
+											<div class="collapse show">
+													<form action="#">
+														<div class="form-group row">
+															<label class="col-lg-5 offset-1 col-form-label">Is Symbol SUFFIXED To Amounts&nbsp;:</label>
+															<div class="col-lg-5 col-form-label">
+																<div class="custom-control custom-switch custom-control-inline">
+																	<input type="radio" class="custom-control-input" name="SUFFIXEDAmtId" id="YesSUFFIXEDAmtId">
+																	<label class="custom-control-label" for="YesSUFFIXEDAmtId">Yes</label>
+																</div>
+																<div class="custom-control custom-switch custom-control-inline">
+																	<input type="radio" class="custom-control-input" name="SUFFIXEDAmtId" id="NoSUFFIXEDAmtId">
+																	<label class="custom-control-label" for="NoSUFFIXEDAmtId">No</label>
+																</div>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-lg-5 offset-1 col-form-label">Put a SPACE Between Amount and Symbol&nbsp;:</label>
+															<div class="col-lg-5 col-form-label">
+																<div class="custom-control custom-switch custom-control-inline">
+																	<input type="radio" class="custom-control-input" name="SpaceId" id="YesSpaceId">
+																	<label class="custom-control-label" for="YesSpaceId">Yes</label>
+																</div>
+																<div class="custom-control custom-switch custom-control-inline">
+																	<input type="radio" class="custom-control-input" name="SpaceId" id="NoSpaceId">
+																	<label class="custom-control-label" for="NoSpaceId">No</label>
+																</div>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-lg-5 offset-1 col-form-label">Symbol For Decimal Portion Of Amount&nbsp;:</label>
+															<div class="col-lg-5">
+																<input type="text" class="form-control" id="SymForDecimalId">
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-lg-5 offset-1 col-form-label">Decimal Places For Printing Amounts in Words&nbsp;:</label>
+															<div class="col-lg-5">
+																<input type="text" class="form-control" id="DecimalAmtId">
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+
+     <!--popup script-->
+
+
+    <!--<script>
+        $(document).ready(function () {
+            debugger
+            currencyfunction();
+
+
+        });
+    </script>-->
+    <script>
+        function currencyfunction() {
+            debugger
+            var url1 = window.location.href;
+            var arr = url1.split('=');
+            console.log(url1.length)
+
+
+            if (arr.length > 1) {
+                var mode = url1.split("=")[2];
+                var SrlNo1 = url1.split("=")[1];
+                var index = (SrlNo1).indexOf('&');
+                var SrlNo = SrlNo1.substring(0, index);
+
+            }
+            var urls = window.location.href;
+            var cccd = localStorage.getItem('CCCD');
+
+            if ($("#YesMillionsAmtId").prop("checked")) {
+                var AmtMillione = "Yes"
+            }
+            else {
+                var AmtMillione = "No"
+            }
+
+
+            if ($("#YesSUFFIXEDAmtId").prop("checked")) {
+                var SymAmt = "Yes"
+            }
+            else {
+                var SymAmt = "No"
+            }
+            if ($("#YesSpaceId").prop("checked")) {
+                var AmtSys = "Yes"
+            }
+            else {
+                var AmtSys = "No"
+            }
+
+            var CurrentDate = new Date();
+            var curndate = CurrentDate.toISOString().replace('Z', '');
+            var status = "A";
+
+
+            //storesession value
+            var UId;
+            var Username;
+            var Createdsystem;
+            var Createdate;
+
+            if (mode == 'edit') {
+                SrlNo = SrlNo,
+                    UId = sessionStorage.getItem('uid');
+                Username = sessionStorage.getItem('username');
+                Createdsystem = sessionStorage.getItem('createdsystem');
+                Createdate = sessionStorage.getItem('createddate');
+            }
+            else {
+                SrlNo = localStorage.getItem('MaxSrlNo');
+                UId = localStorage.getItem('UID');
+                Username = localStorage.getItem('UName');
+                Createdsystem = 'PowerSuit';
+                Createdate = curndate;
+            }
+
+
+            /*var  abc =$()*/
+            // alert("in parameters");
+
+            var parameter =
+            {
+                SrlNo: SrlNo,
+                NAME: $("#CurrenciesNameId").val(),
+                ORIGINALNAME: $("#SymbolId").val(),
+                EXPANDEDSYMBOL: $("#FormalNameId").val(),
+                DECIMALPLACES: $("#DecimalPlacesId").val(),
+                INMILLIONS: AmtMillione,
+                ISSUFFIX: SymAmt,
+                HASSPACE: AmtSys,
+                DECIMALSYMBOL: $("#SymForDecimalId").val(),
+                DECIMALPLACESFORPRINTING: $("#DecimalAmtId").val(),
+                //EMAILID: $("#emailid").val(),
+
+                CCCD: cccd,
+                STATUS: status,
+                CREATEDSYSTEM: Createdsystem,
+                LASTUPDATEDSYSTEM: 'PowerSuit',
+                UID: UId,
+                USERNAME: Username,
+                LUID: localStorage.getItem('UID'),
+                LUSERNAME: localStorage.getItem('UName'),
+                CREATEDDATE: Createdate,
+                LASTUPDATEDDATE: curndate
+            }
+            //alert(JSON.stringify(parameter));
+            return parameter;
+            // alert(NAME + "name");
+
+        }
+
+        $("#savebtnid").click(function () {
+
+            // alert("ghggg");
+            var addcurrencyparameter = currencyfunction();
+            // alert(addcostcatparameter + "json");
+            debugger
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: URLPowerAPI+'/api/PBXMLCurrency/AddPBXMLCurrencies',
+                    dataType: 'JSON',
+                    data: JSON.stringify(addcurrencyparameter),
+                    contentType: 'application/json ; charset = utf-8',
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data, textStatus, xhr) {
+
+                        alert('Customer registered successfully');
+                        $("#loader1").hide();
+                        window.location.href = "Currencies.html";
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                         alert("You entered some invalid fields...! Fill the details again...");
+                    }
+                });
+
+            return;
+
+        });
+
+        $("#updatebtnID").click(function () {
+
+            var addcurrencyparameter = currencyfunction();
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: URLPowerAPI+'/api/PBXMLCurrency/EditPBXMLCurrency',
+                    dataType: 'JSON',
+                    data: JSON.stringify(addcurrencyparameter),
+                    contentType: 'application/json ; charset = utf-8',
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data, textStatus, xhr) {
+                        alert('Customer registered successfully');
+                        $("#loader1").hide();
+                        window.location.href = "Currencies.html";
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                       alert("You entered some invalid fields...! Fill the details again...");
+                    }
+                });
+            return;
+        });
+
+
+    </script>
+
+
+    <!--GET API-->
+    <script>
+        $(document).ready(function () {
+            debugger
+            set_MainHeaderName();
+            var url1 = window.location.href;
+            var mode = url1.split("=")[2];
+            var SrlNo1 = url1.split("=")[1];
+            var index = (SrlNo1).indexOf("&");
+            var SrlNo = SrlNo1.substring(0, index);
+            var cccd = localStorage.getItem('CCCD');
+            //alert(SrlNo);
+
+            if (mode == 'edit') {
+                $.ajax({
+                    type: 'GET',
+                    url: URLPowerAPI+'/api/PBXMLCurrency/GetPBXMLCurrencyById',
+                    dataType: 'JSON',
+                    contentType: 'application/json ; charset = utf-8',
+                    //data: JSON.stringify(groupname),
+                    data: {
+                        cccd: cccd,
+                        SrlNo: SrlNo
+                    },
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data) {
+                        ObjCurrency = data;
+                        $("#loader1").hide();
+
+                        $("#CurrenciesNameId").val(ObjCurrency.NAME);
+                        $("#SymbolId").val(ObjCurrency.ORIGINALNAME);
+                        $("#FormalNameId").val(ObjCurrency.RESERVEDNAME);
+                        $("#DecimalPlacesId").val(ObjCurrency.DECIMALPLACES);
+
+
+
+                        if (ObjCurrency.INMILLIONS == 'Yes') {
+                            $("#YesMillionsAmtId").attr('checked', 'checked');
+                        } else {
+                            $("#NoMillionsAmtId").attr('checked', 'checked');
+                        }
+
+                        if (ObjCurrency.ISSUFFIX == 'Yes') {
+                            $("#YesSUFFIXEDAmtId").attr('checked', 'checked');
+                        } else {
+                            $("#NoSUFFIXEDAmtId").attr('checked', 'checked');
+                        }
+
+                        //alert("assd  " + ObjCurrency.HASSPACE);
+
+                        if (ObjCurrency.HASSPACE == 'Yes') {
+                            $("#YesSpaceId").attr('checked', 'checked');
+                        } else {
+                            $("#NoSpaceId").attr('checked', 'checked');
+                        }
+                        $("#SymForDecimalId").val(ObjCurrency.DECIMALSYMBOL);
+                        $("#DecimalAmtId").val(ObjCurrency.DECIMALPLACESFORPRINTING);
+
+
+                    },
+
+                });
+            }
+            $("#deletebtnID").show();
+            $("#updatebtnID").show();
+            $("#savebtnid").hide();
+
+
+
+            $("#deletebtnID").click(function () {
+                debugger
+                var url1 = window.location.href;
+                var SrlNo1 = url1.split("=")[1];
+                var index = (SrlNo1).indexOf("&");
+                var SrlNo = SrlNo1.substring(0, index);
+                var cccd = localStorage.getItem('CCCD');
+                debugger
+                //alert(urls);
+                var cccd = cccd;
+                var SrlNo = SrlNo;
+
+                $.ajax({
+                    url: URLPowerAPI+'/api/PBXMLCurrency/DeletePBXMLCurrency',
+                    type: 'GET',
+                    dataType: 'JSON',
+                    data: {
+                        cccd: cccd,
+                        srlno: SrlNo
+
+                    },
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    contentType: 'application/json ; charset = utf-8',
+                    success: function (data, textStatus, xhr) {
+                        alert("PBXMLCostcategory deleted successfully");
+                        $("#loader1").hide();
+                        window.location.href = "LLLL-MA-CU-50.shtml";
+
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                      alert("You entered wrong password...! Fill the details again...");
+                    }
+                });
+            });
+
+        });
+
+
+        function set_MainHeaderName() {
+            $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Account Info - Currency ');
+            $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Account Info / Currency </span>');
+        };
+        
+    </script>
+    

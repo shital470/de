@@ -1,0 +1,795 @@
+<!-- /main charts -->
+<!-- Dashboard content -->
+<!-- my code2 -->
+
+<div class="row justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                        <!--<h4><span class="card-title">Customer:Home</span></h4>-->
+                    </div>
+
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display: none; margin-right: 8px;">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display: none; margin-right: 8px;">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+            <!-- create from -->
+            <!--Form layout-->
+            <div class="card-body">
+                <div class="row">
+                    <!--1st column started-->
+                    <!--<div class="col-lg-12">
+                        <div class="card-header header-elements-inline">
+                            <h6 class="font-weight-semibold">Add Customer</h6>
+                        </div>
+                    </div>-->
+                    <div class="col-lg-12">
+                        <form>
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-5 col-form-label"> Customer Type&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <select class="form-control" id="AccpuntNameId">
+                                                <option value="Select" selected>Cr-Dr Debtor</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label"> Client Id&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" value="0" id="ClientID" disabled>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Cr Days&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" value="0" disabled>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Customer Name*&nbsp;:</label>
+
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="CustomerNameId">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label"> Customer Group&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="CustomerGrpId" value="CUSTOMER" disabled>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row  offset-1">
+                                        <label class="col-lg-4 col-form-label">Contact&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="SalesManId">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group row  offset-1">
+                                        <label class="col-lg-4 col-form-label"> City&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="CityId">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Address&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="AddressId">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Pin Code&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="PinCodeId">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row offset-1">
+                                        <div class="col-lg-6 offset-4">
+                                            <input type="text" class="form-control" id="HomePhoneId">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label"> State&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <select class="form-control" id="StateId">
+                                                <option>Maharashtra</option>
+                                                <option>Goa</option>
+                                                <option>Gujrat</option>
+                                                <option>Punjab</option>
+                                                <option>Kerala</option>
+                                                <option>Rajastan</option>
+                                                <option>Delhi</option>
+                                                <option>Karanataka</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">  Email Id&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="MailId">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">  Telephone No&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="TelNoId">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label"> Fax&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="FaxId">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!--sidebar code-->
+<script>
+    $(document).ready(function () {
+
+        //$('#content').load("Sidebar.html");
+        set_MainHeaderName();
+    });
+    $(function () {
+        debugger
+        GetParameterType('ST');
+        GetParameterType('CR');
+
+
+    });
+    function GetParameterType(parametertype) {
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+        $.ajax({
+            type: "GET",
+            url: URLPowerAPI + '/api/PBXMLParameter/GetParameterTypeID',
+            dataType: "json",
+            contentType: "application/json",
+            data: {
+                PARTYPE: parametertype,
+                cccd: cccd
+            },
+            async: false,
+
+            success: function (res) {
+                var abc = res;
+                GetDropDown(abc, parametertype);
+
+            }
+
+        });
+    }
+
+
+    //second function for dropdown
+    function GetDropDown(parameter, parametertype) {
+        debugger
+
+
+        var cccd = localStorage.getItem('CCAC');
+        $.ajax({
+            type: "GET",
+            url: URLPowerAPI + '/api/PBXMLParametercode/GetAllActiveParameterCodes',
+            dataType: "json",
+            contentType: "application/json",
+
+            data: {
+                PARTYPEID: parameter,
+                cccd: cccd
+            },
+            async: false,
+            success: function (res) {
+
+                $.each(res, function (data, value) {
+                    if (parametertype == 'ST') {
+
+                        $("#StateId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'CR') {
+                        $("#OtherCoutryId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                        $("#MailingCountryId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+
+
+
+                })
+            }
+
+        });
+    }
+</script>
+<!--add edit api-->
+
+<script>
+    function AddEditfunction() {
+        debugger
+        /*  alert("in fuctiin");*/
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+            var mode = url1.split("=")[2];
+            var Itcd1 = url1.split("=")[1];
+            var index = (Itcd1).indexOf('&');
+            var Itcd = Itcd1.substring(0, index);
+
+        }
+        var urls = window.location.href;
+        var cccd = localStorage.getItem('CCAC');
+
+
+        var STATENAME = $("#StateId option:selected").text();
+        var STATENO = $("#StateId option:selected").val();
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+        var status = "A";
+
+
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            Itcd = Itcd,
+                UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = sessionStorage.getItem('createddate');
+        }
+        else {
+            Itcd = localStorage.getItem('MaxClNo');
+            UId = localStorage.getItem('UID');
+            Username = localStorage.getItem('UName');
+            Createdsystem = 'LimtlessCRM';
+            Createdate = curndate;
+        }
+
+
+        /*var  abc =$()*/
+        // alert("in parameters");
+
+        var parameter =
+        {
+
+            AccNo: Itcd,
+            LEDGERNAME: $("#CustomerNameId").val(),
+            NAME: $("#CustomerNameId").val(),
+            RESERVEDNAME: $("#CustomerNameId").val(),
+            PARENT: 'Sundry Debtors',
+            HASEDDCITY: $("#CityId").val(),
+            SALESTAXNUMBER: $("#SalesManId").val(),
+            ADDRESS: $("#AddressId").val(),
+            PINCODE: $("#PinCodeId").val(),
+            VATTINNUMBER: $("#VatTinId").val(),
+            LEDGERPHONE: $("#TelNoId").val(),
+            LEDGERFAX: $("#FaxId").val(),
+            MAILINGNAME: $("#MailId").val(),
+            STATENAME: STATENAME,
+            OPENINGBALANCE: $("#CreditAllotId").val(),
+
+            VATDEALERTYPE: "",
+            EXCISELEDGERCLASSIFICATION:"",
+            EXCISEDUTYTYPE: "",
+            EXCISENATUREOFPURCHASE: "",
+            LEDGERFBTCATEGORY: "",
+
+            ISBILLWISEON: 'Yes',
+            ISCOSTCENTRESON:'No',
+            ISINTERESTON:'No',
+            ALLOWINMOBILE:'No',
+            ISCOSTTRACKINGON:'No',
+            ISBENEFICIARYCODEON:'No',
+            ISEXPORTONVCHCREATE:'No',
+            PLASINCOMEEXPENSE:'No',
+            ISUPDATINGTARGETID:'No',
+            ASORIGINAL:'Yes',
+            ISCONDENSED:'No',
+            AFFECTSSTOCK:'No',
+            ISRATEINCLUSIVEVAT:'No',
+            FORPAYROLL:'No',
+            ISABCENABLED:'No',
+            ISCREDITDAYSCHKON:'No',
+            INTERESTONBILLWISE:'No',
+            OVERRIDEINTEREST:'No',
+            OVERRIDEADVINTEREST:'No',
+            USEFORVAT:'No',
+            IGNORETDSEXEMPT: 'No',
+            ISTCSAPPLICABLE:'No',
+            ISTDSAPPLICABLE:'No',
+            ISFBTAPPLICABLE:'No',
+            ISGSTAPPLICABLE:'No',
+            ISEXCISEAPPLICABLE:'No',
+            ISTDSEXPENSE:'No',
+            ISEDLIAPPLICABLE:'No',
+            ISRELATEDPARTY:'No',
+            USEFORESIELIGIBILITY:'No',
+            ISINTERESTINCLLASTDAY:'No',
+            APPROPRIATETAXVALUE:'No',
+            ISBEHAVEASDUTY:'No',
+            INTERESTINCLDAYOFADDITION:'No',
+            INTERESTINCLDAYOFDEDUCTION:'No',
+            ISOTHTERRITORYASSESSEE:'No',
+            IGREMISMATCHWITHWARNING:'No',
+            USEASTIONALBANK:'No',
+            OVERRIDECREDITLIMIT:'No',
+            ISAGAINSTFORMC:'No',
+            ISCHEQUEPRINTINGENABLED:'Yes',
+            ISPAYUPLOAD:'No',
+            ISPAYBATCHONLYSAL:'No',
+            ISBNFCODESUPPORTED:'No',
+            ALLOWEXPORTWITHERRORS:'No',
+            ISTRANSPORTER:'No',
+            USEFORTIONALITC:'No',
+            ISECOMMOPERATOR:'No',
+            OVERRIDEBASEDONREALIZATION:'No',
+            SHOWINPAYSLIP:'No',
+            USEFORGRATUITY:'No',
+            ISTDSPROJECTED:'No',
+            FORSERVICETAX:'No',
+            ISINPUTCREDIT:'No',
+            ISEXEMPTED:'No',
+            ISABATEMENTAPPLICABLE:'No',
+            ISSTXPARTY: 'No',
+            ISSTXNONREALIZEDTYPE: 'No',
+            ISUSEDFORCVD: 'No',
+            LEDBELONGSTONONTAXABLE: 'No',
+            ISEXCISEMERCHANTEXPORTER: 'No',
+            ISPARTYEXEMPTED: 'No',
+            ISSEZPARTY: 'No',
+            TDSDEDUCTEEISSPECIALRATE: 'No',
+            ISECHEQUESUPPORTED: 'No',
+            ISEDDSUPPORTED: 'No',
+            HASECHEQUEDELIVERYMODE:'No',
+            HASECHEQUEDELIVERYTO:'No',
+            HASECHEQUEPRINTLOCATION:'No',
+            HASECHEQUEPAYABLELOCATION:'No',
+            HASEDDDELIVERYMODE:'No',
+            HASEDDDELIVERYTO:'No',
+            HASEDDPRINTLOCATION:'No',
+            HASEDDBANKLOCATION:'No',
+            ISEBANKINGENABLED:'No',
+            ISEXPORTFILEENCRYPTED:'No',
+            ISBATCHENABLED:'No',
+            ISPRODUCTCODEBASED:'No',
+            HASEDDCITY:'No',
+            HASECHEQUECITY:'No',
+            ISFILENAMEFORMATSUPPORTED:'No',
+            HASCLIENTCODE:'No',
+            PAYINSISBATCHAPPLICABLE:'No',
+            PAYINSISFILENUMAPP:'No',
+            ISSALARYTRANSGROUPEDFORBRS:'No',
+            ISEBANKINGSUPPORTED:'No',
+            ISSCBUAE:'No',
+            ISBANKSTATUSAPP:'No',
+            ISSALARYGROUPED:'No',
+            USEFORPURCHASETAX:'No',
+            AUDITED: 'No',
+
+            SORTPOSITION:1000,
+            ALTERID:627,
+            SERVICETAXDETAILSLIST:"",
+            LBTREGNDETAILSLIST: "",
+            VATDETAILSLIST: "",
+            SALESTAXCESSDETAILSLIST: "",
+            //LANGUAGENAMELIST={
+            //    NAME:"",
+            //    LANGUAGEID:"",
+            //},
+                //<LANGUAGENAMELIST>
+                //    <NAMELIST TYPE="String">
+                //        <NAME>AARTI Enterprises Vasind</NAME>
+                //    </NAMELIST>
+                //    <LANGUAGEID> 1033</LANGUAGEID>
+                //</LANGUAGENAMELIST>
+            XBRLDETAILLIST: "",
+            AUDITDETAILSLIST: "",
+            SCHVIDETAILSLIST: "",
+            EXCISETARIFFDETAILSLIST: "",
+            TCSCATEGORYDETAILSLIST: "",
+            TDSCATEGORYDETAILSLIST: "",
+            SLABPERIODLIST: "",
+            GRATUITYPERIODLIST: "",
+            ADDITIONALCOMPUTATIONSLIST: "",
+            EXCISEJURISDICTIONDETAILSLIST: "",
+            EXCLUDEDTAXATIONSLIST: "",
+            BANKALLOCATIONSLIST: "",
+            PAYMENTDETAILSLIST: "",
+            BANKEXPORTFORMATSLIST: "",
+            BILLALLOCATIONSLIST: "",
+            INTERESTCOLLECTIONLIST: "",
+            LEDGERCLOSINGVALUESLIST: "",
+            LEDGERAUDITCLASSLIST: "",
+            OLDAUDITENTRIESLIST: "",
+            TDSEXEMPTIONRULESLIST: "",
+            DEDUCTINSAMEVCHRULESLIST: "",
+            LOWERDEDUCTIONLIST: "",
+            STXABATEMENTDETAILSLIST: "",
+            LEDMULTIADDRESSLISTLIST: "",
+            STXTAXDETAILSLIST: "",
+            CHEQUERANGELIST: "",
+            DEFAULTVCHCHEQUEDETAILSLIST: "",
+            ACCOUNTAUDITENTRIESLIST: "",
+            AUDITENTRIESLIST: "",
+            AUTOBRSCONFIGSLIST: "",
+            BANKURENTRIESLIST: "",
+            DEFAULTCHEQUEDETAILSLIST: "",
+            DEFAULTOPENINGCHEQUEDETAILSLIST: "",
+            CANCELLEDPAYALLOCATIONSLIST: "",
+            ECHEQUEPRINTLOCATIONLIST: "",
+            ECHEQUEPAYABLELOCATIONLIST: "",
+            EDDPRINTLOCATIONLIST: "",
+            EDDPAYABLELOCATIONLIST: "",
+            AVAILABLETRANSACTIONTYPESLIST: "",
+            LEDPAYINSCONFIGSLIST: "",
+            TYPECODEDETAILSLIST: "",
+            FIELDVALIDATIONDETAILSLIST: "",
+            INPUTCRALLOCSLIST: "",
+            TCSMETHODOFCALCULATIONLIST: "",
+            GSTCLASSFNIGSTRATESLIST: "",
+            EXTARIFFDUTYHEADDETAILSLIST: "",
+            VOUCHERTYPEPRODUCTCODESLIST: "",
+
+            CCCD: cccd,
+            STATUS: status,
+            CREATEDSYSTEM: Createdsystem,
+            LASTUPDATEDSYSTEM: Createdsystem,
+            UID: UId,
+            USERNAME: Username,
+            LUID: UId,
+            LUSERNAME: Username,
+            CREATEDDATE: Createdate,
+            LASTUPDATEDDATE: curndate
+        }
+        //var obj1 = {
+        //    dividend: "3",
+        //    divisor: "4"
+        //}
+   
+        var ContactDeatils = {
+          
+            ContactNo: "0",
+            ContactOwnerName: "FIT",
+            ContactOwner: UId,
+            LeadSourceName: "",
+            LeadSourceNo: "0",
+            AccountName: "",
+            AccountNo: "0",
+            SalutationName: "",
+            SalutationNo: "0",
+            MailingStateName: "",
+            MailingStateNo: "0",
+            OtherStateName: STATENAME,
+            OtherStateNo: STATENO,
+            OtherCountryName: "",
+            OtherCountryNo: "0",
+            MailingCountryName: "",
+            MailingCountryNo: "0", 
+            FirstName: $("#CustomerNameId").val(),
+            LastName: "",
+            Email: $("#MailId").val(),
+            Title: "",
+            Phone: $("#TelNoId").val(),
+            Department: "",
+            OtherPhone: $("#TelNoId").val(),
+            HomePhone: $("#TelNoId").val(),
+            Mobile: $("#SalesManId").val(),
+            Fax: $("#FaxId").val(),
+            Assistant: "",
+            ReportsTo: "",
+            DOB: "",
+            AssPhone: $("#TelNoId").val(),
+            EmailOptOut: "",
+            SkypeID: "",
+            SecondaryEmail: $("#MailId").val(),
+            MailingCity: "",
+            WhatsappNo: $("#TelNoId").val(),
+            MailingStrt: "",
+            OtherCity: "",
+            OtherStrt: "",
+            OtherZip:"" ,
+            MailingZip: "",
+            Description: "",
+            CCCD: cccd,
+            STATUS: status,
+            CREATEDSYSTEM: Createdsystem,
+            LASTUPDATEDSYSTEM: Createdsystem,
+            UID: UId,
+            USERNAME: Username,
+            LUID: UId,
+            LUSERNAME: Username,
+            CREATEDDATE: Createdate,
+            LASTUPDATEDDATE: curndate,
+            LastUpdatedBy: UId,
+            CreatedBy: UId,
+            SFID: '',
+            SFXMLVAR:"SFXMLVAR"
+        }
+    
+        return { parameter, ContactDeatils };
+        //return parameter;
+        //return ContactDeatils;
+
+    }
+
+    $("#savebtnid").click(function () {
+
+        // alert("ghggg");
+        var AddParameter1 = AddEditfunction();
+        var parameter = AddParameter1.parameter;
+        var ContactDeatils = AddParameter1.ContactDeatils;
+        alert(parameter + "jst for checking")
+        alert(ContactDeatils + "jst for checking31we")
+        localStorage.setItem("AddParameterD", JSON.stringify(parameter));
+        /*alert("localstorge");*/
+        // alert(addcostcatparameter + "json");
+
+        $.ajax({
+            type: 'POST',
+            url: URLPowerAPI + '/api/PBXMLContact/AddPBXMLContacts',
+            dataType: 'JSON',
+            data: JSON.stringify(ContactDeatils),
+
+            contentType: 'application/json ; charset = utf-8',
+
+            success: function (data, textStatus, xhr) {
+
+                //alert('Customer registered successfully');
+                //window.location.href = "LLLL-CR-CN-50.shtml";
+            },
+        });
+        debugger
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLLedger/AddPBXMLLedger',
+                dataType: 'JSON',
+                data: JSON.stringify(parameter),
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+
+                    alert('Customer registered successfully');
+                    window.location.href = "LLLL-CR-CU-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+
+        return;
+       
+
+    });
+   
+
+    $("#updatebtnID").click(function () {
+        var UpdateParameter = AddEditfunction();
+        localStorage.setItem("UpdateParameter", JSON.stringify(UpdateParameter));
+
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLLedger/EditPBXMLLedger',
+                dataType: 'JSON',
+                data: JSON.stringify(UpdateParameter),
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+                    alert('Customer registered successfully');
+                    window.location.href = "LLLL-CR-CU-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+        return;
+    });
+
+
+</script>
+
+
+<!--GET by id API-->
+<script>
+    $(document).ready(function () {
+
+
+
+
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var AccNo1 = url1.split("=")[1];
+        var index = (AccNo1).indexOf("&");
+        var AccNo = AccNo1.substring(0, index);
+        var cccd = localStorage.getItem('CCAC');
+        // alert(AccNo);
+
+        if (mode == 'edit') {
+            $.ajax({
+                type: 'GET',
+                url: URLPowerAPI + '/api/PBXMLLedger/GetPBXMLLedgerById',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: cccd,
+                    AccNo: AccNo
+                },
+
+
+                success: function (data) {
+                    /* alert(JSON.stringify(data));*/
+                    //data = data;
+
+                    $("#CustomerNameId").val(data.LEDGERNAME);
+                    $("#ClientID").val(data.AccNo)
+                    $("#CityId").val(data.HASEDDCITY);
+                    $("#CustomerGrpId").val("CUSTOMER")
+                    $("#SalesManId").val(data.SALESTAXNUMBER);
+                    $("#AddressId").val(data.ADDRESS);
+                    $("#PinCodeId").val(data.PINCODE);
+                    $("#VatTinId").val(data.VATTINNUMBER);
+                    $("#TelNoId").val(data.LEDGERPHONE);
+                    $("#FaxId").val(data.LEDGERFAX);
+                    $("#MailId").val(data.MAILINGNAME);
+
+                    // alert(data.NAME);
+                    $('#StateId option:selected').text(data.STATENAME);
+
+
+                    sessionStorage.setItem('uid', data.UID);
+                    sessionStorage.setItem('username', data.USERNAME);
+                    sessionStorage.setItem('createdsystem', data.CREATEDSYSTEM);
+                    sessionStorage.setItem('createddate', data.CREATEDDATE);
+                    sessionStorage.setItem('lastupdatedate', data.LASTUPDATEDDATE);
+
+                },
+
+            });
+        }
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+
+
+        $("#deletebtnID").click(function () {
+            debugger
+            var urls = window.location.href;
+            debugger
+            //alert(urls);
+            var cccd = localStorage.getItem('CCAC');
+            var group = AccNo;
+
+            $.ajax({
+                url: URLPowerAPI + '/api/PBXMLLedger/DeletePBXMLLedger',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    AccNo: group
+
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                success: function (data, textStatus, xhr) {
+                    alert("PBXMLCostcategory deleted successfully");
+                    window.location.href = "LLLL-CR-CU-50.shtml";
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+
+    });
+
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">CRM</span> - Account - Customer');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>CRM</a><span class="breadcrumb-item active">Account - Customer</span>');
+    };
+</script>

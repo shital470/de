@@ -1,0 +1,244 @@
+﻿
+                       
+                   
+        <!--popup script-->
+
+        <script>
+
+            function DrCrFunction(amount) {
+
+                debugger
+                var drcr;
+                if (amount < 0) {
+                    drcr = 'Cr';
+                }
+                else {
+                    drcr = 'Dr';
+                }
+                return drcr;
+
+            };
+
+
+            function DrCrclsFunction(Clsamount) {
+
+                debugger
+                var drcr;
+                if (Clsamount < 0) {
+                    Clsdrcr = 'Cr';
+                }
+                else {
+                    Clsdrcr = 'Dr';
+                }
+                return Clsdrcr;
+
+            };
+            function abs(amount) {
+
+                debugger
+                var amount1;
+                if (amount < 0) {
+                    amount1 = amount * -1;
+                }
+                else {
+                    amount1 = amount;
+                }
+                return amount1;
+
+            };
+        </script>
+        <script>
+            /*search date function*/
+            function functnfrom() {
+                var fromdate = document.getElementById("myTextarea").value;
+                var fdate = fromdate.replace(/[-,-]/g, "");
+                return fdate
+            };
+
+            function functnto() {
+                var todate = document.getElementById("myTextarea1").value;
+                var tdate = todate.replace(/[-,-]/g, "");
+                return tdate
+            };
+        </script>
+
+        <!--local stroge date function-->
+
+        <script>
+            function getallfunction() {
+
+                const from = document.getElementById("myTextarea").value;
+                const to = document.getElementById("myTextarea1").value;
+                var urlfrom1 = localStorage.getItem('Fromdate');
+                var urlto1 = localStorage.getItem('Todate');
+                var urlfrom;
+                var urlto;
+                if (from == "" && to == "") {
+                    $('#myTextarea').val(urlfrom1);
+                    $('#myTextarea1').val(urlto1)
+                    urlfrom = functnfrom();
+                    urlto = functnto();
+                }
+                else {
+                    urlfrom = functnfrom();
+                    urlto = functnto();
+                }
+
+                var finacialyear = localStorage.getItem('FinancialYrFrom');
+                var urlfrom = finacialyear.substring(0, 4) + "0401";
+                var urlto = finacialyear.substring(5, 9) + "0331";
+                var cccd = localStorage.getItem('CCCD');
+
+
+
+                $.ajax({
+                    async: false,
+                    url: URLPowerAPI+'/api/PBXMLVDaybook/GetAllPBXMLDayBook?&trtype=-1&trcode=-1',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    //data: JSON.stringify(groupname),
+                    data:
+                    {
+                        cccd: cccd,
+                        from: urlfrom,
+                        to: urlto,
+                        sessid: "shital"
+                    },
+
+                    success: function (groups, textStatus, xhr) {
+                      //  alert(JSON.stringify(groups));
+                        var total = groups.length;
+                        console.log(total);
+                       // alert(total);
+
+                        if (total > 10) {
+                            var pageTotal = Math.ceil(total / 10);
+                            console.log(pageTotal);
+                            // alert(pageTotal+"abc");
+                            var j = 0;
+                            var grp;
+                            //for (var i = 0; i <= pageTotal; i++)
+                            //{
+                            var i = 1;
+                            j = i + 1;
+                            grp = groups.slice(i * 10, (i + 1) * 10);
+                            console.log('checking ' + i * 10, (i + 1) * 10);
+                            console.log(j);
+                            console.log(grp);
+                           // alert(grp);
+                            //}
+                        }
+
+                        var strResult;
+
+
+                        groups = groups.slice(0, 10)
+                        //alert(groups);
+                        $.each(groups, function (index, group) {
+
+                            strResult += "<tr scope='row'><th><a href=TrialBalSubGrp.html?&GROUPS=" + group.Accno + "&from=" + urlfrom + "&to=" + urlto + ">" + group.DATE + "</a></th><td>"
+                                + group.PaidTo + "</td><td>"
+                                + group.VOUCHERTYPENAME + "</td><td>"
+                                + group.VOUCHERNUMBER + "</td><td>"
+                                + group.DrAmt + "</td><td>"
+                                + group.CrAmt + "</td><tr>";
+
+
+
+                        });
+                        $("#DayBook").html(strResult);
+                    }
+
+                });
+
+
+
+            }
+
+
+            $("#testdiv").on('click', 'a', function () {
+
+
+                debugger
+                var myval = $(this).text();
+
+                //alert(myval);
+                var finacialyear = localStorage.getItem('FinancialYrFrom');
+                var urlfrom = finacialyear.substring(0, 4) + "0401";
+                var urlto = finacialyear.substring(5, 9) + "0331";
+                var cccd = localStorage.getItem('CCCD');
+
+
+
+                $.ajax({
+                    async: false,
+                    url: URLPowerAPI+'/api/PBXMLVDaybook/GetAllPBXMLDayBook?&trtype=-1&trcode=-1',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    //data: JSON.stringify(groupname),
+                    data:
+                    {
+                        cccd: cccd,
+                        from: urlfrom,
+                        to: urlto,
+                        sessid: "shital"
+                    },
+
+                    success: function (groups, textStatus, xhr) {
+                        //alert(JSON.stringify(groups));
+                        var total = groups.length;
+
+                        if (total > 10) {
+                            var val = myval;
+
+                            var i = val - 1;
+
+                            console.log('ival=' + i);
+
+                            grp = groups.slice(i * 10, (i + 1) * 10);
+
+                            console.log('checkinglili ' + i * 10, (i + 1) * 10);
+
+                            console.log(grp);
+                            //alert(grp);
+                        }
+
+                        if (groups == null) {
+                            strResult += "<div class='//alert-danger '>data is not defined</div>";
+                        }
+                        var strResult;
+                        //                //alert("Data Function")
+                        groups = groups.slice(i * 10, (i + 1) * 10)
+                        $.each(groups, function (index, group) {
+
+                            strResult += "<tr scope='row'><th><a href=TrialBalSubGrp.html?&GROUPS=" + group.Accno + "&from=" + urlfrom + "&to=" + urlto + ">" + group.DATE + "</a></th><td>"
+                                + group.PaidTo + "</td><td>"
+                                + group.VOUCHERTYPENAME + "</td><td>"
+                                + group.VOUCHERNUMBER + "</td><td>"
+                                + group.DrAmt + "</td><td>"
+                                + group.CrAmt + "</td><tr>";
+
+
+
+                        });
+                        $("#DayBook").html(strResult);
+                    }
+
+                });
+
+
+
+            });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                getallfunction();
+
+
+            });
+        </script>
+
+

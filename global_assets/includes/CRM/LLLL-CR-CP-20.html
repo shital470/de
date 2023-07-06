@@ -1,0 +1,552 @@
+<!-- Online HTML Formatter, Beautifier and Editor -->
+
+<head>
+    <script src="../../../../global_assets/js/plugins/editors/summernote/summernote.min.js"></script>
+    <script src="../../../../global_assets/js/demo_pages/editor_summernote.js"></script> <!-- Global stylesheets -->
+    <!--<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">    <link href="../../../../global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">    <link href="assets/css/all.min.css" rel="stylesheet" type="text/css">-->
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <!--<script src="../../../../global_assets/js/main/jquery.min.js"></script>    <script src="../../../../global_assets/js/main/bootstrap.bundle.min.js"></script>-->
+    <!-- /core JS files -->
+    <!-- Theme JS files -->
+    <script src="../../../../global_assets/js/plugins/uploaders/fileinput/plugins/sortable.min.js"></script>
+    <script src="../../../../global_assets/js/plugins/uploaders/fileinput/fileinput.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="../../../../global_assets/js/demo_pages/uploader_bootstrap.js"></script> <!-- /theme JS files -->
+</head><!-- main content code -->
+<div class="row justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-12 col-xs-12"> </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right ml-2" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="margin-right: 8px;">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="margin-right: 8px;  ">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                        
+                    </div>
+                </div>
+            </div>
+            <!--Form layout-->
+            <div class="card-body">
+                <h5 style="background-color: whitesmoke; margin-right:45px; height:30px"><b>Campaign Information</b></h5>
+                <div class="row">
+                    <!--1st column started-->
+                    <div class="col-lg-12">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-2 offset-1 col-form-label">Campaign NameEE&nbsp;:</label>
+                                    <div class="col-lg-2"> <input type="text" class="form-control" id="CampaignNameId" required> </div>
+                                </div>
+                                <!--Active checkbox-->
+                                <div class="form-group row">
+                                    <label class="col-lg-2 offset-1 col-form-label">Type&nbsp;:</label>
+                                    <div class="col-lg-2 col-form-label">
+                                        <select class="form-control" id="CampaignType">
+                                            <option value="Select" selected>--None--</option>
+                                            <option value="Select" selected>Conference</option>
+                                            <option value="Select" selected>Trade Show</option>
+                                            <option value="Select" selected>Webinar</option>
+                                            <option value="Select" selected>Public Relations</option>
+                                            <option value="Select" selected>Partners</option>
+                                            <option value="Select" selected>Partners</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-2 offset-1 col-form-label">Start Date&nbsp;:</label>
+                                    <div class="col-lg-2"> <input type="text" class="form-control daterange-single" id="Startdateid"> </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-2 offset-1 col-form-label">Expiry Date&nbsp;:</label>
+                                    <div class="col-lg-2"> <input type="text" class="form-control daterange-single" id="ExpiryDateid"> </div>
+                                </div>
+                                <div id="logshowhide" style="display:none" class="form-group row">
+                                    <label class="col-lg-2 offset-1 col-form-label">Log Date&nbsp;:</label>
+                                    <div class="col-lg-2"> <input type="text" class="form-control daterange-single" id="LogDateid"> </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-2 offset-1 col-form-label">Expected Revenue In Campaign&nbsp;:</label>
+                                    <div class="col-lg-2"> <input type="text" class="form-control" id="RevenueId" required> </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-2 offset-1 col-form-label">Budget Cost In Campaign&nbsp;:</label>
+                                    <div class="col-lg-2"> <input type="text" class="form-control" id="BudgetId" required> </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-2 offset-1 col-form-label">Actual Cost In Campaign&nbsp;:</label>
+                                    <div class="col-lg-2"> <input type="text" class="form-control" id="ActualId" required> </div>
+                                </div>
+                               
+                                <div class="form-group row">
+                                    <label class="col-lg-2 offset-1 col-form-label">Status : </label>
+                                    <div class="col-lg-2">
+                                        <select id="projectstatus" data-placeholder="Select Status of Project ..." class="form-control select" data-fouc>
+                                            <option value="I">Inactive</option>
+                                            <option value="A">Active</option>
+                                            <option value="D">Deactivate</option>
+                                        </select>
+                                    </div>
+                                </div>
+                               
+                                <div class="form-group row">
+                                    <label class="col-lg-2 offset-1 col-form-label">Description&nbsp;:</label>
+                                    <div class="col-lg-6"> <textarea class="form-control" id="DescId" rows="6"></textarea> </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>-->
+<!-- Import Trumbowyg -->
+<!--<script src="trumbowyg/dist/trumbowyg.min.js"></script>-->
+<!-- Import all plugins you want AFTER importing jQuery and Trumbowyg -->
+<!--<script src="trumbowyg/dist/plugins/upload/trumbowyg.upload.min.js"></script>-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        // campaignfunction();
+    });
+
+    //function editcampaignfunction() {
+
+
+    //    debugger
+
+    //    var url1 = window.location.href;
+    //    var arr = url1.split('=');
+    //    console.log(url1.length)
+
+    //    if (arr.length > 1) {
+    //        var mode = url1.split("=")[2];
+    //        var CampaignNo1 = url1.split("=")[1];
+    //        var index = (CampaignNo1).indexOf('&');
+    //        var CampaignNo = CampaignNo1.substring(0, index);
+
+    //    }
+
+    //    var cccd = localStorage.getItem('CCAC');
+    //    var status = $("#projectstatus option:selected").text();
+    //    var TypeName = $("#CampaignType option:selected").text();
+
+
+    //    //var testing = document.getElementById('descriptionid');
+    //    var SDATE = document.getElementById("Startdateid").value;
+    //    var mon = CallStartDate.substring(0, 2);
+    //    var day = CallStartDate.split("/")[1];
+    //    var year = CallStartDate.split("/")[2];
+    //    var CallStartDate1 = year + "-" + mon + "-" + day + "T" + "00:" + "00" + "00."+"000";
+
+    //    alert(CallStartDate1 + "CallStartDate1");
+       
+
+
+
+    //    var CurrentDate = new Date();
+    //    var curndate = CurrentDate.toISOString().replace('Z', '');
+    //    var status = "A";
+
+    //    //storesession value
+    //    var UId;
+    //    var Username;
+    //    var Createdsystem;
+    //    var Createdate;
+
+    //    if (mode == 'edit') {
+    //        CampaignNo = CampaignNo,
+    //        UId = sessionStorage.getItem('uid');
+    //        Username = sessionStorage.getItem('username');
+    //        Createdsystem = sessionStorage.getItem('createdsystem');
+    //        Createdate = sessionStorage.getItem('createddate');
+    //    }
+    //    else {
+    //        UId = localStorage.getItem('UID');
+    //        Username = localStorage.getItem('UName');
+    //        Createdsystem = 'PowerSuit';
+    //        Createdate = curndate;
+    //    }
+
+
+
+
+    //    var parameter = {
+    //        CCCD: cccd,
+    //        Status: status,
+    //        CampaignNo: CampaignNo,
+    //        StockGroupNo: "",
+    //        StockGroupName:"",
+    //        StockItem:"",
+    //        CampaignName: $("#CampaignNameId").val(),
+    //        CampaignOwner: uid,
+    //        CampaignOwnerName:"",
+    //        TypeName: TypeName,
+    //        Type: "",
+    //        Itcd: "",
+
+    //        StatusName: status,
+    //        Status: "",
+
+    //        StartDate: CallStartDate1,
+    //        EndDate: $("#ExpiryDateid").val(),
+
+    //        ExpectedRevenue: $("#RevenueId").val(),
+    //        BudgetCost: $("#BudgetId").val(),
+    //        ActualCost: $("#ActualId").val(),
+    //        ExpectedResponse: $("#ResponseId").val(),
+    //        Description: $("#DescId").val(),
+
+    //        ProductName: "",
+    //        SkuName: "",
+    //        LocationName: "",
+    //        Location: "",
+    //        IndustryName: "",
+    //        Industry: " ",
+    //        CreatedBy: uid,
+    //        CreatedDate: Createdate,
+    //        LastUpdatedBy: uid,
+    //        LastUpdatedDate: curndate,
+    //        CREATEDSYSTEM:"PowerSuit",
+    //        LASTUPDATEDSYSTEM:"PowerSuit",
+    //        Cccd: cccd,
+    //        SFID: "1",
+    //        SFXMLVAR:"SFXMLVAR"
+    //    }
+    //    return parameter
+    //    alert(StartDate);
+    //};
+
+    function addcampaignfunction() {
+
+        debugger
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+            var mode = url1.split("=")[2];
+            var CampaignNo1 = url1.split("=")[1];
+            var index = (CampaignNo1).indexOf('&');
+            var CampaignNo = CampaignNo1.substring(0, index);
+
+        }
+
+        var cccd = localStorage.getItem('CCAC');
+        var status = $("#projectstatus option:selected").text();
+        var TypeName = $("#CampaignType option:selected").text();
+
+
+        //var testing = document.getElementById('descriptionid');
+        var CallStartDate = document.getElementById("Startdateid").value;
+        var mon = CallStartDate.substring(0, 2);
+        var day = CallStartDate.split("/")[1];
+        var year = CallStartDate.split("/")[2];
+        var CallStartDate1 = year + "-" + mon + "-" + day + "T" +"00:"+"00:"+"00."+"000";
+
+
+        var CallEndDate = document.getElementById("ExpiryDateid").value;
+        var mon = CallEndDate.substring(0, 2);
+        var day = CallEndDate.split("/")[1];
+        var year = CallEndDate.split("/")[2];
+        var CallEndDate1 = year + "-" + mon + "-" + day + "T" + "00:" + "00:" + "00." + "000";
+
+        alert(CallEndDate1 + "CallStartDate1");
+
+
+
+
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+        var Status = "A";
+
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            CampaignNo = CampaignNo,
+            UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = sessionStorage.getItem('createddate');
+        }
+        else {
+            UId = localStorage.getItem('UID');
+            Username = localStorage.getItem('UName');
+            Createdsystem = 'PowerSuit';
+            Createdate = curndate;
+        }
+
+
+
+        var parameter = {
+            CCCD: cccd,
+            Status: status,
+            CampaignNo: "",
+            CampaignOwner: UId,
+            TypeName: $("#CampaignType").val(),
+            TypeNo: " ",
+            CampaignName: $("#CampaignNameId").val(),
+            StockGroupName: "",
+            StockGroupNo: " ",
+            Itcd: "",
+            StockItem: "",
+            StatusName: status,
+            StatusNo: "",
+            StartDate: CallStartDate1,
+           /* ExpiryDate: "",*/
+            EndDate: CallEndDate1,
+            ExpectedRevenue: $("#RevenueId").val(),
+            BudgetCost: $("#BudgetId").val(),
+            ActualCost: $("#ActualId").val(),
+            ExpectedResponse: "",
+            Description: $("#DescId").val(),
+            ProductName: " ",
+            SkuName: " ",
+            LocationName: " ",
+            LocationNo: " ",
+            IndustryName: " ",
+            IndustryNo: " ",
+            CreatedBy: UId,
+            CreatedDate: Createdate,
+            LastUpdatedBy: UId,
+            LastUpdatedDate: Createdate,
+            Cccd: cccd,
+            SFID: "1",
+            SFXMLVAR:"SFXMLVAR"
+        }
+
+        //var parameter = {
+        //    CCCD: cccd,
+        //    Status: Status,
+        //    CampaignNo: CampaignNo,
+        //    StockGroupNo: "",
+        //    StockGroupName: "",
+        //    StockItem: "",
+        //    CampaignName: $("#CampaignNameId").val(),
+        //    CampaignOwner: UId,
+        //    CampaignOwnerName: Username,
+        //    TypeName: TypeName,
+        //    Type: "",
+        //    Itcd: "",
+
+        //    StatusName: status,
+        //    Status: "",
+
+        //    StartDate: CallStartDate1,
+        //    EndDate: CallEndDate1,
+
+        //    ExpectedRevenue: $("#RevenueId").val(),
+        //    BudgetCost: $("#BudgetId").val(),
+        //    ActualCost: $("#ActualId").val(),
+        //    ExpectedResponse: $("#ResponseId").val(),
+        //    Description: $("#DescId").val(),
+
+        //    ProductName: "",
+        //    SkuName: "",
+        //    LocationName: "",
+        //    Location: "",
+        //    IndustryName: "",
+        //    Industry: " ",
+        //    CreatedBy: UId,
+        //    CreatedDate: Createdate,
+        //    LastUpdatedBy: UId,
+        //    LastUpdatedDate: Createdate,
+        //    CREATEDSYSTEM: "PowerSuit",
+        //    LASTUPDATEDSYSTEM: "PowerSuit",
+        //    Cccd: cccd,
+        //    SFID: "1",
+        //    SFXMLVAR: "SFXMLVAR"
+        //}
+        return parameter
+     
+    }
+    $("#savebtnid").click(function () {
+        /* var type = 'POST';*/
+        /* alert("demnadAdded successfully");*/
+        var addcampaign = addcampaignfunction();
+        /*  alert(JSON.stringify(adddemand));*/
+        debugger
+        $.ajax({
+            type: 'POST',
+            // url: UrlPowerAPI + '/api/PBXMLCampaign/AddPBXMLCampaign',
+            url: 'https://powerbooks.in/PowerAPI/api/PBXMLCampaign/AddPBXMLCampaign',
+            dataType: 'JSON',
+            data: JSON.stringify(addcampaign),
+            contentType: 'application/json ; charset = utf-8',
+            beforeSend: function () {
+                alert(JSON.stringify(addcampaign));
+                sessionStorage.setItem("newcampaign", JSON.stringify(addcampaign));
+                $("#loader1").show();
+            },
+            async: false,
+            success: function (req, res, next) {
+                alert(' add successfully');
+                window.location.href = " LLLL-CR-CP-50.shtml";
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                alert("You entered some invalid fields...! Fill the details again...");
+            }
+        });
+        return;
+    });
+    $("#Productid1").hide();
+    $("#saveid").show();
+    $("#PAGEHEAD").hide();
+    $("#updatebtnID").click(function () {
+        var EDITcampaign = addcampaignfunction();
+        //alert(JSON.stringify(EDITdemand);
+        $.ajax({
+            type: 'POST',
+            //url: UrlPowercashAPI + '/api/PCXMLDemand/EditPCXMLDemand',
+            url: 'https://powerbooks.in/PowerAPI/api/PBXMLCampaign/EditPBXMLCampaign',
+            dataType: 'JSON',
+            data: JSON.stringify(EDITcampaign),
+            contentType: 'application/json ; charset = utf-8',
+            // alert(JSON.stringify(EDITdemand));
+            beforeSend: function () {
+                alert(JSON.stringify(EDITcampaign));
+                $("#loader1").show();
+            },
+            success: function (data, textStatus, xhr) {
+                //alert(JSON.stringify(data));
+                //alert('Update data successfully');
+                window.location.href = " LLLL-CR-CP-50.shtml";
+                $("#loader1").hide();
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                alert("You entered some invalid fields...! Fill the details again...");
+            }
+        });
+        return;
+    });
+</script>
+<!--GET API-->
+<script>
+    $(document).ready(function () {
+        debugger
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var CampaignNo1 = url1.split("=")[1];
+        var index = (CampaignNo1).indexOf('&');
+        var CampaignNo = CampaignNo1.substring(0, index);
+        var cccd = localStorage.getItem('CCAC');
+
+
+
+
+        //var newobjdescription = newobj.Description;
+
+        //alert("hi 1");
+
+
+        // alert(mode);
+        //alert(Id);
+        if (mode == 'edit') {
+            $("#PAGEHEAD").hide();
+            $.ajax({
+                type: 'GET',
+                // url: UrlPowerAPI + 'api/PBXMLCampaign/GetPBXMLCampaignbyID',
+                url: 'https://powerbooks.in/PowerAPI/api/PBXMLCampaign/GetPBXMLCampaignByID',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: cccd,
+                    CampaignNo: CampaignNo
+                },
+                async: false,
+                contentType: 'application/json ; charset = utf-8',
+                success: function (data) {
+                    Objcampaign = data;
+
+                    var startdate = Objcampaign.StartDate;
+                    var expiryDate = Objcampaign.EndDate;
+
+
+                    //var newobjdescription = newobj.Description;
+
+                    //alert("hi 1");
+
+                    Edate = expiryDate.split("T");
+                    Edate = Edate[0];
+                    Edate = Edate.split(/[/,._-]/g);
+                    Edate = Edate[2] + '-' + Edate[1] + '-' + Edate[0];
+
+                    //alert("hi 2");
+
+                    Sdate = startdate.split("T");
+                    Sdate = Sdate[0];
+                    Sdate = Sdate.split(/[/,._-]/g);
+                    Sdate = Sdate[2] + '-' + Sdate[1] + '-' + Sdate[0];
+
+
+
+
+
+
+                    $("#CampaignNameId").val(Objcampaign.CampaignName);
+                    //$("#ShortDescriptionid").val(Objoffer.ShortDescription);
+                    $("#CampaignType").val(Objcampaign.TypeName);
+                    $("#Startdateid").val(Sdate);
+                    $("#ExpiryDateid").val(Edate);
+
+
+
+                    $("#RevenueId").val(Objcampaign.ExpectedRevenue);
+                    $("#ActualId").val(Objcampaign.ExpectedRevenue);
+
+
+
+                    $("#BudgetId").val(Objcampaign.BudgetCost);
+                  
+                    $("#DescId").val(Objcampaign.Description);
+
+                    sessionStorage.setItem('campaignNo', Objcampaign.CampaignNo);
+                },
+            });
+        }
+        $("#Productid1").show();
+        //$("#Updateid").show();
+        //$("#Deleteid").show();
+        $("#deletebtnID").click(function () {
+            var url1 = window.location.href;
+            var CampaignNo1 = url1.split("=")[1];
+            var index = (CampaignNo1).indexOf('&');
+            var CampaignNo = CampaignNo1.substring(0, index);
+            var cccd = localStorage.getItem('CCAC');
+            $.ajax({
+                //url: UrlPowercashAPI + '/api/PCXMLDemand/DeletePCXMLDemand',
+                url: 'https://powerbooks.in/PowerAPI/api/PBXMLCampaign/DELETEPBXMLCampaign',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    CampaignNo: CampaignNo
+                },
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                    //alert(cccd);
+                    // alert(DemandID);
+                },
+                success: function (data, textStatus, xhr) {
+                    //alert("Demand deleted successfully");
+                    window.location.href = " LLLL-CR-CP-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+    });
+</script>
+<!--GET API-->

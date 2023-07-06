@@ -1,0 +1,591 @@
+<div class="row justify-content-center">
+
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="LLLL-IV-RN-50.shtml" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;display:none" id="deletebtnID">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none" onclick="edit_record();" id="updatebtnID">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+            <div class="card-body">
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">No&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="vouchernoID">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Ref&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="RefId">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Partys A/c Name&nbsp;:</label>
+                            <div class="col-lg-6">
+
+                                <span class="input-group-append">
+                                    <select class="form-control" id="accID">
+                                    </select>
+                                    <span class="input-group-text " style="cursor:pointer;"><i class="fas fa-plus "></i></span>
+
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Date&nbsp;:</label>
+                            <div class="input-group col-lg-6">
+                                <span class="input-group-prepend">
+                                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                </span>
+                                <input type="text" class="form-control daterange-single" id="voucherDateID">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Ledger&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="Led_ID">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Vat/Tax Class&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="TaxId">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Current Balance&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="CurrentBalanceID">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Narration&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <textarea id="narrationId" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <hr class="my-3">
+
+                <div class="row" style="border-top: 0px solid black; margin: 0px; height: 50px;">
+                    <div class="col-md-2 offset-md-10" style="padding:3px;">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;display:none" id="donebtnid" onclick="Hide_Item();">Done</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="itembtnid" onclick="Add_item();">Add Item</a>
+
+                    </div>
+                </div>
+
+                <h5 class="text-center" style="background-color: whitesmoke">Item List</h5>
+                <div id="Led_row1" style="display:none">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="form-group row offset-1">
+                                <label class="col-3 col-form-label">Name of item&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="Item_ID">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="form-group row">
+                                <label class="col-3 col-form-label">Group&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Group_ID">
+                                </div>
+                                <div class="col-2 offset-1">
+                                    <input type="button" class="btn btn-sm btn-primary" style="display:none;" value="Update" id="IUpdate_btn">
+                                    <input type="button" class="btn btn-sm btn-primary" style="display:none;" value="Add" id="IAdd_btn">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="form-group row offset-1">
+                                <label class="col-3 col-form-label">Quantity&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Quanity_ID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="form-group row">
+                                <label class="col-3 col-form-label">Rate&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Rate_ID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="form-group row offset-1">
+                                <label class="col-3 col-form-label">Units&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Unit_ID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="form-group row">
+                                <label class="col-3 col-form-label">Amount&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Amount_ID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort">Row No</th>
+                                <th scope="col" class="sort"> Name Of Item</th>
+                                <th scope="col" class="sort"> Quantity</th>
+                                <th scope="col" class="sort">Rate per</th>
+                                <th scope="col" class="sort">Amount</th>
+                                <th scope="col" class="sort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list" id="Item_list">
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="text-right" colspan="2">Total Amount</td>
+                                <td colspan="4"><input class="form-control col-4" type="text" style="border:1px solid #ddd !important;" id="TotalAmountID"></td>
+
+                            </tr>
+
+                        </tfoot>
+                    </table>
+                </div>
+
+                <hr class="my-3">
+                <div class="row" style="border-top: 0px solid black; margin: 0px; height: 50px;">
+                    <div class="col-md-2 offset-md-10" style="padding:3px;">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none" id="donebtnid1" onclick="Hide_Led();">Done</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="ledgeerbtnid1" onclick="Add_Led();">Add ledger</a>
+
+                    </div>
+                </div>
+                <h5 class="text-center" style="background-color: whitesmoke">Ledger List</h5>
+                <div id="Led_row" style="display:none">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="form-group row offset-1">
+                                <label class="col-3 col-form-label">Name of item&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="LItem_ID">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="form-group row">
+                                <label class="col-3 col-form-label">Percentage&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="LGroup_ID">
+                                </div>
+                                <div class="col-2 offset-1">
+                                    <input type="button" class="btn btn-sm btn-primary" style="display:none;" value="Update" id="Update_btn">
+                                    <input type="button" class="btn btn-sm btn-primary" style="display:none;" value="Add" id="LAdd_btn">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="form-group row offset-1">
+                                <label class="col-3 col-form-label">Quantity&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="LQuanity_ID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort">Row No</th>
+                                <th scope="col" class="sort">Ledger Name</th>
+                                <th scope="col" class="sort">Rate </th>
+                                <th scope="col" class="sort">Amount</th>
+                                <th scope="col" class="sort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list" id="Ld_list">
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="text-right" colspan="2">Total Amount</td>
+                                <td colspan="4"><input class="form-control col-4" type="text" style="border:1px solid #ddd !important;" id="LTotalAmountID"></td>
+
+                            </tr>
+
+                        </tfoot>
+                    </table>
+                </div>
+
+                <!--<hr style="color:black; margin-top:0px;" />
+    <div class="row">
+        <div class="col-md-7 offset-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Total Amount: </label>
+                </div>
+                <div class="col-md-4 group-">
+                    <input type="text" id="TotalAmountID">
+                </div>
+                <div class="col-md-4" style="padding-right:0px;padding-Left:0px;">
+                </div>
+
+            </div>
+        </div>
+    </div>-->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        set_MainHeaderName();
+        debugger
+        var url1 = window.location.href;
+        var mode = url1.split("=")[1];
+        var index = (mode).indexOf('&');
+        var trkey = mode.substring(0, index);
+        var cccd = localStorage.getItem('CCCD');
+        $.ajax({
+            async: false,
+            url: URLPowerAPI + '/api/PBXMLInvoice/GetPBXMLInvoice',
+            type: 'GET',
+            dataType: 'json',
+            contentType: 'application/json ; charset = utf-8',
+            data:
+            {
+                cccd: cccd,
+                trkey: trkey
+            },
+            success: function (data, textStatus, xhr,) {
+                localStorage.setItem('helllo', JSON.stringify(data));
+                localStorage.setItem('new1', JSON.stringify(data));
+
+                var Obj = data.LEDGERENTRIESLIST;
+                var Objitem = data.ALLINVENTORYENTRIESLIST;
+                Get_global(data, Obj, Objitem);
+
+                var Objitem = data.ALLINVENTORYENTRIESLIST[0];
+                var acclist = Objitem.ACCOUNTINGALLOCATIONSLIST[0];
+
+                var dataobj = data;
+                $("#vouchernoID").val(dataobj.VOUCHERNUMBER);
+
+                $("#RefId").val(dataobj.REFERENCE);
+
+                var date = dataobj.DATE;
+                var year = date.substring(0, 4);
+                var mon = date.substring(4, 6);
+                var day = date.substring(6, 8);
+                var date1 = day + '-' + mon + '-' + year;
+                $('#voucherDateID').val(date1);
+
+                $("#accID").append($("<option></option>").val(dataobj.VOUCHERNUMBER).html(dataobj.PARTYNAME));
+                $("#Led_ID").append($("<option></option>").val(acclist.ACCSRL).html(acclist.LEDGERNAME));
+
+                var amounttot = 0;
+                var listobj = dataobj.ALLINVENTORYENTRIESLIST;
+                var count = listobj.length;
+                Set_Table(listobj);
+            }
+
+        });
+        $("#savebtnid").hide();
+        $("#updatebtnID").show();
+        $("#deletebtnID").show();
+    });
+
+    function Set_Table() {
+        debugger
+        //alert(JSON.stringify(obj1));
+        var html = '';
+        var Total_amt = ''
+        Objitem1.forEach((item, index) => {
+            Total_amt = Total_amt + item.AMOUNT;
+            html += `<tr>
+                                    <td> ${item.STOCKSRL}</td>
+                                     <td>  ${item.STOCKITEMNAME} </td>
+                                     <td>  ${item.ACTUALQTY} </td>
+                                     <td>  ${item.RATE} </td>
+                                     <td>  ${item.AMOUNT} </td>
+                                    <td>
+                                            <button class="btn btn-sm btn-info" onclick="Edit_item('${item.STOCKITEMNAME}');">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+                            </tr>`;
+        });
+        $('#Item_list').html(html);
+            var table = document.getElementById("Item_list"),
+                sumVal1 = 0;
+            for (var i = 0; i < table.rows.length; i++) {
+                sumVal1 = sumVal1 + parseFloat(table.rows[i].cells[4].innerHTML);
+            }
+        data = sumVal1.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        $('#TotalAmountID').val(data);
+        //    var res = showVariable(data);
+        //function showVariable(val) {
+        //    if (val = null && val = false && val == NaN && val === undefined) {
+        //        $('#TotalAmountID').val("0.00");
+        //    }
+        //    else {
+        //        $('#TotalAmountID').val(val);
+        //    }
+        //}
+        var html = '';
+        Obj1.forEach((item, index) => {
+
+            //if ($('#accID option:selected').text() != item.LEDGERNAME) {
+            html += `<tr>
+                                    <td> ${item.LEDSRL}</td>
+                                     <td> ${item.LEDGERNAME} </td>
+                                      <td>  - </td>
+                                     <td> ${item.AMOUNT} </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-info" onclick="Edit_Led('${item.LEDGERNAME}');">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+                                    </tr>`;
+            //}
+        });
+        $('#Ld_list').html(html);
+        var table1 = document.getElementById("Ld_list"),
+            sumVal = 0;
+        for (var i = 0; i < table1.rows.length; i++) {
+            sumVal1 = sumVal + parseFloat(table.rows[i].cells[3].innerHTML);
+        }
+        data = sumVal1.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        $('#LTotalAmountID').val(data);
+    }
+    var data1;
+    var Obj1;
+    var Objitem1;
+    function Get_global(value, value1, Objitem) {
+        data1 = value;
+        Obj1 = value1;
+        Objitem1 = Objitem;
+    }
+    //var cccd = localStorage.getItem('CCAC');
+    //$.get(URLPowerAPI + '/api/PBXMLInvoice/GetPBXMLInvoice' + "?cccd=" + cccd+"&trkey="+trkey,
+    //    function (data, textStatus, jqXHR) {
+    //        $.each(data, function (index, value) {
+    //            $("#Particular_ID").append($("<option></option>").val(value.ATTDSRL).html(value.NAME));
+    //        });
+    //    });
+    //$.get(URLPowerAPI + '/api/PBXMLVAttendence/GetAllPBXMLVAttendence' + "?cccd=" + cccd,
+    //    function (data, textStatus, jqXHR) {
+    //        $.each(data, function (index, value) {
+    //            $("#AttproID").append($("<option></option>").val(value.AttendanceId).html(value.ATTENDANCETYPE));
+    //        });
+    //    });
+    var val_no;
+    function Edit_item(Value) {
+        debugger
+        $('#Led_row1').css("display", "block");
+        $('#IAdd_btn').css("display", "none");
+        $('#IUpdate_btn').css("display", "block");
+        Objitem1.forEach((item, index) => {
+            if (Value == item.STOCKITEMNAME) {
+                $("#Item_ID").append($("<option selected ></option>").val(item.STOCKSRL).html(item.STOCKITEMNAME));
+                $('#Quanity_ID').val(item.ACTUALQTY.replace(/[^\d.-]/g, ''));
+                $('#Unit_ID').val(item.ACTUALQTY.replace(/[0-9]/g, ''));
+                $('#Rate_ID').val(item.RATE);
+                $('#Amount_ID').val(item.AMOUNT);
+                val_no = item.STOCKSRL;
+            }
+        });
+    }
+    var val_no;
+    function Edit_Led(Value) {
+        debugger
+        $('#Led_row').css("display", "block");
+        $('#Update_btn').css("display", "block");
+        $('#Add_btn').css("display", "none");
+        Obj1.forEach((item, index) => {
+            if (Value == item.LEDGERNAME) {
+                $("#LItem_ID").append($("<option selected ></option>").val(item.STOCKSRL).html(item.LEDGERNAME));
+                //$('#LGroup_ID').val(item.ACTUALQTY);
+                $('#LQuanity_ID').val(item.AMOUNT);
+                val_no = item.LEDGERNAME;
+            }
+        });
+    }
+    function Delete_Led() {
+
+    }
+    //function Add_Att() {
+
+    //}
+    //function getval() {
+    //    var bb = $('#accID option:selected').text();
+    //}
+    function Add_Led() {
+        $('#Led_row').css("display", "block");
+        $('#IAdd_btn').css("display", "block");
+        $('#donebtnid1').css("display", "block");
+        $('#IUpdate_btn').css("display", "none");
+        $('#ledgeerbtnid1').css("display", "none");
+        $('#LAdd_btn').css("display", "block");
+        $("#Particular_ID").val('');
+        $('#Amnt_ID').val('');
+    }
+    function Hide_Led() {
+        var x = document.getElementById("Led_row");
+        var y = document.getElementById("donebtnid1");
+        var z = document.getElementById("ledgeerbtnid1");
+        if (x.style.display === "") {
+            x.style.display = "block";
+        }
+        else {
+            x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "block";
+        }
+    }
+    function Add_item() {
+        $('#Led_row1').css("display", "block");
+        $('#donebtnid').css("display", "block");
+        $('#itembtnid').css("display", "none");
+        $('#Update_btn').css("display", "none");
+        $('#Add_btn').css("display", "block");
+        $("#Particular_ID").val('');
+        $('#Amnt_ID').val('');
+    }
+    function Hide_Item() {
+        var x = document.getElementById("Led_row1");
+        var y = document.getElementById("donebtnid");
+        var z = document.getElementById("itembtnid");
+        if (x.style.display === "") {
+            x.style.display = "block";
+        }
+        else {
+            x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "block";
+        }
+    }
+    $("#IUpdate_btn").click(function () {
+        debugger
+        Value = val_no;
+        Objitem1.forEach((item, index) => {
+            if (Value == item.STOCKSRL) {
+                item.STOCKITEMNAME = $('#Item_ID option:selected').text();
+                item.ACTUALQTY = $('#Quanity_ID').val() +" "+ $('#Unit_ID').val();
+                item.RATE = $('#Rate_ID').val();
+                item.AMOUNT = $('#Amount_ID').val();
+                //item.RATE = $('#Unit_ID').val();
+            }
+        });
+        Set_Table();
+    });
+    $("#Update_btn").click(function () {
+        debugger
+        Value = val_no;
+        Obj1.forEach((item, index) => {
+            if (Value == item.LEDGERNAME) {
+                item.LEDGERNAME = $('#LItem_ID option:selected').text();
+                //item.ACTUALQTY = $('#ActualQtyID').val();
+                item.AMOUNT = $('#LQuanity_ID').val();
+            }
+        });
+        Set_Table();
+    });
+    function edit_record() {
+        debugger
+        data1.VOUCHERNUMBER = $('#vouchernoID').val();
+        data1.PARTYLEDGERNAME = $('#accID option:selected').text();
+        data1.EFFECTIVEDATE = $('#voucherDateID').val();
+        data1.NARRATION = $('#narrationId').val();
+        data1.ALLLEDGERENTRIESLIST = obj1;
+        datas = JSON.stringify(data1);
+        $.ajax({
+
+            url: 'https://www.powerbooks.in/powerapi/api/PBXMLAccounting/EditPBXMLAccounting',
+            type: 'POST',
+            dataType: 'JSON',
+            contentType: 'application/json ; charset = utf-8',
+            data: datas,
+            success: function () {
+                alert('data updated ')
+                window.location.href = 'LLLL-AV-CO-20.shtml';
+
+            }
+        });
+    }
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Finance</span> - Account Voucher - Reciept Note');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Finance</a><span class="breadcrumb-item active">Account Voucher / Reciept Note</span>');
+    };
+</script>

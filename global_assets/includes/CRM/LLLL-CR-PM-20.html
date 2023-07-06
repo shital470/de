@@ -1,0 +1,473 @@
+<!-- Inner content -->
+<!-- my code2 -->
+
+<div class="row justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6">
+                        </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display: none; margin-right: 8px;">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display: none; margin-right: 8px;">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+            <!-- create from -->
+            <!--Form layout-->
+            <div class="card-body">
+                <div class="row">
+                    <!--1st column started-->
+                    <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Code&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="ContactOwnerId">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Description&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="DescriptionID">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Status&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <select class="form-control" id="StatusID">
+                                                <option value="Select" selected>--Select--</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--sidebar code-->
+<script>
+    $(document).ready(function () {
+
+        $('#content').load("Sidebar.html");
+
+    });
+</script>
+
+<!--dropdown list-->
+
+<script type="text/javascript">
+    $(function () {
+        debugger
+        GetParameterType('CAMTYP');
+        GetParameterType('STA');
+        GetParameterType('CT');
+        GetParameterType('IND');
+
+
+    });
+    //create first function for getparameretertypeid
+    function GetParameterType(parametertype) {
+        alert(parametertype);
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+        $.ajax({
+            type: "GET",
+            url: URLPowerAPI +'/api/PBXMLParameter/GetParameterTypeID',
+            dataType: "json",
+            contentType: "application/json",
+            data: {
+                PARTYPE: parametertype,
+                cccd: cccd
+            },
+
+            success: function (res) {
+                alert(JSON.stringify(res));
+                var abc = res;
+                alert(JSON.stringify(abc));
+                alert(parametertype);
+                GetDropDown(abc, parametertype);
+
+            }
+
+        });
+    }
+
+
+    //second function for dropdown
+    function GetDropDown(parameter, parametertype) {
+        debugger
+
+
+        var cccd = localStorage.getItem('CCAC');
+        $.ajax({
+            type: "GET",
+            url: URLPowerAPI +'/api/PBXMLParametercode/GetAllActiveParameterCodes',
+            dataType: "json",
+            contentType: "application/json",
+
+            data: {
+                PARTYPEID: parameter,
+                cccd: cccd
+            },
+
+            success: function (res) {
+
+                $.each(res, function (data, value) {
+                    if (parametertype == 'CAMTYP') {
+                        $("#TypeId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'STA') {
+                        $("#StatusId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'CT') {
+                        $("#LocationId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'IND') {
+                        $("#IndustryId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                })
+            }
+
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+
+        $.ajax
+            ({
+
+                url: URLPowerAPI+'/api/PBXMLVStockGroups/GetAllPBXMLVStockGroup',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd
+
+                },
+
+                success: function (res) {
+
+                    var maxcount = Math.max.apply(Math, res.map(function (o) { return o.Itcd }));
+
+                    localStorage.setItem('MaxItcd', maxcount + 1)
+
+                    //alert("Data inside ajax...!!!")
+                    //alert(JSON.stringify(res));
+                    $.each(res, function (index, value) {
+                        $("#ProductNameId").append($("<option></option>").val(value.Itcd).html(value.STOCKGROUP));
+
+
+
+
+                    });
+                }
+
+            });
+
+    });
+
+
+
+</script>
+
+<!--Add and  edit api-->
+
+<script type="text/javascript">
+    function Groupfunction() {
+        // alert("in function");
+        debugger
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+            var mode = url1.split("=")[2];
+            var AccNo1 = url1.split("=")[1];
+            var index = (AccNo1).indexOf('&');
+            var CampaignNo = AccNo1.substring(0, index);
+
+        }
+        //StartDate: $("#StartDateId").val(),
+        //    EndDate: $("#EnddateId").val(),
+
+        var StartDate1 = $("#StartDateId").val();
+        var StartDate = (StartDate1 + ":" + 0 + 0);
+        var EndDate1 = $("#EnddateId").val();
+        var EndDate = (EndDate1 + ":" + 0 + 0);
+
+        var cccd = localStorage.getItem('CCAC');
+        var TypeName = $("#TypeId option:selected").text();
+        var TypeNo = $("#TypeId option:selected").val();
+        var StockGroupName = $("#ProductNameId option:selected").text();
+        var StockGroupNo = $("#ProductNameId option:selected").val();
+        var StatusName = $("#StatusId option:selected").text();
+        var StatusNo = $("#StatusId option:selected").val();
+        var SkuName = $("#SkuNameId option:selected").text();
+        var SkuNo = $("#SkuNameId option:selected").val();
+        var LocationName = $("#LocationId option:selected").text();
+        var LocationNo = $("#LocationId option:selected").val();
+        var IndustryName = $("#IndustryId option:selected").text();
+        var IndustryNo = $("#IndustryId option:selected").val();
+        var Itcd = localStorage.getItem("MaxItcd");
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+        var status = "A";
+
+
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            CampaignNo = CampaignNo,
+                UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = sessionStorage.getItem('createddate');
+        }
+        else {
+            CampaignNo = localStorage.getItem('MaxCampNo');
+            UId = localStorage.getItem('UID');
+            Username = localStorage.getItem('UName');
+            Createdsystem = 'PowerSuit';
+            Createdate = curndate;
+        }
+
+        var parameter = {
+
+
+            CampaignNo: CampaignNo,
+            CampaignName: $("#CompaignNameId").val(),
+            Itcd: Itcd,
+            TypeName: TypeName,
+            TypeNo: TypeNo,
+            StockGroupName: StockGroupName,
+            StockGroupNo: StockGroupNo,
+            StatusName: StatusName,
+            StockItem: SkuName,
+            SkuNo: SkuNo,
+            StatusNo: StatusNo,
+            LocationName: LocationName,
+            LocationNo: LocationNo,
+            IndustryName: IndustryName,
+            IndustryNo: IndustryNo,
+            StartDate: StartDate,
+            EndDate: EndDate,
+            BudgetCost: $("#BUdgetCostId").val(),
+            Description: $("#DescriptionId").val(),
+            ExpectedResponse: $("#ExpectedResponseId").val(),
+            ExpectedRevenue: $("#ExpectedRevenueId").val(),
+            ActualCost: $("#ActualCostId").val(),
+            CCCD: cccd,
+            CreatedBy: localStorage.getItem('UID'),
+            LastUpdatedBy: localStorage.getItem('UID'),
+            CampaignOwner: localStorage.getItem('UID'),
+            CREATEDDATE: Createdate,
+            LASTUPDATEDDATE: curndate
+        }
+        return parameter
+    }
+    $("#savebtnid").click(function () {
+
+        // alert("ghggg");
+        var addparameter = Groupfunction();
+
+        debugger
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI+'/api/PBXMLCampaign/AddPBXMLCampaign',
+                dataType: 'JSON',
+                data: JSON.stringify(addparameter),
+
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+
+                    alert('Customer registered successfully');
+                    window.location.href = "CrmCampaings.html";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+
+        return;
+
+    });
+
+    $("#updatebtnID").click(function () {
+        debugger
+        var addparameter = Groupfunction();
+
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI+'/api/PBXMLCampaign/EditPBXMLCampaign',
+                dataType: 'JSON',
+                data: JSON.stringify(addparameter),
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+                    alert('Customer registered successfully');
+                    window.location.href = "CrmCampaings.html";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+        return;
+
+    });
+</script>
+
+
+
+<!--GET API-->
+<script>
+    $(document).ready(function () {
+        debugger
+        set_MainHeaderName();
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var Itcd1 = url1.split("=")[1];
+        var index = (Itcd1).indexOf('&');
+        var Itcd = Itcd1.substring(0, index);
+        var cccd = localStorage.getItem('CCAC');
+        // alert(mode);
+        //alert(Id);
+
+        if (mode == 'edit') {
+            $.ajax({
+                type: 'GET',
+                url: URLPowerAPI+'/api/PBXMLCampaign/GetPBXMLCampaignByID',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: cccd,
+                    CampaignNo: Itcd
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                success: function (data) {
+                    ObjCrmCampaingn = data;
+                    alert('ObjCrmCampaingn' + ObjCrmCampaingn);
+
+
+                    alert(JSON.stringify(ObjCrmCampaingn));
+
+                    alert(JSON.stringify(ObjCrmCampaingn.StockGroupName));
+
+                    $('#TypeId option:selected').text(ObjCrmCampaingn.TypeName);
+                    $("#CompaignNameId").val(ObjCrmCampaingn.CampaignName);
+                    $('#ProductNameId option:selected').text(ObjCrmCampaingn.StockGroupName);
+                    $('#StatusId option:selected').text(ObjCrmCampaingn.StatusName);
+                    $('#SkuNameId option:selected').text(ObjCrmCampaingn.StockItem);
+                    $('#LocationId  option:selected').text(ObjCrmCampaingn.LocationName);
+                    $('#IndustryId  option:selected').text(ObjCrmCampaingn.IndustryName);
+                    $("#StartDateId").val(ObjCrmCampaingn.StartDate);
+                    $("#EnddateId").val(ObjCrmCampaingn.EndDate);
+                    $("#ExpectedRevenueId").val(ObjCrmCampaingn.ExpectedRevenue);
+                    $("#ExpectedResponseId").val(ObjCrmCampaingn.ExpectedResponse);
+                    $("#BUdgetCostId").val(ObjCrmCampaingn.BudgetCost);
+                    $("#DescriptionId").val(ObjCrmCampaingn.Description);
+
+                    sessionStorage.setItem('uid', ObjCrmCampaingn.UID);
+                    // alert(ObjCrmCampaingn.UID+"uid");
+                    sessionStorage.setItem('username', ObjCrmCampaingn.USERNAME);
+                    sessionStorage.setItem('createdsystem', ObjCrmCampaingn.CREATEDSYSTEM);
+                    sessionStorage.setItem('createddate', ObjCrmCampaingn.CREATEDDATE);
+                    sessionStorage.setItem('lastupdatedate', ObjCrmCampaingn.LASTUPDATEDDATE);
+
+
+
+
+
+                },
+
+            });
+
+
+        }
+
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+
+
+
+
+        $("#deletebtnID").click(function () {
+            var url1 = window.location.href;
+            var Itcd1 = url1.split("=")[1];
+            var index = (Itcd1).indexOf('&');
+            var Itcd = Itcd1.substring(0, index);
+            var cccd = localStorage.getItem('CCAC');
+
+            $.ajax({
+                url: URLPowerAPI+'/api/PBXMLCampaign/DELETEPBXMLCampaign',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    CampaignNo: Itcd
+
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                success: function (data, textStatus, xhr) {
+                    alert("PBXMLCostcategory deleted successfully");
+                    window.location.href = "CrmCampaings.html";
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">CRM</span> - Parameter');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>CRM</a><span class="breadcrumb-item active">Paramater</span>');
+    };
+</script>
+
+
+
+
+

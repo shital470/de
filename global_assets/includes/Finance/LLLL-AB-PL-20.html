@@ -1,0 +1,239 @@
+﻿
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-xs-2">
+                                                <h4><span class="card-title">Trial Balance</span></h4>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="configbtnid">Configure</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="emailbtnid">Email</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="exportbtnid">Export</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="printbtnid">Print</a>
+                                            </div>
+                                        </div>
+                                        <hr class="my-3">
+
+                                        <!--Form layout-->
+                                        <div class="card-body">
+                                            <div class="collapse show">
+                                                <form action="#">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 ">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label">Form&nbsp;:</label>
+                                                                <div class="input-group col-lg-9">
+                                                                    <span class="input-group-prepend">
+                                                                        <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                                                    </span>
+                                                                    <input type="text" class="form-control daterange-single" id="myTextarea">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label">To&nbsp;:</label>
+                                                                <div class="input-group col-lg-9">
+                                                                    <span class="input-group-prepend">
+                                                                        <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                                                    </span>
+                                                                    <input type="text" class="form-control daterange-single" id="myTextarea1">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="detailbtnid">Detailed</a>
+                                                            <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="searchbtnid">Search</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="table-responsive">
+                                                                <table class="table align-items-center">
+                                                                    <thead class="thead-light">
+                                                                        <tr>
+                                                                            <th scope="col" class="sort"> Particulars</th>
+                                                                            <th scope="col" class="sort">Opening Balance</th>
+                                                                        </tr>
+
+                                                                    </thead>
+                                                                    <tbody class="list" id="Profitloss">
+                                                                    </tbody>
+                                                                </table>
+
+                                                            </div>
+                                                            <hr style="margin:4px;" />
+                                                            <div class="row" id="ProfitlossTblRowId1" style="">
+                                                                <div class="col-md-5 DivCls" style="">Gross Profit c/o:</div>
+                                                                <div class="col-md-5 DivCls" style=""></div>
+                                                                <div class="col-md-2 DivCls" style=""></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="table-responsive">
+                                                                <table class="table align-items-center">
+                                                                    <thead class="thead-light">
+                                                                        <tr>
+                                                                            <th scope="col" class="sort"> Particulars</th>
+                                                                            <th scope="col" class="sort">Opening Balance</th>
+                                                                        </tr>
+
+                                                                    </thead>
+                                                                    <tbody class="list" id="exam1">
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <hr style="margin:4px;" />
+                                                            <div class="row" id="ProfitlossTblRowId1" style="">
+                                                                <div class="DivCls" style="">Gross Profit c/o:</div>
+                                                                <div class="DivCls" style=""></div>
+                                                                <div class="DivCls" style=""></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr style="border: 1px solid #687ae6;" />
+                                                    <div class="row" style="margin:0px;">
+                                                        <div class="col-md-3" style="padding: 0px 5px 5px 10px;">
+                                                            Total &nbsp;:
+                                                        </div>
+                                                        <div class="col-md-2 offset-1" style="border: 1px solid #94c1e8; margin-bottom:5px;" id="optotalid">
+                                                            <p></p>
+                                                        </div>
+                                                        <div class="col-md-3" style="padding: 0px 5px 5px 10px;">
+                                                            Total &nbsp;:
+                                                        </div>
+                                                        <div class="col-md-2 offset-1" style="border: 1px solid #94c1e8; margin-bottom:5px;" id="clstotalid">
+                                                            <p></p>
+                                                        </div>
+                                                    </div><hr style="border:1px solid #abc3d7" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /content area -->
+            <!-- /page content -->
+            <script>
+                function abs(amount) {
+
+
+                    var amount1;
+                    if (amount < 0) {
+                        amount1 = amount * -1;
+                    }
+                    else {
+                        amount1 = amount;
+                    }
+                    return amount1;
+
+                };</script>
+            <script>
+                /*search date function*/
+                function functnfrom() {
+                    var fromdate = document.getElementById("myTextarea").value;
+                    var fdate = fromdate.replace(/[-,-]/g, "");
+                    return fdate
+                };
+
+                function functnto() {
+                    var todate = document.getElementById("myTextarea1").value;
+                    var tdate = todate.replace(/[-,-]/g, "");
+                    return tdate
+                };
+            </script>
+
+            <!--local stroge date function-->
+            <script type="text/javascript">
+
+                function getallfunction() {
+                    debugger
+                    const from = document.getElementById("myTextarea").value;
+                    const to = document.getElementById("myTextarea1").value;
+                    var urlfrom1 = localStorage.getItem('Fromdate');
+                    var urlto1 = localStorage.getItem('Todate');
+                    var urlfrom;
+                    var urlto;
+                    if (from == "" && to == "") {
+                        $('#myTextarea').val(urlfrom1);
+                        $('#myTextarea1').val(urlto1)
+                        urlfrom = functnfrom();
+                        urlto = functnto();
+                    }
+                    else {
+                        urlfrom = functnfrom();
+                        urlto = functnto();
+                    }
+
+
+
+                    debugger
+
+                    var cccd = localStorage.getItem('CCCD');
+
+
+
+                    $.ajax({
+                        async: false,
+                        url: URLPowerAPI+'/api/PBXMLVProfitandLoss/GetAllProfitAndLossView',
+                        type: 'GET',
+                        dataType: 'json',
+                        contentType: 'application/json ; charset = utf-8',
+                        //data: JSON.stringify(groupname),
+                        data:
+                        {
+                            cccd: cccd,
+                            from: urlfrom,
+                            to: urlto,
+                            sessid: "shital"
+                        },
+
+                        success: function (data, textStatus, xhr) {
+                            alert(JSON.stringify(data));
+
+                            var strResult;
+                            var strResult1;
+                            var OpTotal = 0;
+                            var ClsTotal = 0;
+
+
+                            $.each(data, function (index, group) {
+                                strResult += "<tr scope='row'><th><a href=PLSubGroupToAccLedgerView.html?&from=" + urlfrom + "&to=" + urlto + "> " + group.ExpenseParticulars + "</a></th><td>"
+                                    + parseFloat(abs(group.ExpenseAmt)).toFixed(2); + "</td></tr>";
+
+
+                            });
+                            $("#Profitloss").html(strResult);
+
+                            $.each(data, function (index, group) {
+                                strResult1 += "<tr scope='row'><th><a href=TrialBalSubGrp.html?& from=" + urlfrom + " & to=" + urlto + "> " + group.IncomeParticulars + "</a></th><td>"
+                                    + parseFloat(abs(group.IncomeAmt)).toFixed(2) + "</td></tr>";
+
+                                OpTotal = OpTotal + group.ExpenseAmt;
+                                ClsTotal = ClsTotal + group.IncomeAmt;
+                            });
+                            $("#exam1").html(strResult1);
+                            OpTotal = OpTotal.toFixed(2);
+                            $("#optotalid").html(OpTotal);
+                            ClsTotal = ClsTotal.toFixed(2);
+                            $("#clstotalid").html(ClsTotal);
+                        }
+
+                    });
+                }
+            </script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    getallfunction();
+
+
+                });
+            </script>
+
+
+

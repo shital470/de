@@ -1,0 +1,1242 @@
+
+<div class="row justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="margin-right: 8px; display: none;">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="margin-right: 8px; display: none; ">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+            <div class="card-body">
+                <div class="row">
+                    <!--1st column started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Name&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="StockItetmNameId">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Remark&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="RemarkId">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Under&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <select class="form-control" id="UnderValueId">
+                                            <option value="Select" selected>--Select--</option>
+                                            <option value="Select" selected>--PRIMARY--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <h5 class="offset-1" style="background-color: whitesmoke; margin-right:45px">Behaviour</h5>
+                                <!--<div class="col-lg-12">
+                                    <h3 class="mb-0">Behaviour</h3>
+                                    <hr class="my-2">
+                                </div>-->
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Unit&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <select class="form-control" id="StockItemUnitId">
+                                            <option value="Select" selected>--Select--</option>
+                                            <option value="Select" selected>NOS</option>
+                                            <option value="Select" selected>Simple</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Market Valuation Method&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <select class="form-control" id="ValueationMethodId">
+                                            <option value="Select">--Select--</option>
+                                            <option value="1">at Zero Price</option>
+                                            <option value="2">avg. price</option>
+                                            <option value="3">last sale price</option>
+                                            <option value="4">std. price</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Maintain In Batches&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="MaintainId" id="YesMaintainId">
+                                            <label class="custom-control-label" for="YesMaintainId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="MaintainId" id="NoMaintainId" checked>
+                                            <label class="custom-control-label" for="NoMaintainId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Use Expiry Dates&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="UseExpiryDatesId" id="YesUseExpiryDatesId">
+                                            <label class="custom-control-label" for="YesUseExpiryDatesId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="UseExpiryDatesId" id="NoUseExpiryDatesId">
+                                            <label class="custom-control-label" for="NoUseExpiryDatesId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Track Date Of Mfg&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="TrackDateId" id="YesTrackDateId">
+                                            <label class="custom-control-label" for="YesTrackDateId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="TrackDateId" id="NoTrackDateId">
+                                            <label class="custom-control-label" for="NoTrackDateId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Set Components(BOM)&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="SetComponentsId" id="YesSetComponentsId" data-toggle="modal" data-target="#BOM_Modal">
+                                            <label class="custom-control-label" for="YesSetComponentsId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="SetComponentsId" id="NoSetComponentsId" checked>
+                                            <label class="custom-control-label" for="NoSetComponentsId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Set/Alter Satutary Details&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="SatutaryDetailId" id="YesSatutaryDetailId" data-toggle="modal" data-target="#SetAlterStatutary_Model">
+                                            <label class="custom-control-label" for="YesSatutaryDetailId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="SatutaryDetailId" id="NoSatutaryDetailId" checked>
+                                            <label class="custom-control-label" for="NOSatutaryDetailId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--2nd column started-->
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Description&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="DescriptionId">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Set/Modify Default Ledgers for Invoicing &nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="QuantitiesId" id="YesQuantitiesId" data-toggle="modal" data-target="#InvoicingModal">
+                                            <label class="custom-control-label" for="YesQuantitiesId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="QuantitiesId" id="NoQuantitiesId" checked>
+                                            <label class="custom-control-label" for="NoQuantitiesId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Category&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <select class="form-control" id="CategoryId">
+                                            <option value="1">--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Costing Method&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <select class="form-control" id="CostingMethodId">
+                                            <option value="1">--Select--</option>
+                                            <option value="2">At Zero Cost</option>
+                                            <option value="3"> Avg. Cost</option>
+                                            <option value="4"> FIFO Perpetual</option>
+                                            <option value="5"> Last Purchase  Cost</option>
+                                            <option value="6"> LIFO Annual</option>
+                                            <option value="7"> LIFO Perpetual</option>
+                                            <option value="8"> Monthly Avg. Cost</option>
+                                            <option value="9"> FIFO</option>
+                                            <option value="10"> Std. Cost</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Ignore Diff. due to Physical Counting&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="PhysicalCountingId" id="YesPhysicalCountingId">
+                                            <label class="custom-control-label" for="YesPhysicalCountingId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="PhysicalCountingId" id="NoPhysicalCountingId" checked>
+                                            <label class="custom-control-label" for="NoPhysicalCountingId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Ignore Negative Balances&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="IgnoreNegativeBalancesId" id="YesIgnoreNegativeBalancesId">
+                                            <label class="custom-control-label" for="YesIgnoreNegativeBalancesId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="IgnoreNegativeBalancesId" id="NoIgnoreNegativeBalancesId" checked>
+                                            <label class="custom-control-label" for="NoIgnoreNegativeBalancesId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Treat all Sales as New Manufacture&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="ManufactureId" id="YesManufactureId">
+                                            <label class="custom-control-label" for="YesManufactureId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="ManufactureId" id="NoManufactureId" checked>
+                                            <label class="custom-control-label" for="NoManufactureId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Treat all Purchases as Consumed&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="PurchasesId" id="YesPurchasesId">
+                                            <label class="custom-control-label" for="YesPurchasesId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="PurchasesId" id="NoPurchasesId" checked>
+                                            <label class="custom-control-label" for="NoPurchasesId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Treat all Rejection Inward as Scrap&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="RejectionInwardId" id="YesRejectionInwardId">
+                                            <label class="custom-control-label" for="YesRejectionInwardId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="RejectionInwardId" id="NoRejectionInwardId" checked>
+                                            <label class="custom-control-label" for="NoRejectionInwardId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--pop model-->
+<!--Set/Modify Default Ledgers for Invoicing model-->
+
+
+<div id="InvoicingModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert center" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-lg-6 col-form-label">Name Of Item &nbsp;:</label>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-lg-12 col-form-label">Default Accounting Allocation For sales Invoice &nbsp;:</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Ledger Name :</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Set/Alter Tax Class</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+
+                                        <option value="1">Yes</option>
+                                        <option value="2">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> PerCentage% &nbsp; :</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="statutorydetailsID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Rounding Limit &nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="statutorydetailsID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Rounding Method  :</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>Not Applicable</option>
+                                        <option value="2">Downward Rounding</option>
+                                        <option value="3">Normal  Rounding</option>
+                                        <option value="4">Upward Rounding</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row" style="margin-bottom:10px;">
+                        <div class="col-md-5 offset-5">
+                            <button id="PopupAddBtnId1">ADD</button>
+                            <button id="PopupAddBtnId2">Cancle</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12" style="padding-right: 0px;padding-left: 0px;">
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-flush">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col" class="sort" data-sort="name" style="padding-right: 0px;padding-left: 0px;">Ledger Name</th>
+                                            <th scope="col" class="sort" data-sort="budget" style="padding-right: 0px;padding-left: 0px;">Set/Alter Tax Class</th>
+                                            <th scope="col" class="sort" data-sort="status" style="padding-right: 0px;padding-left: 0px;">PerCentage %</th>
+                                            <th scope="col" style="padding-right: 0px;padding-left: 0px;">Rounding Method</th>
+                                            <th scope="col" class="sort" data-sort="completion" style="padding-right: 0px;padding-left: 0px;">Rounding Limit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="list" id="tableid">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label class="col-lg-12 col-form-label">Default Accounting Allocation For Purchase Invoice&nbsp;:</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Ledger Name :</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Set/Alter Tax Class</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+
+                                        <option value="1">Yes</option>
+                                        <option value="2">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> PerCentage% &nbsp; :</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="statutorydetailsID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Rounding Limit &nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="statutorydetailsID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Rounding Method  :</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>Not Applicable</option>
+                                        <option value="2">Downward Rounding</option>
+                                        <option value="3">Normal  Rounding</option>
+                                        <option value="4">Upward Rounding</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row" style="margin-bottom:10px;">
+                        <div class="col-md-5 offset-5">
+                            <button id="PopupAddBtnId1">ADD</button>
+                            <button id="PopupAddBtnId2">Cancle</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12" style="padding-right: 0px;padding-left: 0px;">
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-flush">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col" class="sort" data-sort="name" style="padding-right: 0px;padding-left: 0px;">Ledger Name</th>
+                                            <th scope="col" class="sort" data-sort="budget" style="padding-right: 0px;padding-left: 0px;">Set/Alter Tax Class</th>
+                                            <th scope="col" class="sort" data-sort="status" style="padding-right: 0px;padding-left: 0px;">PerCentage %</th>
+                                            <th scope="col" style="padding-right: 0px;padding-left: 0px;">Rounding Method</th>
+                                            <th scope="col" class="sort" data-sort="completion" style="padding-right: 0px;padding-left: 0px;">Rounding Limit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="list" id="tableid">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--BOM model-->
+<div id="BOM_Modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-form-label col-lg-12" style="text-align:center">BOM LIst Of:</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Name Of BOM&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="statutorydetailsID">
+                                </div>
+
+                            </div>
+                            <div class="row" style="margin-bottom:10px;">
+                                <div class="col-md-5 offset-5">
+                                    <button id="PopupAddBtnId1">ADD</button>
+                                    <button id="PopupAddBtnId2">Cancle</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12" style="padding-right: 0px;padding-left: 0px;">
+                                    <div class="table-responsive">
+                                        <table class="table align-items-center table-flush">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th scope="col" class="sort" data-sort="name" style="padding-right: 0px;padding-left: 0px;">BOM Item No</th>
+                                                    <th scope="col" class="sort" data-sort="budget" style="padding-right: 0px;padding-left: 0px;">Name Of Item</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody class="list" id="tableid">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Set Alter Statutary model-->
+<div id="SetAlterStatutary_Model" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert center" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-lg-6 col-form-label">Statutory Details for</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="statutorydetailsID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span><u>GST</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is GST Applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>--Select--</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span><u>Service Tax</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is Service tax applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>--Select--</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Set / Alter GST Details</label>
+                                <div class="col-lg-6">
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="GSTDectaID" id="YesGSTDectaID">
+                                        <label class="custom-control-label" for="YesGSTDectaID">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="GSTDectaID" id="NoGSTDectaID">
+                                        <label class="custom-control-label" for="NoGSTDectaID">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Nature of Goods</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>--Select--</option>
+                                        <option value="2">Goods</option>
+                                        <option value="2">Service</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Type of Supply</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>--Select--</option>
+                                        <option value="2">Goods</option>
+                                        <option value="2">Service</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is TCS Deductable</label>
+                                <div class="col-lg-6">
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="TCSDectaID" id="YesTCSDectaID">
+                                        <label class="custom-control-label" for="YesTCSDectaID">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="TCSDectaID" id="NoTCSDectaID">
+                                        <label class="custom-control-label" for="NoTCSDectaID">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr style="margin-top: 10px; margin-bottom: 10px;">
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span><u>Excies</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is Excise Applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span><u>VAT</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is VAT/CST applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>--Select--</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Set / Alter Excise Details</label>
+                                <div class="col-lg-6">
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="ExciseDectaID" id="YesExciseDectaID">
+                                        <label class="custom-control-label" for="YesExciseDectaID">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="ExciseDectaID" id="NoExciseDectaID">
+                                        <label class="custom-control-label" for="NoExciseDectaID">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Set / Alter Service VAT Details</label>
+                                <div class="col-lg-6">
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="VATDectaID" id="YesVATDectaID">
+                                        <label class="custom-control-label" for="YesVATDectaID">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="VATDectaID" id="NoVATDectaID">
+                                        <label class="custom-control-label" for="NoVATDectaID">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Type Of Stock Item</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>--Select--</option>
+                                        <option value="2">Capital Goods</option>
+                                        <option value="3">Finished Goods</option>
+                                        <option value="4">Other Inputs</option>
+                                        <option value="5">Principal Inputs</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+
+                        <lable class="col-lg-2 offset-5" style="text-align:center;">
+                            Unit
+                        </lable>
+                        <lable class="col-lg-2 " style="text-align:center;">
+                            Unit
+                        </lable>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label">Conversion Factor</label>
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control" id="" value="0">
+                                </div>
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control" id="" value="0">
+                                </div>=
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control" id="" value="0">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <input type="text" class="form-control" id="" value="0">
+                        </div>
+                    </div>
+                        <hr style="margin-top: 10px; margin-bottom: 10px;">
+
+                    </div>
+                </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--dropdown list-->
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCCD');
+
+        $.ajax({
+            type: "GET",
+            url: URLPowerAPI + "/api/PBXMLVStockGroups/GetAllPBXMLVStockGroup",
+            dataType: "json",
+            contentType: 'application/json ; charset = utf-8',
+            data:
+            {
+                cccd: cccd
+            },
+            beforeSend: function () {
+                $("#loader1").show();
+            },
+            success: function (res) {
+                $("#loader1").hide();
+                $.each(res, function (data, value) {
+                    $("#UnderId").append($("<option></option>").val(value.Itcd).html(value.STOCKGROUP));
+
+
+                })
+            }
+
+        });
+
+    });
+
+</script>
+
+
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCCD');
+
+        $.ajax({
+            type: "GET",
+            url: URLPowerAPI + "/api/PBXMLVStockCategorys/GetAllPBXMLVStockCategories",
+            dataType: "json",
+            contentType: 'application/json ; charset = utf-8',
+            data:
+            {
+                cccd: cccd
+            },
+            beforeSend: function () {
+                $("#loader1").show();
+            },
+            success: function (res) {
+                $("#loader1").hide();
+                $.each(res, function (data, value) {
+
+                    $("#CategoryId").append($("<option></option>").val(value.StockCatNo).html(value.STOCKCATEGORY));
+
+
+                })
+            }
+
+        });
+
+    });
+
+</script>
+
+
+<script type="text/javascript">
+    $(function () {
+        debugger
+        cccd = localStorage.getItem('CCCD');
+
+        $.ajax({
+            type: "GET",
+            url: URLPowerAPI + "/api/PBXMLVUnit/GetAllPBXMLVUnit",
+            dataType: "json",
+            contentType: "application/json",
+            data: {
+                cccd: cccd
+            },
+            beforeSend: function () {
+                $("#loader1").show();
+            },
+            success: function (res) {
+                $("#loader1").hide();
+                $.each(res, function (data, value) {
+                    $("#StockItemUnitId").append($("<option></option>").val(value.SrlNo).html(value.UNIT));
+
+
+                })
+            }
+
+        });
+
+    });
+
+</script>
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+
+        $.ajax({
+            type: "GET",
+            url: URLPowerAPI + "/api/PBXMLVStockGroups/GetAllPBXMLVStockGroup",
+            dataType: "json",
+            contentType: 'application/json ; charset = utf-8',
+            data:
+            {
+                cccd: cccd
+            },
+            beforeSend: function () {
+                $("#loader1").show();
+            },
+            success: function (res) {
+                $("#loader1").hide();
+                $.each(res, function (data, value) {
+                    $("#UnderValueId").append($("<option></option>").val(value.Itcd).html(value.STOCKGROUP));
+
+
+                })
+            }
+
+        });
+
+    });
+
+</script>
+<!--sidebar code-->
+<!--for add button-->
+<script>
+    function Stockitmfunction() {
+        debugger
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+            var mode = url1.split("=")[2];
+            var itcd1 = url1.split("=")[1];
+            var index = (itcd1).indexOf('&');
+            var Itcd = itcd1.substring(0, index);
+
+        }
+
+        var cccd = localStorage.getItem('CCAC');
+        var Unit = $("#UnderValueId option:selected").text();
+        var category = $("#CategoryId option:selected").text();
+        var MarketValMethod = $("#StockItemUnitId option:selected").text();
+        var CostingMethod = $('#CostingMethodId option:selected').text();
+        var ValueationMethod = $('#ValueationMethodId option:selected').text();
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+        var status = "A";
+
+        if ($("#YesPhysicalCountingId").prop("checked")) {
+            var YesPhysicalCounting = "Yes"
+        }
+        else {
+            var YesPhysicalCounting = "No"
+        }
+        if ($("#YesIgnoreNegativeBalancesId").prop("checked")) {
+            var YesIgnoreNegativeBalances = "Yes"
+        }
+        else {
+            var YesIgnoreNegativeBalances = "No"
+        }
+
+
+        if ($("#YesManufactureId").prop("checked")) {
+            var YesManufacture = "Yes"
+        }
+        else {
+            var YesManufacture = "No"
+        }
+        if ($("#YesPurchasesId").prop("checked")) {
+            var YesPurchases = "Yes"
+        }
+        else {
+            var YesPurchases = "No"
+        }
+        if ($("#YesRejectionInwardId").prop("checked")) {
+            var YesRejectionInward = "Yes"
+        }
+        else {
+            var YesRejectionInward = "No"
+        }
+
+        if ($("#YesTrackDateId").prop("checked")) {
+            var YesTrackDate = "Yes"
+        }
+        else {
+            var YesTrackDate = "No"
+        }
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            Itcd = Itcd,
+                UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = sessionStorage.getItem('createddate');
+        }
+        else {
+            Itcd = localStorage.getItem('MaxItcdNo');
+            UId = localStorage.getItem('UID');
+            Username = localStorage.getItem('UName');
+            Createdsystem = 'PowerSuit';
+            Createdate = curndate;
+        }
+
+
+        var parameter = {
+            Itcd: Itcd,
+            STOCKITEM: $("#StockItetmNameId").val(),
+            DESCRIPTION: $("#DescriptionId").val(),
+            NAME: $("#StockItetmNameId").val(),
+            PARENT: Unit,
+            NARRATION: $("#DescriptionId").val(),
+            CATEGORY: category,
+            BASEUNITS: MarketValMethod,
+            VATBASEUNIT: MarketValMethod,
+            COSTINGMETHOD: CostingMethod,
+            VALUATIONMETHOD: ValueationMethod,
+            GUID: "",
+            ADDITIONALUNITS: "",
+            EXCISEITEMCLASSIFICATION: "",
+            ISCOSTCENTRESON: "",
+            ISENTRYTAXAPPLICABLE: "No",
+            ISCOSTTRACKINGON: "No",
+            ISUPDATINGTARGETID: "No",
+            ISRATEINCLUSIVEVAT: "no",
+            IGNOREPHYSICALDIFFERENCE: YesPhysicalCounting,
+            IGNORENEGATIVESTOCK: YesIgnoreNegativeBalances,
+            TREATSALESASMANUFACTURED: YesManufacture,
+            TREATPURCHASESASCONSUMED: YesPurchases,
+            TREATREJECTSASSCRAP: YesRejectionInward,
+            RBChMfgDtY: YesTrackDate,
+            ALLOWUSEOFEXPIREDITEMS: "",
+            IGNOREBATCHES: "No",
+            IGNOREGODOWNS: "No",
+            CALCONMRP: "No",
+            EXCLUDEJRNLFORVALUATION: "No",
+            ISMRPINCLOFTAX: "No",
+            ISADDLTAXEXEMPT: "No",
+            ISSUPPLEMENTRYDUTYON: "No",
+            GVATISEXCISEAPPL: "No",
+            REORDERASHIGHER: "No",
+            MINORDERASHIGHER: "No",
+            ISEXCISECALCULATEONMRP: "No",
+            INCLUSIVETAX: "No",
+            GSTCALCSLABONMRP: "No",
+            MODIFYMRPRATE: "No",
+            ALTERID: UId,
+            ASORIGINAL: "Yes",
+            DENOMINATOR: "1",
+            RATEOFVAT: "0",
+            VATTRAILNO: "1",
+            VATACTUALRATIO: "1",
+            OPENINGBALANCE: "0",
+            OPENINGVALUE: "0",
+            OPENINGRATE: "0",
+            CCCD: cccd,
+            STATUS: status,
+            CREATEDSYSTEM: Createdsystem,
+            LASTUPDATEDSYSTEM: 'PowerSuit',
+            UID: UId,
+            USERNAME: Username,
+            LUID: UId,
+            LUSERNAME: localStorage.getItem('UName'),
+            CREATEDDATE: Createdate,
+            LASTUPDATEDDATE: curndate,
+            SFID: "1",
+            SFXMLVAR:"SFXMLVAR"
+        }
+        return parameter
+    }
+    $("#savebtnid").click(function () {
+
+        //alert("save");
+        var addgroupparameter = Stockitmfunction();
+        localStorage.setItem('stockitem', JSON.stringify(addgroupparameter))
+        // alert(addcostcatparameter + "json");
+        debugger
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLStockItem/AddPBXMLStockItems',
+                dataType: 'JSON',
+                data: JSON.stringify(addgroupparameter),
+
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data, textStatus, xhr) {
+
+                    alert(' Registered successfully');
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MI-SI-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+
+        return;
+
+    });
+
+    $("#updatebtnID").click(function () {
+        //alert("update");
+        debugger
+        var addgroupparameter = Stockitmfunction();
+        localStorage.setItem('EditCrmstockitem', JSON.stringify(addgroupparameter));
+
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLStockItem/EditPBXMLStockItems',
+                dataType: 'JSON',
+                data: JSON.stringify(addgroupparameter),
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+                    alert(' Updated successfully');
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MI-SI-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+        return;
+
+    });
+</script>
+<!--GET API-->
+<script>
+    $(document).ready(function () {
+        debugger
+        set_MainHeaderName();
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var Id1 = url1.split("=")[1];
+        var index = (Id1).indexOf('&');
+        var Id = Id1.substring(0, index);
+        var cccd = localStorage.getItem('CCAC');
+        //alert(mode);
+        // alert(Id);
+
+        if (mode == 'edit') {
+            $.ajax({
+                type: 'GET',
+                url: URLPowerAPI + '/api/PBXMLStockItem/GetPBXMLStockItemsById',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: cccd,
+                    Itcd: Id
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+
+                success: function (data) {
+                    localStorage.setItem("getCrmstockitem", JSON.stringify(data));
+                    $("#loader1").hide();
+                    // data = JSON.stringify(data);
+                    // alert(data);
+                    data = data;
+
+                    //    var MarketValMethod = $("#StockItemUnitId option:selected").text();
+
+
+                    $("#StockItetmNameId").val(data.NAME);
+                    //alert(data.NAME + "name");
+                    $("#DescriptionId").val(data.DESCRIPTION);
+                    $("#RemarkId").val(data.NAME);
+
+                    $('#UnderValueId option:selected').text(data.PARENT);
+                    $('#CategoryId option:selected').text(data.CATEGORY);
+                    $('#StockItemUnitId option:selected').text(data.BASEUNITS);
+                    $('#CostingMethodId option:selected').text(data.COSTINGMETHOD);
+                    $('#ValueationMethodId option:selected').text(data.VALUATIONMETHOD);
+
+
+
+                    sessionStorage.setItem('uid', data.UID);
+                    // alert(data.UID + "uid");
+                    sessionStorage.setItem('username', data.USERNAME);
+                    sessionStorage.setItem('createdsystem', data.CREATEDSYSTEM);
+                    sessionStorage.setItem('createddate', data.CREATEDDATE);
+                    sessionStorage.setItem('lastupdatedate', data.LASTUPDATEDDATE);
+
+
+
+
+
+
+                },
+
+            });
+
+
+        }
+
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+        $("#savebtnid").hide();
+
+
+
+
+        $("#deletebtnID").click(function () {
+            debugger
+            var url1 = window.location.href;
+            var mode = url1.split("=")[2];
+            var Id1 = url1.split("=")[1];
+            var index = (Id1).indexOf('&');
+            var Id = Id1.substring(0, index);
+            var cccd = localStorage.getItem('CCAC');
+
+            $.ajax({
+                url: URLPowerAPI + '/api/PBXMLStockItem/DeletePBXMLStockItems',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    itcd: Id
+
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data, textStatus, xhr) {
+
+                    alert(" Deleted successfully");
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MI-SI-50.shtml";
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+    });
+
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Inventory Info - Stock Item');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Inventory Info / Stock Item</span>');
+    };
+</script>
+

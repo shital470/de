@@ -1,0 +1,116 @@
+{
+	"PBXMLAccounting": {
+		"cccd": "ANUWAGLE2021",
+		"DATE": "20210402",
+		"NARRATION": "",
+		"REFERENCE": "",
+		"PRICELEVEL": "",
+		"PARTYNAME": "",
+		"PARTYLEDGERNAME": "Mr. Y",
+		"BASICBASEPARTYNAME": "",
+		"VOUCHERTYPENAME": "Receipt",
+		"VOUCHERNUMBER": "1",
+		"VOUCHERKEY": "190211216637968",
+		"CREATEDSYSTEM": "TALLY",
+		"LASTUPDATEDSYSTEM": "TALLY",
+		"UID": "292",
+		"USERNAME": "Anuj Wagle",
+		"LUID": "292",
+		"LUSERNAME": "Anuj Wagle",
+		"CREATEDDATE": "2021-07-16T15:51:07.943",
+		"LASTUPDATEDDATE": "2021-07-16T15:51:07.943",
+		"FBTPAYMENTTYPE": "Default",
+		"PERSISTEDVIEW": "Accounting Voucher View",
+		"BASICBUYERNAME": "",
+		"BASICBUYERSSALESTAXNO": "",
+		"BASICDUEDATEOFPYMT": "",
+		"BASICDATETIMEOFREMOVAL": "",
+		"EFFECTIVEDATE": "20210402",
+		"CSTFORMRECVTYPE": "",
+		"CSTFORMISSUETYPE": "",
+		"CONSIGNEECSTNUMBER": "",
+		"BUYERSCSTNUMBER": "",
+		"BASICSHIPPEDBY": "",
+		"ATTENDANCEENTRIESLIST": {
+			"ATTDSRL": "1",
+			"NAME": "",
+			"ATTENDANCETYPE": "",
+			"ATTDTYPETIMEVALUE": "",
+			"ATTDTYPEVALUE": ""
+		},
+		"ALLLEDGERENTRIESLIST": [
+			{
+				"LEDSRL": "1",
+				"LEDGERNAME": "Mr. Y",
+				"AMOUNT": "20000.00",
+				"BILLALLOCATIONSLIST": {
+					"BILLALLOCSRL": "1",
+					"NAME": "1",
+					"BILLTYPE": "Advance",
+					"TDSDEDUCTEEISSPECIALRATE": "No",
+					"AMOUNT": "20000.00"
+				},
+				"BANKALLOCATIONSLIST": {
+					"BANKALLOCSRL": "1",
+					"BANKDATE": "",
+					"INSTRUMENTDATE": "",
+					"TRANSACTIONTYPE": "",
+					"IFSCODE": "",
+					"BANKNAME": "",
+					"ACCOUNTNUMBER": "",
+					"BANKERSDATE": "",
+					"PAYMENTFAVOURING": "",
+					"TRANSFERMODE": "",
+					"INSTRUMENTNUMBER": "",
+					"CHEQUEPRINTED": "",
+					"AMOUNT": ""
+				},
+				"TAXOBJECTALLOCATIONSLIST": {
+					"TAXSRL": "1",
+					"CATEGORY": "",
+					"TAXTYPE": "",
+					"TAXNAME": "",
+					"PARTYLEDGER": "",
+					"NATUREOFSERVICE": "",
+					"REFTYPE": ""
+				}
+			},
+			{
+				"LEDSRL": "2",
+				"LEDGERNAME": "HDFC Bank",
+				"AMOUNT": "-20000.00",
+				"BILLALLOCATIONSLIST": {
+					"BILLALLOCSRL": "1",
+					"NAME": "",
+					"BILLTYPE": "",
+					"TDSDEDUCTEEISSPECIALRATE": "",
+					"AMOUNT": ""
+				},
+				"BANKALLOCATIONSLIST": {
+					"BANKALLOCSRL": "1",
+					"BANKDATE": "",
+					"INSTRUMENTDATE": "20210402",
+					"TRANSACTIONTYPE": "Cheque/DD",
+					"IFSCODE": "",
+					"BANKNAME": "",
+					"ACCOUNTNUMBER": "",
+					"BANKERSDATE": "",
+					"PAYMENTFAVOURING": "Mr. Y",
+					"TRANSFERMODE": "",
+					"INSTRUMENTNUMBER": "",
+					"CHEQUEPRINTED": "1",
+					"AMOUNT": "-20000.00"
+				},
+				"TAXOBJECTALLOCATIONSLIST": {
+					"TAXSRL": "1",
+					"CATEGORY": "",
+					"TAXTYPE": "",
+					"TAXNAME": "",
+					"PARTYLEDGER": "",
+					"NATUREOFSERVICE": "",
+					"REFTYPE": ""
+				}
+			}
+		]
+	}
+}

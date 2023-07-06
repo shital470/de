@@ -1,0 +1,696 @@
+<div class="row justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display: none; margin-right: 8px;">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display: none; margin-right: 8px;">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+            <div class="card-body">
+                <div class="row">
+                    <!--1st column started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Category&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <select class="form-control " id="EmployeeCatID">
+                                            <option value="1" selected>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Name&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="EmployeeNameID">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--2nd column started-->
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Under&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control " id="EmpGrpUnderId">
+                                            <option value="Select" selected>Primary</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Define Salary Detailss&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="DefSalary" id="YesDefSalary" data-toggle="modal" data-target="#SalDetails_Modal">
+                                            <label class="custom-control-label" for="YesDefSalary">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="DefSalary" id="NoDefSalary">
+                                            <label class="custom-control-label" for="NoDefSalary">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--SalDetails_Modal-->
+
+
+<div id="SalDetails_Modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-form-label col-lg-12" style="text-align:center">Salary Details</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Name&nbsp; :</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Sal_DetNameID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Under &nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Sal_DetUnderID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Effective From&nbsp; :</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Sal_DetEffectiveID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Start Type &nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="Sal_StartTypeId">
+                                        <option value="1">--Select--</option>
+                                        <option value="2">Copy from Employee Group</option>
+                                        <option value="3">Copy from Parent Value</option>
+                                        <option value="4">Start Afresh</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Pay Head&nbsp; :</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="Sal_PayHeadId">
+                                        <option value="1">--Select--</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Pay Head Type &nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="Sal_PayTypeId">
+                                        <option value="1">--Select--</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Calculation Type&nbsp; :</label>
+                                <div class="col-lg-6">
+
+                                    <select class="form-control" id="Sal_CalTypeID">
+                                        <option value="1">--Select--</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Computed On &nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="Sal_ComputedID">
+                                        <option value="1">--Select--</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label"> Rate&nbsp; :</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Sal_RateID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Per&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="Sal_PerID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 offset-5">
+                            <button id="PopupAddBtnId1">ADD</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12" style="padding-right: 0px;padding-left: 0px;">
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-flush">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col" class="sort" data-sort="name" style="padding-right: 0px;padding-left: 0px;"> row No</th>
+                                            <th scope="col" class="sort" data-sort="budget" style="padding-right: 0px;padding-left: 0px;">Effective From</th>
+                                            <th scope="col" class="sort" data-sort="name" style="padding-right: 0px;padding-left: 0px;">Rate </th>
+                                            <th scope="col" class="sort" data-sort="name" style="padding-right: 0px;padding-left: 0px;">Pay Head</th>
+                                            <th scope="col" class="sort" data-sort="budget" style="padding-right: 0px;padding-left: 0px;">Per</th>
+                                            <th scope="col" class="sort" data-sort="budget" style="padding-right: 0px;padding-left: 0px;">Calculation Type</th>
+                                            <th scope="col" class="sort" data-sort="budget" style="padding-right: 0px;padding-left: 0px;">Computed On</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody class="list" id="tableid">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--add edit code-->
+<!--<script>
+    $(document).ready(function () {
+        debugger
+        Empcatfunction();
+
+
+    });
+</script>-->
+<!--dropdown list-->
+<!--drop down-->
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCAC')
+        $.ajax({
+            type: "GET",
+            url: "https://www.powerbooks.in/powerapi/api/PBXMLVCostCategory/GetAllPBXMLVCostCategories",
+            dataType: "json",
+            contentType: "application/json",
+            data: {
+                cccd: cccd
+            },
+
+            success: function (res) {
+                $.each(res, function (data, value) {
+
+                    $("#EmployeeCatID").append($("<option></option>").val(value.CostCatNo).html(value.CostCatNm));
+                })
+            }
+
+        });
+
+    });
+
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCCD')
+        $.ajax({
+            type: "GET",
+            url: "https://www.powerbooks.in/powerapi/api/PBXMLVEmployeeGroup/GetAllPBXMLVEmployeeGroup",
+            dataType: "json",
+            contentType: "application/json",
+            data: {
+                cccd: cccd
+            },
+
+            success: function (res) {
+                //alert(JSON.stringify(res));
+                $.each(res, function (data, value) {
+
+
+                    $("#EmployeeDeptID").append($("<option></option>").val(value.EmpNo).html(value.NAME));
+
+                })
+            }
+
+        });
+
+    });
+
+</script>
+
+
+
+<script>
+    function Empfunction() {
+        debugger
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+            var mode = url1.split("=")[2];
+            var group1 = url1.split("=")[1];
+            var index = (group1).indexOf('&');
+            var group = group1.substring(0, index);
+
+        }
+        var urls = window.location.href;
+        // var cccd = localStorage.getItem('CCAC');
+        var cccd = localStorage.getItem('CCAC');
+        if ($("#YesDefSalary").prop("checked")) {
+            var saldel = "Yes"
+        }
+        else {
+            var saldel = "No"
+        }
+
+
+
+
+        if ($("#EmployeeProvideDtlsYesID").prop("checked")) {
+            var bankdel = "Yes"
+        }
+        else {
+            var bankdel = "No"
+        }
+
+        var BloodGroup = $("#BloodGroupID option:selected").text();
+        var Gender = $("#GenderID option:selected").text();
+        var Reason = $("#ReasonForLeaving option:selected").text();
+        var category = $("#EmployeeCatID option:selected").text();
+        var department = $("#EmployeeDeptID option:selected").text();
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+        var status = "A";
+
+
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            group = group,
+                UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = sessionStorage.getItem('createddate');
+        }
+        else {
+            group = localStorage.getItem('MaxEmpNoNo');
+            UId = localStorage.getItem('UID');
+            Username = localStorage.getItem('UName');
+            Createdsystem = 'PowerSuit';
+            Createdate = curndate;
+        }
+
+
+        /*var  abc =$()*/
+        // alert("in parameters");
+
+        var parameter =
+        {
+            EmpNo: group,
+            REASONSFORLEAVING: Reason,
+            NAME: $("#EmployeeNameID").val(),
+            CATEGORY: category,
+            PARENT: department,
+            GENDER: Gender,
+            BLOODGROUP: BloodGroup,
+            COUNTRYOFISSUE: $("#CountryOfIssue").val(),
+            PASSPORTEXPIRYDATE: $("#PassportDate").val(),
+            VISANUMBER: $("#VisaNumber").val(),
+            WORKPERMITNUMBER: $("#WorkNumber").val(),
+            PFJOININGDATE: $("#PFJoining").val(),
+            AADHARNUMBER: $("#AadhaarNumber").val(),
+            FATHERNAME: $("#FMNameID").val(),
+            SPOUSENAME: $("#SpouseNameID").val(),
+            DESIGNATION: $("#DesignationId").val(),
+            ADDRESS: $("#AddressID").val(),
+            DEACTIVATIONDATE: $("#EmployeeDORID").val(),
+            DATE: $("#EmployeeDOJID").val(),
+            VISAEXPIRYDATE: $("#VisaExpiryDate").val(),
+            CONTRACTSTARTDATE: $("#ContractSDate").val(),
+            NOTES: $("#EmployeeNotesID").val(),
+            CONTRACTEXPIRYDATE: $("#ContractExpiryDate").val(),
+            FUNCTION1: $("#FunctionID").val(),
+            PFACCOUNTNUMBER: $("#PFNumber").val(),
+            LOCATION: $("#LocationID").val(),
+            ESINUMBER: $("#ESINumberid").val(),
+            PANNUMBER: $("#TaxNo").val(),
+            REMARKS: $("#EmployeeRemarksID").val(),
+            EMAILID: $("#EmailID").val(),
+            CONTACTNUMBERS: $("#ContactNoID").val(),
+            DATEOFBIRTH: $("#DateofBirthID").val(),
+            BANKDETAILS: bankdel,
+            //EMAILID: $("#emailid").val(),
+            // ALLOCATEREVENUE: Revenue,
+            //ALLOCATENONREVENUE: JobCosting,
+            CCCD: cccd,
+            STATUS: status,
+            CREATEDSYSTEM: Createdsystem,
+            LASTUPDATEDSYSTEM: 'PowerSuit',
+            UID: UId,
+            USERNAME: Username,
+            LUID: localStorage.getItem('UID'),
+            LUSERNAME: localStorage.getItem('UName'),
+            CREATEDDATE: Createdate,
+            LASTUPDATEDDATE: curndate
+        }
+        //alert(JSON.stringify(parameter));
+        return parameter;
+        // alert(NAME + "name");
+
+    }
+
+    $("#savebtnid").click(function () {
+
+        // alert("ghggg");
+        var addempcatparameter = Empfunction();
+        // alert(addcostcatparameter + "json");
+        debugger
+        $.ajax
+            ({
+                type: 'POST',
+                url: 'https://powerbooks.in/powerapi/api/PBXMLEmployee/AddPBXMLEmployee',
+                dataType: 'JSON',
+                data: JSON.stringify(addempcatparameter),
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+
+                    alert('Customer registered successfully');
+                    window.location.href = "Employees.html";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+
+        return;
+
+    });
+    $("#savebtnid").show();
+    $("#CancelbtnID").show();
+
+    $("#updatebtnID").click(function () {
+
+        var addempcatparameter = Empfunction();
+        $.ajax
+            ({
+                type: 'POST',
+                url: 'https://powerbooks.in/powerapi/api/PBXMLEmployee/EditPBXMLEmployee',
+                dataType: 'JSON',
+                data: JSON.stringify(addempcatparameter),
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+                    alert('Customer registered successfully');
+                    window.location.href = "Employees.html";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+        return;
+    });
+
+
+</script>
+
+<!--GET API-->
+<script>
+    $(document).ready(function () {
+        debugger
+        set_MainHeaderName();
+        get_costCats();
+        get_EmpGrp();
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var Id1 = url1.split("=")[1];
+        var index = (Id1).indexOf('&');
+        var empno = Id1.substring(0, index);
+        var cccd = localStorage.getItem('CCAC');
+        //  alert(cccd + "CCAC");
+        //var cccd = 'GIN00000';
+        //alert(mode);
+        //alert(empno);
+
+        if (mode == 'edit') {
+            $.ajax({
+                type: 'GET',
+                url: URLPowerAPI + '/api/PBXMLEmployeeGroup/GetPBXMLEmployeeGroupByID',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: cccd,
+                    empno: empno
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                success: function (data) {
+                    //alert(JSON.stringify(data));
+
+                    employeeobj = data;
+                    //lert('jnjnjn' + EmpGrp);
+
+
+                    //alert(JSON.stringify(employeeobj));
+                    $("#CountryOfIssue").val(employeeobj.COUNTRYOFISSUE);
+                    $("#PassportDate").val(employeeobj.PASSPORTEXPIRYDATE);
+                    $("#VisaNumber").val(employeeobj.VISANUMBER);
+                    $("#WorkNumber").val(employeeobj.WORKPERMITNUMBER);
+                    $("#PFJoining").val(employeeobj.PFJOININGDATE);
+                    $("#AadhaarNumber").val(employeeobj.AADHARNUMBER);
+                    $("#FMNameID").val(employeeobj.FATHERNAME);
+                    $("#SpouseNameID").val(employeeobj.SPOUSENAME);
+                    $("#ESINumberid").val(employeeobj.ESINUMBER);
+                    $("#TaxNo").val(employeeobj.PANNUMBER);
+                    $("#PFNumber").val(employeeobj.PFACCOUNTNUMBER);
+                    $("#LocationID").val(employeeobj.LOCATION);
+                    $("#EmployeeNotesID").val(employeeobj.NOTES);
+                    $("#FunctionID").val(employeeobj.FUNCTION1);
+                    $("#ContractExpiryDate").val(employeeobj.CONTRACTEXPIRYDATE);
+                    $("#ContractSDate").val(employeeobj.CONTRACTSTARTDATE);
+                    $("#VisaExpiryDate").val(employeeobj.VISAEXPIRYDATE);
+                    $("#EmployeeDORID").val(employeeobj.DEACTIVATIONDATE);
+                    $("#EmployeeDOJID").val(employeeobj.DATE);
+                    $("#AddressID").val(employeeobj.ADDRESS);
+                    $("#EmployeeNameID").val(employeeobj.NAME);
+                    $("#EmailID").val(employeeobj.EMAILID);
+                    $("#DateofBirthID").val(employeeobj.DATEOFBIRTH);
+                    $("#ContactNoID").val(employeeobj.CONTACTNUMBERS);
+                    // alert(employee.NAME + "name");
+
+                    $("#EmployeeRemarksID").val(employeeobj.REMARKS);
+                    $('#EmployeeCatID option:selected').text(employeeobj.CATEGORY);
+                    $('#EmpGrpUnderId option:selected').text(employeeobj.PARENT);
+                    $("#ReasonForLeaving").val(employeeobj.REASONSFORLEAVING);
+                    $('#BloodGroupID option:selected').text(employeeobj.BLOODGROUP);
+                    $('#GenderID option:selected').text(employeeobj.GENDER);
+                    $('#ReasonForLeaving option:selected').text(employeeobj.REASONSFORLEAVING);
+                    $('#EmployeeDeptID option:selected').text(employeeobj.PARENT);
+                    $("#EmployeeID").val(employeeobj.EmpNo);
+                    $("#DesignationId").val(employeeobj.DESIGNATION);
+
+                    //if (employee.ALLOCATENONREVENUE == 'Yes') {
+                    //    $("#YesNonRevenueId").attr('checked', 'checked');
+                    //} else {
+                    //    $("#NoNonRevenueId").attr('checked', 'checked');
+
+                    //}
+                    if (employeeobj.ASORIGINAL == 'Yes') {
+
+                        $("#YesDefSalary").prop("checked", true);
+                    } else {
+                        $("#NoDefSalary").prop("checked", true);
+                    }
+
+
+                    if (employeeobj.BANKDETAILS == 'Yes') {
+                        $("#EmployeeProvideDtlsYesID").attr('checked', 'checked');
+                    } else {
+                        $("#EmployeeProvideDtlsNoID").attr('checked', 'checked');
+                    }
+
+                    sessionStorage.setItem('uid', employeeobj.UID);
+                    // alert(ObjPayHeads.UID+"uid");
+                    sessionStorage.setItem('username', employeeobj.USERNAME);
+                    sessionStorage.setItem('createdsystem', employeeobj.CREATEDSYSTEM);
+                    sessionStorage.setItem('createddate', employeeobj.CREATEDDATE);
+                    sessionStorage.setItem('lastupdatedate', employeeobj.LASTUPDATEDDATE);
+
+
+                },
+
+            });
+
+
+        }
+
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+        $("#savebtnid").hide();
+
+        function get_costCats() {
+            var cccd = localStorage.getItem('CCCD')
+            $.ajax({
+                type: "GET",
+                url: URLPowerAPI + '/api/PBXMLVCostCategory/GetAllPBXMLVCostCategories',
+                dataType: "json",
+                contentType: "application/json",
+                data: {
+                    cccd: cccd
+                },
+
+                success: function (data) {
+                    $.each(data, function (index, value) {
+
+                        $("#EmployeeCatID").append($("<option></option>").val(value.CostCatNo).html(value.CostCatNm));
+                    })
+                }
+
+            });
+        }
+        function get_EmpGrp() {
+            var cccd = localStorage.getItem('CCCD')
+            $.ajax({
+                type: "GET",
+                url: URLPowerAPI + '/api/PBXMLVEmployeeGroup/GetAllPBXMLVEmployeeGroup',
+                dataType: "json",
+                contentType: "application/json",
+                data: {
+                    cccd: cccd
+                },
+
+                success: function (data1) {
+                    // alert(JSON.stringify(data1));
+                    $.each(data1, function (index, value) {
+                        debugger
+
+                        $("#EmpGrpUnderId").append($("<option></option>").val(value.EmpNo).html(value.NAME));
+
+                    })
+                }
+
+            });
+        }
+
+
+        $("#deletebtnID").click(function () {
+            var urls = window.location.href;
+            debugger
+            //alert(urls);
+            var url1 = window.location.href;
+            var mode = url1.split("=")[2];
+            var Id1 = url1.split("=")[1];
+            var index = (Id1).indexOf('&');
+            var empno = Id1.substring(0, index);
+            var cccd = localStorage.getItem('CCAC');
+
+            $.ajax({
+                url: 'https://powerbooks.in/powerapi/api/PBXMLEmployeeGroup/DeletePBXMLEmployeeGroup',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    EmpNo: empno
+
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                success: function (data, textStatus, xhr) {
+                    alert("PBXMLCostcategory deleted successfully");
+                    window.location.href = "Employees.html";
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+    });
+
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Payroll Info - Employee Group');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Payroll Info / Employee Group</span>');
+    };
+</script>
+

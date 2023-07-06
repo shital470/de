@@ -1,0 +1,199 @@
+<div class="row justify-content-center">
+
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title"></h5>
+            </div>
+
+
+
+            <div class="card-body ">
+                <div class=" row">
+                    <div class="col-lg-6">
+                        <h5 class="card-title">Attendace Home</h5>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display:none;">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display:none;">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                        <button onclick="window.print()" class="btn btn-sm btn-primary float-right" style=" margin-right:10px;">Print</button>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row">
+                            <label class="col-lg-5 col-form-label">Name&nbsp;:</label>
+                            <div class="col-lg-7">
+                                <select class="form-control select" id="NameID">
+                                    <option value="Select" selected>--Select--</option>
+                                    <option value="Select" selected> Payroll</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-5 col-form-label">Process for&nbsp;:</label>
+                            <div class="col-lg-7">
+                                <select class="form-control select" id="ProcessforID">
+                                    <option value="Select" selected>--Select--</option>
+                                    <option value="Select" selected>ESI Contribution</option>
+                                    <option value="Select" selected>PF Contribution</option>
+                                    <option value="Select" selected>Salary </option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-5 col-form-label">Sort by&nbsp;:</label>
+                            <div class="col-lg-7">
+                                <select class="form-control select" id="SortByID">
+                                    <option value="Select" selected>--Select--</option>
+                                    <option value="Select" selected>Employee Name</option>
+                                    <option value="Select" selected>Employee Number Only</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-5 col-form-label">Employee Category&nbsp;:</label>
+                            <div class="col-lg-7">
+                                <select class="form-control select" id="EmpCategotyID">
+                                    <option value="Select" selected>
+                                        --Select--
+                                    </option>
+                                    <option value="0">Raj</option>
+                                    <option value="1">Akbar</option>
+                                    <option value="2">Primary Cost Category</option>
+                                    <option value="3">xyz</option>
+                                    <option value="5">Jay</option>
+                                    <option value="6">Marsh</option>
+                                    <option value="7">Ryan</option>
+                                    <option value="8">AAA</option>
+                                    <option value="9">QQQ</option>
+                                    <option value="11">newcostcattest1</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-5 col-form-label">Include Employee having 'For Banking' details&nbsp;:</label>
+                            <div class="col-lg-7">
+                                <select class="form-control select" id="BankingDtlID">
+                                    <option value="Select" selected>Yes</option>
+                                    <option value="Select" selected>No</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-5 col-form-label">Use mode of Payment/Transaction Type?&nbsp;:</label>
+                            <div class="col-lg-7">
+                                <select class="form-control select" id="PTTypeID">
+                                    <option value="Select" selected>Yes</option>
+                                    <option value="Select" selected>No</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        <div class="form-group row">
+                            <label class="col-lg-5 col-form-label">Class&nbsp;:</label>
+                            <div class="col-lg-7">
+                                <select class="form-control select" id="ClassId">
+                                    <option value="Select" selected>--Select--</option>
+                                    <option value="Select" selected> Payroll</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+
+                            <label class="col-lg-5 col-form-label">From(bank for begning):</label>
+
+                            <div class="input-group col-lg-7">
+
+                                <span class="input-group-prepend">
+
+                                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
+
+                                </span>
+
+                                <input type="text" class="form-control daterange-single" value="01/05/2022">
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+
+                            <label class="col-lg-5 col-form-label">to(bank for end):</label>
+
+                            <div class="input-group col-lg-7">
+
+                                <span class="input-group-prepend">
+
+                                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
+
+                                </span>
+
+                                <input type="text" class="form-control daterange-single" value="01/05/2022">
+
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-5 col-form-label">Employee Group&nbsp;:</label>
+                            <div class="col-lg-7">
+                                <select class="form-control select" id="EmpGroupID">
+                                    <option value="Select" selected>--Select--</option>
+                                    <option value="Select" selected> Payroll</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-lg-5 col-form-label">Payroll/Bank/Cash Ledger&nbsp;:</label>
+                            <div class="col-lg-7">
+                                <select class="form-control select" id="PBCID">
+                                    <option value="Select" selected>--Select--</option>
+                                    <option value="8">Advance Tax - A.Y. - 09-10</option>
+                                    <option value="23">Bank of Baroda Current A/c</option>
+                                    <option value="52">Cash</option>
+                                    <option value="10000069">FIXED</option>
+                                    <option value="790">test</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-5 col-form-label">Narration&nbsp;:</label>
+                            <div class="col-lg-7">
+                                <textarea class="form-control" id="narrID" style="resize:none"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Result</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

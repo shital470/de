@@ -1,0 +1,357 @@
+﻿
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-xs-2">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display: none; margin-right: 8px;">Delete</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display: none; margin-right: 8px;">Update</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Form layout-->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <h6 style="background-color:whitesmoke">Add employe Name</h6>
+                                            </div>
+                                            <!--1st column started-->
+                                            
+                                            <div class="col-lg-6">
+                                                <div class="collapse show">
+                                                    <form action="#">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Name&nbsp;:</label>
+                                                            <div class="col-lg-5">
+                                                                <input type="text" class="form-control" id="StockCategoryNameId">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Allocate Revenue Items&nbsp;:</label>
+                                                            <div class="col-lg-5 col-form-label">
+                                                                <div class="custom-control custom-switch custom-control-inline">
+                                                                    <input type="radio" class="custom-control-input" name="AllocateRevenueId" id="YesAllocateRevenueId">
+                                                                    <label class="custom-control-label" for="YesAllocateRevenueId">Yes</label>
+                                                                </div>
+                                                                <div class="custom-control custom-switch custom-control-inline">
+                                                                    <input type="radio" class="custom-control-input" name="AllocateRevenueId" id="NoAllocateRevenueId">
+                                                                    <label class="custom-control-label" for="NoAllocateRevenueId">No</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        <!--2nd column started-->
+                                        <div class="col-lg-6">
+                                            <div class="collapse show">
+                                                    <form action="#">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Allocate Non-Revenue Items&nbsp;:</label>
+                                                            <div class="col-lg-5 col-form-label">
+                                                                <div class="custom-control custom-switch custom-control-inline">
+                                                                    <input type="radio" class="custom-control-input" name="AllocateNonRevenueId" id="YesAllocateNonRevenueId">
+                                                                    <label class="custom-control-label" for="YesAllocateNonRevenueId">Yes</label>
+                                                                </div>
+                                                                <div class="custom-control custom-switch custom-control-inline">
+                                                                    <input type="radio" class="custom-control-input" name="AllocateNonRevenueId" id="NoAllocateNonRevenueId">
+                                                                    <label class="custom-control-label" for="NoAllocateNonRevenueId">No</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+
+
+
+            <!--add edit code-->
+            <!--<script>
+        $(document).ready(function () {
+            debugger
+            Empcatfunction();
+
+
+        });
+    </script>-->
+
+            <script>
+                function Empcatfunction() {
+                    debugger
+                    var url1 = window.location.href;
+                    var arr = url1.split('=');
+                    console.log(url1.length)
+
+                    if (arr.length > 1) {
+                        var mode = url1.split("=")[2];
+                        var CostCd1 = url1.split("=")[1];
+                        var index = (CostCd1).indexOf('&');
+                        var CostCatNo = CostCd1.substring(0, index);
+
+                    }
+                    var urls = window.location.href;
+                    // var cccd = localStorage.getItem('CCAC');
+                    var cccd = localStorage.getItem('CCAC');
+                    if ($("#YesAllocateRevenueId").prop("checked")) {
+                        var Revenue = "Yes"
+                    }
+                    else {
+                        var Revenue = "No"
+                    }
+
+
+                    if ($("#YesAllocateNonRevenueId").prop("checked")) {
+                        var JobCosting = "Yes"
+                    }
+                    else {
+                        var JobCosting = "No"
+                    }
+
+                    var CurrentDate = new Date();
+                    var curndate = CurrentDate.toISOString().replace('Z', '');
+                    var status = "A";
+
+
+                    //storesession value
+                    var UId;
+                    var Username;
+                    var Createdsystem;
+                    var Createdate;
+
+                    if (mode == 'edit') {
+                        CostCatNo = CostCatNo,
+                            UId = sessionStorage.getItem('uid');
+                        Username = sessionStorage.getItem('username');
+                        Createdsystem = sessionStorage.getItem('createdsystem');
+                        Createdate = sessionStorage.getItem('createddate');
+                    }
+                    else {
+                        CostCatNo = localStorage.getItem('MaxCostCatNo');
+                        UId = localStorage.getItem('UID');
+                        Username = localStorage.getItem('UName');
+                        Createdsystem = 'PowerSuit';
+                        Createdate = curndate;
+                    }
+
+
+                    /*var  abc =$()*/
+                    // alert("in parameters");
+
+                    var parameter =
+                    {
+                        CostCatNo: CostCatNo,
+                        NAME: $("#StockCategoryNameId").val(),
+                        //EMAILID: $("#emailid").val(),
+                        ALLOCATEREVENUE: Revenue,
+                        ALLOCATENONREVENUE: JobCosting,
+                        CCCD: cccd,
+                        STATUS: status,
+                        CREATEDSYSTEM: Createdsystem,
+                        LASTUPDATEDSYSTEM: 'PowerSuit',
+                        UID: UId,
+                        USERNAME: Username,
+                        LUID: localStorage.getItem('UID'),
+                        LUSERNAME: localStorage.getItem('UName'),
+                        CREATEDDATE: Createdate,
+                        LASTUPDATEDDATE: curndate
+                    }
+                    //alert(JSON.stringify(parameter));
+                    return parameter;
+                    // alert(NAME + "name");
+
+                }
+
+                $("#savebtnid").click(function () {
+
+                    // alert("ghggg");
+                    var addempcatparameter = Empcatfunction();
+                    // alert(addcostcatparameter + "json");
+                    debugger
+                    $.ajax
+                        ({
+                            type: 'POST',
+                            url: URLPowerAPI+'/api/PBXMLCostCategory/AddPBXMLCostCategory',
+                            dataType: 'JSON',
+                            data: JSON.stringify(addempcatparameter),
+                            contentType: 'application/json ; charset = utf-8',
+                            beforeSend: function () {
+                                $("#loader1").show();
+                            },
+                            success: function (data, textStatus, xhr) {
+
+                                //alert(' Added successfully');
+                                $("#loader1").hide();
+                                window.location.href = "../LLLL-MP-EC-50.shtml";
+                            },
+                            error: function (xhr, textStatus, errorThrown) {
+                                //alert("You entered some invalid fields...! Fill the details again...");
+                            }
+                        });
+
+                    return;
+
+                });
+
+                $("#updatebtnID").click(function () {
+
+                    var addempcatparameter = Empcatfunction();
+                    $.ajax
+                        ({
+                            type: 'POST',
+                            url: URLPowerAPI+'/api/PBXMLCostCategory/EditPBXMLCostCategory',
+                            dataType: 'JSON',
+                            data: JSON.stringify(addempcatparameter),
+                            contentType: 'application/json ; charset = utf-8',
+                            beforeSend: function () {
+                                $("#loader1").show();
+                            },
+                            success: function (data, textStatus, xhr) {
+                                //alert('Updated successfully');
+                                $("#loader1").hide();
+                                window.location.href = "../LLLL-MP-EC-50.shtml";
+                            },
+                            error: function (xhr, textStatus, errorThrown) {
+                                //alert("You entered some invalid fields...! Fill the details again...");
+                            }
+                        });
+                    return;
+                });
+
+
+            </script>
+
+            <!--GET API-->
+            <script>
+                $(document).ready(function () {
+                    debugger
+                    set_MainHeaderName();
+                    var url1 = window.location.href;
+                    var mode = url1.split("=")[2];
+                    var CostCatNo1 = url1.split("=")[1];
+                    var index = (CostCatNo1).indexOf('&');
+                    var CostCatNo = CostCatNo1.substring(0, index);
+                    var cccd = localStorage.getItem('CCAC');
+                    //  alert(mode);
+                    //alert(Id);
+
+                    if (mode == 'edit') {
+                        $.ajax({
+                            type: 'GET',
+                            url: URLPowerAPI+'/api/PBXMLCostCategory/GetPBXMLCostCategoryByID',
+                            dataType: 'JSON',
+                            contentType: 'application/json ; charset = utf-8',
+                            //data: JSON.stringify(groupname),
+                            data: {
+                                cccd: cccd,
+                                CostCatNo: CostCatNo
+                            },
+                            beforeSend: function () {
+                                $("#loader1").show();
+                            },
+                            contentType: 'application/json ; charset = utf-8',
+                            success: function (data) {
+                                $("#loader1").hide();
+                                EmpCategory = data;
+                                //  alert('jnjnjn' + EmpCategory);
+
+
+                                // alert(JSON.stringify(data));
+
+                                $("#StockCategoryNameId").val(EmpCategory.CostCatNm);
+                                //  alert(data.CostCatNm);
+                                // alert("bhjbhjbj" + data.ALLOCREVENUE);
+                                if (EmpCategory.ALLOCATEREVENUE == 'Yes') {
+                                    $("#YesAllocateRevenueId").attr('checked', 'checked');
+                                } else {
+                                    $("#NoAllocateRevenueId").attr('checked', 'checked');
+                                }
+
+                                if (EmpCategory.ALLOCATENONREVENUE == 'Yes') {
+                                    $("#YesAllocateNonRevenueId").attr('checked', 'checked');
+                                } else {
+                                    $("#NoAllocateNonRevenueId").attr('checked', 'checked');
+                                }
+
+
+
+                                sessionStorage.setItem('uid', EmpCategory.UID);
+                                sessionStorage.setItem('username', EmpCategory.USERNAME);
+                                sessionStorage.setItem('createdsystem', EmpCategory.CREATEDSYSTEM);
+                                sessionStorage.setItem('createddate', EmpCategory.CREATEDDATE);
+                                sessionStorage.setItem('lastupdatedate', EmpCategory.LASTUPDATEDDATE);
+
+
+
+
+                            },
+
+                        });
+
+
+                    }
+
+                    $("#deletebtnID").show();
+                    $("#updatebtnID").show();
+                    $("#savebtnid").hide();
+
+
+
+
+                    $("#deletebtnID").click(function () {
+                        var url1 = window.location.href;
+                        var mode = url1.split("=")[2];
+                        var CostCatNo1 = url1.split("=")[1];
+                        var index = (CostCatNo1).indexOf('&');
+                        var CostCatNo = CostCatNo1.substring(0, index);
+                        var cccd = localStorage.getItem('CCAC');
+                        debugger
+                        //alert(urls);
+
+
+                        $.ajax({
+                            url: URLPowerAPI+'/api/PBXMLCostCategory/DeletePBXMLCostCategory',
+                            type: 'GET',
+                            dataType: 'JSON',
+                            data: {
+                                cccd: cccd,
+                                CostCatNo: CostCatNo
+                            },
+                            beforeSend: function () {
+                                $("#loader1").show();
+                            },
+                            contentType: 'application/json ; charset = utf-8',
+                            success: function (data, textStatus, xhr) {
+                                alert("Deleted successfully");
+                                $("#loader1").hide();
+                                window.location.href = "../LLLL-MP-EC-50.shtml";
+
+                            },
+                            error: function (xhr, textStatus, errorThrown) {
+                                //  //alert("You entered wrong password...! Fill the details again...");
+                            }
+                        });
+                    });
+                });
+
+
+                function set_MainHeaderName() {
+                    $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Payroll Info - Employee Categories');
+                    $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Payroll Info / Employee Categories/</span>');
+                };
+            </script>
+
+

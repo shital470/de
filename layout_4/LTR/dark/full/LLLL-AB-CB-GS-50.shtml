@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+ <!--#include file="./includes/header.html"-->
+<body>
+	 <!--#include file="./includes/sidebar.html"-->
+	<!--#include file="./includes/MainContent_header.html"-->
+
+	<!-- Content area -->
+	
+		<!-- content-inner class here is optional recheck its css and also check in sidebar.html about that and then set it -->
+		<!--#include file="../../../../global_assets/includes/Finance/LLLL-AB-CB-GS-50.html"-->
+	
+    <!-- /Content area -->
+
+
+	<!--#include file="./includes/footer.html"-->
+</body>
+</html>

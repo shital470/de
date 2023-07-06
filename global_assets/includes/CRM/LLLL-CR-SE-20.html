@@ -1,0 +1,1496 @@
+<!-- Dashboard content -->
+<!-- my code2 -->
+
+<div class="row justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px;" id="cancelbtnid">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px; display: none;" id="deletebtnID">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px; display: none;" id="updatebtnID">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+
+            <div class="card-body">
+                <form class="fromcls">
+                    <div class="pl-lg-4 abc">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4">Event Owner&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="eventownerID" value="FIT">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4" for="input-PayHeadName">Subject<span style="color:red;">*</span>&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="EventSubjectId">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4">Venue&nbsp;:</label>
+                                    <div class="input-group col-lg-6">
+                                        <input type="text" class="form-control" id="EventVenueID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4" for="input-PayHeadName">Start Date Time&nbsp;:</label>
+                                    <div class="col-lg-8 form-group row">
+                                        <div class="input-group col-md-6">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                            </span>
+                                            <input type="text" class="form-control daterange-single" id="EventStartDateId" style="padding-right: 0px;padding-left: 0px;">
+                                        </div>
+                                        <div class="col-md-2" style="padding:0px;">
+                                            <select type="text" class="form-control 1-12" style="padding:2px;" id="EventHrId">
+                                                <option></option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2" style="padding:0px;">
+
+                                            <select type="text" class="form-control 1-60" style="padding:2px;" id="EventMinId">
+                                                <option></option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2" style="padding:0px;">
+                                            <select type="text" class="form-control" style="padding:2px;" id="EventAmPmId">
+                                                <option>AM</option>
+                                                <option>PM</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4" for="input-PayHeadName">Start Date Time&nbsp;:</label>
+                                    <div class="col-lg-8 form-group row">
+                                        <div class="input-group col-md-6">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                            </span>
+                                            <input type="text" class="form-control daterange-single" id="EventEndDateId" style="padding-right: 0px;padding-left: 0px;">
+                                        </div>
+                                        <div class="col-md-2" style="padding:0px;">
+                                            <select type="text" class="form-control 1-12" style="padding:2px;" id="EventEndHrId">
+                                                <option></option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2" style="padding:0px;">
+
+                                            <select type="text" class="form-control 1-60" style="padding:2px;" id="EventEndMinId">
+                                                <option></option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2" style="padding:0px;">
+                                            <select type="text" class="form-control" style="padding:2px;" id="EventEndAmPmId">
+                                                <option>AM</option>
+                                                <option>PM</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--<div class="col-lg-6">
+        <div class="form-group row">
+            <label class="col-form-label col-lg-4">End Date Time&nbsp;:</label>
+            <div class="col-lg-8 form-group row">
+                <div class="input-group col-md-6">
+                    <span class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                    </span>
+                    <input type="text" class="form-control daterange-single" id="EventEndId" style="padding-right: 0px;padding-left: 0px;">
+                </div>
+                <div class="col-md-2" style="padding:0px;">
+                    <select type="text" class="form-control 1-12" style="padding:2px;" id="EventHrId">
+                        <option></option>
+
+                    </select>
+                </div>
+                <div class="col-md-2" style="padding:0px;">
+
+                    <select type="text" class="form-control 1-60" style="padding:2px;" id="EventEndMin">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-md-2" style="padding:0px;">
+                    <select type="text" class="form-control" style="padding:2px;" id="EventEndAmPmId">
+                        <option>AM</option>
+                        <option>PM</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+    </div>-->
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4" for="input-PayHeadName">Call From To*&nbsp;:</label>
+                                    <div class="col-lg-8">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="csr_selector" id="Contactid"  onclick="show1();">
+                                            <label class="custom-control-label" for="Contactid">Contact</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="csr_selector" id="LeadId"  onclick="show2();">
+                                            <label class="custom-control-label" for="LeadId">Lead</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row csSelectorShow" id="cs2" style="display: none;">
+                                    <label class="col-form-label col-lg-4"> Lead Name&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <select id="EventLeadNameId" class="form-control">
+
+
+                                            <option>--Select--</option>
+                                            <option>Fixed</option>
+                                            <option>variable</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row csSelectorShow"id="cs3">
+                                    <label class="col-form-label col-lg-4">Contact Name&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="EventContactNameId">
+                                            <option value="Select" selected>--Select--</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row  " id="cs3">
+                                    <label class="col-form-label col-lg-4">Related To&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="RelatedToId" onclick="DropDownSelVal(this)">
+                                            <option value="Select" selected>--Select--</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row " id="cs4">
+                                    <label class="col-form-label col-lg-4">&nbsp;</label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="RelatedValueId">
+                                            <option value="Select" selected>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4" for="input-PayHeadName">Status<span style="color:red;">*</span>&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="StatusID">
+                                            <option>--Select--</option>
+                                            <option>Active</option>
+                                            <option>Deactive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4">Priority&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="PriorityID">
+                                            <option>--Select--</option>
+                                            <option>High</option>
+                                            <option>Low</option>
+                                            <option>Medium</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4">Recurring Activity&nbsp;:</label>
+                                    <div class="form-check form-check-inline form-check-right col-lg-6">
+                                        <input type="checkbox" class="form-control" id="RecActivityID" onchange="valueChanged()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4">Send Notification Email&nbsp;:</label>
+                                    <div class="form-check form-check-inline form-check-right col-lg-6">
+                                        <input type="checkbox" class="form-control" id="SendNoEmailID">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="autoUpdate" class="autoUpdate" style="display:none;">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-lg-4">Start Date&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <div class="input-group">
+                                                <span class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                                </span>
+                                                <input type="text" class="form-control daterange-single" id="RecActStartdateId">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-lg-4">End Date&nbsp;</label>
+                                        <div class="col-lg-6">
+                                            <div class="input-group">
+                                                <span class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                                </span>
+                                                <input type="text" class="form-control daterange-single" id="RecActEnddateId">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-lg-4">Repeat Type&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <div class="input-group">
+                                                <select class="form-control" onchange="myFunction(this)" id="RepeattypeId">
+                                                    <option value="0">None</option>
+                                                    <option value="1">Daily</option>
+                                                    <option value="2">Weekly</option>
+                                                    <option value="3">Monthly</option>
+                                                    <option value="4">Yearly</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="EveryDayId" style="display: none;">
+                                <div class="row">
+                                    <div class="col-lg-6 offset-2">
+                                        <div class="form-group">
+                                            <input type="radio" class="radio-inline" id="REveryDayId" name="Daily">
+                                            <label class="col-form-label" for="input-PayHeadName"> Every Day</label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 offset-2" style="padding-right:0px;">
+                                        <div class="form-group">
+                                            <input type="radio" id="RExactDayId" name="Daily">
+                                            <label class="col-form-label"> Repeat for every</label>
+                                            <input type="text" class="CrmClass" id="DailyDate">
+                                            <label class="col-form-label">days</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row" id="weeklyId" style="display: none;">
+
+                                <div class="col-lg-6 offset-2">
+                                    <div class="form-group">
+                                        <label class="col-form-label" for="input-PayHeadName">
+                                            Repeat for every
+                                        </label>
+                                        <input type="text" class="CrmClass" id="RepForWeek">
+                                        <label class="col-form-label" for="input-PayHeadName">
+                                            Week
+                                        </label>
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-8 offset-2">
+                                        <input type="checkbox" id="CheckSunId">
+                                        <label class="col-form-label">  Sunday</label>
+                                        <input type="checkbox" id="CheckMonId">
+                                        <label class="col-form-label">  Monday</label>
+                                        <input type="checkbox" id="CheckTueId">
+                                        <label class="col-form-label">  Tuesday</label>
+                                        <input type="checkbox" id="CheckWenId">
+                                        <label class="col-form-label">  Wednesday</label>
+                                        <input type="checkbox" id="CheckThrId">
+                                        <label class="col-form-label">  Thursday</label>
+                                        <input type="checkbox" id="CheckFriId">
+                                        <label class="col-form-label">  Friday</label>
+                                        <input type="checkbox" id="CheckSatId">
+                                        <label class="col-form-label">  Saturday</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="MontlyId" style="display:none;">
+                                <div class="row">
+                                    <div class="col-lg-10 offset-2" style="padding-right:0px;">
+                                        <div class="form-group">
+                                            <input type="radio" id="dateOfMonId">
+                                            <label class="col-form-label"> On</label>
+                                            <select class="CrmClass 1-31" id="SeldateOfMon">
+                                                <option></option>
+
+                                            </select>
+
+                                            <label class="col-form-label">of every</label>
+                                            <input type="text" class="CrmClass" id="dayOfMon">
+                                            <label class="col-form-label">Months</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-10 offset-2" style="padding-right:0px;">
+                                        <div class="form-group">
+                                            <input type="radio" id="dayofMonthId">
+                                            <label class="col-form-label"> On</label>
+                                            <select class="CrmClass" id="SelweekOfMon">
+                                                <option>First</option>
+                                                <option>Second</option>
+                                                <option>Third</option>
+                                                <option>Fourth</option>
+                                                <option>Last</option>
+                                            </select>
+                                            <select class="CrmClass fa-calendar-day" id="SelWeekDayOfMon">
+                                                <option value="SUN">Sunday</option>
+                                                <option value="MON">Monday</option>
+                                                <option value="TUE">Tuesday</option>
+                                                <option value="WED">Wednesday</option>
+                                                <option value="THUR">Thursday</option>
+                                                <option value="FRI">Friday</option>
+                                                <option value="SAT">Saturday</option>
+                                            </select>
+                                            <label class="col-form-label">of every</label>
+                                            <input type="text" class="CrmClass" id="WeekofMon">
+                                            <label class="col-form-label">Months</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row" id="YearId" style="display: none; ">
+                                <div class="row" style="margin-left:0px;">
+                                    <div class="col-lg-10 offset-2" style="padding-right:0px;">
+                                        <div class="form-group">
+                                            <input type="radio" id="dateofYearId">
+                                            <label class="col-form-label"> Of every</label>
+                                            <select class="CrmClass" id="SelMonOfyear">
+                                                <option>January</option>
+                                                <option>February</option>
+                                                <option>March</option>
+                                                <option>April</option>
+                                                <option>May</option>
+                                                <option>June</option>
+                                                <option>July</option>
+                                                <option>August</option>
+                                                <option>September</option>
+                                                <option>October</option>
+                                                <option>November</option>
+                                                <option>December</option>
+                                            </select>
+                                            <select class="CrmClass 1-31" id="SelDayOfyear">
+                                                <option></option>
+
+                                            </select>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin-left:0px;">
+                                    <div class="col-lg-10 offset-2" style="padding-right:0px;">
+                                        <div class="form-group">
+                                            <input type="radio" id="dayofYearId">
+                                            <label class="col-form-label"> On</label>
+                                            <select class="CrmClass" id="SeldaysOfyear">
+                                                <option>First</option>
+                                                <option>Second</option>
+                                                <option>Third</option>
+                                                <option>Fourth</option>
+                                                <option>Last</option>
+                                            </select>
+                                            <select class="CrmClass fa-calendar-day" id="SeldayOfyear">
+                                                <option value="SUN">Sunday</option>
+                                                <option value="MON">Monday</option>
+                                                <option value="TUE">Tuesday</option>
+                                                <option value="WED">Wednesday</option>
+                                                <option value="THUR">Thursday</option>
+                                                <option value="FRI">Friday</option>
+                                                <option value="SAT">Saturday</option>
+                                            </select>
+
+                                            <select class="CrmClass month" id="monthId1">
+                                                <option>January</option>
+                                                <option>February</option>
+                                                <option>March</option>
+                                                <option>April</option>
+                                                <option>May</option>
+                                                <option>June</option>
+                                                <option>July</option>
+                                                <option>August</option>
+                                                <option>September</option>
+                                                <option>October</option>
+                                                <option>November</option>
+                                                <option>December</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4" for="input-PayHeadName">Description&nbsp;:</label>
+                                    <div class="col-lg-8">
+                                        <textarea class="form-control" id="EventDiscriptionId" cols="20" rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+
+
+<!--<script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/js-cookie/js.cookie.js"></script>
+<script src="../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+<script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>-->
+<!-- Argon JS -->
+<!--<script src="../assets/js/argon.js?v=1.2.0"></script>
+<script src="../assets/vendor/jquery/dist/jquery.min.js"></script>-->
+<!-- Argon Scripts -->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>-->
+<!--model link-->
+<!--<script src="../Model/CrmContact.js" type="text/javascript"></script>-->
+<!--radio btn hide show-->
+
+
+<script>
+    $(document).ready(function () {
+
+        set_MainHeaderName();
+
+    });</script>
+<script>
+    function valueChanged() {
+        if ($('#RecActivityID').is(":checked"))
+            $(".autoUpdate").show();
+        else
+            $(".autoUpdate").hide();
+    }
+</script>
+
+<script>
+    function myFunction(element) {
+        document.getElementById('EveryDayId').style.display = element.value == 1 ? 'block' : 'none';
+        document.getElementById('weeklyId').style.display = element.value == 2 ? 'block' : 'none';
+        document.getElementById('MontlyId').style.display = element.value == 3 ? 'block' : 'none';
+        document.getElementById('YearId').style.display = element.value == 4 ? 'block' : 'none';
+    }
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $('#checkbox1').change(function () {
+            $('#autoUpdate').fadeToggle();
+        });
+    });
+</script>
+
+<script>
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">CRM</span> Activities-Schedule Event');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>CRM</a><span class="breadcrumb-item active">Activities-Schedule Event</span>');
+    };
+</script>
+
+<!--radio btn hide show-->
+<!--<script>
+    $('[name=csr_selector]').change(function () {
+        $('.csSelectorShow').each(function () {
+            $(this).toggle();
+        });
+    });
+</script>-->
+
+    <script>
+        function show2() {
+            $("#cs2").show();
+            $("#cs3").hide();
+            //$('#cs2').each(function () {
+            //    /* $(this).toggle();*/
+            //    $("#cs2").show();
+            //    $("#cs3").hide();
+
+            //});
+        }
+        function show1() {
+
+
+            var abc = document.getElementById("cs3")
+            if ("abc==hide") {
+                $("#cs3").show();
+                $("#cs2").hide();
+            }
+
+
+        }
+</script>
+
+<script>
+    $(function () {
+        debugger
+        var $select = $(".1-60");
+        for (i = 1; i <= 60; i++) {
+
+            $select.append($('<option></option>').val(i).html(i))
+        }
+    });
+</script>
+<script>
+    $(function () {
+        var $select = $(".1-12");
+        for (i = 1; i <= 12; i++) {
+            $select.append($('<option></option>').val(i).html(i))
+        }
+    });
+</script>
+
+
+<script>
+    $(function () {
+        debugger
+        var $select = $(".1-31");
+        for (i = 1; i <= 31; i++) {
+            $select.append($('<option></option>').val(i).html(i))
+        }
+
+    });
+</script>
+<!--sidebar code-->
+<script>
+    $(document).ready(function () {
+
+        $('#content').load("Sidebar.html");
+
+    });</script>
+<!--dropdown list-->
+<script type="text/javascript">
+    $(function () {
+        debugger
+
+        GetParameterType('SRS');
+
+    });
+    //create first function for getparameretertypeid
+    function GetParameterType(parametertype) {
+        debugger
+       // alert("parametertype1" + parametertype);
+        var cccd = localStorage.getItem('CCAC');
+        $.ajax({
+            async: false,
+            type: "GET",
+            url: URLPowerAPI+'/api/PBXMLParameter/GetParameterTypeID',
+            dataType: "json",
+            contentType: "application/json",
+            data: {
+                PARTYPE: parametertype,
+                cccd: cccd
+            },
+
+            success: function (res) {
+           //     alert(JSON.stringify(res + "code"));
+                var abc = res;
+                //alert(JSON.stringify(abc));
+               // alert(parametertype + "2nd");
+                GetDropDown(abc, parametertype);
+
+            }
+
+        });
+    }
+
+
+    //second function for dropdown
+    function GetDropDown(parameter, parametertype) {
+        debugger
+
+
+        var cccd = localStorage.getItem('CCAC');
+        $.ajax({
+            async: false,
+            type: "GET",
+            url: URLPowerAPI +'/api/PBXMLParametercode/GetAllActiveParameterCodes',
+            dataType: "json",
+            contentType: "application/json",
+
+            data: {
+                PARTYPEID: parameter,
+                cccd: cccd
+            },
+
+            success: function (res) {
+                var related2 = [];
+                var relatedto; var related2 = [];
+                var relatedto;
+                $.each(res, function (data, value) {
+
+                    if (parametertype == 'SRS') {
+                        $("#RelatedToId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                        relatedto = value.ParCodeDescription;
+                       // alert(relatedto + "RelatedToooo");
+                        related2.push(relatedto);
+                    }
+
+                })
+            }
+
+        });
+    }
+
+
+    $(document).ready(function () {
+        $("#RelatedToId").change(function () {
+            debugger
+
+            var relatedval = $("#RelatedToId option:selected").text();
+            var cccd = localStorage.getItem('CCAC');
+            if (relatedval == "Account") {
+                $("#RelatedValueId").html("");
+                $.ajax({
+
+                    url: URLPowerAPI+'/api/PBXMLAccounts/GetAllCustomer',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    data: {
+                        cccd: cccd
+                    },
+
+                    success: function (res) {
+
+                        $.each(res, function (index, value) {
+                            $("#RelatedValueId").append($("<option></option>").val(value.ClId).html(value.Name));
+                        });
+
+                    }
+
+                });
+
+            }
+            else if (relatedval == "Campaign") {
+                $("#RelatedValueId").html("");
+                $.ajax({
+
+                    url: URLPowerAPI+'/api/PBXMLVCampaign/GetAllPBXMLCampaign',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    data: {
+                        cccd: cccd
+                    },
+
+                    success: function (res) {
+
+                        $.each(res, function (index, value) {
+                            $("#RelatedValueId").append($("<option></option>").val(value.CampaignNo).html(value.CampaignName));
+                        });
+
+                    }
+
+                });
+
+            } else if (relatedval == "Case") {
+
+                $("#RelatedValueId").html("");
+                $.ajax({
+
+                    url: URLPowerAPI+'/api/PBXMLVCase/GetAllPBXMLCase',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    data: {
+                        cccd: cccd
+                    },
+
+                    success: function (res) {
+
+                        $.each(res, function (index, value) {
+                            $("#RelatedValueId").append($("<option></option>").val(value.CaseNo).html(value.Subject));
+                        });
+
+                    }
+
+                });
+            }
+            else if (relatedval == "Contact") {
+                $("#RelatedValueId").html("");
+                $.ajax({
+
+                    url: URLPowerAPI+'/api/PBXMLVContact/GetAllPBXMLContacts',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    data: {
+                        cccd: cccd
+                    },
+
+                    success: function (res) {
+
+                        $.each(res, function (index, value) {
+                            $("#RelatedValueId").append($("<option></option>").val(value.ContactNo).html(value.FirstName));
+                        });
+
+                    }
+
+                });
+            }
+            else if (relatedval == "Lead") {
+                $("#RelatedValueId").html("");
+                $.ajax({
+
+                    url: URLPowerAPI+'/api/PBXMLVLead/GetAllPBXMLLead',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    data: {
+                        cccd: cccd
+                    },
+
+                    success: function (res) {
+
+                        $.each(res, function (index, value) {
+                            $("#RelatedValueId").append($("<option></option>").val(value.LeadNo).html(value.FirstName));
+                        });
+
+                    }
+
+                });
+            }
+            else if (relatedval == "Opportunity") {
+                $("#RelatedValueId").html("");
+                $.ajax({
+
+                    url: URLPowerAPI+'/api/PBXMLVOpportunity/GetAllPBXMLOpportunity',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    data: {
+                        cccd: cccd
+                    },
+
+                    success: function (res) {
+
+                        $.each(res, function (index, value) {
+                            $("#RelatedValueId").append($("<option></option>").val(value.OppNo).html(value.OppName));
+                        });
+
+                    }
+
+                });
+            }
+            else if (relatedval == "Potential") {
+                $("#RelatedValueId").html("");
+                $.ajax({
+
+                    url: URLPowerAPI+'/api/PBXMLVPotential/GetAllPBXMLPotential',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    data: {
+                        cccd: cccd
+                    },
+
+                    success: function (res) {
+
+                        $.each(res, function (index, value) {
+                            $("#RelatedValueId").append($("<option></option>").val(value.PotentialNo).html(value.PotentialName));
+                        });
+
+                    }
+
+                });
+            }
+            else if (relatedval == "Product") {
+                $("#RelatedValueId").html("");
+                $.ajax({
+
+                    url: URLPowerAPI+'/api/PBXMLVStockGroups/GetAllPBXMLVStockGroup',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    data: {
+                        cccd: cccd
+                    },
+
+                    success: function (res) {
+
+                        $.each(res, function (index, value) {
+                            $("#RelatedValueId").append($("<option></option>").val(value.Itcd).html(value.STOCKGROUP));
+                        });
+
+                    }
+
+                });
+            }
+        });
+
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+
+        $.ajax
+            ({
+
+                url: URLPowerAPI+'/api/PBXMLVContact/GetAllPBXMLContacts',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd
+
+                },
+
+                success: function (res) {
+
+
+                    $.each(res, function (index, value) {
+                        $("#EventContactNameId").append($("<option></option>").val(value.ContactNo).html(value.FirstName));
+
+
+
+
+                    });
+                }
+
+            });
+
+    });
+
+
+
+</script>
+<!--add edit code-->
+<!--<script>
+    $(document).ready(function () {
+        debugger
+        // we define and invoke a function
+        (function () {
+            console.log('payheadfunction!');
+        })();
+    });
+</script>-->
+
+<script>
+    function payheadfunction() {
+        debugger
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+            var mode = url1.split("=")[2];
+            var AccNo1 = url1.split("=")[1];
+            var index = (AccNo1).indexOf('&');
+            var ActivityNo = AccNo1.substring(0, index);
+
+        }
+
+        var CallHr = $("#EventHrId").val();
+        //alert(CallHr + "CallHr");
+        var Callmin = $("#EventMinId").val();
+        var x = Callmin.charAt(0);
+
+        if (Callmin <= 9 && x != 0) {
+
+            Callmin = "0" + Callmin;
+        }
+
+        var PmAm = $("#EventAmPmId").val();
+        var CallSec = "0" + "0";
+        if (PmAm == 'PM') {
+            CallHr = parseInt(CallHr) + parseInt(12);
+            var Startcallhrminpmam = CallHr + ":" + Callmin + ":" + CallSec;
+        }
+
+        else if (PmAm == 'AM') {
+            var cxh = String(CallHr)[0];
+            if (CallHr <= 9 && cxh != 0) {
+                CallHr = "0" + CallHr;
+            }
+
+            var Startcallhrminpmam = CallHr + ":" + Callmin + ":" + CallSec;
+        }
+
+        var EndCallHr = $("#EventEndHrId").val();
+        if (EndCallHr <= 9 && x != 0) {
+
+            EndCallHr = "0" + EndCallHr;
+        }
+      //  alert(EndCallHr + "CallHr");
+        var EndCallmin = $("#EventEndMinId").val();
+        if (EndCallmin <= 9 && x != 0) {
+
+            EndCallmin = "0" + EndCallmin;
+        }
+
+        var EndPmAm = $("#EventEndAmPmId").val();
+
+        if (EndPmAm == 'PM') {
+            var CallSec = "0" + "0";
+            EndCallHr = parseInt(CallHr) + parseInt(12);
+            var Endcallhrminpmam = EndCallHr + ":" + EndCallmin + ":" + CallSec;
+        }
+        else if (EndPmAm == 'AM') {
+            var CallSec = "0" + "0";
+            EndCallHr = EndCallHr;
+            var Endcallhrminpmam = EndCallHr + ":" + EndCallmin + ":" + CallSec;
+        }
+
+
+        var cccd = localStorage.getItem('CCAC');
+        var RecActStartdate = $("#RecActStartdateId").val();
+        var RecActEnddate = $("#RecActEnddateId").val();
+        var DailyDate = $("#DailyDate").val();
+        var dateOfMon = $('#SeldateOfMon option:selected').val();
+        var dayOfMon = $("#dayOfMon").val();
+        var SelweekOfMon = $('#SelweekOfMon option:selected').val();
+        var weekDayOfMon = $('#SelWeekDayOfMon option:selected').val();
+        var weekofMon = $("#WeekofMon").val();
+        var RepForWeek = $("#RepForWeek").val();
+
+        var SelDayOfyear = $('#SelDayOfyear option:selected').val();
+        var SelDayOfyear = $('#SelDayOfyear option:selected').val();
+
+        var SeldaysOfyear = $('#SeldaysOfyear option:selected').val();
+        var SeldayOfyear = $('#SeldayOfyear option:selected').val();
+        var monthId1 = $('#monthId1 option:selected').val();
+
+
+        var ContactPersonName = $("#EventContactNameId option:selected").text();
+        var ContactName = $("#EventContactNameId option:selected").val();
+        var ContactLead = $("#EventLeadNameId option:selected").text();
+        // var RelatedToName = $("#EventRelatedToId option:selected").text();
+        var AccountOptionName = $("#RelatedToId option:selected").text();
+        var AccountOption = $("#RelatedToId option:selected").val();
+        var StatusName = $("#StatusID option:selected").text();
+        var Status = $("#StatusID option:selected").val();
+        var PriorityName = $("#PriorityID option:selected").text();
+        var Priority = $("#PriorityID option:selected").val();
+
+
+        var RelatedToName = $("#RelatedValueId option:selected").text();
+        var RelatedTo = $("#RelatedValueId option:selected").val();
+
+
+        var StartDateTime1 = $("#EventStartDateId").val();
+        var mon = StartDateTime1.substring(0, 2);
+        var day = StartDateTime1.split("/"||"-")[1];
+        var year = StartDateTime1.split("/")[2];
+        var StartDateTime2 = year + "-" + mon + "-" + day;
+
+        var StartDateTime = StartDateTime2 + "T" + Startcallhrminpmam;
+
+        var EndDateTime1 = $("#EventEndDateId").val();
+        var mon = EndDateTime1.substring(0, 2);
+        var day = EndDateTime1.split("/")[1];
+        var year = EndDateTime1.split("/")[2];
+        var EndDateTime2 = year + "-" + mon + "-" + day;
+
+        var EndDateTime = EndDateTime2 + "T" + Endcallhrminpmam;
+
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+
+        var status = "A";
+
+
+
+
+
+        if ($('#SendNoEmailID').is(":checked")) {
+            var SendNoficatnEmail = "True"
+        }
+        else {
+            var SendNoficatnEmail = "False"
+        }
+
+        var target = $('#RepeattypeId option:selected').val();
+        //alert("tabghjgj" + target)
+        if ($('#RecActivityID').is(":checked" || "!False")) {
+
+            //var  RecurringActivity = "True";
+            if (target == "0") {
+                RecurringActivity = " ";
+            }
+            else if (target == "1") {
+                if (REveryDayId.Checked) {
+                    RecurringActivity = "Recurring activity that repeats every day from " + RecActStartdate + " to " + RecActEnddate;
+                }
+                else {
+                    RecurringActivity = "Recurring activity that repeats for every " + DailyDate + " from " + RecActStartdate + " to " + RecActEnddate;
+                }
+            }
+            else if (target == "2") {
+                var temp = ""
+
+                if ($('#CheckSunId').is(':checked')) {
+                    temp = temp + " Sunday ";
+                }
+                if ($('#CheckMonId').is(':checked')) { temp = temp + " Monday "; }
+                if ($('#CheckTueId').is(':checked')) { temp = temp + " Tuesday "; }
+                if ($('#CheckWenId').is(':checked')) { temp = temp + " Wednesday "; }
+                if ($('#CheckThrId').is(':checked')) { temp = temp + " Thursday "; }
+                if ($('#CheckFriId').is(':checked')) { temp = temp + " Friday "; }
+                if ($('#CheckSatId').is(':checked')) { temp = temp + " Saturday "; }
+                RecurringActivity = "Recurring activity repeats on " + temp + " from " + RecActStartdate + " to " + RecActEnddate + " for every " + RepForWeek + " week(s)";
+            }
+
+            else if (target == "3") {
+                if (dateOfMonId.Checked) {
+                    RecurringActivity = "Recurring activity that repeats on day " + dateOfMon + " of every " + dayOfMon + " month(s)  from " + RecActStartdate + " to " + RecActEnddate;
+                }
+                else {
+                    RecurringActivity = "Recurring activity that repeats on every " + SelweekOfMon + " " + weekDayOfMon + " of every " + weekofMon + " month(s)  from " + RecActStartdate + " to " + RecActEnddate;
+                }
+            }
+            else if (target == "4") {
+                if (dateofYearId.Checked) {
+                    RecurringActivity = "Recurring activity that repeats every year on " + SelDayOfyear + " " + SelDayOfyear + " from " + RecActStartdate + " to " + RecActEnddate;
+                }
+                else {
+                    RecurringActivity = "Recurring activity that repeats every year on " + SeldaysOfyear + " " + SeldayOfyear + " of " + monthId1 + " from " + RecActStartdate + " to " + RecActEnddate;
+                }
+            }
+        }
+        else RecurringActivity = "False";
+
+
+
+
+
+
+
+
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            ActivityNo = ActivityNo,
+                UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = curndate;
+        }
+        else {
+            ActivityNo = localStorage.getItem('MaxActivityNo');
+            UId = localStorage.getItem('UID');
+            Username = localStorage.getItem('UName');
+            Createdsystem = 'PowerSuit';
+            Createdate = curndate;
+        }
+
+
+        var parameter = {
+            ActivityOwnerName: Username,
+            ActivityOwner: UId,
+            ActivityNo: ActivityNo,
+            Subject: $("#EventSubjectId").val(),
+            ActivityType: 'Event',
+            //ActivityOwnerName: $("#EventOwnerId").val(),
+           // Venue: $("#EventVenueId").val(),
+            Venue: $("#EventVenueID").val(),
+            AccountOptionName: AccountOptionName,
+            AccountOption: AccountOption,
+            RelatedToName: RelatedToName,
+            RelatedTo: RelatedTo,
+            ContactPersonName: ContactPersonName,
+            ContactName: ContactName,
+            ContactLead: ContactLead,
+            StartDateTime: StartDateTime,
+            EndDateTime: EndDateTime,
+            DueDate: EndDateTime,
+            CallStartTime: StartDateTime,
+            CallDuration: "00:00:00",
+            CallDurationInSec: 0,
+            RecurringActivity: RecurringActivity,
+            SendNoficatnEmail: SendNoficatnEmail,
+            Description: $("#EventDiscriptionId").val(),
+            Billable: "",
+            CallResult: "",
+            Status: Status,
+            StatusName: StatusName,
+            Priority: Priority,
+            PriorityName: PriorityName,
+            CallType: "",
+            CallPurpose: "",
+            CallPurposeName: "",
+            Cccd: cccd,
+            STATUS: status,
+            LastUpdatedBy: UId,
+            CreatedBy: UId,
+            UID: UId,
+            USERNAME: Username,
+            LUID: localStorage.getItem('UID'),
+            LUSERNAME: localStorage.getItem('UName'),
+            CREATEDDATE: Createdate,
+            CreatedDate: Createdate,
+            LastUpdatedDate: curndate,
+            CREATEDSYSTEM: 'PowerBooksCRM',
+            LASTUPDATEDSYSTEM: 'PowerBooksCRM',
+            SFID: "",
+            SFXMLVAR: 'SFXMLVAR'
+
+        }
+        return parameter
+    }
+    $("#savebtnid").click(function () {
+
+        // alert("ghggg");
+        var addpayheadparameter = payheadfunction();
+        localStorage.setItem("addEventheadparameter2222", JSON.stringify(addpayheadparameter));
+        // alert(addcostcatparameter + "json");
+        debugger
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI+'/api/PBXMLActivities/AddPBXMLActivities',
+                dataType: 'JSON',
+                data: JSON.stringify(addpayheadparameter),
+
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+
+                    alert('Customer registered successfully');
+                    window.location.href = "LLLL-CR-SE-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+
+        return;
+
+    });
+
+    $("#updatebtnID").click(function () {
+        debugger
+        var addpayheadparameter = payheadfunction();
+        localStorage.setItem("addEventheadparameter2222", JSON.stringify(addpayheadparameter));
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI+'/api/PBXMLActivities/EditPBXMLActivities',
+                dataType: 'JSON',
+                data: JSON.stringify(addpayheadparameter),
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+                    alert('Customer registered successfully');
+                    window.location.href = "LLLL-CR-SE-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+        return;
+
+    });
+</script>
+
+<!--GET API-->
+<script>
+    $(document).ready(function () {
+        debugger
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var Id1 = url1.split("=")[1];
+        var index = (Id1).indexOf('&');
+        var Id = Id1.substring(0, index);
+        var cccd = localStorage.getItem('CCAC');
+        //alert(mode);
+        //alert(Id);
+
+        if (mode == 'edit') {
+            $.ajax({
+                type: 'GET',
+                url: URLPowerAPI+'/api/PBXMLActivities/GetPBXMLActivitiesByID',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: cccd,
+                    ActivityNo: Id
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                success: function (data) {
+                    alert(JSON.stringify(data));
+                    localStorage.setItem("getEventadparameter222", JSON.stringify(data));
+                    // alert(addcostcatparameter + "json");
+
+                    data = data;
+                    // alert('jnjnjn' + EmpGrp);
+
+
+                    /*   Call Start DateTime */
+                    var CallStartTime = data.StartDateTime;
+                    alert(CallStartTime)
+                    var index = (CallStartTime).indexOf('T');
+                    var CallStartTime2 = CallStartTime.substring(0, index);
+
+                    var year = CallStartTime2.substring(0, 4);
+                    var mon = CallStartTime2.split("-")[1];
+                    var day = CallStartTime2.split("-")[2];
+                    var CallStartTime1 = mon + "/" + day + "/" + year;
+
+
+                    alert(CallStartTime1 + "ali ka date");
+                  
+                   // var mode = url1.split("=")[2];
+                    var Callhr1 = CallStartTime.split("T")[1];
+                    var Callhr = Callhr1.substring(0, 2);
+                   // var Callhr = '2';
+                    alert(Callhr+"cl hr")
+                    var Callmin = CallStartTime.split(":")[1];
+                    alert(Callmin + "cl min")
+
+                    if (Callhr > 12
+                    ) {
+                        alert("infunction");
+                        Callhr = parseInt(Callhr) - parseInt(12);
+                        Callhr = Callhr;
+                        PmAm = "PM";
+                        alert(PmAm + "PmAm++");
+                    }
+                    else
+                    if (Callhr <= 12 || Callhr == "00") {
+
+                        Callhr = Callhr;
+                        PmAm = "AM";
+                        alert(PmAm + "PmAm+++");
+                    }
+
+                  
+
+                    /*   Call End DateTime */
+                    var CallEndTime = data.EndDateTime;
+                    
+                    var index1 = (CallEndTime).indexOf('T');
+                    var CallEndTime2 = CallEndTime.substring(0, index1);
+                    var year = CallEndTime2.substring(0, 4);
+                    var mon = CallEndTime2.split("-")[1];
+                    var day = CallEndTime2.split("-")[2];
+                    var CallEndTime1 = mon + "/" + day + "/" + year;
+
+                    alert(CallEndTime1 + "CallEndTime")
+
+                    var CallEndhr1 = CallEndTime.split("T")[1];
+                    alert(CallEndhr1 +"CallEndhr1")
+                    var CallEndhr = CallEndhr1.substring(0, 2);
+                    alert(CallEndhr + "CallEndhr")
+                    var CallEndmin = CallEndTime.split(":")[1];
+                    alert(CallEndhr + "CallEndhr");
+                    alert(CallEndmin + "CallEndmin");
+
+
+                    
+
+                    if (CallEndhr > 12) {
+                        CallEndhr = parseInt(CallEndhr) - parseInt(12);
+                        CallEndhr = CallEndhr;
+                        alert(CallEndhr + "CallEndhr");
+                        CallEndPmAm = "PM";
+                        alert(CallEndPmAm + "CallEndPmAm");
+                    }
+                    else if (CallEndhr <= 12 || CallEndhr == "00") {
+                        CallEndhr = CallEndhr;
+                        CallEndPmAm = "AM";
+
+                    }
+
+
+                   
+                   
+                   
+                    $("#EventSubjectId").val(data.Subject);
+                    $("#EventOwnerId").val(data.ActivityOwnerName);
+                    alert(data.Venue + "Venue");
+                    $("#EventVenueID").val(data.Venue);
+                    $("#EventDiscriptionId").val(data.Description);
+                    $('#EventContactNameId option:selected').text(data.ContactPersonName);
+                    $('#EventContactNameId option:selected').val(data.ContactName);
+                    $('#RelatedToId option:selected').text(data.AccountOptionName);
+                    $('#RelatedToId option:selected').val(data.AccountOption);
+                    $('#RelatedValueId option:selected').text(data.RelatedToName);
+                    /*$('#RelatedValueId option:selected').text(data.RelatedToName);*/
+                    $('#EventLeadNameId option:selected').text(data.ContactLead);
+                  
+                    $('#StatusID option:selected').text(data.StatusName);
+                    $('#StatusID option:selected').val(data.Status);
+                    $('#PriorityID option:selected').text(data.PriorityName);
+                    $('#PriorityID option:selected').val(data.Priority);
+                  
+                    if (data.SendNoficatnEmail == 'True') {
+                        $("#SendNoEmailID").attr('checked', 'checked');
+                    }
+                  
+                    
+                    $('#RecActivityID').attr('disabled', 'disabled');
+
+                    $("#EventStartDateId").val(CallStartTime1);
+                    $('#EventHrId option:selected').text(Callhr);
+                    $('#EventMinId option:selected').text(Callmin);
+                    $('#EventAmPmId option:selected').text(PmAm);
+
+
+                    $("#EventEndDateId").val(CallEndTime1);
+                    $('#EventEndHrId option:selected').text(CallEndhr);
+                    $('#EventEndMinId option:selected').text(CallEndmin);
+                    $('#EventEndAmPmId option:selected').text(CallEndPmAm);
+
+
+                
+
+                    
+
+
+                   
+                    sessionStorage.setItem('uid', data.UID);
+                    // alert(data.UID+"uid");
+                    sessionStorage.setItem('username', data.USERNAME);
+                    sessionStorage.setItem('createdsystem', data.CREATEDSYSTEM);
+                    sessionStorage.setItem('createddate', data.CREATEDDATE);
+                    sessionStorage.setItem('lastupdatedate', data.LASTUPDATEDDATE);
+
+
+
+
+                },
+
+            });
+
+
+        }
+
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+
+
+
+
+        $("#deletebtnID").click(function () {
+            var url1 = window.location.href;
+            var mode = url1.split("=")[2];
+            var Id1 = url1.split("=")[1];
+            var index = (Id1).indexOf('&');
+            var Id = Id1.substring(0, index);
+            var cccd = localStorage.getItem('CCAC');
+            $.ajax({
+                url: URLPowerAPI+'/api/PBXMLActivities/DeletePBXMLActivities',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    ActivityNo: Id
+
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                success: function (data, textStatus, xhr) {
+                    alert("PBXMLCostcategory deleted successfully");
+                    window.location.href = "LLLL-CR-SE-50.shtml";
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+

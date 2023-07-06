@@ -1,0 +1,206 @@
+
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-xs-2">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="margin-right: 8px; display:none;">Delete</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="margin-right: 8px; display:none;">Update</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Form layout-->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <!--1st column started-->
+                                            
+                                                <div class="col-lg-6">
+                                                <div class="collapse show">
+                                                    <form action="#">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Name&nbsp;:</label>
+                                                            <div class="col-lg-5">
+                                                                <input type="text" class="form-control" id="TarrifNameId">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">HSN Code&nbsp;:</label>
+                                                            <div class="col-lg-5">
+                                                                <input type="text" class="form-control" id="HSNCodeId">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Used for&nbsp;:</label>
+                                                            <div class="col-lg-5">
+                                                                <select class="form-control " id="UnderId">
+                                                                    <option value="Select" selected>Both</option>
+                                                                    <option value="Select" selected>Excise</option>
+                                                                    <option value="Select" selected>VAT</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <h5 class="offset-1" style="background-color: whitesmoke; margin-right:45px">VAT</h5>
+                                                        <!--<div class="col-12">
+                                                            <h3 class="mb-0">VAT</h3>
+                                                        </div>-->
+                                                        <!--<hr class="my-2">-->
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Commodity Code&nbsp;:</label>
+                                                            <div class="col-lg-5 col-form-label">
+                                                                <input type="text" class="form-control" id="CommodityCodeId">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Schedule Serial Number&nbsp;:</label>
+                                                            <div class="col-lg-5 col-form-label">
+                                                                <input type="text" class="form-control" id="ScheduleSerialNumberId">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        <!--2nd column started-->
+                                        <div class="col-lg-6">
+                                            <div class="collapse show">
+                                                    <form action="#">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Schedule Number&nbsp;:</label>
+                                                            <div class="col-lg-5 col-form-label">
+                                                                <input type="text" class="form-control" id="ScheduleSerialNumberId">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Note&nbsp;:</label>
+                                                            <div class="col-lg-5 col-form-label">
+                                                                <input type="text" class="form-control" id="NoteId">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  
+
+    <!--GET By ID API-->
+    <script>
+        $(document).ready(function () {
+            debugger
+            set_MainHeaderName();
+
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var Id1 = url1.split("=")[1];
+        var index = (Id1).indexOf('&');
+        var Id = Id1.substring(0, index);
+        var cccd = localStorage.getItem('CCCD');
+        //alert(mode);
+        // alert(Id);
+
+        if (mode == 'edit') {
+            $.ajax({
+                async:'false',
+                type: 'GET',
+                url: URLPowerAPI+'/api/PBXMLVTariffVat/GetTariffVatCommodity',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: cccd,
+                    tariffcd: Id
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data) {
+                   // alert("gvgvg" + data);
+                    $("#loader1").hide();
+                    ObjTariffCom = data[0];
+
+                   //alert(data.NAME);
+
+
+                    //alert(JSON.stringify(data));
+                    //alert("gvgvg" + ObjTariffCom.NAME);
+                    $("#TarrifNameId").val(ObjTariffCom.NAME);
+                   // alert($("#TarrifNameId").val());
+
+                    $('#UnderId option:selected').text(ObjTariffCom.USEDFOR);
+                    $("#HSNCodeId").val(ObjTariffCom.HSN);
+                    //alert(ObjTariffCom.HSN);
+                    $("#CommodityCodeId").val(ObjTariffCom.VATCOMMODITYCODE);
+                    $("#ScheduleSerialId").val(ObjTariffCom.SCHEDULENUMBER);
+
+                    $("#ScheduleSerialNumberId").val(ObjTariffCom.SCHEDULESERIALNUMBER);
+                    $("#NoteId").val(ObjTariffCom.NOTE);
+
+
+
+
+                },
+
+            });
+
+
+}
+
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+        $("#savebtnid").hide();
+
+
+
+
+        $("#deletebtnID").click(function () {
+        var urls = window.location.href;
+        debugger
+        //alert(urls);
+        var cc = cccd;
+        var abc = Id;
+
+        $.ajax({
+            url: URLPowerAPI+'/api/PBXMLStockGroup/DeletePBXMLStockGroup',
+        type: 'GET',
+        dataType: 'JSON',
+        data: {
+            cccd: cc,
+        tariffcd: abc
+        },
+
+        contentType: 'application/json ; charset = utf-8',
+            beforeSend: function () {
+                $("#loader1").show();
+            },
+        success: function (data, textStatus, xhr) {
+            alert(" Deleted successfully");
+            $("#loader1").hide();
+        window.location.href = "LLLL-MI-TV-50.shtml";
+
+},
+        error: function (xhr, textStatus, errorThrown) {
+            alert("You entered wrong password...! Fill the details again...");
+}
+});
+});
+});
+
+        
+        function set_MainHeaderName() {
+            $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Inventory Info - Tarrif/Vat ');
+            $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Inventory Info / Tarrif/Vat </span>');
+        };
+    </script>
+

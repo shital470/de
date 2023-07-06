@@ -1,0 +1,82 @@
+<!-- main content code -->
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="card">
+                <div class="card-header ">
+				<table cellspacing="5" cellpadding="5" border="0" class="float-center">
+                        <tbody>
+                            <tr>
+                                <td>Minimum date:</td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                        <input type="text" class="form-control daterange-single" name="datefilter" id="min_date" value="04/01/2022">
+                                    </div>
+                                </td>
+
+                                <td>Maximum date:</td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                        <input type="text" class="form-control daterange-single" name="datefilter" id="max_date" value="06/06/2023">
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="dt-button btn btn-light" tabindex="0" type="button" title="Apply" id="Apply_Btn" onclick="get_usersdata();"><span>Apply</span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="table_area">
+                    <table class="table" id="Godown_tbl">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="sort" data-sort="name"> </th>
+                            </tr>
+                        </thead>
+                        <tbody id="Godown_tbody">
+                        </tbody>
+                    </table>
+                </div>
+                <!-- cards views -->
+                <div class="content">
+                    <div id="Square_thumbs" style="display:none;">
+                        <div class="mb-3">
+                            <h6 class="mb-0 font-weight-semibold">
+                                Views
+                            </h6>
+                            <span class="text-muted d-block">Different Types of <code>Users</code> Views</span>
+                        </div>
+                        <div class="row" id="Square_thumbs_data">
+
+                        </div>
+                        <div class="dataTables_paginate paging_simple" id="pagination_sec">
+                            page: <span id="page"></span>
+                            <a class="paginate_button previous " aria-controls="DataTables_Table_1" data-dt-idx="0" tabindex="-1" href="javascript:prevPage()" id="btn_prev">← Prev</a>
+                            <a class="paginate_button next" aria-controls="DataTables_Table_1" data-dt-idx="1" tabindex="0" href="javascript:nextPage()" id="btn_next">Next →</a>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /cards views -->
+
+            </div>
+        </div>
+    </div>
+    <!-- /main content code -->
+<script type="text/javascript">
+    debugger
+    $(document).ready(function () {
+        set_MainHeaderName();
+
+    });
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Order</span> -Job Work Register - Job Work Out Order Book');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Order</a><span class="breadcrumb-item active">Job Work Register / Job Work Out Order Book</span>');
+    };
+</script>

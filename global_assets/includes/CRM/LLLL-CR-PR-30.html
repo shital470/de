@@ -1,0 +1,313 @@
+    <!-- Dashboard content -->
+    <!-- my code2 -->
+
+    <div class="row justify-content-center">
+
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-lg-6 col-xs-2">
+                            <!--<h4><span class="card-title"> Lead:Create Lead</span></h4>-->
+                        </div>
+                        <div class="col-lg-6">
+                            <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                            <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" id="deletebtnID">Delete</a>
+                            <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" id="updatebtnID">Update</a>
+                            <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Form layout-->
+                <div class="card-body">
+                    
+
+                   
+                      <div class="row">
+
+                        <div class="col-lg-4">
+                            <div class="form-group row ">
+                                <label class="col-lg-3 offset-1 col-form-label">Group:&nbsp;:</label>
+                                <div class="col-lg-7">
+                                    <input type="text" class="form-control" id="ItemGrpId">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group row ">
+                                <label class="col-lg-3 offset-1 col-form-label">Desc Name&nbsp;:</label>
+                                <div class="col-lg-7">
+                                    <input type="text" class="form-control" id="ItemDescId">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group row ">
+                                <label class="col-lg-3 offset-1 col-form-label">Desc Units:&nbsp;:</label>
+                                <div class="col-lg-7">
+                                    <input type="text" class="form-control" id="DescSalesId">
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div> 
+                     <!-- <div class="row">
+
+                        <div class="col-lg-4">
+                            <div class="form-group row ">
+                                <label class="col-lg-3 offset-1 col-form-label">Per&nbsp;:</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" id="PerId">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group row ">
+                                <label class="col-lg-3 offset-1 col-form-label">Vat @&nbsp;:</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" id="VatId">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group row ">
+                                <label class="col-lg-3 offset-1 col-form-label">Units&nbsp;:</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" id="UnitsId">
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                    <div class="row">
+
+                        <div class="col-lg-4">
+                            <div class="form-group row ">
+                                <label class="col-lg-3 offset-1 col-form-label">Packing Qty&nbsp;:</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" id="QntyId">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group row ">
+                                <label class="col-lg-3 offset-1 col-form-label">Rate&nbsp;:</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" id="RateId">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group row ">
+                                <label class="col-lg-3 offset-1 col-form-label">Ammount&nbsp;:</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" id="AmtId">
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div> -->
+                   
+                   
+                    <!--<div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col" class="sort" style="padding-left: 80px;">SUBJECT</th>
+                                    <th scope="col" class="sort" style="padding-left: 30px;">ACTIVITY TYPE</th>
+                                    <th scope="col" class="sort" style="padding-left: 30px;">CONTACT NAME</th>
+                                    <th scope="col" class="sort" style="padding-left: 30px;">DESCRIPTION</th>
+                                    <th scope="col" class="sort" style="padding-left: 30px;">CREATED DATE</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="list" id="exam">
+                            </tbody>
+
+                        </table>
+                    </div>-->
+                    <hr class="my-3">
+                        <div class="col">
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-flush">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col" class="sort">Item Code</th>
+                                            <th scope="col" class="sort"> Item Desc</th>
+                                            <th scope="col" class="sort"> Rate</th>
+                                            <th scope="col" class="sort">Amount</th>
+                                            <th scope="col" class="sort">Units</th>
+                                            <!-- <th scope="col" class="sort">Var Percentage</th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody class="list" id="item_list">
+                                    </tbody>
+                                    
+                                </table>
+                            </div>
+                        </div>
+
+                                            
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <!--sidebar code-->
+    <script>
+        $(document).ready(function () {
+            set_MainHeaderName();
+
+    get_FromURL();
+    get_userdata();
+    get_userdata1();
+
+        });</script>
+
+
+
+    <!--dropdown list-->
+    <script type="text/javascript">
+
+        var itcd,parent;
+        function get_FromURL(){
+             debugger
+            var url1 = window.location.href;
+            url1 = url1.split('=');
+            
+            url1 = url1[1].split('&');
+             itcd = url1[0];
+           
+        }
+       function get_userdata(){
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+
+            $.ajax
+                ({
+
+                    url: URLPowerAPI+'/api/PBXMLStockGroup/GetPBXMLStockGroupById',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    data:
+                    {
+                        cccd: cccd,
+                        Itcd:itcd
+
+                    },
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data) {
+                        $("#loader1").hide();
+                        //alert(data);
+                        parent =data.STOCKGROUP;
+                        $('#ItemGrpId').val(data.STOCKGROUP);
+                        $('#ItemDescId').val(data.NAME);
+                        $('#DescSalesId').val(data.BASEUNITS);
+
+                        
+                    }
+
+                });
+
+       }
+    function get_userdata1(){
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+
+            $.ajax
+                ({
+
+                    url: URLPowerAPI+'/api/PBXMLVStocksItem/GetAllPBXMLVStockItems',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    data:
+                    {
+                        cccd: cccd
+
+                    },
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data1) {
+                        $("#loader1").hide();
+                       // alert(data1);
+
+                        var html = '';
+                       debugger
+                        data1.forEach((item, index) => {
+                            
+                            if (item.PARENT== parent) {
+                               //  alert(item.OPENINGRATE);
+                               var rate = item.OPENINGRATE;
+                               rate = rate.split('/');
+                               rate = rate[0];
+                                html += `<tr>
+                                    <td> ${index + 1}</td>
+                                     <td>  ${item.DESCRIPTION} </td>
+                                     <td>  ${parseFloat(Math.abs(rate)).toFixed(2)} </td>
+                                     <td>  ${parseFloat(Math.abs(item.OPENINGVALUE)).toFixed(2)} </td>
+                                     <td>  ${item.BASEUNITS} </td>
+                                     <td>  </td>
+                                     
+                                      
+                                    </tr>`;
+
+                            }
+                        });
+                           
+                        $('#item_list').html(html);
+                    }
+
+                });
+
+       }
+
+
+       function Set_Table() {
+                        debugger
+                        var html = '';
+                      
+                        data1.forEach((item, index) => {
+                            if (value.PARENT == parent) {
+                                
+                                html += `<tr>
+                                    <td> ${index}</td>
+                                     <td>  ${item.DESCRIPTION} </td>
+                                     <td>  ${item.OPENINGRATE} </td>
+                                     <td>  ${item.OPENINGVALUE} </td>
+                                     <td>  ${item.BASEUNITS} </td>
+                                     <td> '' </td>
+                                     
+                                      
+                                    </tr>`;
+
+                            }
+                        });
+                           
+                        $('#item_list').html(html);
+                        
+                    }
+
+    
+        function set_MainHeaderName() {
+            $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">CRM</span> - Product');
+            $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>CRM</a><span class="breadcrumb-item active">Product</span>');
+        };
+    </script>
+
+

@@ -1,0 +1,762 @@
+<!-- Dashboard content -->
+<!-- my code2 -->
+
+<div class="row justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                        <h4><span class="card-title"></span></h4>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display: none; margin-right: 8px;">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display: none; margin-right: 8px;">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">UserId&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="Userid">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Password&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="UserPassId">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">User FullName&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="UserFNameId">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">
+                                User Type&nbsp;:
+                            </label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="UserTypeId">
+                                    <option value="Select" selected>--select--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">User EmailId&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="UserEmailId">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">
+                                User List&nbsp;:
+                            </label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="UserListId">
+                                    <option value="Select" selected>--select--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">
+                                Status&nbsp;:
+                            </label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="StatusId">
+                                    <option value="Select" selected>--select--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">
+                                User Role&nbsp;:
+                            </label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="UserRoleId">
+                                    <option value="Select" selected>--select--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">User Address1&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="UserFirstAdd">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">User Address2&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="UserSecondAdd">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">
+                                Head Quarter&nbsp;:
+                            </label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="headerQuterId">
+                                    <option value="Select" selected>--select--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">
+                                Area&nbsp;:
+                            </label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="AreaId">
+                                    <option value="Select" selected>--select--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">
+                                Region&nbsp;:
+                            </label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="RegionId">
+                                    <option value="Select" selected>--select--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">
+                                Zone&nbsp;:
+                            </label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="ZoneId">
+                                    <option value="Select" selected>--select--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">
+                                City&nbsp;:
+                            </label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="CityId">
+                                    <option value="Select" selected>--select--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">
+                                District&nbsp;:
+                            </label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="DistrictId">
+                                    <option value="Select" selected>--select--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">
+                                State&nbsp;:
+                            </label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="StateId">
+                                    <option value="Select" selected>--select--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">
+                                Country&nbsp;:
+                            </label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="CountryId">
+                                    <option value="Select" selected>--select--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="card-header header-elements-inline">
+                        <h6 class="font-weight-semibold">Additinal Information</h6>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Mobile1&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="MobFirst">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Mobile2&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="MobSecond">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Telephone1&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="TelFirst">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Telephone2&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="Telsecond">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">CRM</span> User');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>CRM</a><span class="breadcrumb-item active">User</span>');
+    };
+</script>
+<!--dropdown list-->
+
+<script type="text/javascript">
+    $(function () {
+        debugger
+        GetParameterType('UR');
+        GetParameterType('HQ');
+        GetParameterType('AR');
+        GetParameterType('CT');
+        GetParameterType('DI');
+        GetParameterType('RG');
+        GetParameterType('ZO');
+        GetParameterType('STA');
+        GetParameterType('ST');
+        GetParameterType('CR');
+
+    });
+    //create first function for getparameretertypeid
+    function GetParameterType(parametertype) {
+        /* alert(parametertype);*/
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+        $.ajax({
+            type: "GET",
+            url: URLPowerAPI + '/api/PBXMLParameter/GetParameterTypeID',
+            dataType: "json",
+            contentType: "application/json",
+            data: {
+                PARTYPE: parametertype,
+                cccd: cccd
+            },
+            beforeSend: function () {
+                $("#loader1").show();
+            },
+            async: false,
+            success: function (res) {
+                $("#loader1").hide();
+                var abc = res;
+                GetDropDown(abc, parametertype);
+
+            }
+
+        });
+    }
+
+
+    //second function for dropdown
+    function GetDropDown(parameter, parametertype) {
+        debugger
+
+
+        var cccd = localStorage.getItem('CCAC');
+        $.ajax({
+            type: "GET",
+            url: URLPowerAPI + '/api/PBXMLParametercode/GetAllActiveParameterCodes',
+            dataType: "json",
+            contentType: "application/json",
+            data: {
+                PARTYPEID: parameter,
+                cccd: cccd
+            },
+            async: false,
+
+            success: function (res) {
+
+                $.each(res, function (data, value) {
+                    if (parametertype == 'UR') {
+                        $("#UserRoleId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'HQ') {
+                        $("#headerQuterId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'ST') {
+                        $("#StateId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'AR') {
+                        $("#AreaId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'RG') {
+                        $("#RegionId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'CT') {
+                        $("#CityId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'ZO') {
+                        $("#ZoneId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'DI') {
+                        $("#DistrictId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'STA') {
+                        $("#StatusId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'CR') {
+                        $("#CountryId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+
+                })
+            }
+
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/PBXMLVUsers/GetAllPBXMLUsers',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd
+
+                },
+                async: false,
+                success: function (res) {
+                    //alert("Data inside ajax...!!!")
+                    //alert(JSON.stringify(res));
+                    $.each(res, function (index, value) {
+                        $("#UserTypeId").append($("<option></option>").val(value.UID).html(value.UserType));
+
+
+
+                    });
+                }
+
+            });
+
+    });
+
+
+
+</script>
+
+
+<!--Add and  edit api-->
+
+<script type="text/javascript">
+    function Groupfunction() {
+        /*   alert("in function");*/
+        debugger
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+            var mode = url1.split("=")[2];
+            var AccNo1 = url1.split("=")[1];
+            var index = (AccNo1).indexOf('&');
+            var AccNo = AccNo1.substring(0, index);
+
+        }
+
+        var cccd = localStorage.getItem('CCAC');
+        var Usertype = $("#UserTypeId option:selected").text();
+        var UserList = $("#UserListId option:selected").text();
+        var UStatus = $("#StatusId option:selected").text();
+        var URole = $("#UserRoleId option:selected").val();
+        var URoleName = $("#UserRoleId option:selected").text();
+        var UHQ = $("#headerQuterId option:selected").val();
+        var UHQName = $("#headerQuterId option:selected").text();
+        var UArea = $("#AreaId option:selected").val();
+        var UAreaName = $("#AreaId option:selected").text();
+        var URegion = $("#RegionId option:selected").val();
+        var URegionName = $("#RegionId option:selected").text();
+        var UZone = $("#ZoneId option:selected").val();
+        var UZoneName = $("#ZoneId option:selected").text();
+        var UCity = $("#CityId option:selected").val();
+        var UCityName = $("#CityId option:selected").text();
+        var UDistrict = $("#DistrictId option:selected").val();
+        var UDistrictName = $("#DistrictId option:selected").text();
+        var UState = $("#StateId option:selected").val();
+        var UStateName = $("#StateId option:selected").text();
+        var UCountry = $("#CountryId option:selected").val();
+        var UCountryName = $("#CountryId option:selected").text();
+
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+        var status = "A";
+
+
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            AccNo = AccNo,
+                UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            CCNM = sessionStorage.getItem('CCNM');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = sessionStorage.getItem('createddate');
+        }
+        else {
+            AccNo = localStorage.getItem('MaxUID');
+            CCNM = localStorage.getItem('CCNM');
+            UId = localStorage.getItem('UID');
+            Username = localStorage.getItem('UName');
+            Createdsystem = 'PowerSuit'
+            Createdate = curndate;
+        }
+
+        var parameter = {
+
+            UID: AccNo,
+            UserID: $("#Userid").val(),
+            UPassword: $("#UserPassId").val(),
+            UName: $("#UserFNameId").val(),
+            UserType: Usertype,
+            UEmailID: $("#UserEmailId").val(),
+            UserList: UserList,
+            UStatus: UStatus,
+            URole: URole,
+            URoleName: URoleName,
+            UAddress1: $("#UserFirstAdd").val(),
+            UAddress2: $("#UserSecondAdd").val(),
+            UHQ: UHQ,
+            UHQName: UHQName,
+            UArea: UArea,
+            UAreaName: UAreaName,
+            URegion: URegion,
+            URegionName: URegionName,
+            UDistrict: UDistrict,
+            UDistrictName: UDistrictName,
+            UZone: UZone,
+            UZoneName: UZoneName,
+            UCity: UCity,
+            UCityName: UCityName,
+            UState: UState,
+            UStateName: UStateName,
+            UCountry: UCountry,
+            UCountryName: UCountryName,
+            UMobile1: $("#MobFirst").val(),
+            UMobile2: $("#MobSecond").val(),
+            UTelephone1: $("#TelFirst").val(),
+            UTelephone2: $("#Telsecond").val(),
+            CCCD: cccd,
+            STATUS: status,
+            USERNAME: Username,
+            CCNM: CCNM,
+            UCreatedBy: UId,
+            ULastUpdatedBy: UId,
+            LUSERNAME: localStorage.getItem('UName'),
+            UCreatedDate: Createdate,
+            ULastUpdateDate: curndate
+
+        }
+        return parameter
+    }
+    $("#savebtnid").click(function () {
+
+        alert("ghggg");
+        var addgroupparameter = Groupfunction();
+        localStorage.setItem("addparameter", JSON.stringify(addgroupparameter));
+        debugger
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLUser/AddPBXMLUser',
+                dataType: 'JSON',
+                data: JSON.stringify(addgroupparameter),
+
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+
+                    alert('User registered successfully');
+                    window.location.href = "LLLL-CR-UR-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+
+        return;
+
+    });
+
+    $("#updatebtnID").click(function () {
+        debugger
+        var addgroupparameter = Groupfunction();
+        /*   localStorage.setItem("addparameter", JSON.stringify(addgroupparameter));*/
+        // alert("localstorage")
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLUser/EditPBXMLUser',
+                dataType: 'JSON',
+                data: JSON.stringify(addgroupparameter),
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+                    alert('User registered successfully');
+                    window.location.href = "LLLL-CR-UR-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+        return;
+
+    });
+</script>
+
+<!--GET by id API-->
+<script>
+    $(document).ready(function () {
+        debugger
+        set_MainHeaderName();
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var AccNo1 = url1.split("=")[1];
+        var index = (AccNo1).indexOf("&");
+        var UID = AccNo1.substring(0, index);
+        var cccd = localStorage.getItem('CCAC');
+        // alert(AccNo);
+
+        if (mode == 'edit') {
+            $.ajax({
+                type: 'GET',
+                url: URLPowerAPI + '/api/PBXMLUser/GetPBXMLUserById',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: cccd,
+                    UID: UID
+                },
+                //beforeSend: function () {
+                //    $("#loader1").show();
+                //},
+                success: function (data) {
+                    /*$("#loader1").hide();*/
+
+                    $("#Userid").val(data.UserID);
+                    $("#UserPassId").val(data.UPassword);
+                    $("#UserFNameId").val(data.UName);
+                    $("#UserEmailId").val(data.UEmailID);
+                    $("#UserFirstAdd").val(data.UAddress1);
+                    $("#UserSecondAdd").val(data.UAddress2);
+                    $("#MobFirst").val(data.UMobile1);
+                    $("#MobSecond").val(data.UMobile2);
+
+                    $("#TelFirst").val(data.UTelephone1);
+                    $("#Telsecond").val(data.UTelephone2);
+
+                    // alert(data.NAME);
+
+
+                    $('#UserTypeId option:selected').text(data.UserType);
+                    $('#UserListId option:selected').text(data.UserList);
+                    //$('#StatusId option:selected').text(data.UStatus);
+                    $('#StatusId option:contains(' + data.UStatus + ')').prop('selected', true);
+                    // $('#UserRoleId option:selected').text(data.URoleName);
+                    $('#UserRoleId option:contains(' + data.URoleName + ')').prop('selected', true);
+                    $('#headerQuterId option:selected').text(data.UHQName);
+                    $('#AreaId option:selected').text(data.UAreaName);
+                    $('#RegionId option:selected').text(data.URegionName);
+                    $('#ZoneId option:selected').text(data.UZoneName);
+                    $('#CityId option:selected').text(data.UCityName);
+                    $('#DistrictId option:selected').text(data.UDistrictName);
+                    $('#StateId option:selected').text(data.UStateName);
+                    $('#CountryId option:selected').text(data.UCountryName);
+                    // alert("ADDLALLOCTYPE" + data.ADDLALLOCTYPE);
+
+
+                    sessionStorage.setItem('uid', data.UCreatedBy);
+                    sessionStorage.setItem('username', data.USERNAME);
+                    sessionStorage.setItem('createdsystem', data.CREATEDSYSTEM);
+                    sessionStorage.setItem('createddate', data.UCreatedDate);
+                    sessionStorage.setItem('lastupdatedate', data.ULastUpdateDate);
+                    sessionStorage.setItem('CCNM', data.CCNM);
+
+                },
+
+            });
+        }
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+        $("#savebtnid").hide();
+
+
+        $("#deletebtnID").click(function () {
+            debugger
+            var urls = window.location.href;
+            debugger
+            //alert(urls);
+            var cccd = localStorage.getItem('CCAC');
+            var group = UID;
+
+            $.ajax({
+                url: URLPowerAPI + '/api/PBXMLUser/DeletePBXMLUser',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    UID: group
+
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                success: function (data, textStatus, xhr) {
+                    alert("User deleted successfully");
+                    window.location.href = "LLLL-CR-UR-50.shtml";
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+
+    });
+
+</script>
+<script>
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">CRM</span> - User');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>CRM</a><span class="breadcrumb-item active">User</span>');
+    };
+</script>
+
+
+

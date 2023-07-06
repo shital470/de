@@ -1,0 +1,328 @@
+<div class="row justify-content-center">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-xs-2">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display: none; margin-right: 8px;">Delete</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display: none; margin-right: 8px;">Update</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Form layout-->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="collapse show">
+                                               <h6>Add Category</h6>
+                                            </div>
+
+
+                                            </div>
+                                        </div>
+                                                    <!--1st column started-->
+
+                                                    <div class="col-lg-6">
+                                                        <div class="collapse show">
+                                                            <form action="#">
+                                                                <div class="form-group row">
+                                                                    <label class="col-lg-5 offset-1 col-form-label">Name&nbsp;:</label>
+                                                                    <div class="col-lg-5">
+                                                                        <input type="text" class="form-control" id="StockCategoryNameId">
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+
+                                                    <!--2nd column started-->
+                                                    <div class="col-lg-6">
+                                                        <div class="collapse show">
+                                                            <form action="#">
+                                                                <div class="form-group row">
+                                                                    <label class="col-lg-5 offset-1 col-form-label">Under&nbsp;:</label>
+                                                                    <div class="col-lg-5">
+                                                                        <select class="form-control select" id="UnderId">
+                                                                            <option value="Select" selected>--Select--</option>
+                                                                            <option value="Select">Primary</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                   
+                <!--drop-down list-->
+                <script type="text/javascript">
+                    $(function () {
+                        debugger
+                        var cccd = localStorage.getItem("CCAC");
+
+                        $.ajax({
+                            type: "GET",
+                            url: URLPowerAPI+"/api/PBXMLVStockCategorys/GetAllPBXMLVStockCategories",
+                            dataType: "json",
+                            contentType: "application/json",
+                            data:
+                            {
+                                cccd: cccd
+                            },
+                            beforeSend: function () {
+                                $("#loader1").show();
+                            },
+                            success: function (res) {
+                                $("#loader1").hide();
+                                $.each(res, function (data, value) {
+
+                                    $("#UnderId").append($("<option></option>").val(value.StockCatNo).html(value.PARENT));
+                                })
+                            }
+
+                        });
+
+                    });
+
+                </script>
+                <!--For Save Button-->
+                <script>
+                    function StockCatoryfunction() {
+                        debugger
+                        var url1 = window.location.href;
+                        var arr = url1.split('=');
+                        console.log(url1.length)
+
+                        if (arr.length > 1) {
+                            var mode = url1.split("=")[2];
+                            var StockCatNo1 = url1.split("=")[1];
+                            var index = (StockCatNo1).indexOf('&');
+                            var StockCatNo = StockCatNo1.substring(0, index);
+
+                        }
+
+                        var cccd = localStorage.getItem('CCAC');
+
+
+                        var parent = $("#UnderId option:selected").text();
+
+                        var CurrentDate = new Date();
+                        var curndate = CurrentDate.toISOString().replace('Z', '');
+                        var status = "A";
+
+
+                        //storesession value
+                        var UId;
+                        var Username;
+                        var Createdsystem;
+                        var Createdate;
+
+                        if (mode == 'edit') {
+                            StockCatNo = StockCatNo,
+                                UId = sessionStorage.getItem('uid');
+                            Username = sessionStorage.getItem('username');
+                            Createdsystem = sessionStorage.getItem('createdsystem');
+                            Createdate = sessionStorage.getItem('createddate');
+                        }
+                        else {
+                            StockCatNo = localStorage.getItem('MaxStockCatNo');
+                            UId = localStorage.getItem('UID');
+                            Username = localStorage.getItem('UName');
+                            Createdsystem = 'PowerSuit';
+                            Createdate = curndate;
+                        }
+
+
+                        var parameter = {
+                            StockCatNo: StockCatNo,
+                            STOCKCATEGORY: $("#StockCategoryNameId").val(),
+                            NAME: $("#StockCategoryNameId").val(),
+                            PARENT: parent,
+                            CCCD: cccd,
+                            STATUS: status,
+                            CREATEDSYSTEM: Createdsystem,
+                            LASTUPDATEDSYSTEM: 'PowerSuit',
+                            UID: UId,
+                            USERNAME: Username,
+                            LUID: localStorage.getItem('UID'),
+                            LUSERNAME: localStorage.getItem('UName'),
+                            CREATEDDATE: Createdate,
+                            LASTUPDATEDDATE: curndate
+                        }
+                        return parameter
+                    }
+                    $("#savebtnid").click(function () {
+
+                        // alert("ghggg");
+                        var addStockCatparameter = StockCatoryfunction();
+                        // alert(addcostcatparameter + "json");
+                        debugger
+                        $.ajax
+                            ({
+                                type: 'POST',
+                                url: URLPowerAPI+'/api/PBXMLStockCategory/AddPBXMLStockCategories',
+                                dataType: 'JSON',
+                                data: JSON.stringify(addStockCatparameter),
+
+                                contentType: 'application/json ; charset = utf-8',
+                                beforeSend: function () {
+                                    $("#loader1").show();
+                                },
+                                success: function (data, textStatus, xhr) {
+
+                                   /* alert(' Registered successfully');*/
+                                    $("#loader1").hide();
+                                    window.location.href = "LLLL-MI-SC-50.html";
+                                },
+                                error: function (xhr, textStatus, errorThrown) {
+                                    alert("You entered some invalid fields...! Fill the details again...");
+                                }
+                            });
+
+                        return;
+
+                    });
+
+                    $("#updatebtnID").click(function () {
+                        debugger
+                        var addStockCatparameter = StockCatoryfunction();
+                        $.ajax
+                            ({
+                                type: 'POST',
+                                url: URLPowerAPI+'/api/PBXMLStockCategory/EditPBXMLStockCategory',
+                                dataType: 'JSON',
+                                data: JSON.stringify(addStockCatparameter),
+                                contentType: 'application/json ; charset = utf-8',
+                                beforeSend: function () {
+                                    $("#loader1").show();
+                                },
+                                success: function (data, textStatus, xhr) {
+                                    alert(' Updated successfully');
+                                    $("#loader1").hide();
+                                    window.location.href = "../LLLL-MI-SC-50.shtml";
+                                },
+                                error: function (xhr, textStatus, errorThrown) {
+                                    alert("You entered some invalid fields...! Fill the details again...");
+                                }
+                            });
+                        return;
+
+                    });
+                </script>
+
+                <!-- For GET By API-->
+                <script>
+                    $(document).ready(function () {
+                        debugger
+                        set_MainHeaderName();
+                        var url1 = window.location.href;
+                        var mode = url1.split("=")[2];
+                        var StockCatNo1 = url1.split("=")[1];
+                        var index = (StockCatNo1).indexOf('&');
+                        var StockCatNo = StockCatNo1.substring(0, index);
+                        var cccd = localStorage.getItem('CCAC');
+                        //alert(mode);
+                        //alert(Id);
+
+                        if (mode == 'edit') {
+                            $.ajax({
+                                type: 'GET',
+                                url: URLPowerAPI+'/api/PBXMLStockCategory/GetPBXMLStockCategoryById',
+                                dataType: 'JSON',
+                                contentType: 'application/json ; charset = utf-8',
+                                //data: JSON.stringify(groupname),
+                                data: {
+                                    cccd: cccd,
+                                    StockCatNo: StockCatNo
+                                },
+
+                                contentType: 'application/json ; charset = utf-8',
+                                beforeSend: function () {
+                                    $("#loader1").show();
+                                },
+                                success: function (data) {
+                                    ObjStockCat = data;
+                                    $("#loader1").hide();
+                                    // alert('jnjnjn' + ObjStockCat);
+
+
+                                    //alert(JSON.stringify(data));
+
+                                    $("#StockCategoryNameId").val(ObjStockCat.NAME);
+                                    //alert(data.NAME);
+                                    $('#UnderId option:selected').text(ObjStockCat.PARENT);
+
+                                    sessionStorage.setItem('uid', ObjStockCat.UID);
+                                    sessionStorage.setItem('username', ObjStockCat.USERNAME);
+                                    sessionStorage.setItem('createdsystem', ObjStockCat.CREATEDSYSTEM);
+                                    sessionStorage.setItem('createddate', ObjStockCat.CREATEDDATE);
+                                    sessionStorage.setItem('lastupdatedate', ObjStockCat.LASTUPDATEDDATE);
+
+
+                                },
+
+                            });
+
+
+                        }
+
+                        $("#deletebtnID").show();
+                        $("#updatebtnID").show();
+                        $("#savebtnid").hide();
+
+
+
+
+                        $("#deletebtnID").click(function () {
+                            debugger
+                            var url1 = window.location.href;
+                            var mode = url1.split("=")[2];
+                            var StockCatNo1 = url1.split("=")[1];
+                            var index = (StockCatNo1).indexOf('&');
+                            var StockCatNo = StockCatNo1.substring(0, index);
+                            var cccd = localStorage.getItem('CCAC');
+                            //alert(urls);
+
+
+                            $.ajax({
+                                url: URLPowerAPI+'/api/PBXMLStockCategory/DeletePBXMLStockCategories',
+                                type: 'GET',
+                                dataType: 'JSON',
+                                data: {
+                                    cccd: cccd,
+                                    StockCatNo: StockCatNo
+
+                                },
+
+                                contentType: 'application/json ; charset = utf-8',
+                                beforeSend: function () {
+                                    $("#loader1").show();
+                                },
+                                success: function (data, textStatus, xhr) {
+                                    alert(" Deleted successfully");
+                                    $("#loader1").hide();
+                                    window.location.href = "../LLLL-MI-SC-50.shtml";
+
+                                },
+                                error: function (xhr, textStatus, errorThrown) {
+                                    alert("You entered wrong password...! Fill the details again...");
+                                }
+                            });
+                        });
+                    });
+
+
+            function set_MainHeaderName() {
+            $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Inventory Info Stock Category');
+            $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Inventory Info Stock Category</span>');
+            };
+           
+                </script>
+

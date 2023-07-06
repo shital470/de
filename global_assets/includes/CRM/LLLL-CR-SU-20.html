@@ -1,0 +1,587 @@
+<!-- main content code -->
+      
+            <div class="row justify-content-center">
+
+                <div class="col">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-lg-6 col-xs-2">
+                                    <!--<h4><span class="card-title">Activity:Create Call</span></h4>-->
+                                </div>
+                                <div class="col-lg-6">
+                                    <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                                    <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display: none; margin-right: 8px;">Delete</a>
+                                    <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display: none; margin-right: 8px;">Update</a>
+                                    <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Form layout-->
+                        <div class="card-body">
+                            <div class="col-lg-12">
+                                <div class="card-header header-elements-inline" style="padding-top: 5px;padding-bottom: 20px;">
+                                    <!--<h6 class="font-weight-semibold">ADD SUPPLIER</h6>-->
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">
+                                            Supplier Type&nbsp;:
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <select class="form-control" id="UnderValueId">
+                                                <option value="Select" selected>Cr-Sr Creditors</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Supplier Name&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="SupplierNameId">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Supplier Group&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="SupplierGrpId" value="SUPPLIER" disabled>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Contact person&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="PayHeadNameId">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Address&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="AddressId" placeholder="Address Line 1">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">City&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="CityId">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">&nbsp;</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="AddressId2" placeholder="Address Line 2">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Pin Code:&nbsp;</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="PinCodeId">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">State&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="StateId">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Telephone&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="TelNoId">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Email Id&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="MailId">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">PAN No&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="PanNoId">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Fax&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="FaxId">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Section Code&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="SecCodeId">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Deductee Code&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" value="0" id="DedCodeId">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Edu Cess @ :&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" value="0">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Tds@&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" value="0" ">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Surcharge&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" value="0">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">VAT TIN&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="VatTinId">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">C.S.T TIN&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">
+                                            Tax Pattern &nbsp;:
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <select class="form-control" id="TextpatternId">
+                                                <option value="Select" selected>--Select--</option>
+                                                <option>GST</option>
+                                                <option>LABOUR CHARGES</option>
+                                                <option>VAT @ 12.5%</option>
+                                                <option>VAT @ 5%</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Tax Rate&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" value="0">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Pymt.Nature&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="PayNatureId">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group row offset-1">
+                                        <label class="col-lg-4 col-form-label">Currency&nbsp;:</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- /main content code -->
+       
+   
+
+
+    <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/js-cookie/js.cookie.js"></script>
+    <script src="../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+    <!-- Argon JS -->
+    <script src="../assets/js/argon.js?v=1.2.0"></script>
+    <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+
+    <!-- Argon Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+    <!--model link-->
+
+    <script src="../Model/CrmContact.js" type="text/javascript"></script>
+
+    <!--sidebar code-->
+    <script>
+        $(document).ready(function () {
+
+            $('#content').load("Sidebar.html");
+
+        });</script>
+
+ <!--add edit api-->
+
+    <script>
+        function AddEditfunction() {
+            debugger
+            /*alert("in fuctiin");*/
+            var url1 = window.location.href;
+            var arr = url1.split('=');
+            console.log(url1.length)
+
+            if (arr.length > 1) {
+                var mode = url1.split("=")[2];
+                var Itcd1 = url1.split("=")[1];
+                var index = (Itcd1).indexOf('&');
+                var Itcd = Itcd1.substring(0, index);
+
+            }
+            var urls = window.location.href;
+            var cccd = localStorage.getItem('CCAC');
+
+
+            //var STATENAME = $("#StateId option:selected").text();
+            var TAXTYPE = $("#TextpatternId option:selected").text();
+            var CurrentDate = new Date();
+            var curndate = CurrentDate.toISOString().replace('Z', '');
+            var status = "A";
+
+
+            //storesession value
+            var UId;
+            var Username;
+            var Createdsystem;
+            var Createdate;
+
+            if (mode == 'edit') {
+                Itcd = Itcd,
+                    UId = sessionStorage.getItem('uid');
+                Username = sessionStorage.getItem('username');
+                Createdsystem = sessionStorage.getItem('createdsystem');
+                Createdate = sessionStorage.getItem('createddate');
+            }
+            else {
+                Itcd = localStorage.getItem('MaxSpNo');
+                UId = localStorage.getItem('UID');
+                Username = localStorage.getItem('UName');
+                Createdsystem = 'PowerSuit';
+                Createdate = curndate;
+            }
+
+
+            /*var  abc =$()*/
+            // alert("in parameters");
+
+            var parameter =
+            {
+
+                AccNo: Itcd,
+                LEDGERNAME: $("#SupplierNameId").val(),
+                NAME: $("#SupplierNameId").val(),
+                PARENT: 'Sundry Creditors',
+                HASEDDCITY: $("#CityId").val(),
+                SALESTAXNUMBER: $("#SalesManId").val(),
+                ADDRESS: $("#AddressId").val(),
+                Add2: $("#AddressId2").val(),
+                PINCODE: $("#PinCodeId").val(),
+                VATTINNUMBER: $("#VatTinId").val(),
+                LEDGERPHONE: $("#TelNoId").val(),
+                LEDGERFAX: $("#FaxId").val(),
+                TAXTYPE: TAXTYPE,
+                MAILINGNAME: $("#MailId").val(),
+                STATENAME: $("#StateId").val(),
+                OpenBal: $("#CreditAllotId").val(),
+                CURRENCYNAME: $("#CURRENCYID").val(),
+                PanNo: $("#PanNoId").val(),
+                SecCd: $("#SecCodeId").val(),
+                DedCdSpecified: $("#DedCodeId").val(),
+                PymtNat: $("#PayNatureId").val(),
+                CCCD: cccd,
+                STATUS: status,
+                CREATEDSYSTEM: 'PowerBooksCRM',
+                LASTUPDATEDSYSTEM: 'PowerBooksCRM',
+                UID: UId,
+                USERNAME: Username,
+                LUID: UId,
+                LUSERNAME: Username,
+                CREATEDDATE: Createdate,
+                LASTUPDATEDDATE: curndate
+            }
+            //alert(JSON.stringify(parameter));
+            return parameter;
+            // alert(NAME + "name");
+
+        }
+
+        $("#savebtnid").click(function () {
+
+            // alert("ghggg");
+            var AddParameter = AddEditfunction();
+            localStorage.setItem("AddParameter", JSON.stringify(AddParameter));
+            /*alert("localstorge");*/
+            // alert(addcostcatparameter + "json");
+            debugger
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: URLPowerAPI+'/api/PBXMLLedger/AddPBXMLLedger',
+                    dataType: 'JSON',
+                    data: JSON.stringify(AddParameter),
+                    contentType: 'application/json ; charset = utf-8',
+
+                    success: function (data, textStatus, xhr) {
+
+                        alert('Customer registered successfully');
+                        window.location.href = "LLLL-CR-SU-50.shtml";
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("You entered some invalid fields...! Fill the details again...");
+                    }
+                });
+
+            return;
+
+        });
+
+        $("#updatebtnID").click(function () {
+            var UpdateParameter = AddEditfunction();
+
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: URLPowerAPI+'/api/PBXMLLedger/EditPBXMLLedger',
+                    dataType: 'JSON',
+                    data: JSON.stringify(UpdateParameter),
+                    contentType: 'application/json ; charset = utf-8',
+
+                    success: function (data, textStatus, xhr) {
+                        alert('Customer registered successfully');
+                        window.location.href = "LLLL-CR-SU-50.shtml";
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("You entered some invalid fields...! Fill the details again...");
+                    }
+                });
+            return;
+        });
+
+
+    </script>
+
+
+    <!--GET by id API-->
+    <script>
+        $(document).ready(function () {
+            debugger
+            set_MainHeaderName();
+            var url1 = window.location.href;
+            var mode = url1.split("=")[2];
+            var AccNo1 = url1.split("=")[1];
+            var index = (AccNo1).indexOf("&");
+            var AccNo = AccNo1.substring(0, index);
+            var cccd = localStorage.getItem('CCAC');
+            // alert(AccNo);
+
+            if (mode == 'edit') {
+                $.ajax({
+                    type: 'GET',
+                    url: URLPowerAPI+'/api/PBXMLLedger/GetPBXMLLedgerById',
+                    dataType: 'JSON',
+                    contentType: 'application/json ; charset = utf-8',
+                    //data: JSON.stringify(groupname),
+                    data: {
+                        cccd: cccd,
+                        AccNo: AccNo
+                    },
+
+
+                    success: function (data) {
+                       /* alert(JSON.stringify(data));*/
+                        ObjCrmAccCustomer = data;
+
+                        $("#SupplierNameId").val(ObjCrmAccCustomer.LEDGERNAME);
+                        $("#CityId").val(ObjCrmAccCustomer.HASEDDCITY);
+                        $("#CreditAllotId").val(ObjCrmAccCustomer.OpenBal);
+                        $("#SupplierGrpId").val("SUPPLIER")
+                        // $("#SalesManId").val(ObjCrmAccCustomer.LEDGENAME);
+                        $("#AddressId").val(ObjCrmAccCustomer.ADDRESS);
+                        $("#PinCodeId").val(ObjCrmAccCustomer.PINCODE);
+                        $("#VatTinId").val(ObjCrmAccCustomer.VATTINNUMBER);
+                        $("#TelNoId").val(ObjCrmAccCustomer.LEDGERPHONE);
+                        $("#FaxId").val(ObjCrmAccCustomer.LEDGERFAX);
+                        $("#MailId").val(ObjCrmAccCustomer.MAILINGNAME);
+                        $("#StateId").val(ObjCrmAccCustomer.STATENAME);
+                        // alert(ObjCrmAccCustomer.NAME);
+                        $('#TextpatternId option:selected').text(ObjCrmAccCustomer.TAXTYPE);
+
+
+                        sessionStorage.setItem('uid', ObjCrmAccCustomer.UID);
+                        sessionStorage.setItem('username', ObjCrmAccCustomer.USERNAME);
+                        sessionStorage.setItem('createdsystem', ObjCrmAccCustomer.CREATEDSYSTEM);
+                        sessionStorage.setItem('createddate', ObjCrmAccCustomer.CREATEDDATE);
+                        sessionStorage.setItem('lastupdatedate', ObjCrmAccCustomer.LASTUPDATEDDATE);
+
+                    },
+
+                });
+            }
+            $("#deletebtnID").show();
+            $("#updatebtnID").show();
+            $("#savebtnid").hide();
+
+
+            $("#deletebtnID").click(function () {
+                debugger
+                var urls = window.location.href;
+                debugger
+                var cccd = localStorage.getItem('CCAC');
+                var group = AccNo;
+
+                $.ajax({
+                    url: URLPowerAPI+'/api/PBXMLLedger/DeletePBXMLLedger',
+                    type: 'GET',
+                    dataType: 'JSON',
+                    data: {
+                        cccd: cccd,
+                        AccNo: group
+
+                    },
+
+                    contentType: 'application/json ; charset = utf-8',
+                    success: function (data, textStatus, xhr) {
+                        alert("PBXMLCostcategory deleted successfully");
+                        window.location.href = "LLLL-CR-SU-50.Shtml";
+
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("You entered wrong password...! Fill the details again...");
+                    }
+                });
+            });
+
+        });
+
+    </script>
+    <script>
+        function set_MainHeaderName() {
+            $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">CRM</span> - Supplier');
+            $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>CRM</a><span class="breadcrumb-item active">Supplier</span>');
+        };
+    </script>
+
+
+
+
+
+

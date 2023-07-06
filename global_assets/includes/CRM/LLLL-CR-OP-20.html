@@ -1,0 +1,792 @@
+<!-- main content code -->
+
+        <div class="row justify-content-center">
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-lg-6 col-xs-2">
+                                <!--<h4><span class="card-title">Opportunity:Create Opportunity</span></h4>-->
+                            </div>
+                            <div class="col-lg-6">
+                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                                <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display: none; margin-right: 8px;">Delete</a>
+                                <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display: none; margin-right: 8px;">Update</a>
+                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--Form layout-->
+                    <div class="card-body">
+                        <div class="col-lg-12">
+                            <div class="card-header header-elements-inline" style="padding-top: 5px;padding-bottom: 20px;">
+                                <!--<h6 class="font-weight-semibold">CREATE OPPORTUNITY</h6>-->
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <div class="form-group row offset-1">
+                                    <label class="col-lg-4 col-form-label">Name*&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="NameId" >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group row offset-1">
+                                    <label class="col-lg-4 col-form-label">
+                                        Currency&nbsp;:
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="CurrencyId">
+                                            <option value="Select" selected>--select--</option>
+                                            <option>Indian Rupees : Rs</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row offset-1">
+                                    <label class="col-lg-4 col-form-label">
+                                        Type&nbsp;:
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="TypeId" >
+                                            <option value="Select" selected>--select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group row offset-1">
+                                    <label class="col-lg-4 col-form-label">
+                                        Account Name*&nbsp;:
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="AccountNameId" >
+                                            <option value="Select" >--select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+
+                                <div class="form-group row offset-1">
+                                    <label class="col-lg-4 col-form-label">Amount*&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <input type="number" class="form-control" id="AmountId">
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="form-group row offset-1">
+                                    <label class="col-lg-4 col-form-label">Expected Date*&nbsp;:</label>
+                                    <div class="input-group col-lg-6">
+                                        <!--<span class="input-group-prepend">
+        <span class="input-group-text"><i class="icon-calendar22"></i></span>
+    </span>-->
+                                        <!--<input type="date" class="form-control daterange-single" id="DateId">-->
+                                        <input type="text" class="form-control daterange-single" id="DateId">
+                                        <!-- name="datefilter" -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <div class="form-group row offset-1">
+                                    <label class="col-lg-4 col-form-label">
+                                        Assigned To&nbsp;:
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="AssignedToId">
+                                            <option value="Select" selected>--select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group row offset-1">
+                                    <label class="col-lg-4 col-form-label">
+                                        Campaign&nbsp;:
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="CampaignId">
+                                            <option value="Select" selected>--select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <div class="form-group row offset-1">
+                                    <label class="col-lg-4 col-form-label">
+                                        Status*&nbsp;:
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="StatusId">
+                                            <option value="Select" selected>--select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group row offset-1">
+                                    <label class="col-lg-4 col-form-label">
+                                        Lead Source&nbsp;:
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="LeadSourceId">
+                                            <option value="Select" selected>--select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <div class="form-group row offset-1">
+                                    <label class="col-lg-4 col-form-label">
+                                        Sales Stage*&nbsp;:
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="SalestageId">
+                                            <option value="Select" selected>--select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group row offset-1">
+                                    <label class="col-lg-4 col-form-label">Probability(%)&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="ProbabilityId">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row offset-1">
+                                    <label class="col-lg-4 col-form-label">Next Step&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="NextStepId">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row offset-1">
+                                    <label class="col-lg-4 col-form-label">Description&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        
+                                        <textarea class="form-control" id="DiscriptionId" cols="20" rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+
+                        <hr class="my-3">
+
+
+
+
+
+
+                        <!--<div class="table-responsive">
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col" class="sort" style="padding-left: 80px;">SUBJECT</th>
+                                        <th scope="col" class="sort" style="padding-left: 30px;">ACTIVITY TYPE</th>
+                                        <th scope="col" class="sort" style="padding-left: 30px;">CONTACT NAME</th>
+                                        <th scope="col" class="sort" style="padding-left: 30px;">DESCRIPTION</th>
+                                        <th scope="col" class="sort" style="padding-left: 30px;">CREATED DATE</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody class="list" id="exam">
+                                </tbody>
+
+                            </table>
+                        </div>-->
+
+                    </div>
+                </div>
+                <!-- /main content code -->
+            </div>
+            <!-- /Content area -->
+
+
+        </div>
+        <!-- /main content code -->
+
+
+
+
+  
+
+
+
+
+    <!--sidebar code-->
+  
+        <script>
+            $(document).ready(function () {
+
+                
+                set_MainHeaderName();
+
+
+            });</script>
+
+
+
+
+    <!--dropdown list-->
+
+    <script type="text/javascript">
+
+        var abc;
+        //create first function for getparameretertypeid
+        GetParameterType('PTYP');
+        GetParameterType('LDS');
+        GetParameterType('STA'); 
+        GetParameterType('STG');
+
+        function GetParameterType(parametertype) {
+           // alert(parametertype);
+            debugger
+            var cccd = localStorage.getItem('CCAC');
+            $.ajax({
+               
+                type: "GET",
+                url: URLPowerAPI+'/api/PBXMLParameter/GetParameterTypeID',
+                dataType: "json",
+                contentType: "application/json",
+                data: {
+                    PARTYPE: parametertype,
+                    cccd: cccd
+                },
+                async: false,
+
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+
+                success: function (res) {
+                    $("#loader1").hide();
+                     abc = res;
+                    GetDropDown(abc, parametertype);
+
+                }
+
+            });
+        }
+
+
+        //second function for dropdown
+        function GetDropDown(parameter, parametertype) {
+            debugger
+            var cccd = localStorage.getItem('CCAC');
+            $.ajax({
+                async: 'false',
+                type: "GET",
+                url: URLPowerAPI+'/api/PBXMLParametercode/GetAllActiveParameterCodes',
+                dataType: "json",
+                contentType: "application/json",
+
+                data: {
+                    PARTYPEID: parameter,
+                    cccd: cccd
+                },
+                async: false,
+
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (res) {
+                    $("#loader1").hide();
+                    debugger
+                    $.each(res, function (data, value) {
+                        if (parametertype == 'PTYP') {
+                            $("#TypeId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                        }
+                        else if (parametertype == 'LDS') {
+                            $("#LeadSourceId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                        }
+                        else if (parametertype == 'STA') {
+                            $("#StatusId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                        }
+                        else if (parametertype == 'STG') {
+                            $("#SalestageId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                        }
+                    })
+                }
+
+            });
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            debugger
+            var cccd = localStorage.getItem('CCAC');
+
+            $.ajax
+                ({
+                    async:'false',
+                    url: URLPowerAPI+'/api/PBXMLAccounts/GetAllCustomer',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    data:
+                    {
+                        cccd: cccd
+
+                    },
+                    async: false,
+
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+
+                    success: function (res) {
+                        $("#loader1").hide();
+                        $.each(res, function (index, value) {
+                            $("#AccountNameId").append($("<option></option>").val(value.ClId).html(value.Name));
+
+
+
+                        });
+                    }
+
+                });
+
+        });
+
+
+
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            debugger
+            var cccd = localStorage.getItem('CCAC');
+
+            $.ajax
+                ({
+                    async: 'false',
+                    url: URLPowerAPI+'/api/PBXMLVCampaign/GetAllPBXMLCampaign',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    data:
+                    {
+                        cccd: cccd
+
+                    },
+                    async: false,
+
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+
+                    success: function (res) {
+                        $("#loader1").hide();
+                        $.each(res, function (index, value) {
+                            $("#CampaignId").append($("<option></option>").val(value.CampaignNo).html(value.CampaignName));
+
+
+
+                        });
+                    }
+
+                });
+
+        });
+
+
+
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            debugger
+            var cccd = localStorage.getItem('CCAC');
+
+            $.ajax
+                ({
+                    async: 'false',
+                    url: 'https://www.powerbooks.in/powerapi/api/PBXMLVContact/GetAllPBXMLContacts',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    data:
+                    {
+                        cccd: cccd
+
+                    },
+                    async:false,
+
+                    success: function (res) {
+                        //alert("Data inside ajax...!!!")
+                        //alert(JSON.stringify(res));
+                        $.each(res, function (index, value) {
+
+                            var contactname = value.FirstName + " " + value.LastName;
+                            $("#AssignedToId").append($("<option></option>").val(value.ContactNo).html(contactname));
+
+
+                        });
+                    }
+
+                });
+
+        });
+
+
+
+    </script>
+
+    <!--add  update API-->
+    <script>
+        function AddFunction() {
+            debugger
+            var url1 = window.location.href;
+            var arr = url1.split('=');
+            console.log(url1.length)
+
+            if (arr.length > 1) {
+                var mode = url1.split("=")[2];
+                var LeadNo1 = url1.split("=")[1];
+                var index = (LeadNo1).indexOf('&');
+                var OppNo = LeadNo1.substring(0, index);
+
+            }
+            var urls = window.location.href;
+            var cccd = localStorage.getItem('CCAC');
+
+
+
+
+
+            var Currency = $("#CurrencyId option:selected").text();
+          /*  alert("Currency" + Currency)*/
+            var TypeName = $("#TypeId option:selected").text();
+           /* alert("TypeName" + TypeName)*/
+            var Type = $("#TypeId option:selected").val();
+            var Account = $("#AccountNameId option:selected").text();
+            var AccountName = $("#AccountNameId option:selected").val();
+            var CampaignName = $("#CampaignId option:selected").text();
+            var Campaign = $("#CampaignId option:selected").val();
+            var StatusName = $("#StatusId option:selected").text();
+            var StatusNo = $("#StatusId option:selected").val();
+            var LeadSourceName = $("#LeadSourceId option:selected").text();
+            var LeadSource = $("#LeadSourceId option:selected").val();
+            var SalesStageName = $("#SalestageId option:selected").text();
+            var SalesStage = $("#SalestageId option:selected").val();
+            var AssignedToName = $("#AssignedToId option:selected").text();
+            var AssignedTo = $("#AssignedToId option:selected").val();
+            var CurrentDate = new Date();
+            var curndate = CurrentDate.toISOString().replace('Z', '');
+            var status = "A";
+
+
+            //storesession value
+            var UId;
+            var Username;
+            var Createdsystem;
+            var Createdate;
+
+            if (mode == 'edit') {
+                OppNo = OppNo,
+                    UId = sessionStorage.getItem('uid');
+                Username = sessionStorage.getItem('username');
+                Createdsystem = sessionStorage.getItem('createdsystem');
+                Createdate = sessionStorage.getItem('createddate');
+            }
+            else {
+                OppNo = localStorage.getItem("MaxOppNo");
+                UId = localStorage.getItem('UID');
+                Username = localStorage.getItem('UName');
+                Createdsystem = 'PowerSuit';
+                Createdate = curndate;
+            }
+
+
+            var parameter =
+            {
+                OppNo: OppNo,
+                OppName: $("#NameId").val(),
+                Amount: $("#AmountId").val(),
+                ExpCloseDate: $("#DateId").val(),
+                Probability: $("#ProbabilityId").val(),
+                NextStep: $("#NextStepId").val(),
+                Description: $("#DiscriptionId").val(),
+                TypeName: TypeName,
+                Currency: Currency,
+                Type: Type,
+                Account: Account,
+                AccountName: AccountName,
+                CampaignName: CampaignName,
+                Campaign: Campaign,
+                StatusName: StatusName,
+                Status: StatusNo,
+                STATUS: status,
+                LeadSourceName: LeadSourceName,
+                LeadSource: LeadSource,
+                SalesStageName: SalesStageName,
+                SalesStage: SalesStage,
+                AssignedToName: AssignedToName,
+                AssignedTo: AssignedTo,
+                CCCD: cccd,
+                CreatedBy: UId,
+                LastUpdatedBy: UId,
+                CREATEDDATE: Createdate,
+                LASTUPDATEDDATE: curndate,
+                UID: UId,
+                CREATEDSYSTEM: 'PowerSuitCRM',
+                LASTUPDATEDSYSTEM: 'PowerSuitCRM',
+                USERNAME: Username,
+                LUID: UId,
+                LUSERNAME: Username,
+                SFID: "",
+                SFXMLVAR:"SFXMLVAR"
+
+                //    CREATEDDATE: Createdate,
+                //      LASTUPDATEDDATE: curndate,
+                //        LastUpdatedBy: localStorage.getItem('UID'),
+                
+            }
+            return parameter;
+        }
+
+        $("#savebtnid").click(function () {
+            /*alert("xsdc");*/
+            var addparameter = AddFunction();
+            localStorage.setItem("addparametsave", JSON.stringify(addparameter));
+
+            $.ajax
+                ({
+                    async: 'false',
+                    type: 'POST',
+                    url: URLPowerAPI+'/api/PBXMLOpportunity/AddPBXMLOpportunity',
+                    dataType: 'JSON',
+                    data: JSON.stringify(addparameter),
+                    contentType: 'application/json ; charset = utf-8',
+
+                    success: function (data, textStatus, xhr) {
+
+                        alert('Opportunity registered successfully');
+                        window.location.href = "LLLL-CR-OP-50.shtml";
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("You entered some invalid fields...! Fill the details again...");
+                    }
+                });
+
+            return;
+
+        });
+
+        $("#updatebtnID").click(function () {
+
+            var addparameter = AddFunction();
+            localStorage.setItem("addparametoppup", JSON.stringify(addparameter));
+            $.ajax
+                ({
+                    async: 'false',
+                    type: 'POST',
+                    url: URLPowerAPI+'/api/PBXMLOpportunity/EditPBXMLOpportunity',
+                    dataType: 'JSON',
+                    data: JSON.stringify(addparameter),
+                    contentType: 'application/json ; charset = utf-8',
+
+                    success: function (data, textStatus, xhr) {
+                        alert('Opportunity registered successfully');
+                        window.location.href = "LLLL-CR-OP-50.shtml";
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("You entered some invalid fields...! Fill the details again...");
+                    }
+                });
+            return;
+        });
+
+
+    </script>
+
+
+
+    <!--GET by id API-->
+    <script>
+        $(document).ready(function () {
+            
+            debugger
+            var url1 = window.location.href;
+
+            var mode = url1.split("=")[2];
+            var AccNo1 = url1.split("=")[1];
+            var index = (AccNo1).indexOf("&");
+            var AccNo = AccNo1.substring(0, index);
+            var cccd = localStorage.getItem('CCAC');
+           
+           /* alert(AccNo);*/
+
+            if (mode == 'edit') {
+                $.ajax({
+                    async: 'false',
+                    type: 'GET',
+                    url: URLPowerAPI+'/api/PBXMLOpportunity/GetPBXMLOpportunityByID',
+                    dataType: 'JSON',
+                    contentType: 'application/json ; charset = utf-8',
+                    //data: JSON.stringify(groupname),
+                    data: {
+                        cccd: cccd,
+                        OppNo: AccNo
+                    },
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+
+                    success: function (data) {
+                        debugger
+                        $("#loader1").hide();
+                        var Exdate = data.ExpCloseDate;
+                        Exdate = Exdate.split('T');
+                        Exdate = Exdate[0];
+
+                        $("#NameId").val(data.OppName);
+                        $('#CurrencyId option:selected').text(data.Currency);
+                       // $('#CurrencyId option:selected').val(data.Currency);
+
+                        $('#TypeId option:selected').text(data.TypeName);
+                        $('#TypeId option:selected').val(data.Type);
+
+
+                        $('#AccountNameId option:selected').text(data.Account);
+                        $('#AccountNameId option:selected').val(data.AccountName);
+                        //alert(data.AccountName);
+                      //  $('#AccountNameId option[value=' + data.AccountName + ']').prop('selected', true);
+                        $("#AmountId").val(data.Amount);
+                        $("#DateId").val(Exdate);
+                        $('#AssignedToId option:selected').text(data.AssignedToName);
+                        $('#AssignedToId option:selected').val(data.AssignedTo);
+
+                        $('#CampaignId option:selected').text(data.CampaignName);
+                        $('#CampaignId option:selected').val(data.Campaign);
+
+                        $('#StatusId option:selected').text(data.StatusName);
+                        $('#StatusId option:selected').val(data.Status);
+
+                        $('#LeadSourceId option:selected').text(data.LeadSourceName);
+                        $('#LeadSourceId option:selected').val(data.LeadSource);
+                        $('#SalestageId option:selected').text(data.SalesStageName);
+                        $('#SalestageId option:selected').val(data.SalesStage);
+
+                        $("#ProbabilityId").val(data.Probability);
+                        $("#NextStepId").val(data.NextStep);
+                        $("#DiscriptionId").val(data.Description);
+
+
+                        /*alert(data.leadsourcename)*/
+
+
+                        sessionStorage.setItem('uid', data.UID);
+                        sessionStorage.setItem('username', data.USERNAME);
+                        sessionStorage.setItem('createdsystem', data.CREATEDSYSTEM);
+                        sessionStorage.setItem('createddate', data.CREATEDDATE);
+                        sessionStorage.setItem('lastupdatedate', data.LASTUPDATEDDATE);
+                        var addparameter = AddFunction();
+                        localStorage.setItem('newjson', JSON.stringify(addparameter));
+
+                    },
+
+                });
+            }
+            $("#deletebtnID").show();
+            $("#updatebtnID").show();
+            $("#savebtnid").hide();
+
+
+            $("#deletebtnID").click(function () {
+                debugger
+                var urls = window.location.href;
+                debugger
+                //alert(urls);
+                var cccd = localStorage.getItem('CCAC');
+                var group = AccNo;
+
+                $.ajax({
+                    async: 'false',
+                    url: URLPowerAPI+'/api/PBXMLOpportunity/DeletePBXMLOpportunity',
+                    type: 'GET',
+                    dataType: 'JSON',
+                    data: {
+                        cccd: cccd,
+                        OppNo: group
+
+                    },
+
+                    contentType: 'application/json ; charset = utf-8',
+                    success: function (data, textStatus, xhr) {
+                        alert("Opportunity deleted successfully");
+                        window.location.href = "LLLL-CR-OP-50.shtml";
+
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("You entered wrong password...! Fill the details again...");
+                    }
+                });
+            });
+
+        });
+
+    </script>
+   
+
+    <script>
+        function set_MainHeaderName() {
+            $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">CRM</span> - Opportunity');
+            $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>CRM</a><span class="breadcrumb-item active">Opportunity</span>');
+       };
+    </script>
+

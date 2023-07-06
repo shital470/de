@@ -1,0 +1,369 @@
+<!-- Dashboard content -->
+<!-- my code2 -->
+
+<div class="row justify-content-center">
+
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                        <!--<h4><span class="card-title"> Lead:Create Lead</span></h4>-->
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" id="deletebtnID">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" id="updatebtnID">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+            <div class="card-body">
+                <div class="col-lg-12">
+                    <div class="card-header header-elements-inline" style="padding-top: 5px;padding-bottom: 20px;">
+                        <!--<h6 class="font-weight-semibold">Add Item Group</h6>-->
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Item Group&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="ItemGrpId">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Under&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="UnderId">
+                                    <option value="Select" selected>--select--</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-3">
+                <!--<div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort" style="padding-left: 80px;">SUBJECT</th>
+                                <th scope="col" class="sort" style="padding-left: 30px;">ACTIVITY TYPE</th>
+                                <th scope="col" class="sort" style="padding-left: 30px;">CONTACT NAME</th>
+                                <th scope="col" class="sort" style="padding-left: 30px;">DESCRIPTION</th>
+                                <th scope="col" class="sort" style="padding-left: 30px;">CREATED DATE</th>
+
+                            </tr>
+                        </thead>
+                        <tbody class="list" id="exam">
+                        </tbody>
+
+                    </table>
+                </div>-->
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+<!--sidebar code-->
+<script>
+    $(document).ready(function () {
+
+
+
+    });</script>
+
+
+
+<!--dropdown list-->
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+
+        $.ajax
+            ({
+
+                url: URLPowerAPI+'/api/PBXMLVStockGroups/GetAllPBXMLVStockGroup',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd
+
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (res) {
+                    $("#loader1").hide();
+                    $.each(res, function (index, value) {
+                        $("#UnderId").append($("<option></option>").val(value.Itcd).html(value.STOCKGROUP));
+
+
+
+                    });
+                }
+
+            });
+
+    });
+
+
+
+</script>
+<!--add edit api-->
+<script>
+    function stockgrpfunction() {
+        debugger
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+            var mode = url1.split("=")[2];
+            var Itcd1 = url1.split("=")[1];
+            var index = (Itcd1).indexOf('&');
+            var Itcd = Itcd1.substring(0, index);
+
+        }
+        var urls = window.location.href;
+        var cccd = localStorage.getItem('CCAC');
+
+
+
+
+
+
+        var undergroup = $("#UnderId option:selected").text();
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+        var status = "A";
+
+
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            Itcd = Itcd,
+                UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = sessionStorage.getItem('createddate');
+        }
+        else {
+            Itcd = localStorage.getItem('MaxItcdNo');
+            UId = localStorage.getItem('UID');
+            Username = localStorage.getItem('UName');
+            Createdsystem = 'PowerSuit';
+            Createdate = curndate;
+        }
+
+
+        /*var  abc =$()*/
+        // alert("in parameters");
+
+        var parameter =
+        {
+            Itcd: Itcd,
+            NAME: $("#ItemGrpId").val(),
+            STOCKGROUP: $("#ItemGrpId").val(),
+            PARENT: undergroup,
+            CCCD: cccd,
+            STATUS: status,
+            CREATEDSYSTEM: Createdsystem,
+            LASTUPDATEDSYSTEM: 'PowerSuit',
+            UID: UId,
+            USERNAME: Username,
+            LUID: localStorage.getItem('UID'),
+            LUSERNAME: localStorage.getItem('UName'),
+            CREATEDDATE: Createdate,
+            LASTUPDATEDDATE: curndate,
+            SFID: "1",
+            SFXMLVAR:"SFXMLVAR"
+        }
+        //alert(JSON.stringify(parameter));
+        return parameter;
+        // alert(NAME + "name");
+
+    }
+
+    $("#savebtnid").click(function () {
+
+        // alert("ghggg");
+        var AddStockgrpparameter = stockgrpfunction();
+        // alert(addcostcatparameter + "json");
+        localStorage.setItem("addProd", JSON.stringify(AddStockgrpparameter));
+        debugger
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI+'/api/PBXMLStockGroup/AddPBXMLStockGroup',
+                dataType: 'JSON',
+                data: JSON.stringify(AddStockgrpparameter),
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+
+                    alert('Customer registered successfully');
+                    window.location.href = "LLLL-CR-PR-50.html";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+
+        return;
+
+    });
+
+    $("#updatebtnID").click(function () {
+        var AddStockgrpparameter = stockgrpfunction();
+
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI+'/api/PBXMLStockGroup/EditPBXMLStockGroup',
+                dataType: 'JSON',
+                data: JSON.stringify(AddStockgrpparameter),
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+                    alert('Customer registered successfully');
+                    window.location.href = "LLLL-CR-PR-50.html";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+        return;
+    });
+
+
+</script>
+<!--GET by id API-->
+<script>
+    $(document).ready(function () {
+        debugger
+        set_MainHeaderName();
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var AccNo1 = url1.split("=")[1];
+        var index = (AccNo1).indexOf("&");
+        var AccNo = AccNo1.substring(0, index);
+        var cccd = localStorage.getItem('CCAC');
+        /* alert(AccNo);*/
+
+        if (mode == 'edit') {
+            $.ajax({
+                type: 'GET',
+                url: URLPowerAPI+'/api/PBXMLOpportunity/GetPBXMLOpportunityByID',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: cccd,
+                    OppNo: AccNo
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data) {
+                    $("#loader1").hide();
+                    var Exdate = data.ExpCloseDate;
+                    $("#NameId").val(data.OppName);
+                    $('#CurrencyId option:selected').text(data.Currency);
+                    $('#TypeId option:selected').text(data.TypeName);
+                    $('#AccountNameId option:selected').text(data.Account);
+                    $("#AmountId").val(data.Amount);
+                    $("#DateId").val(date);
+                    $('#AssignedToId option:selected').text(data.AssignedToName);
+                    $('#CampaignId option:selected').text(data.CampaignName);
+                    $('#StatusId option:selected').text(data.StatusName);
+                    $('#LeadSourceId option:selected').text(data.LeadSourceName);
+                    $('#SalestageId option:selected').text(data.SalesStageName);
+                    $("#ProbabilityId").val(data.Probability);
+                    $("#NextStepId").val(data.NextStep);
+                    $("#DiscriptionId").val(data.Description);
+
+
+                    /*alert(data.leadsourcename)*/
+
+
+                    sessionStorage.setItem('uid', data.UID);
+                    sessionStorage.setItem('username', data.USERNAME);
+                    sessionStorage.setItem('createdsystem', data.CREATEDSYSTEM);
+                    sessionStorage.setItem('createddate', data.CREATEDDATE);
+                    sessionStorage.setItem('lastupdatedate', data.LASTUPDATEDDATE);
+
+                },
+
+            });
+        }
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+        $("#savebtnid").hide();
+
+
+        $("#deletebtnID").click(function () {
+            debugger
+            var urls = window.location.href;
+            debugger
+            //alert(urls);
+            var cccd = localStorage.getItem('CCAC');
+            var group = AccNo;
+
+            $.ajax({
+                url: URLPowerAPI+'/api/PBXMLOpportunity/DeletePBXMLOpportunity',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    OppNo: group
+
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                success: function (data, textStatus, xhr) {
+                    alert("PBXMLCostcategory deleted successfully");
+                    window.location.href = "LLLL-CR-PR-50.shtml";
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+
+    });
+
+</script>
+<script>
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">CRM</span> - Product');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>CRM</a><span class="breadcrumb-item active">Product</span>');
+    };
+</script>
+
+

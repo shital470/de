@@ -1,0 +1,108 @@
+﻿
+                    <!-- my code2 -->
+                    <div class="container-fluid mt-6">
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-xs-2">
+                                                <h4><span class="card-title">Group Summary</span></h4>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="configbtnid">Configure</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="emailbtnid">Email</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="exportbtnid">Export</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="printbtnid">Print</a>
+                                            </div>
+                                        </div>
+                                        <hr class="my-3">
+
+                                        <!--Form layout-->
+                                        <div class="card-body">
+                                            <div class="collapse show">
+                                                <form action="#">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 ">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label">Form&nbsp;:</label>
+                                                                <div class="input-group col-lg-9">
+                                                                    <span class="input-group-prepend">
+                                                                        <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                                                    </span>
+                                                                    <input type="text" class="form-control daterange-single" id="FormID">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label">To&nbsp;:</label>
+                                                                <div class="input-group col-lg-9">
+                                                                    <span class="input-group-prepend">
+                                                                        <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                                                    </span>
+                                                                    <input type="text" class="form-control daterange-single" id="ToID">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="SearchBtnId" onclick="getallfunction(); return false;">Search</a>
+                                                        </div>
+                                                        <hr class="my-3">
+
+                                                        <div class="table-responsive">
+                                                            <table class="table align-items-center table-flush">
+                                                                <thead class="thead-light">
+                                                                    <tr>
+                                                                        <th scope="col" class="sort"> Particulars</th>
+                                                                        <th scope="col" class="sort">Opening Balance</th>
+                                                                        <th scope="col" class="sort"></th>
+                                                                        <th scope="col" class="sort">Debit</th>
+                                                                        <th scope="col" class="sort">Credit</th>
+                                                                        <th scope="col" class="sort">Closing Balance</th>
+                                                                        <th scope="col" class="sort"></th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody class="list" id="exam">
+                                                                </tbody>
+                                                                <tr>
+                                                                    <th scope="col" class="sort">Grand Total</th>
+                                                                    <th scope="col" class="sort"> </th>
+                                                                    <th scope="col" class="sort" id="drcr"></th>
+                                                                    <th scope="col" class="sort" id="DebitId"> </th>
+                                                                    <th scope="col" class="sort" id="CredittId"> </th>
+                                                                    <th scope="col" class="sort" id="drcrclsid"></th>
+
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+
+
+                                                        <div class="table-responsive">
+                                                            <table class="table align-items-center table-flush">
+                                                                <thead class="thead-light">
+
+                                                                </thead>
+
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /content area -->
+            <!-- /main content -->
+        <!-- /page content -->
+        <!--popup script-->
+        <script>
+
+        </script>
+
+</body>
+</html>

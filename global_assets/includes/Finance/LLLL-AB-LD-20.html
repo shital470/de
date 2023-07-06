@@ -1,0 +1,138 @@
+﻿
+                    <!-- my code2 -->
+                        <div class="row justify-content-center">
+                    <!-- /content area -->
+                   
+            <!-- /main content -->
+        <!-- /page content -->
+        <!--popup script-->
+                         <script>
+                    function MonClsBal(Clsbal) {
+                        debugger
+
+                        var drcr;
+
+                        var drcr1;
+
+                        if (Clsbal <=0) {
+                            drcr1 = 'Cr';
+                            /*drcr1 = $(drcr1).css("padding-left", "5px");*/
+                            drcr = Clsbal * (-1) + drcr1;
+
+
+                        }
+
+                        else {
+                            drcr1 = 'Dr';
+                            drcr = Clsbal + drcr1;
+                        }
+                        return drcr;
+                    }
+
+                    function DrCrFunction(amount) {
+
+
+                        var drcr;
+                        if (amount <=0) {
+                            drcr = 'Cr';
+
+                        }
+                        else {
+                            drcr = 'Dr';
+                        }
+                        return drcr;
+
+                    };
+        </script>
+        <script>
+                    /*search date function*/
+                    function functnfrom() {
+                        var fromdate = document.getElementById("FormID").value;
+                        var fdate = fromdate.replace(/[-,-]/g, "");
+                        return fdate
+                    };
+
+                    function functnto() {
+                        var todate = document.getElementById("ToID").value;
+                        var tdate = todate.replace(/[-,-]/g, "");
+                        return tdate
+                    };
+        </script>
+
+        <!--local stroge date function-->
+        <script type="text/javascript">
+
+                    function getallfunction() {
+                        debugger
+                        const from = document.getElementById("FormID").value;
+                        const to = document.getElementById("ToID").value;
+                        var urlfrom1 = localStorage.getItem('Fromdate');
+                        var urlto1 = localStorage.getItem('Todate');
+                        var urlfrom;
+                        var urlto;
+                        if (from == "" && to == "") {
+                            $('#FormID').val(urlfrom1);
+                            $('#ToID').val(urlto1)
+                            urlfrom = functnfrom();
+                            urlto = functnto();
+                        }
+                        else {
+                            urlfrom = functnfrom();
+                            urlto = functnto();
+                        }
+                        debugger
+
+                        //var finacialyear = localStorage.getItem('FinancialYrFrom');
+                        //var urlfrom = finacialyear.substring(0, 4) + "0401";
+                        //var urlto = finacialyear.substring(5, 9) + "0331";
+                        var cccd = localStorage.getItem('CCCD');
+
+
+
+                        $.ajax({
+                            async: false,
+                            url: URLPowerAPI+'/api/PBXMLVLedgerList/GetAllPBXMLVLedgerList',
+                            type: 'GET',
+                            dataType: 'json',
+                            contentType: 'application/json ; charset = utf-8',
+                            //data: JSON.stringify(groupname),
+                            data:
+                            {
+                                cccd: cccd,
+                                fromdt: urlfrom,
+                                todt: urlto
+
+                            },
+
+                            success: function (data, textStatus, xhr) {
+                                alert(JSON.stringify(data));
+
+                                var strResult;
+
+
+                                $.each(data, function (index, group) {
+                                    strResult += "<tr scope='row'><th><a href=LedgerFinance.html?&GROUPs=" + group.AccNo + "&from=" + urlfrom + "&to=" + urlto + "> " + group.LEDGERNAME + "</a></th><td>"
+                                        + parseFloat(group.OpDrAmt).toFixed(2)+ "</td><td>"
+                                        + DrCrFunction(group.OpDrAmt - group.OpCrAmt) + "</td><td>"
+                                        + group.TotDrAmt + "</td><td>"
+                                        + group.TotCrAmt + "</td><td>" + MonClsBal(parseFloat(group.CloseDr).toFixed(2))+ "</td><tr>";
+
+
+                                });
+                                $("#exam").html(strResult);
+                            }
+
+                        });
+                    }
+        </script>
+        <script type="text/javascript">
+                    $(document).ready(function () {
+
+                        getallfunction();
+
+
+                    });
+        </script>
+
+</body>
+</html>

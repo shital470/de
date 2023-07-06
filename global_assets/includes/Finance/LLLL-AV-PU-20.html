@@ -1,0 +1,584 @@
+<div class="row justify-content-center">
+
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="deletebtnID">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none" onclick="edit_record();" id="updatebtnID">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+            <div class="card-body">
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">No&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="vouchernoID">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Ref&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="RefId">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Partys A/c Name&nbsp;:</label>
+                            <div class="col-lg-6">
+
+                                <span class="input-group-append">
+                                    <select class="form-control" id="accID">
+                                        <option value="Select" selected>--select--</option>
+                                    </select>
+                                    <!--<span class="input-group-text " style="cursor:pointer;"><i class="fas fa-plus"></i></span>
+
+                        </span>-->
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Date&nbsp;:</label>
+                            <div class="input-group col-lg-6">
+                                <span class="input-group-prepend">
+                                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                </span>
+                                <input type="text" class="form-control daterange-single" id="voucherDateID">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Ledger&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="Led_ID">
+                                    <option value="Select" selected>--select--</option>
+
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Vat/Tax Class&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="TaxId">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Current Balance&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="CurrentBalanceID">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Narration&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <textarea id="narrationId" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <hr class="my-3">
+
+                <div class="row" style="border-top: 0px solid black; margin: 0px; height: 50px;">
+                    <div class="col-md-2 offset-md-10" style="padding:3px;">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none" id="donebtnid" onclick="Hide_item();">Done</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="ledgeerbtnid" onclick="Add_item();">Add item</a>
+
+                    </div>
+                </div>
+
+                <div id="Led_row" style="display:none;">
+                    Write the add Item code Here
+                </div>
+                <h5 class="text-center" style="background-color: whitesmoke">Item List</h5>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort">Row No</th>
+                                <th scope="col" class="sort">Name Of Item</th>
+                                <th scope="col" class="sort">Quantity</th>
+                                <th scope="col" class="sort">Rate per</th>
+                                <th scope="col" class="sort">Amount</th>
+                                <th scope="col" class="sort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list" id="Item_list">
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="text-right" colspan="4">Total Item Amount</td>
+                                <td colspan="2"><input class="form-control col-4" type="text" style="border:1px solid #ddd !important;" id="ITotalAmountID" disabled></td>
+
+                            </tr>
+
+                        </tfoot>
+                    </table>
+                </div>
+
+
+                <hr class="my-3">
+                <div class="row" style="border-top: 0px solid black; margin: 0px; height: 50px;">
+                    <div class="col-md-2 offset-md-10" style="padding:3px;">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" id="donebtnid1" onclick="Hide_led();">Done</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="ledgeerbtnid1" onclick="Add_led();">Add Ledger</a>
+
+                    </div>
+                </div>
+                <div id="Led_row1" style="display:none">
+                    Write the add ledger code here
+                </div>
+                    <h5 class="text-center" style="background-color: whitesmoke">Ledger List</h5>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort">Row No</th>
+                                <th scope="col" class="sort">Ledger Name</th>
+                                <th scope="col" class="sort">Rate </th>
+                                <th scope="col" class="sort">Amount</th>
+                                <th scope="col" class="sort">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="list" id="Ld_list">
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="text-right" colspan="3">Total Ledger Amount</td>
+                                <td><input class="form-control col-4" type="text" style="border:1px solid #ddd !important;" id="TotalAmountID" disabled></td>
+
+                            </tr>
+                        </tfoot>
+                    </table>
+                        <div class="table-responsive">
+                            <table class="table align-items-right table-flush">
+
+                                <tr>
+                                    <td colspan="6" style="padding-right: 20px;padding-left: 1100px;" 5px;padding-left: 900px;"align="right">
+                                        Total Quantity :
+                                        <input name="txttotQty" type="text" readonly="readonly" id="txttotQty" disabled="disabled" autocomplete="off" style="height:20px;width:130px;text-align:right" />
+                                        <span style="margin-left: 90px;">Total Amount :</span>
+                                        <input name="TexttotAmt" type="text" readonly="readonly" id="TexttotAmt" disabled="disabled" autocomplete="off" style="height:20px;width:130px;text-align:right" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                </div>
+                <!--<hr style="color:black; margin-top:0px;" />
+    <div class="row">
+        <div class="col-md-7 offset-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Total Amount: </label>
+                </div>
+                <div class="col-md-4 group-">
+                    <input type="text" id="TotalAmountID">
+                </div>
+                <div class="col-md-4" style="padding-right:0px;padding-Left:0px;">
+                </div>
+
+            </div>
+        </div>
+    </div>-->
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- MOdals Code IF there's any -->
+<!-- /MOdals Code IF there's any -->
+
+
+
+
+<script>
+    function abs(amount) {
+        debugger
+
+        var amount1;
+        if (amount < 0) {
+            amount1 = amount * -1;
+        }
+        else {
+            amount1 = amount;
+        }
+        return amount1;
+
+    };
+</script>
+<script>
+    $(document).ready(function () {
+        debugger
+        //var url1 = window.location.href;
+        //var arr = url1.split('=');
+        //console.log(url1.length)
+
+        //if (arr.length < 1) {
+        //    var xyz = localStorage.getItem('MaxVoucherNo');
+        //    $('#vouchernoID').val(xyz);
+        //}
+
+        var VoucherNo = localStorage.getItem('MaxVoucherNo');
+        if (VoucherNo == null || VoucherNo == "") {
+
+            $('#vouchernoID').val("0");
+        }
+        else {
+            $('#vouchernoID').val(VoucherNo);
+        }
+
+
+        //alert('xyz' + VoucherNo);
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+        debugger
+        set_MainHeaderName();
+        get_ledger();
+        get_userdata();
+        $("#savebtnid");
+
+    });
+    var url1 = window.location.href;
+    var mode = url1.split("=")[1];
+    var index = (mode).indexOf('&');
+    var trkey = mode.substring(0, index);
+    //alert("Ssaws" + trkey);
+
+
+
+    var cccd = localStorage.getItem('CCCD');
+    //var costceneter = $("#costcenetelistID option:selected").text();
+
+    function get_userdata() {
+        $.ajax({
+            async: 'false',
+            url: URLPowerAPI + '/api/PBXMLInvoice/GetPBXMLInvoice',
+            type: 'GET',
+            dataType: 'json',
+            contentType: 'application/json ; charset = utf-8',
+
+            data:
+            {
+                cccd: cccd,
+                trkey: trkey
+
+            },
+
+            success: function (data, textStatus, xhr) {
+               // alert(JSON.stringify(data));
+                //alert(JSON.stringify(data.ALLLEDGERENTRIESLIST[1]));
+                //alert(data.ALLLEDGERENTRIESLIST[1]);
+                localStorage.setItem('new', JSON.stringify(data));
+                var Obj = data.LEDGERENTRIESLIST;
+                var Objitem = data.ALLINVENTORYENTRIESLIST;
+                //alert(JSON.stringify(Objitem[0].ACCOUNTINGALLOCATIONSLIST[0].LEDGERNAME));
+                var strResult;
+                var dataobj = data;
+                //alert(JSON.stringify(dataobj));
+                // $('#costcenetelistID option:selected').text(dataobj.costceneter);
+                var voucherno = dataobj.VOUCHERNUMBER;
+                $("#vouchernoID").val(data.VOUCHERNUMBER);
+
+                var ledgerlist = dataobj.LEDGERENTRIESLIST; //ALLINVENTORYENTRIESLIST //LEDGERENTRIESLIST //168242458918920
+                //alert(JSON.stringify(ledgerlist.LEDGERNAME));
+                $('#accID option:selected').val(ledgerlist.LEDGERNAME);
+                $("#narrationId").val(data.NARRATION);
+                var date = dataobj.DATE;
+                var year = date.substring(0, 4);
+                var mon = date.substring(4, 6);
+                var day = date.substring(6, 8); 1
+
+                var date1 = day + '-' + mon + '-' + year;
+                //alert(date1 + "date");
+                $('#voucherDateID').val(date1);
+                //$('#costcenetelistID').val(PARTYLEDGERNAME);
+                debugger
+                $("#accID").append($("<option selected></option>").html(dataobj.PARTYLEDGERNAME));
+                //$('#Ld_list').append($('<tr><td>"' + dataobj.LEDSRL + '</td><td>' + dataobj.LEDGERNAME + '</td><td>' + dataobj.AMOUNT + '</td><td>' + Edit + '&nbsp;' + Delete + '"</td></tr>'));
+                acc = $('#accID option:selected').val();
+                $('#Led_ID option:selected').text(Objitem[0].ACCOUNTINGALLOCATIONSLIST[0].LEDGERNAME);
+
+                //$('#accID option:selected').text();
+                var html = '';
+                var Total_amt = ''
+                Obj.forEach((item, index) => {
+
+                    if ($('#accID option:selected').text() != item.LEDGERNAME) {
+
+                        Total_amt = Total_amt + item.AMOUNT;
+                        html += `<tr>
+                                    <td> ${item.LEDSRL}</td>
+                                     <td> ${item.LEDGERNAME} </td>
+                                     <td> - </td>
+                                     <td> ${item.AMOUNT}</td>
+                                     
+
+                                     <td>
+                                            <button class="btn btn-sm btn-info" onclick="Edit_Led('${item.LEDGERNAME}');">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+                                    </tr>`;
+                    }
+
+
+                });
+                $('#Ld_list').html(html);
+                var table = document.getElementById("Ld_list"),
+                    sumVal1 = 0;
+                for (var i = 0; i < table.rows.length; i++) {
+                    sumVal1 = sumVal1 + parseFloat(table.rows[i].cells[3].innerHTML);
+                }
+                data = sumVal1.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+                $('#TotalAmountID').val(data);
+
+
+
+                var html = '';
+                var Total_amt = ''
+                Objitem.forEach((item, index) => {
+
+
+                    Total_amt = Total_amt + item.AMOUNT;
+                    html += `<tr>
+                                    <td> ${item.STOCKSRL}</td>
+                                     <td>  ${item.STOCKITEMNAME} </td>
+                                     <td>  ${item.ACTUALQTY} </td>
+                                     <td>  ${item.RATE} </td>
+                                     <td>  ${item.AMOUNT} </td>
+                                       <td>
+                                            <button class="btn btn-sm btn-info" onclick="Edit_Led('${item.LEDGERNAME}');">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+
+                                    </tr>`;
+
+
+
+                });
+                $('#Item_list').html(html);
+                var table = document.getElementById("Item_list"),
+                    sumVal1 = 0;
+                for (var i = 0; i < table.rows.length; i++) {
+                    sumVal1 = sumVal1 + parseFloat(table.rows[i].cells[4].innerHTML);
+                }
+                data = sumVal1.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+                $('#ITotalAmountID').val(data);
+
+                //alert(newclsbal);
+                //var amounttot = 0;
+                //var listobj = dataobj.ALLINVENTORYENTRIESLIST;
+                //var count = listobj.length;
+                //alert(count + "count");
+
+                //$.each(listobj, function (index, group) {
+                //    if (group.LEDSRL < count) {
+
+
+                //        strResult += "<tr scope='row'><th ><a href=TrialBalLedger.html?Accno=" + group.Accno + "> " + group.LEDSRL + "</a></th><td>"
+                //            + group.LEDGERNAME + "</td><td>"
+                //            + parseFloat(abs(group.AMOUNT)).toFixed(2) + "</td><td>"
+                //            + group.LEDGERNAME + "</td><tr>";
+
+                //        //alert(group.AMOUNT);
+                //        // $("#accID").append($("<option></option>").val(value.CostCd).html(value.COSTCENTRE));
+                //        amounttot = parseFloat(amounttot) + parseFloat(group.AMOUNT);
+                //        //alert(amounttot);
+                //        //  debittotal = debittotal + group.CrAmt;
+                //    }
+
+                //});
+                //$("#Item_list").html(strResult);
+                //var amounttot1 = parseFloat(abs(amounttot)).toFixed(2);
+
+                //$("#opbalId1").val(amounttot1);
+
+            }
+
+        });
+    }
+    var cccd = localStorage.getItem('CCCD');
+    function get_ledger() {
+        debugger
+        $.ajax({
+            async: 'false',
+            url: URLPowerAPI + '/api/PBXMLVLedgerList/GetAllPBXMLVLedgerList',
+            type: 'GET',
+            dataType: 'json',
+            contentType: 'application/json ; charset = utf-8',
+            data:
+            {
+                cccd: cccd,
+                fromdt: '20070401',
+                todt: '20080331',
+
+            },
+            success: function (res) {
+                //alert(JSON.stringify(res));
+
+                //alert("Data inside ajax...!!!")
+
+                /* $('#costcenetelistID option:selected').text(res.COSTCENTRE);*/
+
+                $.each(res, function (index, value) {
+                    if (value.ParentID == '10000011')
+                        $("#Led_ID").append($("<option></option>").val(value.AccNo).html(value.LEDGERNAME));
+
+                });
+
+
+            }
+
+
+
+
+        }
+
+        );
+    }
+
+    function Add_item() {
+        $('#Led_row').css("display", "block");
+        $('#donebtnid').css("display", "block");
+        $('#ledgeerbtnid').css("display", "none");
+        $('#Update_btn').css("display", "none");
+        $('#Add_btn').css("display", "block");
+        $("#Particular_ID").val('');
+        $('#Amnt_ID').val('');
+    }
+    function Hide_item() {
+        var x = document.getElementById("Led_row");
+        var y = document.getElementById("donebtnid");
+        var z = document.getElementById("ledgeerbtnid");
+        if (x.style.display === "") {
+            x.style.display = "block";
+        }
+        else {
+            x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "block";
+        }
+    }
+    function Add_led() {
+        $('#Led_row1').css("display", "block");
+        $('#donebtnid1').css("display", "block");
+        $('#ledgeerbtnid1').css("display", "none");
+        $('#Update_btn').css("display", "none");
+        $('#Add_btn').css("display", "block");
+        $("#Particular_ID").val('');
+        $('#Amnt_ID').val('');
+    }
+    function Hide_led() {
+        var x = document.getElementById("Led_row1");
+        var y = document.getElementById("donebtnid1");
+        var z = document.getElementById("ledgeerbtnid1");
+        if (x.style.display === "") {
+            x.style.display = "block";
+        }
+        else {
+            x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "block";
+        }
+    }
+
+
+
+
+    $(function () {
+        debugger
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/AccMst/GetAllBnkCashVoucher',
+                type: 'GET',
+                dataType: 'json',
+
+                data:
+                {
+                    cccd: cccd
+
+
+                },
+
+
+                success: function (res) {
+                    // alert(JSON.stringify(res));
+                    /*alert("Data inside ajax...!!!")*/
+                    /*$('#accID option:selected').text(res.LEDGERNAME);*/
+                    /* alert(res.LEDGERNAME)+"abcaaaaa";*/
+                    $.each(res, function (index, value) {
+                        $("#accID").append($("<option></option>").val(value.AccNo).html(value.LEDGERNAME));
+
+                    });
+
+
+                }
+
+
+
+
+            }
+
+            );
+
+    });
+
+
+
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Finance</span> - Account Voucher - Purchase');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Finance</a><span class="breadcrumb-item active">Account Voucher / Purchase</span>');
+    };
+</script>

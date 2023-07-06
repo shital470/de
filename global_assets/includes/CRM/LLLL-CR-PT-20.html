@@ -1,0 +1,675 @@
+<!-- /main charts -->
+<!-- Dashboard content -->
+<!-- my code2 -->
+
+<div class="row justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                        <!--<h4><span class="card-title">Potential</span></h4>-->
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px;" id="cancelbtnid">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px; display: none;" id="deletebtnID">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px; display: none;" id="updatebtnID">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+
+            <div class="card-body">
+                <form class="fromcls">
+                    <!--<h6 class="heading-small text-muted mb-4">Create Potential </h6>-->
+                    <div class="pl-lg-4 abc">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4">Potential Owner*&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control UserId" id="PotentialOwnerId">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4">Potential Name*&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" value="" id="PtentialNameId">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4" for="input-PayHeadName">Amount&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <input type="number" class="form-control" value="" id="AmountId">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4" for="input-PayHeadName">Closing Date&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <input type="date" class="form-control" value="" id="ClosingDateId">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4" for="input-PayHeadName">Account Name*&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="AccountNameId">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4" for="input-PayHeadName">Type&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="TypeId">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4"> Stage*&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="StageId">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4"> Probability(%)&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="ProbablityId">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4">  Next Step &nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="NextStepId">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4"> Expected Revenue&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" value="0" id="ExpectedRevId">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4">Lead Source&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="LeadSourceId">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4">ContactName &nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="ContactNameId">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4">Campaign Source&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="CampaignSourceId">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-4">Description&nbsp;:</label>
+                                    <div class="col-lg-6">
+                                        <textarea type="text" class="form-control" id="DescripationId"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>-->
+
+
+
+
+<!--sidebar code-->
+<script>
+    $(document).ready(function () {
+
+        $('#content').load("Sidebar.html");
+        $(".UserId").val(localStorage.getItem('UName'));
+
+    });</script>
+
+
+<!--<script>
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">CRM</span> Potential');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>CRM</a><span class="breadcrumb-item active">Potential</span>');
+    };
+</script>-->
+<!--dropdown list-->
+
+<script type="text/javascript">
+    $(function () {
+        debugger
+        GetParameterType('PTYP');
+        GetParameterType('STG');
+        GetParameterType('LDS');
+        /* GetParameterType('IND');*/
+
+
+    });
+    //create first function for getparameretertypeid
+    function GetParameterType(parametertype) {
+        //  alert(parametertype);
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+        $.ajax({
+            type: "GET",
+            url: URLPowerAPI + '/api/PBXMLParameter/GetParameterTypeID',
+            dataType: "json",
+            contentType: "application/json",
+            data: {
+                PARTYPE: parametertype,
+                cccd: cccd
+            },
+            beforeSend: function () {
+                $("#loader1").show();
+            },
+            async: false,
+            success: function (res) {
+                $("#loader1").hide();
+                var abc = res;
+                GetDropDown(abc, parametertype);
+
+            }
+
+        });
+    }
+
+
+    //second function for dropdown
+    function GetDropDown(parameter, parametertype) {
+        debugger
+        //  alert(parameter);
+
+        var cccd = localStorage.getItem('CCAC');
+        $.ajax({
+            type: "GET",
+            url: URLPowerAPI + '/api/PBXMLParametercode/GetAllActiveParameterCodes',
+            dataType: "json",
+            contentType: "application/json",
+
+            data: {
+                PARTYPEID: parameter,
+                cccd: cccd
+            },
+            async: false,
+            success: function (res) {
+
+                $.each(res, function (data, value) {
+                    if (parametertype == 'PTYP') {
+                        $("#TypeId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'STG') {
+                        $("#StageId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    else if (parametertype == 'LDS') {
+                        $("#LeadSourceId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    }
+                    //else if (parametertype == 'IND') {
+                    //    $("#IndustryId").append($("<option></option>").val(value.ParCodeID).html(value.ParCodeDescription));
+                    //}
+                })
+            }
+
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/PBXMLAccounts/GetAllCustomer',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd
+
+                },
+                async: false,
+                success: function (res) {
+                    $.each(res, function (index, value) {
+                        $("#AccountNameId").append($("<option></option>").val(value.ClId).html(value.Name));
+
+
+
+                    });
+                }
+
+            });
+
+    });
+
+
+
+</script>
+
+
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+
+        $.ajax
+            ({
+
+                url: 'https://www.powerbooks.in/powerapi/api/PBXMLVCampaign/GetAllPBXMLCampaign',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd
+
+                },
+
+                success: function (res) {
+                    //alert("Data inside ajax...!!!")
+                    //alert(JSON.stringify(res));
+                    $.each(res, function (index, value) {
+                        $("#CampaignSourceId").append($("<option></option>").val(value.CampaignNo).html(value.CampaignName));
+
+
+
+                    });
+                }
+
+            });
+
+    });
+
+
+
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/PBXMLVContact/GetAllPBXMLContacts',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd
+
+                },
+                async: false,
+                success: function (res) {
+                    //alert("Data inside ajax...!!!")
+                    // alert(JSON.stringify(res));
+                    $.each(res, function (index, value) {
+
+                        var contactname = value.FirstName + " " + value.LastName;
+                        $("#ContactNameId").append($("<option></option>").val(value.ContactNo).html(contactname));
+
+
+                    });
+                }
+
+            });
+
+    });
+
+
+
+</script>
+<!--Add and  edit api-->
+
+<script type="text/javascript">
+    function Groupfunction() {
+        /*   alert("in function");*/
+        debugger
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+            var mode = url1.split("=")[2];
+            var AccNo1 = url1.split("=")[1];
+            var index = (AccNo1).indexOf('&');
+            var AccNo = AccNo1.substring(0, index);
+
+        }
+
+        var cccd = localStorage.getItem('CCAC');
+
+
+        var AccountNo = $("#AccountNameId option:selected").val();
+        var AccountName = $("#AccountNameId option:selected").text();
+        var StageNo = $("#StageId option:selected").val();
+        var StageName = $("#StageId option:selected").text();
+        var TypeName = $("#TypeId option:selected").text();
+        var TypeNo = $("#TypeId option:selected").val();
+        var LeadSourceName = $("#LeadSourceId option:selected").text();
+        var LeadSourceNo = $("#LeadSourceId option:selected").val();
+        var CampaignSourceName = $("#CampaignSourceId option:selected").text();
+        var CampaignSourceNo = $("#CampaignSourceId option:selected").val();
+        var ContactNo = $("#ContactNameId option:selected").val();
+        var ContactName = $("#ContactNameId option:selected").text();
+
+
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+        var status = "A";
+
+
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            AccNo = AccNo,
+                UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = sessionStorage.getItem('createddate');
+        }
+        else {
+
+
+            AccNo = localStorage.getItem('MaxPotentialNo');
+            UId = localStorage.getItem('UID');
+            Username = localStorage.getItem('USERNAME');
+            Createdate = curndate;
+        }
+
+        var parameter = {
+            PotentialOwner:UId,
+            //PotentialNo: AccNo,
+            PotentialName: $("#PtentialNameId").val(),
+            ClosingDate: $("#ClosingDateId").val(),
+            Amount: $("#AmountId").val(),
+            Probability: $("#ProbablityId").val(),
+            NextStep: $("#NextStepId").val(),
+            ExpectedRevenue: $("#ExpectedRevId").val(),
+            AccountName: AccountName,
+            AccountNo: AccountNo,
+            StageName: StageName,
+            StageNo: StageNo,
+            TypeName: TypeName,
+            TypeNo: TypeNo,
+            LeadSourceName: LeadSourceName,
+            LeadSourceNo: LeadSourceNo,
+            CampaignSourceName: CampaignSourceName,
+            CampaignSourceNo: CampaignSourceNo,
+            ContactName: ContactName,
+            ContactNo: ContactNo,
+            CCCD: cccd,
+            STATUS: status,
+            CREATEDSYSTEM: 'PowerSuit',
+            LASTUPDATEDSYSTEM: 'PowerSuit',
+            CreatedBy: UId,
+            LastUpdatedBy: UId,
+            USERNAME: Username,
+            LUSERNAME: Username,
+            UID: UId,
+            LUID: UId,
+            CREATEDDATE: Createdate,
+            LastUpdatedDate: curndate
+
+        }
+        return parameter
+    }
+    $("#savebtnid").click(function () {
+
+        alert("ghggg");
+        var addgroupparameter = Groupfunction();
+        localStorage.setItem("addparameterpot", JSON.stringify(addgroupparameter));
+        debugger
+        $.ajax
+            ({
+                type: 'POST',
+                url: 'https://www.powerbooks.in/powerapi/api/PBXMLPotential/AddPBXMLPotential',
+                dataType: 'JSON',
+                data: JSON.stringify(addgroupparameter),
+
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+
+                    alert('Potential registered successfully');
+                    window.location.href = "LLLL-CR-PT-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+
+        return;
+
+    });
+
+    $("#updatebtnID").click(function () {
+        debugger
+        var addgroupparameter = Groupfunction();
+        localStorage.setItem("editparameterpot", JSON.stringify(addgroupparameter));
+        alert("localstorage")
+        $.ajax
+            ({
+                type: 'POST',
+                url: 'https://www.powerbooks.in/powerapi/api/PBXMLPotential/EditPBXMLPotential',
+                dataType: 'JSON',
+                data: JSON.stringify(addgroupparameter),
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+                    alert('Potential registered successfully');
+                    window.location.href = "LLLL-CR-PT-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+        return;
+
+    });
+</script>
+<!--GET by id API-->
+<script>
+    $(document).ready(function () {
+
+        set_MainHeaderName();
+        debugger
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var AccNo1 = url1.split("=")[1];
+        var index = (AccNo1).indexOf("&");
+        var PotentialNo = AccNo1.substring(0, index);
+        var cccd = localStorage.getItem('CCAC');
+        // alert(AccNo);
+
+        if (mode == 'edit') {
+            $.ajax({
+                type: 'GET',
+                url: URLPowerAPI + '/api/PBXMLPotential/GetPBXMLPotentialByID',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: cccd,
+                    PotentialNo: PotentialNo
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data) {
+                    $("#loader1").hide();
+
+                    CrmPotentials = data;
+                    localStorage.setItem("getparameterPot", JSON.stringify(data));
+
+
+
+                    $("#PtentialNameId").val(CrmPotentials.PotentialName);
+                    $("#AmountId").val(CrmPotentials.Amount);
+                    $("#ClosingDateId").val(CrmPotentials.ClosingDate);
+                    $("#SubjectId").val(CrmPotentials.Subject);
+                    $("#NextStepId").val(CrmPotentials.NextStep);
+                    $("#ExpectedRevId").val(CrmPotentials.ExpectedRevenue);
+
+
+                    $("#AccountNameId option:selected").text(CrmPotentials.AccountName);
+                    $("#TypeId option:selected").text(CrmPotentials.TypeName);
+                    $("#StageId option:selected").text(CrmPotentials.StageName);
+                    $("#LeadSourceId option:selected").text(CrmPotentials.LeadSourceName);
+                    $("#ContactNameId option:selected").text(CrmPotentials.ContactName);
+                    $("#CampaignSourceId option:selected").text(CrmPotentials.CampaignSourceName);
+
+
+
+
+
+                    // alert("ADDLALLOCTYPE" + ObjCrmLead.ADDLALLOCTYPE);
+
+
+
+
+
+                    sessionStorage.setItem('uid', data.UID);
+                    sessionStorage.setItem('username', data.USERNAME);
+                    sessionStorage.setItem('createdsystem', data.CREATEDSYSTEM);
+                    sessionStorage.setItem('createddate', data.CREATEDDATE);
+                    sessionStorage.setItem('lastupdatedate', data.LASTUPDATEDDATE);
+
+                },
+
+            });
+        }
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+        $("#savebtnid").hide();
+
+
+        $("#deletebtnID").click(function () {
+            debugger
+            var urls = window.location.href;
+            debugger
+            //alert(urls);
+            var cccd = localStorage.getItem('CCAC');
+            var group = PotentialNo;
+
+            $.ajax({
+                url: URLPowerAPI + '/api/PBXMLPotential/DeletePBXMLPotential',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    PotentialNo: group
+
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                success: function (data, textStatus, xhr) {
+                    alert("Potential deleted successfully");
+                    window.location.href = "LLLL-CR-PT-50.shtml";
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+
+    });
+
+</script>
+<script>
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">CRM</span> - Potential');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>CRM</a><span class="breadcrumb-item active">Potential</span>');
+    };
+</script>
+
+
+
+
+

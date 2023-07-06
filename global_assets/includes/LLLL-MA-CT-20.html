@@ -1,0 +1,356 @@
+
+		<div class="row justify-content-center">
+			<div class="col">
+				<div class="card">
+					<div class="card-header">
+						<div class="row">
+							<div class="col-lg-6 col-xs-2">
+							</div>
+							<div class="col-lg-6">
+								<a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px;" id="cancelbtnid">Cancel</a>
+								<a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px; display: none;" id="deletebtnID">Delete</a>
+								<a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px; display: none;" id="updatebtnID">Update</a>
+								<a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+							</div>
+						</div>
+					</div>
+
+					<!--Form layout-->
+
+					<div class="card-body">
+						<div class="row">
+							<!--1st column started-->
+							
+							<div class="col-lg-6">
+								<div class="collapse show">
+									<form action="#">
+										<div class="form-group row">
+											<label class="col-lg-5 offset-1 col-form-label">Name&nbsp;:</label>
+											<div class="col-lg-5">
+												<input type="text" class="form-control" id="input-username">
+											</div>
+										</div>
+
+										<div class="form-group row">
+											<label class="col-lg-5 offset-1 col-form-label">Allocate Revenue Items&nbsp;:</label>
+											<div class="col-lg-5 col-form-label">
+												<div class="custom-control custom-switch custom-control-inline">
+													<input type="radio" class="custom-control-input" name="RevenueId" id="YesRevenueId">
+													<label class="custom-control-label" for="YesRevenueId">Yes</label>
+												</div>
+												<div class="custom-control custom-switch custom-control-inline">
+													<input type="radio" class="custom-control-input" name="RevenueId" id="NoRevenueId">
+													<label class="custom-control-label" for="NoRevenueId">No</label>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+
+						<!--2nd column started-->
+						<div class="col-lg-6">
+							<div class="collapse show">
+									<form action="#">
+										<div class="form-group row">
+											<label class="col-lg-5 offset-1 col-form-label">Allocate Non-Revenue Items&nbsp;:</label>
+											<div class="col-lg-5 col-form-label">
+												<div class="custom-control custom-switch custom-control-inline">
+													<input type="radio" class="custom-control-input" name="NonRevenueId" id="YesNonRevenueId">
+													<label class="custom-control-label" for="YesNonRevenueId">Yes</label>
+												</div>
+												<div class="custom-control custom-switch custom-control-inline">
+													<input type="radio" class="custom-control-input" name="NonRevenueId" id="NoNonRevenueId">
+													<label class="custom-control-label" for="NoNonRevenueId">No</label>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+
+     <!--popup script-->
+
+         <script>
+   //         $(document).ready(function () {
+
+   //             $('#content').load("Sidebar.html");
+
+			//});
+		 </script>
+
+        <!--<script>
+            $(document).ready(function () {
+                debugger
+                costcatfunction();
+
+
+            });
+        </script>-->
+
+
+        <!--add update API-->
+        <script>
+            function costcatfunction() {
+                debugger
+                var url1 = window.location.href;
+                var arr = url1.split('=');
+                console.log(url1.length)
+
+                if (arr.length > 1) {
+                    var mode = url1.split("=")[2];
+                    var CostCatNo1 = url1.split("=")[1];
+                    var index = (CostCatNo1).indexOf('&');
+                    var CostCatNo = CostCatNo1.substring(0, index);
+
+                }
+                var urls = window.location.href;
+                var cccd = localStorage.getItem('CCAC');
+
+                if ($("#YesRevenueId").prop("checked")) {
+                    var NonRevenue = "Yes"
+                }
+                else {
+                    var NonRevenue = "No"
+                }
+
+
+                if ($("#YesNonRevenueId").prop("checked")) {
+                    var nonrevenue = "Yes"
+                }
+                else {
+                    var nonrevenue = "No"
+                }
+                var CurrentDate = new Date();
+                var curndate = CurrentDate.toISOString().replace('Z', '');
+                var status = "A";
+
+
+                //storesession value
+                var UId;
+                var Username;
+                var Createdsystem;
+                var Createdate;
+
+                if (mode == 'edit') {
+                    CostCatNo = CostCatNo,
+                        UId = sessionStorage.getItem('uid');
+                    Username = sessionStorage.getItem('username');
+                    Createdsystem = sessionStorage.getItem('createdsystem');
+                    Createdate = sessionStorage.getItem('createddate');
+                }
+                else {
+                    CostCatNo = localStorage.getItem("MaxCostCatNo");
+                    UId = localStorage.getItem('UID');
+                    Username = localStorage.getItem('UName');
+                    Createdsystem = 'PowerSuit';
+                    Createdate = curndate;
+                }
+
+
+
+
+                var parameter =
+                {
+                    CostCatNo: CostCatNo,
+                    NAME: $("#input-username").val(),
+                    ALLOCATEREVENUE: NonRevenue,
+                    ALLOCATENONREVENUE: nonrevenue,
+                    CCCD: cccd,
+                    STATUS: status,
+                    CREATEDSYSTEM: Createdsystem,
+                    LASTUPDATEDSYSTEM: 'PowerSuit',
+                    UID: UId,
+                    USERNAME: Username,
+                    LUID: localStorage.getItem('UID'),
+                    LUSERNAME: localStorage.getItem('UName'),
+                    CREATEDDATE: Createdate,
+                    LASTUPDATEDDATE: curndate
+                }
+                return parameter;
+            }
+
+            $("#savebtnid").click(function () {
+                var addcostcatparameter = costcatfunction();
+
+                $.ajax
+                    ({
+                        type: 'POST',
+                        url: URLPowerAPI+'/api/PBXMLCostCategory/AddPBXMLCostCategory',
+                        dataType: 'JSON',
+                        data: JSON.stringify(addcostcatparameter),
+                        contentType: 'application/json ; charset = utf-8',
+                        beforeSend: function () {
+                            $("#loader1").show();
+                        },
+                        success: function (data, textStatus, xhr) {
+
+                            alert('Registered successfully');
+                            $("#loader1").hide();
+                            window.location.href = "LLL-MA-CT-50.shtml";
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert("You entered some invalid fields...! Fill the details again...");
+                        }
+                    });
+
+                return;
+
+            });
+
+            $("#updatebtnID").click(function () {
+
+                var addcostcatparameter = costcatfunction();
+                $.ajax
+                    ({
+                        type: 'POST',
+                        url: URLPowerAPI+'/api/PBXMLCostCategory/EditPBXMLCostCategory',
+                        dataType: 'JSON',
+                        data: JSON.stringify(addcostcatparameter),
+                        contentType: 'application/json ; charset = utf-8',
+                        beforeSend: function () {
+                            $("#loader1").show();
+                        },
+                        success: function (data, textStatus, xhr) {
+                            alert(' Updated successfully');
+                            $("#loader1").hide();
+                            window.location.href = "LLL-MA-CT-50.shtml";
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert("You entered some invalid fields...! Fill the details again...");
+                        }
+                    });
+                return;
+            });
+
+
+        </script>
+
+
+        <!--GetById-->
+        <script>
+            $(document).ready(function () {
+                set_MainHeaderName();
+                debugger
+				var url1 = window.location.href;
+				var web = url1.split("/");
+				var n = web.length;
+				var web1 = web[n - 1];
+				if (web1 != 'LLLL-MA-CT-20.shtml') {
+                    var mode = url1.split("=")[2];
+                    var CostCatNo1 = url1.split("=")[1];
+                    var index = (CostCatNo1).indexOf('&');
+
+                    var CostCatNo = CostCatNo1.substring(0, index);
+                }
+               
+
+                if (mode == 'edit') {
+                    $.ajax
+                        ({
+                            type: 'GET',
+                            url: URLPowerAPI+'/api/PBXMLCostCategory/GetPBXMLCostCategoryByID',
+                            dataType: 'JSON',
+                            contentType: 'application/json ; charset = utf-8',
+                            //data: JSON.stringify(groupname),
+                            data:
+                            {
+                                cccd: localStorage.getItem('CCAC'),
+                                CostCatNo: CostCatNo
+                            },
+                            contentType: 'application/json ; charset = utf-8',
+                            beforeSend: function () {
+                                $("#loader1").show();
+                            },
+                            success: function (data) {
+                                $("#loader1").hide();
+								ObjCostCat = data;
+								//alert('jeu');
+                                //alert(ObjCostCat.NAME);
+                                $("#input-username").val(ObjCostCat.NAME);
+
+                                if (ObjCostCat.ALLOCATEREVENUE == 'Yes') {
+                                    $("#YesRevenueId").attr('checked', 'checked');
+                                } else {
+                                    $("#NoRevenueId").attr('checked', 'checked');
+                                }
+
+                                if (ObjCostCat.ALLOCATENONREVENUE == 'Yes') {
+                                    $("#YesNonRevenueId").attr('checked', 'checked');
+                                } else {
+                                    $("#NoNonRevenueId").attr('checked', 'checked');
+                                }
+
+                                //store data into session
+                                sessionStorage.setItem('uid', ObjCostCat.UID);
+                                sessionStorage.setItem('username', ObjCostCat.USERNAME);
+                                sessionStorage.setItem('createdsystem', ObjCostCat.CREATEDSYSTEM);
+                                sessionStorage.setItem('createddate', ObjCostCat.CREATEDDATE);
+                                sessionStorage.setItem('lastupdatedate', ObjCostCat.LASTUPDATEDDATE);
+
+                            },
+
+                        });
+
+                    $("#deletebtnID").show();
+                    $("#updatebtnID").show();
+                    $("#savebtnid").hide();
+                }
+
+               
+
+                //delete script
+                $("#deletebtnID").click(function () {
+
+                    var url1 = window.location.href;
+                    var mode = url1.split("=")[2];
+                    var CostCatNo1 = url1.split("=")[1];
+                    var index = (CostCatNo1).indexOf('&');
+                    var CostCatNo = CostCatNo1.substring(0, index);
+                    var cccd = localStorage.getItem('CCAC')
+
+                    $.ajax
+                        ({
+                            url: URLPowerAPI+'/api/PBXMLCostCategory/DeletePBXMLCostCategory',
+                            type: 'GET',
+                            dataType: 'JSON',
+                            data: {
+                                cccd: cccd,
+                                CostCatNo: CostCatNo
+                            },
+                            beforeSend: function () {
+                                $("#loader1").show();
+                            },
+                            contentType: 'application/json ; charset = utf-8',
+                            success: function (data, textStatus, xhr) {
+                                alert("Deleted Succesfully");
+                                $("#loader1").hide();
+                                window.location.href = "LLL-MA-CT-50.shtml";
+                            },
+                            error: function (xhr, textStatus, errorThrown) {
+                                alert("You entered wrong password...! Fill the details again...");
+                            }
+                        });
+                });
+
+            });
+
+             function set_MainHeaderName() {
+                 $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Account Info - Cost Category');
+                 $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Account Info / Cost Category</span>');
+            };
+
+           
+        </script>
+
+
+        <!--dropdownscript-->
+
+
+    

@@ -1,0 +1,388 @@
+<div class="row justify-content-center">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-xs-2">
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                                                    <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display: none; margin-right: 8px;">Delete</a>
+                                                    <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display: none; margin-right: 8px;">Update</a>
+                                                    <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--Form layout-->
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <!--1st column started-->
+                                                
+                                                <div class="col-lg-6">
+                                                    <div class="collapse show">
+                                                        <form action="#">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Name&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <input type="text" class="form-control" id="EmpGrpNameId">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Row No.&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <input type="text" class="form-control" id="RowNoId">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Start type&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <select class="form-control" id="accID1">
+                                                                        <option value="Select" selected>--Select--</option>
+                                                                        <option value="1">Copy from Employee Group</option>
+                                                                        <option value="2">Copy from Parent Value</option>
+                                                                        <option value="3">Start A fresh</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Pay Head type&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <input type="text" class="form-control" id="PTypeid">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Per&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <input type="text" class="form-control" id="PerId">
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+
+                                            <!--2nd column started-->
+                                            <div class="col-lg-6">
+                                                <div class="collapse show">
+                                                        <form action="#">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Under&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <select class="form-control" id="EmpUnderId">
+                                                                        <option value="Select" selected>--Select--</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Effective Form&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <input type="text" class="form-control" id="EffectiveFromId">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Pay Head&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <select class="form-control" id="accID3">
+                                                                        <option value="Select" selected>--Select--</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-5 offset-1 col-form-label">Rate&nbsp;:</label>
+                                                                <div class="col-lg-5">
+                                                                    <input type="text" class="form-control" id="RateId">
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                     
+    <!-- /page content -->
+    <!--drop down list-->
+    <script type="text/javascript">
+        $(function () {
+            debugger
+            var cccd = localStorage.getItem('CCAC');
+            // alert(cccd + "CCCD");
+            $.ajax
+                ({
+
+                    url: URLPowerAPI+'/api/PBXMLEmployeeGroup/GetAllPBXMLEmployeeGroup?cccd=FIT00000',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    data:
+                    {
+                        cccd: cccd
+                    },
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (res) {
+                        //alert("Data inside ajax...!!!")
+
+                        $("#loader1").hide();
+                        $.each(res, function (index, value) {
+
+                            $("#EmpUnderId").append($("<option></option>").val(value.AccNo).html(value.PARENT));
+
+
+                        });
+
+
+                    }
+                }
+
+                );
+
+        });
+    </script>
+
+    <!--add update-->
+    <script>
+        function EmpGrpfunction() {
+            debugger
+            var url1 = window.location.href;
+            var arr = url1.split('=');
+            console.log(url1.length)
+
+            if (arr.length > 1) {
+                var mode = url1.split("=")[2];
+                var EmpNo1 = url1.split("=")[1];
+                var index = (EmpNo1).indexOf('&');
+                var EmpNo = EmpNo1.substring(0, index);
+
+            }
+            var urls = window.location.href;
+            var cccd = localStorage.getItem('CCAC');
+
+            if ($("#DefSalaryYes").prop("checked")) {
+                var saldetail = "Yes"
+            }
+            else {
+                var saldetail = "No"
+            }
+
+            var category = $("#EmpUnderId option:selected").text();
+            var under = $("#EmpCatId option:selected").text();
+            var CurrentDate = new Date();
+            var curndate = CurrentDate.toISOString().replace('Z', '');
+            var status = "A";
+
+
+            //storesession value
+            var UId;
+            var Username;
+            var Createdsystem;
+            var Createdate;
+
+            if (mode == 'edit') {
+                EmpNo = EmpNo,
+                    UId = sessionStorage.getItem('uid');
+                Username = sessionStorage.getItem('username');
+                Createdsystem = sessionStorage.getItem('createdsystem');
+                Createdate = sessionStorage.getItem('createddate');
+            }
+            else {
+                EmpNo = localStorage.getItem('MaxEmpNo');
+                UId = localStorage.getItem('UID');
+                Username = localStorage.getItem('UName');
+                Createdsystem = 'PowerSuit';
+                Createdate = curndate;
+            }
+
+            /*var  abc =$()*/
+            // alert("in parameters");
+
+            var parameter =
+            {
+                EmpNo: EmpNo,
+                NAME: $("#EmpGrpNameId").val(),
+                PARENT: category,
+                CATEGORY: under,
+                ISEMPLOYEEGROUP: 'Yes',
+                CCCD: cccd,
+                STATUS: status,
+                CREATEDSYSTEM: Createdsystem,
+                LASTUPDATEDSYSTEM: 'PowerSuit',
+                UID: UId,
+                USERNAME: Username,
+                LUID: localStorage.getItem('UID'),
+                LUSERNAME: localStorage.getItem('UName'),
+                CREATEDDATE: Createdate,
+                LASTUPDATEDDATE: curndate
+            }
+            //alert(JSON.stringify(parameter));
+            return parameter;
+            // alert(NAME + "name");
+        }
+
+        $("#savebtnid").click(function () {
+
+            // alert("ghggg");
+            var EmpGrpparameter = EmpGrpfunction();
+            // alert(addcostcatparameter + "json");
+            debugger
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: URLPowerAPI+'/api/PBXMLEmployeeGroup/AddPBXMLEmployeeGroup',
+                    dataType: 'JSON',
+                    data: JSON.stringify(EmpGrpparameter),
+                    contentType: 'application/json ; charset = utf-8',
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data, textStatus, xhr) {
+
+                        alert('Added successfully ');
+                        $("#loader1").hide();
+                        window.location.href = "LLLL-MP-SD-50.html";
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("You entered some invalid fields...! Fill the details again...");
+                    }
+                });
+
+            return;
+        });
+
+        $("#savebtnid").show();
+        $("#cancelbtnid").show();
+
+        $("#updatebtnID").click(function () {
+            var EmpGrpparameter = EmpGrpfunction();
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: URLPowerAPI+'/api/PBXMLEmployeeGroup/EditPBXMLEmployeeGroup',
+                    dataType: 'JSON',
+                    data: JSON.stringify(EmpGrpparameter),
+                    contentType: 'application/json ; charset = utf-8',
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data, textStatus, xhr) {
+                        alert(' updated successfully ');
+                        $("#loader1").hide();
+                        window.location.href = "LLLL-MP-SD-50.shtml";
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("You entered some invalid fields...! Fill the details again...");
+                    }
+                });
+            return;
+        });
+    </script>
+
+    <!--GET API-->
+    <script>
+        $(document).ready(function () {
+            debugger
+            set_MainHeaderName();
+            var url1 = window.location.href;
+            var mode = url1.split("=")[2];
+            var EmpNo1 = url1.split("=")[1];
+            var index = (EmpNo1).indexOf('&');
+            var EmpNo = EmpNo1.substring(0, index);
+            var cccd = localStorage.getItem('CCAC');
+
+
+            if (mode == 'edit') {
+                $.ajax({
+                    type: 'GET',
+                    url: URLPowerAPI+'/api/PBXMLEmployeeGroup/GetPBXMLEmployeeGroupByID',
+                    dataType: 'JSON',
+                    contentType: 'application/json ; charset = utf-8',
+                    //data: JSON.stringify(groupname),
+                    data:
+                    {
+                        cccd: cccd,
+                        EmpNo: EmpNo
+
+                    },
+                    contentType: 'application/json ; charset = utf-8',
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data) {
+                        $("#loader1").hide();
+                        // alert(JSON.stringify(data));
+                        EmpGrp = data;
+
+
+                        $("#EmpGrpNameId").val(EmpGrp.NAME);
+                        $('#EmpUnderId option:selected').text(EmpGrp.PARENT);
+
+                        $('#EmpCatId option:selected').text(EmpGrp.CATEGORY);
+
+                        if (EmpGrp.ALLOCATENONREVENUE == 'Yes') {
+                            $("#YesNonRevenueId").attr('checked', 'checked');
+                        } else {
+                            $("#NoNonRevenueId").attr('checked', 'checked');
+                        }
+
+                        sessionStorage.setItem('uid', EmpGrp.UID);
+                        sessionStorage.setItem('username', EmpGrp.USERNAME);
+                        sessionStorage.setItem('createdsystem', EmpGrp.CREATEDSYSTEM);
+                        sessionStorage.setItem('createddate', EmpGrp.CREATEDDATE);
+                        sessionStorage.setItem('lastupdatedate', EmpGrp.LASTUPDATEDDATE);
+
+                    },
+
+                });
+
+            }
+
+            $("#deletebtnID").show();
+            $("#updatebtnID").show();
+            $("#savebtnid").hide();
+            $("#cancelbtnid").show();
+
+            $("#deletebtnID").click(function () {
+                var url1 = window.location.href;
+                var mode = url1.split("=")[2];
+                var EmpNo1 = url1.split("=")[1];
+                var index = (EmpNo1).indexOf('&');
+                var EmpNo = EmpNo1.substring(0, index);
+                var cccd = localStorage.getItem('CCCD')
+
+                $.ajax({
+                    url: URLPowerAPI+'/api/PBXMLEmployeeGroup/DeletePBXMLEmployeeGroup',
+                    type: 'GET',
+                    dataType: 'JSON',
+                    data: {
+                        cccd: cccd,
+                        EmpNo: EmpNo
+                    },
+                    contentType: 'application/json ; charset = utf-8',
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data, textStatus, xhr) {
+                        alert(" Deleted successfully ");
+                        $("#loader1").hide();
+                        window.location.href = "LLLL-MP-SD-50.shtml";
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("You entered wrong password...! Fill the details again...");
+                    }
+                });
+            });
+        });
+
+        function set_MainHeaderName() {
+            $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Payroll Info - Salary Details');
+            $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Payroll Info / Salary Details</span>');
+        };
+    </script>
+
+    
+
+
+

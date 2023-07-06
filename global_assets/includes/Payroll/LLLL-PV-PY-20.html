@@ -1,0 +1,399 @@
+﻿<div class="row justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h5 class="card-title">Payroll Voucher</h5>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display:none;">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display:none;">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px;" id="savebtnid">Save</a>
+                        <button onclick="window.print()" class="btn btn-sm btn-primary float-right" style=" margin-right: 8px;">Print</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="card-body ">
+                <div class=" row">
+                    <div class="col-lg-6">
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label">No&nbsp;:</label>
+                            <div class="col-lg-8">
+                                <input type="text" class="form-control" id="NoID">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+
+                            <label class="col-lg-4 col-form-label">Inv Date :</label>
+
+                            <div class="input-group col-lg-8">
+
+                                <span class="input-group-prepend">
+
+                                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
+
+                                </span>
+
+                                <input type="text" class="form-control daterange-single" id="InvdateID">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label">Narration&nbsp;:</label>
+                            <div class="col-lg-8">
+                                <textarea type="text" class="form-control" id="narrID"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label">Account&nbsp;:</label>
+                            <div class="col-lg-8">
+                                <select class="form-control" id="AccountId">
+                                    <option value="Select" selected>--Select--</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label">Current Balance&nbsp;:</label>
+                            <div class="col-lg-8">
+                                <input type="text" class="form-control" id="CurrentBalID">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="row" style="border-top: 0px solid black; margin: 0px; height: 50px;">
+                            <div class="col-md-2 offset-md-10" style="padding:3px;">
+                                <!--<a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none" id="donebtnid" onclick="Hide_Led();">Done</a>-->
+                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="Itembtnid" onclick="Additem();">Add Item</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="zero" style="display:none">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label">Category&nbsp;:</label>
+                                    <div class="col-lg-8">
+                                        <select class="form-control select" id="CategoryId">
+                                            <option value="Select" selected>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label">Employee&nbsp;:</label>
+                                    <div class="col-lg-8">
+                                        <select class="form-control select" id="EmpId">
+                                            <option value="Select" selected>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label">Amount&nbsp;:</label>
+                                    <div class="col-lg-8">
+                                        <select class="form-control select" id="AmountId">
+                                            <option value="Select" selected>--Select--</option>
+
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-lg-6 ">
+
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" style="width:800px; margin:0 auto;">Current Balance&nbsp;:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="CurBAlID">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label">Payhead&nbsp;:</label>
+                                    <div class="col-lg-8">
+                                        <select class="form-control select" id="payId">
+                                            <option value="Select" selected>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" style="width:800px; margin:0 auto;"></label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="PayID">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="row" style="border-top: 0px solid black; margin: 0px; height: 50px;">
+                                    <div class="col-md-2 offset-md-10" style="padding:3px;">
+                                        <!--<a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none" id="donebtnid" onclick="Hide_Led();">Done</a>-->
+                                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">cancel</a>
+                                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Add</a>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+
+                        <div class="table-responsive">
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th colspan="6" scope="col" class="sort"><center>PayrollList</center></th>
+                                    </tr>
+                                    <tr>
+                                        <th>Particular</th>
+                                        <th>Employee</th>
+                                        <th> Payhead</th>
+                                        <th>AmountType</th>
+                                        <th>PayheadAmount</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="list" id="exam">
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4">
+                                            <label class="float-right" style="margin-right:8px;">Total Amount</label>
+                                        </td>
+                                        <td colspan="2">
+                                            <input type="text" class="float-left" style="margin-right:8px;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                        </td>
+                                        <td colspan="2">
+                                            <input type="text" class="float-left" style="margin-right:8px;">
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    </div>
+                </div>
+            </div>
+
+<script>
+    $(document).ready(function () {
+        debugger
+        var VoucherNo = localStorage.getItem('MaxVoucherNo');
+        if (VoucherNo == null || VoucherNo == "") {
+
+            $('#vouchernoID').val("0");
+        }
+        else {
+            $('#vouchernoID').val(VoucherNo);
+        }
+    });
+
+    $(document).ready(function () {
+
+        set_MainHeaderName();
+        debugger
+        var url1 = window.location.href;
+        var mode = url1.split("=")[1];
+        var index = (mode).indexOf('&');
+        var trkey = mode.substring(0, index);
+        var cccd = localStorage.getItem('CCCD');
+        $.ajax({
+            async: false,
+            url: URLPowerAPI + '/api/PBXMLPayroll/GetPBXMLPayroll',
+            type: 'GET',
+            dataType: 'json',
+            contentType: 'application/json ; charset = utf-8',
+            data:
+            {
+                cccd: cccd,
+                trkey: trkey
+            },
+            success: function (data, textStatus, xhr) {
+                localStorage.setItem('helllo', JSON.stringify(data));
+                localStorage.setItem('new1', JSON.stringify(data));
+                var Obj = data.ATTENDANCEENTRIESLIST;
+                Get_global(data, Obj);
+
+                var dataobj = data;
+                var voucherno = dataobj.VOUCHERNUMBER;
+                $("#NoID").val(voucherno);
+
+                var date = dataobj.DATE;
+                var year = date.substring(0, 4);
+                var mon = date.substring(4, 6);
+                var day = date.substring(6, 8);
+
+                var date1 = day + '-' + mon + '-' + year;
+                $('#InvdateID').val(date1);
+                var naration = dataobj.NARRATION;
+                $("#narrID").val(naration);
+                //$("#AccountId").append($("<option></option>").val(value.PARTYLEDGERNAME).html(value.PARTYLEDGERNAME));
+
+                var strResult;
+                var amounttot = 0;
+                var groups = dataobj.CATEGORYENTRYLIST;
+                var gr = dataobj.CATEGORYENTRYLIST[0];
+                var result = gr.EMPLOYEEENTRIESLIST;
+                Set_Table(groups, result);
+            }
+
+        });
+        $("#savebtnid").hide();
+        $("#updatebtnID").show();
+        $("#deletebtnID").show();
+    });
+
+    function Set_Table(val, val1) {
+        var items = val;
+        var ite = val1;
+        alert(JSON.stringify(items));
+        alert(JSON.stringify(ite));
+        var html = '';
+        $.each(items, function(index, item) {
+            html += `<tr>
+                             <td>  ${item.CATEGORY} </td>
+                             <td>  ${item.EMPLOYEENAME} </td>
+                             <td>  ${item.PAYHEADNAME} </td>
+                             <td>  ${item.PAYHEADAMOUNT} </td>
+                             <td></td>
+                             <td>
+                             <button class="btn btn-sm btn-info" onclick="Edit_Led('${item.NAME}');">Edit</button>
+                             <button class="btn btn-sm btn-danger">Delete</button>
+                             </td>
+                </tr>`;
+        });
+        $('#exam').html(html);
+    }
+    var data1;
+    var obj1;
+    function Get_global(value, value1) {
+        data1 = value;
+        obj1 = value1;
+    }
+    var cccd = localStorage.getItem('CCAC');
+    $.get(URLPowerAPI + '/api/PBXMLEmployee/GetAllPBXMLEmployee' + "?cccd=" + cccd,
+        function (data, textStatus, jqXHR) {
+            $.each(data, function (index, value) {
+                $("#Particular_ID").append($("<option></option>").val(value.ATTDSRL).html(value.NAME));
+            });
+        });
+    $.get(URLPowerAPI + '/api/PBXMLVAttendence/GetAllPBXMLVAttendence' + "?cccd=" + cccd,
+        function (data, textStatus, jqXHR) {
+            $.each(data, function (index, value) {
+                $("#AttproID").append($("<option></option>").val(value.AttendanceId).html(value.ATTENDANCETYPE));
+            });
+        });
+    var val_no;
+    function Edit_Led(Value) {
+        debugger
+        $('#Led_row').css("display", "block");
+        $('#Add_btn').css("display", "none");
+        $('#Update_btn').css("display", "block");
+        obj1.forEach((item, index) => {
+            if (Value == item.NAME) {
+                $("#Particular_ID").append($("<option selected ></option>").val(item.ATTDSRL).html(item.NAME));
+                $("#AttproID").append($("<option selected ></option>").val(item.ATTENDANCETYPE).html(item.ATTENDANCETYPE));
+                $('#UnitID').val(item.ATTDTYPEVALUE);
+                val_no = item.ATTDSRL;
+            }
+        });
+    }
+    function Delete_Led() {
+
+    }
+    function Add_Att() {
+
+    }
+    function getval() {
+        var bb = $('#accID option:selected').text();
+    }
+    function Add_Led() {
+        $('#Led_row').css("display", "block");
+        $('#donebtnid').css("display", "block");
+        $('#ledgeerbtnid').css("display", "none");
+        $('#Update_btn').css("display", "none");
+        $('#Add_btn').css("display", "block");
+        $("#Particular_ID").val('');
+        $('#Amnt_ID').val('');
+    }
+    function Hide_Led() {
+        var x = document.getElementById("Led_row");
+        var y = document.getElementById("donebtnid");
+        var z = document.getElementById("ledgeerbtnid");
+        if (x.style.display === "") {
+            x.style.display = "block";
+        }
+        else {
+            x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "block";
+        }
+    }
+
+    $("#Update_btn").click(function () {
+        debugger
+        Value = val_no;
+        obj1.forEach((item, index) => {
+            if (Value == item.ATTDSRL) {
+                item.NAME = $('#Particular_ID option:selected').text();
+                item.ATTENDANCETYPE = $('#AttproID').val();
+                item.ATTDTYPEVALUE = $('#UnitID').val();
+            }
+
+        });
+
+        Set_Table();
+    });
+    function edit_record() {
+        debugger
+        data1.VOUCHERNUMBER = $('#vouchernoID').val();
+        data1.PARTYLEDGERNAME = $('#accID option:selected').text();
+        data1.EFFECTIVEDATE = $('#voucherDateID').val();
+        data1.NARRATION = $('#narrationId').val();
+        data1.ALLLEDGERENTRIESLIST = obj1;
+        datas = JSON.stringify(data1);
+        $.ajax({
+
+            url: 'https://www.powerbooks.in/powerapi/api/PBXMLAccounting/EditPBXMLAccounting',
+            type: 'POST',
+            dataType: 'JSON',
+            contentType: 'application/json ; charset = utf-8',
+            data: datas,
+
+            success: function () {
+                alert('data updated ')
+                window.location.href = 'LLLL-AV-CO-20.shtml';
+
+            }
+        });
+    }
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Payroll</span> - Payroll Voucher - Payroll');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Payroll</a><span class="breadcrumb-item active">Payroll Voucher / Payroll</span>');
+    };
+</script>

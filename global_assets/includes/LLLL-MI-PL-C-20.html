@@ -1,0 +1,568 @@
+﻿
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-xs-2">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" id="deletebtnID">Delete</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" id="updatebtnID">Update</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Form layout-->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <!--1st column started-->
+                                            
+                                            <div class="col-lg-6">
+                                                <div class="collapse show">
+                                                    <form action="#">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-4 col-form-label">Stock Category&nbsp;:</label>
+                                                            <div class="col-lg-8">
+                                                                <select class="form-control" id="StockGrpID">
+                                                                    <option selected="selected" value="-1">---Select---</option>
+                                                                    <option value="3">Packing Material</option>
+                                                                    <option value="15">Packing Material</option>
+                                                                    <option value="18">Packing Material</option>
+                                                                    <option value="1">PRIMARY</option>
+                                                                    <option value="13">Ratik sunil kinalekar</option>
+                                                                    <option value="16">siddhant</option>
+                                                                    <option value="12">Stored Material213</option>
+                                                                    <option value="14">subodh</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-4 col-form-label">Price List&nbsp;:</label>
+                                                            <div class="col-lg-8">
+                                                                <select class="form-control" id="PriceListID">
+                                                                    <option selected="selected" value="NOT APPLICABLE">NOT APPLICABLE</option>
+                                                                    <option value="DEALER1">DEALER1</option>
+                                                                    <option value="DEALER2">DEALER2</option>
+                                                                    <option value="DEALER3">DEALER3</option>
+                                                                    <option value="DEALER4">DEALER4</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        <!--2nd column started-->
+                                        <div class="col-lg-6">
+                                            <div class="collapse show">
+                                                    <form action="#">
+
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-4 col-form-label">Applicable From&nbsp;:</label>
+                                                            <div class="input-group col-lg-8">
+                                                                <span class="input-group-prepend">
+                                                                <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                                                </span>
+                                                                <input type="text" class="form-control daterange-single" id="ApplicableformID">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  
+    <!--popup script-->
+
+    <script>
+        function myFunction() {
+            debugger
+            var x = document.getElementById("GroupId").value;
+
+            if (x == 2) {
+                $('#BudgetFirstModal').show();
+                $("#PopUpGrpName").val($("#Budgets-username").val());
+                $("#PopUpFromId").val($("#FromId").val());
+                $("#PopUpToId").val($("#ToId").val());
+            }
+            else {
+                $('#BudgetFirstModal').hide();
+            }
+        }
+        var BudgetFirstModal = document.getElementById("BudgetFirstModal");
+        var Bugfirstspan = document.getElementsByClassName("BugfirstModClosecls")[0];
+
+        Bugfirstspan.onclick = function () {
+            BudgetFirstModal.style.display = "none";
+        }
+    </script>
+
+
+    <!--list of group of budget popup model js-->
+    <script>
+        function myLedgerFunction() {
+            debugger
+            var x = document.getElementById("LedgersId").value;
+
+            if (x == 2) {
+                $('#BudgetSecondModal').show();
+                $("#PopUpGrpName").val($("#Budgets-username").val());
+                $("#PopUpFromId").val($("#FromId").val());
+                $("#PopUpToId").val($("#ToId").val());
+            }
+            else {
+                $('#BudgetSecondModal').hide();
+            }
+        }
+
+        var Bugsecondtspan = document.getElementsByClassName("BugSecondModClosecls")[0];
+        var BudgetSecondModal = document.getElementById("BudgetSecondModal");
+        Bugsecondtspan.onclick = function () {
+            BudgetSecondModal.style.display = "none";
+        }
+
+    </script>
+
+    <!--list of  cost center  popup mode jsl-->
+    <script>
+        function mycostFunction() {
+            debugger
+            var x = document.getElementById("CostCentresId").value;
+
+            if (x == 2) {
+                $('#BudgetthirdModal').show();
+                $("#PopUpGrpName").val($("#Budgets-username").val());
+                $("#PopUpFromId").val($("#FromId").val());
+                $("#PopUpToId").val($("#ToId").val());
+            }
+            else {
+                $('#BudgetthirdModal').hide();
+            }
+        }
+        var BudgetthirdModal = document.getElementById("BudgetthirdModal");
+        var BugthirdModClosecls = document.getElementsByClassName("BugthirdModClosecls")[0];
+        BugthirdModClosecls.onclick = function () {
+            BudgetthirdModal.style.display = "none";
+        }
+    </script>
+
+
+    <!--model dropdown-->
+    <script type="text/javascript">
+        $(function () {
+            debugger
+            var cccd = localStorage.getItem('CCAC');
+            $.ajax
+                ({
+
+                    url: URLPowerAPI+'/api/PBXMLVGroups/GetAllPBXMLVGroup',
+                    type: 'GET',
+                    dataType: 'json',
+                    data:
+                    {
+                        cccd: cccd
+                    },
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (res) {
+                        //alert("Data inside ajax...!!!")
+                        $("#loader1").hide();
+
+                        $.each(res, function (index, value) {
+
+                            $("#GrpAccNameId").append($("<option></option>").val(value.AccNo).html(value.GROUP));
+                        });
+
+
+                    }
+
+
+
+
+                }
+
+                );
+
+        });
+
+
+
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            debugger
+            var cccd = localStorage.getItem('CCCD');
+            var fromdt = '20070401';
+            var todt = '20080331';
+            $.ajax
+                ({
+
+                    url: URLPowerAPI+'/api/PBXMLVLedgerList/GetAllPBXMLVLedgerList',
+                    type: 'GET',
+                    dataType: 'json',
+                    data:
+                    {
+                        cccd: cccd,
+                        fromdt: fromdt,
+                        todt: todt
+
+                    },
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (res) {
+                        //alert("Data inside ajax...!!!")
+                        $("#loader1").hide();
+
+                        $.each(res, function (index, value) {
+
+                            $("#LedAccNameId").append($("<option></option>").val(value.AccNo).html(value.LEDGERNAME));
+                        });
+
+
+                    }
+
+
+
+
+                }
+
+                );
+
+        });
+
+
+
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            debugger
+            var cccd = localStorage.getItem('CCCD');
+            $.ajax
+                ({
+
+                    url: URLPowerAPI+'/api/PBXMLVCostCenter/GetAllPBXMLVCostCenter',
+                    type: 'GET',
+                    dataType: 'json',
+                    data:
+                    {
+                        cccd: cccd
+                    },
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (res) {
+                        $("#loader1").hide();
+                        // alert("Data inside ajax...!!!")
+
+
+                        $.each(res, function (index, value) {
+
+                            $("#GrpCostCenId").append($("<option></option>").val(value.CostCd).html(value.COSTCENTRE));
+                            $("#LedCostCetId").append($("<option></option>").val(value.CostCd).html(value.COSTCENTRE));
+                            $("#thirdCostCetId").append($("<option></option>").val(value.CostCd).html(value.COSTCENTRE));
+
+                        });
+
+
+                    }
+
+
+
+
+                }
+
+                );
+
+        });
+
+
+
+    </script>
+    <!--drop doen list-->
+    <script type="text/javascript">
+        $(function () {
+            debugger
+            var cccd = localStorage.getItem('CCAC');
+            $.ajax
+                ({
+
+                    url: URLPowerAPI+'/api/PBXMLVBudget/GetAllPBXMLVBudget',
+                    type: 'GET',
+                    dataType: 'json',
+                    data:
+                    {
+                        cccd: cccd
+                    },
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (res) {
+                        // alert("Data inside ajax...!!!")
+                        $("#loader1").hide();
+
+
+                        $.each(res, function (index, value) {
+
+                            $("#underValueId").append($("<option></option>").val(value.BUDGETSRL).html(value.NAME));
+                            // $("#GrpBudgetId").append($("<option></option>").val(value.BUDGETSRL).html(value.PARENT));
+                        });
+
+
+                    }
+                }
+                );
+
+        });
+    </script>
+    <script>
+        function Budgetfunction() {
+            debugger
+            var url1 = window.location.href;
+            var arr = url1.split('=');
+            console.log(url1.length)
+
+            if (arr.length > 1) {
+                var mode = url1.split("=")[2];
+                var BUDGETSRL = url1.split("=")[1];
+                var index = (BUDGETSRL).indexOf('&');
+                var BUDGETSRL1 = BUDGETSRL.substring(0, index);
+
+            }
+            var urls = window.location.href;
+            var cccd = localStorage.getItem('CCAC');
+
+            if ($("#YesIsScenarioId").prop("checked")) {
+                var scenario = "Yes"
+            }
+            else {
+                var scenario = "No"
+            }
+
+
+
+
+            var under = $("#underValueId option:selected").text();
+            var group = $("#GroupselectdId option:selected").text();
+            var ledger = $("#LedgersId option:selected").text();
+            var costcenter = $("#CostCentresId option:selected").text();
+            var CurrentDate = new Date();
+            var curndate = CurrentDate.toISOString().replace('Z', '');
+            var status = "A";
+
+
+            //storesession value
+            var UId;
+            var Username;
+            var Createdsystem;
+            var Createdate;
+
+            if (mode == 'edit') {
+                BUDGETSRL = BUDGETSRL1,
+                    UId = sessionStorage.getItem('uid');
+                Username = sessionStorage.getItem('username');
+                Createdsystem = sessionStorage.getItem('createdsystem');
+                Createdate = sessionStorage.getItem('createddate');
+            }
+            else {
+                BUDGETSRL = localStorage.getItem('MaxBUDGETSRLNo');
+                UId = localStorage.getItem('UID');
+                Username = localStorage.getItem('UName');
+                Createdsystem = 'PowerSuit';
+                Createdate = curndate;
+            }
+
+
+            /*var  abc =$()*/
+            // alert("in parameters");
+
+            var parameter =
+            {
+                BUDGETSRL: BUDGETSRL,
+                NAME: $("#Budgets-username").val(),
+                //EMAILID: $("#emailid").val(),
+                ISSCENARIO: scenario,
+                PARENT: under,
+                CCCD: cccd,
+                STATUS: status,
+                CREATEDSYSTEM: Createdsystem,
+                LASTUPDATEDSYSTEM: 'PowerSuit',
+                UID: UId,
+                USERNAME: Username,
+                LUID: localStorage.getItem('UID'),
+                LUSERNAME: localStorage.getItem('UName'),
+                CREATEDDATE: Createdate,
+                LASTUPDATEDDATE: curndate
+            }
+            //alert(JSON.stringify(parameter));
+            return parameter;
+            // alert(NAME + "name");
+
+        }
+
+        $("#savebtnid").click(function () {
+
+            // alert("ghggg");
+            var addbudgetparameter = Budgetfunction();
+            // alert(addcostcatparameter + "json");
+            debugger
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: URLPowerAPI+'/api/PBXMLBudget/AddPBXMLBudgetScenario',
+                    dataType: 'JSON',
+                    data: JSON.stringify(addbudgetparameter),
+                    contentType: 'application/json ; charset = utf-8',
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data, textStatus, xhr) {
+
+                        alert(' Registered successfully');
+                        $("#loader1").hide();
+                        window.location.href = "LLLL-MA-BU-50.shtml";
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("You entered some invalid fields...! Fill the details again...");
+                    }
+                });
+
+            return;
+
+        });
+
+        $("#updatebtnID").click(function () {
+
+            var addbudgetparameter = Budgetfunction();
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: URLPowerAPI+'/api/PBXMLBudget/EditPBXMLBudgetScenario',
+                    dataType: 'JSON',
+                    data: JSON.stringify(addbudgetparameter),
+                    contentType: 'application/json ; charset = utf-8',
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data, textStatus, xhr) {
+                        alert(' Updated successfully');
+                        $("#loader1").hide();
+                        window.location.href = "LLLL-MA-BU-50.shtml";
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("You entered some invalid fields...! Fill the details again...");
+                    }
+                });
+            return;
+        });
+
+
+    </script>
+    <!--GET API-->
+    <script>
+        $(document).ready(function () {
+            debugger
+            set_MainHeaderName();
+            var url1 = window.location.href;
+            var mode = url1.split("=")[2];
+            var BUDGETSRL1 = url1.split("=")[1];
+            var index = (BUDGETSRL1).indexOf("&");
+            var BUDGETSRL = BUDGETSRL1.substring(0, index);
+            //  alert(BUDGETSRL);
+
+            if (mode == 'edit') {
+                $.ajax({
+                    type: 'GET',
+                    url: URLPowerAPI+'/api/PBXMLBudget/GetPBXMLBudgetById',
+                    dataType: 'JSON',
+                    contentType: 'application/json ; charset = utf-8',
+                    //data: JSON.stringify(groupname),
+                    data: {
+                        cccd: localStorage.getItem('CCAC'),
+                        BUDGETSRL: BUDGETSRL
+                    },
+
+                    success: function (data) {
+                        ObjBudgets = data;
+                        $("#loader1").hide();
+
+                        $("#Budgets-username").val(ObjBudgets.NAME);
+                        //alert("objname" + ObjBudgets.NAME);
+
+
+                        $('#underValueId option:selected').text(ObjBudgets.PARENT);
+                        //alert("objname" + ObjBudgets.PARENT);
+
+
+                        if (ObjBudgets.ISSCENARIO == 'Yes') {
+                            $("#YesIsScenarioId").attr('checked', 'checked');
+                        } else {
+                            $("#NoIsScenarioId").attr('checked', 'checked');
+                        }
+
+                        sessionStorage.setItem('uid', ObjBudgets.UID);
+                        sessionStorage.setItem('username', ObjBudgets.USERNAME);
+                        sessionStorage.setItem('createdsystem', ObjBudgets.CREATEDSYSTEM);
+                        sessionStorage.setItem('createddate', ObjBudgets.CREATEDDATE);
+                        sessionStorage.setItem('lastupdatedate', ObjBudgets.LASTUPDATEDDATE);
+
+                    },
+
+                });
+            }
+            $("#deletebtnID").show();
+            $("#updatebtnID").show();
+
+
+            $("#deletebtnID").click(function () {
+                debugger
+                var url1 = window.location.href;
+                var BUDGETSRL1 = url1.split("=")[1];
+                var index = (BUDGETSRL1).indexOf("&");
+                var BUDGETSRL = BUDGETSRL1.substring(0, index);
+                var cccd = localStorage.getItem('CCAC');
+
+                // alert(BUDGETSRL);
+
+                $.ajax({
+                    url: URLPowerAPI+'/api/PBXMLBudget/DeletePBXMLBudget',
+                    type: 'GET',
+                    dataType: 'JSON',
+                    data: {
+                        cccd: cccd,
+                        BUDGETSRL: BUDGETSRL
+
+                    },
+
+                    contentType: 'application/json ; charset = utf-8',
+                    beforeSend: function () {
+                        $("#loader1").show();
+                    },
+                    success: function (data, textStatus, xhr) {
+                        alert("Deleted successfully");
+                        $("#loader1").hide();
+                        window.location.href = "LLLL-MA-BU-50.shtml";
+
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("You entered wrong password...! Fill the details again...");
+                    }
+                });
+            });
+
+        });
+        function set_MainHeaderName() {
+            $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Account Info - Price List - Stock Category');
+            $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Account Info / Price List / Stock Category</span>');
+        };
+    </script>
+
+

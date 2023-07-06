@@ -1,0 +1,2586 @@
+
+
+<div class="row justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px;" id="cancelbtnid">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px; display: none;" id="deletebtnID">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right: 8px; display: none;" id="updatebtnID">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+
+            <div class="card-body">
+                <h5 class="" style="background-color: whitesmoke">Add Account</h5>
+                <div class="row">
+                    <!--1st column started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Account Name&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="LEDGERNAMEID">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Under Group&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="UnderValueId">
+                                            <option value="1">--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Maintain Balances Bill By Bill&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="MainyainBillByID" id="YesISBILLWISEONId">
+                                            <label class="custom-control-label" for="YesISBILLWISEONId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="MainyainBillByID" id="NoISBILLWISEONId">
+                                            <label class="custom-control-label" for="NoISBILLWISEONId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Inventory Values are affected&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="TaxDetailsId" id="YesInventoryValuesId">
+                                            <label class="custom-control-label" for="YesInventoryValuesId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="TaxDetailsId" id="NoInventoryValuesId">
+                                            <label class="custom-control-label" for="NoInventoryValuesId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Activate Interest Calculation&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="InterestCalculationID" id="YesActivateInterestId" data-toggle="modal" data-target="#ActivateInteresrCal_Modal">
+                                            <label class="custom-control-label" for="YesActivateInterestId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="InterestCalculationID" id="NoActivateInterestId">
+                                            <label class="custom-control-label" for="NoActivateInterestId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Type of Duty/Tax&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="TaxValueId">
+                                            <option value="1">--Select--</option>
+                                            <option>CENVAT</option>
+                                            <option>CST</option>
+                                            <option>GST</option>
+                                            <option>Krishi Kalyan Cess</option>
+                                            <option>Others</option>
+                                            <option>Service Tax</option>
+                                            <option>Swachh Bharat Cess</option>
+                                            <option>TDS</option>
+                                            <option>VAT</option>
+                                            <option>TCS</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <!--<div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Maintain Balances Bill By Bill&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="MainyainBillByID" id="YesISBILLWISEONId">
+                                            <label class="custom-control-label" for="YesISBILLWISEONId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="MainyainBillByID" id="NoISBILLWISEONId">
+                                            <label class="custom-control-label" for="NoISBILLWISEONId">No</label>
+                                        </div>
+                                    </div>
+                                </div>-->
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Use For Payroll:&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="PayrollID" id="YesUseforPayrollId">
+                                            <label class="custom-control-label" for="YesUseforPayrollId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="PayrollID" id="NoUseforPayrollId">
+                                            <label class="custom-control-label" for="NoUseforPayrollId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Check for credit days during voucher entry&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="TDSDetailsId" id="YescreditdaysId">
+                                            <label class="custom-control-label" for="YescreditdaysId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="TDSDetailsId" id="NocreditdaysId">
+                                            <label class="custom-control-label" for="NocreditdaysId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Set/Alter Statutary Details:&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="StatutaryDetailsId" id="YesStatutoryDetailsId" data-toggle="modal" data-target="#SetAlterStatutary_Model">
+                                            <label class="custom-control-label" for="YesStatutoryDetailsId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="StatutaryDetailsId" id="NoStatutoryDetailsId">
+                                            <label class="custom-control-label" for="NoStatutoryDetailsId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--2nd col started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Currency of Ledger&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <select class="form-control" id="CurrencyId">
+                                            <option>--select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Opening Balance&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="inlineFormInputGroup">
+                                            <span class="input-group-append">
+                                                <select class="form-control">
+                                                    <option>Dr.</option>
+                                                    <option>Cr.</option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Specify Credit Limit&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="inlineFormInputGroup">
+                                            <span class="input-group-append">
+                                                <select class="form-control">
+                                                    <option>Dr.</option>
+                                                    <option>Cr.</option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Cost Centres Are Applicale&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="NetDebitId" id="YesCostCentresId">
+                                            <label class="custom-control-label" for="YesCostCentresId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="NetDebitId" id="NoCostCentresId">
+                                            <label class="custom-control-label" for="NoCostCentresId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Pricing Level Applicable&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="PricinglevId">
+                                            <option value="1" selected>Not Applicable</option>
+                                            <option value="2">dealer1</option>
+                                            <option value="3">dealer2</option>
+                                            <option value="4">dealer3</option>
+                                            <option value="5">dealer4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Types Of Ledger</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="LedgerId">
+                                            <option>Not Applicable</option>
+                                            <option>Discount</option>
+                                            <option>Invoice Rounding</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Default Credit Period&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Days">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Percentage of Calculation&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="inlineFormInputGroup">
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+                    <!--2nd column started-->
+
+                </div>
+
+                <!--mailing Details-->
+
+                <h5 class="" style="background-color: whitesmoke">Mailing Details</h5>
+                <div class="row">
+                    <!--1st MD column started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Name</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="NAMEID">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Pincode</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="Pincodeid">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Country</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="CountryId">
+                                            <option>--Select--</option>
+                                            <option>India</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">State</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="statenameId">
+                                            <option>--Select--</option>
+                                            <option>Maharastra</option>
+                                            <option>Manipur</option>
+                                            <option>Goa</option>
+                                            <option>Gujrat</option>
+                                            <option>Delhi</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--2nd md col started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Address</label>
+                                    <div class="col-lg-5">
+                                        <textarea class="form-control" id="ADDRESSid">
+ 
+                                                                </textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Provide Bank Details&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="BankDetailsID" id="YesProvideBankId" data-toggle="modal" data-target="#ProvideDetails_Modal">
+                                            <label class="custom-control-label" for="YesProvideBankId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="BankDetailsID" id="NoProvideBankId">
+                                            <label class="custom-control-label" for="NoProvideBankId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!--Tax Registration  Details-->
+
+                <h5 class="" style="background-color: whitesmoke">Tax Registration Details</h5>
+                <div class="row">
+                    <!--1st TR column started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">PAN/IT No&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="inlineFormInputGroup">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Set/Alter GST Details&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="AlterGSTIS" id="YesGSTDetailsId" data-toggle="modal" data-target="#GSTDetails_Modal">
+                                            <label class="custom-control-label" for="YesGSTDetailsId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="AlterGSTIS" id="NoGSTDetailsId">
+                                            <label class="custom-control-label" for="NoGSTDetailsId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">GSTIN/UIN No&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="inlineFormInputGroup">
+                                    </div>
+                                </div>
+
+
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--2nd col started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Registration Type&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="RegistrationtypeID">
+                                            <option value="-1"></option>
+                                            <option>Unknown</option>
+                                            <option>Composition</option>
+                                            <option>Consumer</option>
+                                            <option>Regular</option>
+                                            <option>Unragistered</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Set/Alter Service TAX Details&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="ServiceTaxID" id="YesTaxDetailsId"  data-toggle="modal" data-target="#taxDetails_Modal">
+                                            <label class="custom-control-label" for="YesTaxDetailsId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="ServiceTaxID" id="NoTaxDetailsId">
+                                            <label class="custom-control-label" for="NoTaxDetailsId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Set/Alter Service VAT Details&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="VATDetailsID" id="YesVATDetailsId" data-toggle="modal" data-target="#VATDetails_Modal">
+                                            <label class="custom-control-label" for="YesVATDetailsId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="VATDetailsID" id="NoVATDetailsId">
+                                            <label class="custom-control-label" for="NoVATDetailsId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Set/Alter Exise Details&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="ExiseDetailsID" id="YesExciseDetailsId" data-toggle="modal" data-target="#ExciseDetails_Modal">
+                                            <label class="custom-control-label" for="YesExciseDetailsId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="ExiseDetailsID" id="NoExciseDetailsId" data-toggle="modal" data-target="#SetAlterNoExcise_Model">
+                                            <label class="custom-control-label" for="NoExciseDetailsId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal content -->
+<div id="ActivateInteresrCal_Modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert center" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-form-label">Interest Parameters</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-8">Calculate Interest Transaction-by-transaction</label>
+                                <div class="custom-control custom-switch custom-control-inline">
+                                    <input type="radio" class="custom-control-input" name="CalculationInterId" id="YesCalculationInterId">
+                                    <label class="custom-control-label" for="YesCalculationInterId">Yes</label>
+                                </div>
+                                <div class="custom-control custom-switch custom-control-inline">
+                                    <input type="radio" class="custom-control-input" name="CalculationInterId" id="NoCalculationInterId">
+                                    <label class="custom-control-label" for="NoCalculationInterId">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-8">Include transaction date for interest calculation</label>
+                                <div class="custom-control custom-switch custom-control-inline">
+                                    <input type="radio" class="custom-control-input" name="IncludetranIntCal" id="YesIncludetranIntCal">
+                                    <label class="custom-control-label" for="YesIncludetranIntCal">Yes</label>
+                                </div>
+                                <div class="custom-control custom-switch custom-control-inline">
+                                    <input type="radio" class="custom-control-input" name="IncludetranIntCal" id="NoIncludetranIntCal">
+                                    <label class="custom-control-label" for="NoIncludetranIntCal">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-8">For Amounts Added</label>
+                                <div class="custom-control custom-switch custom-control-inline">
+                                    <input type="radio" class="custom-control-input" name="AmmountAdded" id="YesAmmountAdded">
+                                    <label class="custom-control-label" for="YesAmmountAdded">Yes</label>
+                                </div>
+                                <div class="custom-control custom-switch custom-control-inline">
+                                    <input type="radio" class="custom-control-input" name="AmmountAdded" id="NoAmmountAdded">
+                                    <label class="custom-control-label" for="NoAmmountAdded">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12" style="padding-top: 0px; height: 50px;">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-8">For Amounts Deducted</label>
+                                <div class="custom-control custom-switch custom-control-inline">
+                                    <input type="radio" class="custom-control-input" name="AmmountDeducted" id="YesAmmountDeducted">
+                                    <label class="custom-control-label" for="YesAmmountDeducted">Yes</label>
+                                </div>
+                                <div class="custom-control custom-switch custom-control-inline">
+                                    <input type="radio" class="custom-control-input" name="AmmountDeducted" id="NoAmmountDeducted">
+                                    <label class="custom-control-label" for="NoAmmountDeducted">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 10px; margin-bottom: 10px;">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Rate&nbsp;:</label>
+                                <div class="col-lg-6 row">
+                                    <input type="text" class="form-control" id="RateID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Per&nbsp;:</label>
+                                <div class="col-lg-6 row">
+                                    <input type="text" class="form-control" id="PerID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">On&nbsp;:</label>
+                                <div class="col-lg-6 row">
+                                    <input type="text" class="form-control" id="OnID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Applicability&nbsp;:</label>
+                                <div class="col-lg-6 row">
+                                    <input type="text" class="form-control" id="ApplicabilityID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Calculate From&nbsp;:</label>
+                                <div class="col-lg-6 row">
+                                    <input type="text" class="form-control" id="CalculateID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Rounding&nbsp;:</label>
+                                <div class="col-lg-6 row">
+                                    <input type="text" class="form-control" id="RoundingID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">by&nbsp;:</label>
+                                <div class="col-lg-6 row">
+                                    <input type="text" class="form-control" id="ByID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">limit&nbsp;:</label>
+                                <div class="col-lg-6 row">
+                                    <input type="text" class="form-control" id="limitID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12" style="padding-right: 0px;padding-left: 0px;">
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-flush">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col" class="sort" data-sort="name" style="padding-right: 0px;padding-left: 0px;">Row No</th>
+                                            <th scope="col" class="sort" data-sort="budget" style="padding-right: 0px;padding-left: 0px;">Rate</th>
+                                            <th scope="col" class="sort" data-sort="status" style="padding-right: 0px;padding-left: 0px;">Per</th>
+                                            <th scope="col" style="padding-right: 0px;padding-left: 0px;">On</th>
+                                            <th scope="col" class="sort" data-sort="completion" style="padding-right: 0px;padding-left: 0px;">Applicability</th>
+                                            <th scope="col" style="padding-right: 0px;padding-left: 0px;">By</th>
+                                            <th scope="col" style="padding-right: 0px;padding-left: 0px;">Calculate From</th>
+                                            <th scope="col" style="padding-right: 0px;padding-left: 0px;">Rounding</th>
+                                            <th scope="col" style="padding-right: 0px;padding-left: 0px;">Limit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="list" id="tableid">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+<!--second model-->
+<div id="SetAlterStatutary_Model" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert center" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-lg-6 col-form-label">Statutory Details for</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="statutorydetailsID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span><u>GST</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is GST Applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span><u>Service Tax</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is Service tax applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>--Select--</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Type of Supply</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>--Select--</option>
+                                        <option value="2">Goods</option>
+                                        <option value="2">Service</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Set/Alter Service tax Details</label>
+                                <div class="col-lg-6 row">
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="TaxDetailsId" id="YesTaxDetailsId">
+                                        <label class="custom-control-label" for="YesTaxDetailsId">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="TaxDetailsId" id="NoTaxDetailsId">
+                                        <label class="custom-control-label" for="NoTaxDetailsId">No</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 10px; margin-bottom: 10px;">
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span><u>TCS</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is TCS Applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span><u>Service Tax</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is TDS applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Nature of Goods</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Nature of Payment</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is TCS Deductable</label>
+                                <div class="col-lg-6">
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="TCSDectaID" id="YesTCSDectaID">
+                                        <label class="custom-control-label" for="YesTCSDectaID">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="TCSDectaID" id="NoTCSDectaID">
+                                        <label class="custom-control-label" for="NoTCSDectaID">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is TDS Deductable</label>
+                                <div class="col-lg-6">
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="TDSDectaID" id="YesTDSDectaID">
+                                        <label class="custom-control-label" for="YesTDSDectaID">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="TDSDectaID" id="NoTDSDectaID">
+                                        <label class="custom-control-label" for="NoTDSDectaID">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 10px; margin-bottom: 10px;">
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span><u>Excies</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is Excise Applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span><u>VAT</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is VAT/CST applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>--Select--</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 10px; margin-bottom: 10px;">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span><u>Othes</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Include in assessable value calculation for</label>
+                                <div class="col-lg-6">
+                                    <div class="form-group row" style="padding-right: 0px;padding-left: 0px;">
+                                        <select class="form-control">
+                                            <option value="1" selected>Not Applicable</option>
+                                            <option value="2">Excise</option>
+                                            <option value="3">Excise and VAT</option>
+                                            <option value="4">Excise and GST</option>
+                                            <option value="5">VAT</option>
+                                            <option value="6">GST</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span><u>&nbsp;</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Method of Calculation</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>Based on Quantity</option>
+                                        <option value="2">Based on Value</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Provide Bank Details Model -->
+<div id="ProvideDetails_Modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-form-label col-lg-6">Bank Details For&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="bankdetailsid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Transaction Type&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                        <option selected="selected" value="Select">---Select---</option>
+                                        <option value="ATM">ATM</option>
+                                        <option value="Card">Card</option>
+                                        <option value="Cheque">Cheque</option>
+                                        <option value="ECS">ECS</option>
+                                        <option value="Electronic Cheque">Electronic Cheque</option>
+                                        <option value="Electronic DD/PO">Electronic DD/PO</option>
+                                        <option value="E-Fund Transfer">E-Fund Transfer</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--GST Details model-->
+<div id="GSTDetails_Modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-lg-12">
+                                <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                                    <label class="col-form-label col-lg-12" style="text-align:center">GST Details</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Registration Type&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                        <option selected="selected" value="-1"></option>
+                                        <option value="1">Unknown</option>
+                                        <option value="2">Composition</option>
+                                        <option value="3">Consumer</option>
+                                        <option value="4">Regular</option>
+                                        <option value="5">Unragistered</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Assessee of Other Territory&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                        <option selected="selected" value="-1">No</option>
+                                        <option value="1">Yes</option>
+                                        <option value="2">No</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Is e-commerce operator&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                        <option selected="selected" value="-1">No</option>
+                                        <option value="1">Yes</option>
+                                        <option value="2">No</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Consider Party as Deemed Exporter for Purchases&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                        <option selected="selected" value="-1">No</option>
+                                        <option value="1">Yes</option>
+                                        <option value="2">No</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Party Type&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                        <option selected="selected" value="-1">Not Applicable</option>
+                                        <option value="1">Not Applicable</option>
+                                        <option value="2">Deemed Export</option>
+                                        <option value="3">Embassy/UN Body</option>
+                                        <option value="4">SEZ</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">GSTIN/UIN&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="GSTID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Is a Transporter&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                        <option selected="selected" value="-1">No</option>
+                                        <option value="1">Yes</option>
+                                        <option value="2">No</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label class="col-form-label col-lg-6">Transporter ID&nbsp;:</label>
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" ">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Service Tax Details model-->
+<div id="taxDetails_Modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-lg-12">
+                                <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                                    <label class="col-form-label col-lg-12" style="text-align:center">Service Details</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Service tax registration number&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="GSTID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Assessee of Other Territory&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                        <option selected="selected" value="-1">Undefined</option>
+                                        <option value="1">Undefined</option>
+                                        <option value="2">Exempt</option>
+                                        <option value="3">Pure Agent</option>
+                                        <option value="4">Taxable</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Notification Number&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="GSTID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Notification serial number&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="GSTID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Is party an associated enterprise&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                        <option selected="selected" value="-1">No</option>
+                                        <option value="1">Yes</option>
+                                        <option value="2">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Dose party belong to non-taxable territory&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                        <option selected="selected" value="-1">No</option>
+                                        <option value="1">Yes</option>
+                                        <option value="2">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Vat Details model-->
+<div id="VATDetails_Modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-form-label col-lg-12" style="text-align:center">Tax/Rate details</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Classification&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                        <option selected="selected" value="-1">--Select--</option>
+                                        <option value="0">Any</option>
+                                        <option value="1">Undefined</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Applicable from&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="GSTID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Exise Details model-->
+<div id="ExciseDetails_Modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-form-label col-lg-12" style="text-align:center">Excise Tariff Details</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Tariff Name&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">HSN Code&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Reporting Unit of Measure &nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="">
+                                        <option selected="selected" value="-1">--Select--</option>
+                                        <option value="1">Undefined</option>
+                                        <option value="2">10GMS(10 Grams)</option>
+                                        <option value="3">1KKWH(1000 Kilowatt Hours)</option>
+                                        <option value="4">C/K(Carats)</option>
+                                        <option value="5">CM(Centimetre)</option>
+                                        <option value="6">CM3(Cubic Centimetre)</option>
+                                        <option value="7">G(Grams)</option>
+                                        <option value="8">GI F/S(Gram of Fissile lsotopes)</option>
+                                        <option value="9">KG(Kilograms)</option>
+                                        <option value="10">KL(Kilolitre)</option>
+                                        <option value="11">L(Litre)</option>
+                                        <option value="12">M(Metre)</option>
+                                        <option value="13">M2(Square Metre)</option>
+                                        <option value="14">M3(Cubic Metre)</option>
+                                        <option value="15">MM(Millimetre)</option>
+                                        <option value="16">MT(Metric Tonne)</option>
+                                        <option value="17">PA(Number of Pairs)</option>
+                                        <option value="18">Q(Quintal)</option>
+                                        <option value="19">T(Ton)</option>
+                                        <option value="20">TU(Thousand in Nos)</option>
+                                        <option value="21">U(Numbers)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Valuation Type&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Tariff Date Applicability&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-6">Rate&nbsp;:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Set/Alter ExciseNo model-->
+<div id="SetAlterNoExcise_Model" class="modal fade" tabindex="-1">
+    <div class="modal-lg modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert center" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-lg-6 col-form-label">Statutory Details for</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="statutorydetailsID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span><u>GST</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is GST Applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span><u>Service Tax</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is Service tax applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>--Select--</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Type of Supply</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>--Select--</option>
+                                        <option value="2">Goods</option>
+                                        <option value="2">Service</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Set/Alter Service tax Details</label>
+                                <div class="col-lg-6 row">
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="TaxDetailsId" id="YesTaxDetailsId">
+                                        <label class="custom-control-label" for="YesTaxDetailsId">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="TaxDetailsId" id="NoTaxDetailsId">
+                                        <label class="custom-control-label" for="NoTaxDetailsId">No</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 10px; margin-bottom: 10px;">
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span><u>TCS</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is TCS Applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span><u>Service Tax</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is TDS applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Nature of Goods</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Nature of Payment</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is TCS Deductable</label>
+                                <div class="col-lg-6">
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="TCSDectaID" id="YesTCSDectaID">
+                                        <label class="custom-control-label" for="YesTCSDectaID">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="TCSDectaID" id="NoTCSDectaID">
+                                        <label class="custom-control-label" for="NoTCSDectaID">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is TDS Deductable</label>
+                                <div class="col-lg-6">
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="TDSDectaID" id="YesTDSDectaID">
+                                        <label class="custom-control-label" for="YesTDSDectaID">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="TDSDectaID" id="NoTDSDectaID">
+                                        <label class="custom-control-label" for="NoTDSDectaID">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 10px; margin-bottom: 10px;">
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span><u>Excies</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is Excise Applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>-1</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span><u>VAT</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Is VAT/CST applicable</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>--Select--</option>
+                                        <option value="2">Applicable</option>
+                                        <option value="3">Not Applicable</option>
+                                        <option value="4">Undefine</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 10px; margin-bottom: 10px;">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span><u>Othes</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Include in assessable value calculation for</label>
+                                <div class="col-lg-6">
+                                    <div class="form-group row" style="padding-right: 0px;padding-left: 0px;">
+                                        <select class="form-control">
+                                            <option value="1" selected>Not Applicable</option>
+                                            <option value="2">Excise</option>
+                                            <option value="3">Excise and VAT</option>
+                                            <option value="4">Excise and GST</option>
+                                            <option value="5">VAT</option>
+                                            <option value="6">GST</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span><u>&nbsp;</u></span>
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Method of Calculation</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option value="1" selected>Based on Quantity</option>
+                                        <option value="2">Based on Value</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--nineth model-->
+<div id="ninethModal" class="modal modalcls">
+    <div class="modal-content ModelContentcls">
+        <div class="container containercls">
+            <form class="formcls">
+                <div class="form p-2">
+                    <div class="form-row">
+                        <div class="col-lg-12">
+                            <a href="FHHU-MA-LD-20.html" class="close float-right" style="margin-right:8px;">X</a>
+                        </div>
+                    </div>
+                    <p id="taxdetailsId" style="background-color:lightgray;text-align:center; margin:5px; padding:10px;">Tax/Rate Details</p>
+
+                    <div class="form-row my-3 ">
+
+                        <div class="col-lg-4">
+                            <label>
+                                Tariff Name:
+                            </label>
+                            <input type="text" class="effect-1" />
+                        </div>
+                        <div class="col-lg-4">
+                            <label>
+                                HSN Code:
+                            </label>
+                            <input type="text" class="effect-1" />
+                        </div>
+                        <div class="col-lg-4">
+                            <label>
+                                Reporting Unit Of Measure:
+                            </label>
+                            <select class="effect-1" id="UnitOfMeasureId">
+                                <option>--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row my-3 ">
+
+                        <div class="col-lg-4">
+                            <label>
+                                Valuation Type:
+                            </label>
+                            <input type="text" class="effect-1" />
+                        </div>
+                        <div class="col-lg-4">
+                            <label>
+                                Tariff Date Applicability:
+                            </label>
+                            <input type="text" class="effect-1" />
+                        </div>
+                        <div class="col-lg-4">
+                            <label>
+                                Rate:
+                            </label>
+                            <input type="text" class="effect-1" />
+
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+            <hr id="PopDownLineId" />
+            <button id="PopupBtnId" class="btn btn-sm btn-primary float-right" style="margin:5px;">Done</button>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+        alert('cccd'+cccd)
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/PBXMLVGroups/GetAllPBXMLVGroup',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd
+
+                },
+                async: false,
+                success: function (res) {
+                    alert("Data inside ajax...!!!")
+                    $.each(res, function (index, value) {
+
+
+                        $("#UnderValueId").append($("<option></option>").val(value.AccNo).html(PARENT));
+
+
+
+                    });
+                }
+
+            });
+
+    });-->
+
+
+
+
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+
+        var cccd = localStorage.getItem('CCAC');
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/PBXMLVGroups/GetAllPBXMLVGroup',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd
+                },
+                //beforeSend: function () {
+                //    $("#loader1").show();
+                //},
+                success: function (res) {
+                    // alert("Data inside ajax...!!!")
+                    // $("#loader1").hide();
+
+                    $.each(res, function (index, value) {
+
+                        $("#UnderValueId").append($("<option></option>").val(value.AccNo).html(value.GROUP));
+
+                    });
+
+
+                }
+
+
+
+
+            }
+
+            );
+
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/PBXMLVCurrency/GetAllPBXMLVCurrency',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd
+                },
+                //beforeSend: function () {
+                //    $("#loader1").show();
+                //},
+                success: function (res) {
+                    // alert("Data inside ajax...!!!")
+                    // $("#loader1").hide();
+
+                    $.each(res, function (index, value) {
+
+                        $("#CurrencyId").append($("<option></option>").val(value.SrlNo).html(value.NAME));
+
+                    });
+
+
+                }
+
+
+
+
+            }
+
+            );
+    });
+
+</script>
+
+
+<!--<script>
+    $(function () {
+        // choose target dropdown
+        var select = $('#UnderValueId');
+
+        select.html(select.find('option').sort(function (x, y) {
+            // to change to descending order switch "<" for ">"
+            return $(x).text() > $(y).text() ? 1 : -1;
+        }));
+
+        // select default item after sorting (first item)
+        // $('select').get(0).selectedIndex = 0;
+    });
+</script>-->
+<!--drop down list-->
+<script type="text/javascript">
+
+
+
+
+</script>
+
+<!--Save button/Add Button-->
+
+<script type="text/javascript">
+    function Groupfunction() {
+        // alert("in function");
+        debugger
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+
+            var mode = url1.split("=")[2];
+            var AccNo1 = url1.split("=")[1];
+            var index = (AccNo1).indexOf('&');
+            var AccNo = AccNo1.substring(0, index);
+
+        }
+
+        var cccd = localStorage.getItem('CCAC');
+        if ($("#YesUseforPayrollId").prop("checked")) {
+            var UseforPayroll = "Yes"
+        }
+        else {
+            var UseforPayroll = "No"
+        }
+        if ($("#YesISBILLWISEONId").prop("checked")) {
+            var MaintainBalances = "Yes"
+        }
+        else {
+            var MaintainBalances = "No"
+        }
+        if ($("#YesInventoryValuesId").prop("checked")) {
+            var InventoryValues = "Yes"
+        }
+        else {
+            var InventoryValues = "No"
+        }
+        if ($("#YesActivateInterestId").prop("checked")) {
+            var ActivateInterest = "Yes"
+        }
+        else {
+            var ActivateInterest = "No"
+        }
+        if ($("#YescreditdaysId").prop("checked")) {
+            var creditdays = "Yes"
+        }
+        else {
+            var creditdays = "No"
+        }
+        if ($("#YesStatutoryDetailsId").prop("checked")) {
+            var StatutoryDetails = "Yes"
+        }
+        else {
+            var StatutoryDetails = "No"
+        }
+        if ($("#YesCostCentresId").prop("checked")) {
+            var CostCentres = "Yes"
+        }
+        else {
+            var CostCentres = "No"
+        }
+        if ($("#YesProvideBankId").prop("checked")) {
+            var ProvideBank = "Yes"
+        }
+        else {
+            var ProvideBank = "No"
+        }
+        if ($("#YesGSTDetailsId").prop("checked")) {
+            var GSTDetails = "Yes"
+        }
+        else {
+            var GSTDetails = "No"
+        }
+        if ($("#YesTaxDetailsId").prop("checked")) {
+            var TaxDetails = "Yes"
+        }
+        else {
+            var TaxDetails = "No"
+        }
+        if ($("#YesVATDetailsId").prop("checked")) {
+            var VATDetails = "Yes"
+        }
+        else {
+            var VATDetails = "No"
+        }
+        if ($("#YesExciseDetailsId").prop("checked")) {
+            var ExciseDetails = "Yes"
+        }
+        else {
+            var ExciseDetails = "No"
+        }
+
+        var under = $("#UnderValueId option:selected").text();
+        var TaxValue = $("#TaxValueId option:selected").text();
+        var CURRENCYNAME = $("#CurrencyId option:selected").text();
+        var statename = $("#statenameId option:selected").text();
+        var GSTREGISTRATIONTYPE = $("#RegistrationtypeID option:selected").text();
+        var PRICELEVEL = $("#PricinglevId option:selected").text();
+
+
+
+
+
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+        var status = "A";
+
+
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            AccNo = AccNo,
+                UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = sessionStorage.getItem('createddate');
+        }
+        else {
+            AccNo = localStorage.getItem('MaxAccNo');
+            UId = localStorage.getItem('UID');
+            Username = localStorage.getItem('UName');
+            Createdsystem = 'PowerSuit';
+            Createdate = curndate;
+        }
+
+        var parameter = {
+            AccNo: AccNo,
+            NAME: $("#LEDGERNAMEID").val(),
+            RESERVEDNAME: $("#LEDGERNAMEID").val(),
+            PARENT: under,
+            OPENINGBALANCE: $("#OPENING-BALANCE").val(),
+            TAXTYPE: TaxValue,
+            FORPAYROLL: UseforPayroll,
+            VATDETAILSLIST: VATDetails,
+            ISINTERESTON: ActivateInterest,
+            ISCOSTCENTRESON: CostCentres,
+            GSTDETAILSLIST: GSTDetails,
+            PINCODE: $("#Pincodeid").val(),
+            ADDRESS: $("#ADDRESSid").val(),
+            STATENAME: statename,
+            ISBILLWISEON: MaintainBalances,
+
+
+            MAILINGNAME: $("#NAMEID").val(),
+            CURRENCYNAME: CURRENCYNAME,
+        //   SALESTAXNUMBER : txtpanno.Text,
+            INTERSTATESTNUMBER : "",
+            INCOMETAXNUMBER: $("#inlineFormInputGroup").val(),
+            GSTREGISTRATIONTYPE: GSTREGISTRATIONTYPE,
+            //NAMEONPAN:
+            //NAMEONPAN : txtpanname.Text;
+            LEDGERPHONE : "",
+            LEDGERCONTACT : "",
+            LEDGERFAX : "",
+
+           ASORIGINAL : "Yes",
+           ISCONDENSED : "No",
+           AFFECTSSTOCK : "No",
+           ISRATEINCLUSIVEVAT : "No",
+           FORPAYROLL : "No",
+           ISABCENABLED : "No",
+           ISCREDITDAYSCHKON : "yes",
+           INTERESTONBILLWISE : "No",
+           OVERRIDEINTEREST : "No",
+            PRICELEVEL: PRICELEVEL,
+          // TAXCLASSIFICATIONNAME : DDLclassification.SelectedItem.Text,
+         //  GSTTYPE : DDLvattaxtype.SelectedItem.Text,
+           APPROPRIATEFOR : "",
+           SERVICECATEGORY : "Not Applicable",
+            EXCISEDUTYTYPE: TaxValue,
+           EXCISENATUREOFPURCHASE : "",
+           //TDSDEDUCTEETYPE : ddldeducteetype.SelectedItem.Text,
+           LEDGERFBTCATEGORY : "",
+           TYPEOFINTERESTON : "Voucher Date",
+            IGNORETDSEXEMPT  :"No",
+
+
+
+            CCCD: cccd,
+            STATUS: status,
+            CREATEDSYSTEM: Createdsystem,
+            LASTUPDATEDSYSTEM: 'PowerSuit',
+            UID: UId,
+            USERNAME: Username,
+
+            LUID: localStorage.getItem('UID'),
+            LUSERNAME: localStorage.getItem('UName'),
+            CREATEDDATE: Createdate,
+            LASTUPDATEDDATE: curndate
+        }
+        return parameter
+    }
+
+    $("#savebtnid").click(function () {
+        debugger
+
+        // alert("ghggg");
+        var cccd = localStorage.getItem('CCAC');
+        var addgroupparameter = Groupfunction();
+
+        // alert(addcostcatparameter + "json");
+        debugger
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLLedger/AddPBXMLLedger',
+                dataType: 'JSON',
+                data: JSON.stringify(addgroupparameter),
+
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data, textStatus, xhr) {
+
+
+                    alert('Registered successfully');
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MA-LD-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+
+        return;
+
+    });
+    $("#Cancelid").show();
+    $("#savebtnid").show();
+
+
+
+
+
+
+    $("#updatebtnID").click(function () {
+        debugger
+        var addgroupparameter = Groupfunction();
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLLedger/EditPBXMLLedger',
+                dataType: 'JSON',
+                data: JSON.stringify(addgroupparameter),
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data, textStatus, xhr) {
+                    alert('Updated successfully');
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MA-LD-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+        return;
+
+    });
+</script>
+
+
+
+
+
+
+
+<!--GET by id API-->
+<script>
+    $(document).ready(function () {
+        set_MainHeaderName();
+        debugger
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var AccNo1 = url1.split("=")[1];
+        var index = (AccNo1).indexOf("&");
+        var AccNo = AccNo1.substring(0, index);
+        var AccNo = AccNo;
+        var cccd = localStorage.getItem('CCAC');
+        // alert(AccNo);
+
+        if (mode == 'edit') {
+            $.ajax({
+                async: false,
+                type: 'GET',
+                url: URLPowerAPI + '/api/PBXMLLedger/GetPBXMLLedgerById',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: cccd,
+                    AccNo: AccNo
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data) {
+                    $("#loader1").hide();
+                    localStorage.setItem('hii', JSON.stringify(data));
+
+                    GroupObject = data;
+
+
+                    $("#LEDGERNAMEID").val(GroupObject.NAME);
+                    // alert(GroupObject.NAME);
+                    $('#UnderValueId option:selected').text(GroupObject.PARENT);
+                    $('#statenameId option:selected').text(GroupObject.STATENAME);
+                    $('#TaxValueId option:selected').text(GroupObject.TAXTYPE);
+                    $("#Pincodeid").val(GroupObject.PINCODE);
+                    $("#ADDRESSid").val(GroupObject.ADDRESS);
+
+
+                    if (GroupObject.ISBILLWISEON == 'Yes') {
+                        $("#YesISBILLWISEONId").attr('checked', 'checked');
+                    } else {
+                        $("#NoISBILLWISEONId").attr('checked', 'checked');
+                    }
+                    //if (GroupObject.ISADDABLE == 'Yes') {
+                    //    $("#YesNetDebitId").attr('checked', 'checked');
+                    //} else {
+                    //    $("#NoNetDebitId").attr('checked', 'checked');
+                    //}
+
+                    //if (GroupObject.BASICGROUPISCALCULABLE == 'Yes') {
+                    //    $("#YesCalculationId").attr('checked', 'checked');
+                    //} else {
+                    //    $("#NoCalculationId").attr('checked', 'checked');
+                    //}
+
+
+                    sessionStorage.setItem('uid', GroupObject.UID);
+                    sessionStorage.setItem('username', GroupObject.USERNAME);
+                    sessionStorage.setItem('createdsystem', GroupObject.CREATEDSYSTEM);
+                    sessionStorage.setItem('createddate', GroupObject.CREATEDDATE);
+                    sessionStorage.setItem('lastupdatedate', GroupObject.LASTUPDATEDDATE);
+
+                },
+
+            });
+        }
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+        $("#Cancelid").show();
+        $("#savebtnid").hide();
+
+        $("#deletebtnID").click(function () {
+            debugger
+            var urls = window.location.href;
+
+            //alert(urls);
+            var cccd = localStorage.getItem('CCAC');
+            var group = AccNo;
+
+            $.ajax({
+                url: URLPowerAPI + '/api/PBXMLLedger/DeletePBXMLLedger',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    AccNo: group
+
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data, textStatus, xhr) {
+                    alert("Deleted successfully");
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MA-LD-50.shtml";
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+
+    });
+
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Account Info - Ledger');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Account Info / Ledger</span>');
+    };
+
+</script>
+
+
+<!--drop down list-->
+<!--<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+        // alert(cccd + "CCCD");
+        $.ajax
+            ({
+
+                url: 'https: //www.powerbooks.in/powerapi/api/PBXMLVGroups/GetAllPBXMLVGroup',
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json ; charset = utf-8',
+                data:
+                {
+                    cccd: cccd
+                },
+
+                success: function (res) {
+                    //alert("Data inside ajax...!!!")
+
+
+                    $.each(res, function (index, value) {
+
+                        $("#UnderValueId").append($("<option></option>").val(value.AccNo).html(value.GROUP));
+
+
+                    });
+
+
+                }
+
+
+
+
+            }
+
+            );
+
+    });
+
+
+
+</script>-->
+<!--add update-->
+<!--<script type="text/javascript">
+    function Groupfunction() {
+        // alert("in function");
+
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+            var mode = url1.split("=")[2];
+            var AccNo1 = url1.split("=")[1];
+            var index = (AccNo1).indexOf('&');
+            var AccNo = AccNo1.substring(0, index);
+
+        }
+        var cccd = localStorage.getItem('CCAC');
+        if ($("#YesSubLedgerId").prop("checked")) {
+            var SubLedger = "Yes"
+        }
+        else {
+            var SubLedger = "No"
+        }
+        if ($("#YesNetDebitId").prop("checked")) {
+            var NetDebCr = "Yes"
+        }
+        else {
+            var NetDebCr = "No"
+        }
+        if ($("#YesCalculationId").prop("checked")) {
+            var Usecal = "Yes"
+        }
+        else {
+            var Usecal = "No"
+        }
+        if ($("#YesGSTDetailsId").prop("checked")) {
+            var GSTDet = "Yes"
+        }
+        else {
+            var GSTDet = "No"
+        }
+        if ($("#YesTaxDetailsId").prop("checked")) {
+            var TaxDet = "Yes"
+        }
+        else {
+            var TaxDet = "No"
+        }
+        if ($("#YesTDSDetailsId").prop("checked")) {
+            var TDSDet = "Yes"
+        }
+        else {
+            var TDSDet = "No"
+        }
+        if ($("#YesTCSDetailsId").prop("checked")) {
+            var TCSDet = "Yes"
+        }
+        else {
+            var TCSDet = "No"
+        }
+        if ($("#YesVATDetailsId").prop("checked")) {
+            var VATDet = "Yes"
+        }
+        else {
+            var VATDet = "No"
+        }
+
+        var under = $("#UnderValueId option:selected").text();
+        var MetoAlloc = $("#AllocateMethodId option:selected").text();
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+        var status = "A";
+
+
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            AccNo = AccNo,
+                UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = sessionStorage.getItem('createddate');
+        }
+        else {
+            AccNo = localStorage.getItem('MaxAccNo');
+            UId = localStorage.getItem('UID');
+            Username = localStorage.getItem('UName');
+            Createdsystem = 'PowerSuit';
+            Createdate = curndate;
+        }
+        var parameter = {
+            AccNo: AccNo,
+            GROUP: $("#Group-username").val(),
+            NAME: $("#Group-username").val(),
+            PARENT: under,
+            ISSUBLEDGER: SubLedger,
+            BASICGROUPISCALCULABLE: Usecal,
+            ADDLALLOCTYPE: MetoAlloc,
+            GSTDETAILSLIST: GSTDet,
+            SERVICETAXDETAILSLIST: TaxDet,
+            VATDETAILSLIST: VATDet,
+            CCCD: cccd,
+            STATUS: status,
+            CREATEDSYSTEM: Createdsystem,
+            LASTUPDATEDSYSTEM: 'PowerSuit',
+            UID: UId,
+            USERNAME: Username,
+            LUID: localStorage.getItem('UID'),
+            LUSERNAME: localStorage.getItem('UName'),
+            CREATEDDATE: Createdate,
+            LASTUPDATEDDATE: curndate
+        }
+        return parameter
+    }
+    $("#savebtnid").click(function () {
+
+        // alert("ghggg");
+        var addgroupparameter = Groupfunction();
+        // alert(addcostcatparameter + "json");
+
+        $.ajax
+            ({
+                type: 'POST',
+                url: 'https: //www.powerbooks.in/PowerAPI/api/PBXMLGroup/AddPBXMLGroup',
+                dataType: 'JSON',
+                data: JSON.stringify(addgroupparameter),
+
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+
+                    alert('Group successfully Saved');
+                    window.location.href = "FHHU-MA-GR-10.html";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+
+        return;
+
+    });
+
+    $("#savebtnid").show();
+    $("#cancelbtnid").show();
+
+    $("#updatebtnID").click(function () {
+
+        var addgroupparameter = Groupfunction();
+        $.ajax
+            ({
+                type: 'POST',
+                url: 'https: //www.powerbooks.in/powerapi/api/PBXMLGroup/EditPBXMLGroup',
+                dataType: 'JSON',
+                data: JSON.stringify(addgroupparameter),
+                contentType: 'application/json ; charset = utf-8',
+
+                success: function (data, textStatus, xhr) {
+                    alert('Group Updated successfully');
+                    window.location.href = "FHHU-MA-GR-10.html";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+        return;
+    });
+</script>-->
+<!--Get by Id-->
+<!--<script>
+    $(document).ready(function () {
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var AccNo1 = url1.split("=")[1];
+        var index = (AccNo1).indexOf("&");
+        var AccNo = AccNo1.substring(0, index);
+        var cccd = localStorage.getItem('CCAC');
+        // alert(AccNo);
+
+        if (mode == 'edit') {
+            $.ajax({
+                type: 'GET',
+                url: 'https: //www.powerbooks.in/powerapi/api/PBXMLGroup/GetPBXMLGroupByID',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: cccd,
+                    AccNo: AccNo
+                },
+
+
+                success: function (data) {
+                    GroupObject = data;
+
+                    $("#Group-username").val(GroupObject.NAME);
+                    $("#Group-name").val(GroupObject.NAME);
+                    // alert(GroupObject.NAME);
+                    $('#UnderValueId option:selected').text(GroupObject.PARENT);
+                    $('#AllocateMethodId option:selected').text(GroupObject.ADDLALLOCTYPE);
+                    // alert("ADDLALLOCTYPE" + GroupObject.ADDLALLOCTYPE);
+
+                    if (GroupObject.ISSUBLEDGER == 'Yes') {
+                        $("#YesSubLedgerId").attr('checked', 'checked');
+                    } else {
+                        $("#NoSubLedgerId").attr('checked', 'checked');
+                    }
+                    if (GroupObject.ISADDABLE == 'Yes') {
+                        $("#YesNetDebitId").attr('checked', 'checked');
+                    } else {
+                        $("#NoNetDebitId").attr('checked', 'checked');
+                    }
+
+                    if (GroupObject.BASICGROUPISCALCULABLE == 'Yes') {
+                        $("#YesCalculationId").attr('checked', 'checked');
+                    } else {
+                        $("#NoCalculationId").attr('checked', 'checked');
+                    }
+
+
+                    sessionStorage.setItem('uid', GroupObject.UID);
+                    sessionStorage.setItem('username', GroupObject.USERNAME);
+                    sessionStorage.setItem('createdsystem', GroupObject.CREATEDSYSTEM);
+                    sessionStorage.setItem('createddate', GroupObject.CREATEDDATE);
+                    sessionStorage.setItem('lastupdatedate', GroupObject.LASTUPDATEDDATE);
+
+                },
+
+            });
+        }
+
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+
+        $("#deletebtnID").click(function () {
+
+            var urls = window.location.href;
+            debugger
+            //alert(urls);
+            var cccd = localStorage.getItem('CCAC');
+            var group = AccNo;
+
+            $.ajax({
+                url: 'https: //www.powerbooks.in/powerapi/api/PBXMLGroup/DeletePBXMLGroup',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    AccNo: group
+
+                },
+
+                contentType: 'application/json ; charset = utf-8',
+                success: function (data, textStatus, xhr) {
+                    alert("Group deleted successfully");
+                    window.location.href = "FHHU-MA-GR-10.html";
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+
+    });
+
+</script>
+
+
+<script>
+    $(document).ready(function () {
+
+        $('#content').load("sidebar.html");
+
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#companynameId").text(localStorage.getItem('CCNM') + '(' + localStorage.getItem('FinancialYrFrom') + ')');
+
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#userId").text(localStorage.getItem('UName'));
+
+    });
+</script>-->

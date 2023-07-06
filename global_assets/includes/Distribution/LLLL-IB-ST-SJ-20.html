@@ -1,0 +1,477 @@
+﻿<div class="row justify-content-center">
+
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="LLLL-AB-SR-50.shtml" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none" id="deletebtnID">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;display:none" onclick="edit_record();" id="updatebtnID">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+            <div class="card-body">
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Stock Journal No.&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="vouchernoID">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Inv Date&nbsp;:</label>
+                            <div class="input-group col-lg-6">
+                                <span class="input-group-prepend">
+                                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                </span>
+                                <input type="text" class="form-control daterange-single" id="voucherDateID">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Refrence No&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="CostCnetID">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group row offset-1">
+                            <label class="col-lg-4 col-form-label">Narration&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <textarea id="narrationId" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3">
+            <h5 class="text-center" style="background-color: whitesmoke"><b>Transfer Of Materials</b></h5>
+            <!--<div class="row" style="border-top: 0px solid black; margin: 0px; height: 50px;">
+                <div class="col-md-2 offset-md-10" style="padding:3px;">
+                    <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" onclick="Hide_Led();" id="donebtnid">Done</a>
+                    <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" onclick="Add_Led();" id="itembtnid">Add Item</a>
+
+                </div>
+            </div>-->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="table-responsive" id="AddItem_ID">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr style="background-color: whitesmoke">
+                                    <td colspan="8">Source (Consumption)</td>
+                                </tr>
+                            </thead>
+                            <tbody class="thead-light">
+                                <tr>
+                                    <td colspan="2">
+                                        Name of Item&nbsp;:
+                                        <select class="form-control" id="naItID"><option></option></select>
+                                    </td>
+                                    <td></td>
+                                    <td colspan="2">
+                                        Actual quantity&nbsp;:
+                                        <select class="form-control" id="ActualQtyID"><option></option></select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Billed quantity&nbsp;:
+                                        <input type="text" class="form-control" id="BillqtyID">
+                                    </td>
+                                    <td>
+                                        Rate&nbsp;:
+                                        <input type="text" class="form-control" id="RateID">
+                                    </td>
+                                    <td>
+                                        Per&nbsp;:
+                                        <input type="text" class="form-control" id="perID">
+                                    </td>
+                                    <td>
+                                        Amount&nbsp;:
+                                        <input type="text" class="form-control" id="AmmID">
+                                    </td>
+                                    <td>
+                                        <label class="btn btn-sm btn-primary" id="AddbtnID">Add</label>
+                                        <label class="btn btn-sm btn-primary" id="UpdateID">Update</label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="table-responsive" id="AddItem_ID">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr style="background-color: whitesmoke">
+                                    <td colspan="8">Destination (Production) </td>
+                                </tr>
+                            </thead>
+                            <tbody class="thead-light">
+                                <tr>
+                                    <td colspan="2">
+                                        Name of Item&nbsp;:
+                                        <select class="form-control" id="naItID"><option></option></select>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td colspan="2">
+                                        Actual quantity&nbsp;:
+                                        <select class="form-control" id="ActualQtyID"><option></option></select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Billed quantity&nbsp;:
+                                        <input type="text" class="form-control" id="BillqtyID">
+                                    </td>
+                                    <td>
+                                        Rate&nbsp;:
+                                        <input type="text" class="form-control" id="RateID">
+                                    </td>
+                                    <td>
+                                        Per&nbsp;:
+                                        <input type="text" class="form-control" id="perID">
+                                    </td>
+                                    <td>
+                                        Amount&nbsp;:
+                                        <input type="text" class="form-control" id="AmmID">
+                                    </td>
+                                    <td>
+                                        <label class="btn btn-sm btn-primary" id="AddbtnID">Add</label>
+                                        <label class="btn btn-sm btn-primary" id="UpdateID">Update</label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--<div id="Add_Led" style="display:none;">
+            <div class="row">
+                <div class="col-5">
+                    <div class="form-group row offset-1">
+                        <label class="col-3 col-form-label">Particulars&nbsp;:</label>
+                        <div class="col-lg-6">
+                            <select class="form-control" id="Particular_ID">
+                            </select>-->
+            <!--<input type="text" class="form-control" id="Particular_ID">-->
+            <!--</div>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-group row">
+                            <label class="col-3 col-form-label">amount&nbsp;:</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="Amnt_ID">
+                            </div>
+                            <div class="col-2 offset-1">
+                                <input type="button" class="btn btn-sm btn-primary" style="display:none;" value="Update" id="Update_btn">
+                                <input type="button" class="btn btn-sm btn-primary" style="display:none;" value="Add" id="Add_btn">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <h5 class="text-center" style="background-color: whitesmoke">Item List</h5>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th style="width:100px">Row No</th>
+                                    <th style="width:100px">Item Name</th>
+                                    <th style="width:100px">Godown</th>
+                                    <th style="width:100px">Quantity</th>
+                                    <th style="width:100px">Rate Unit</th>
+                                    <th style="width:100px">Amount</th>
+                                    <th style="width:100px">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list" id="Item_list">
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" class="text-right">Total Quantity</td>
+                                    <td>
+                                        <input class="form-control" type="text" style="border:1px solid #ddd !important;" id="TotalQtyID">
+                                    </td>
+                                    <td class="text-right" style="padding-left:0px; padding-right:0px;">Total Amount</td>
+                                    <td>
+                                        <input class="form-control" type="text" style="border:1px solid #ddd !important;" id="TotalAmountID">
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th style="width:100px">Row No</th>
+                                    <th style="width:100px">Item Name</th>
+                                    <th style="width:100px">Godown</th>
+                                    <th style="width:100px">Quantity</th>
+                                    <th style="width:100px">Rate Unit</th>
+                                    <th style="width:100px">Amount</th>
+                                    <th style="width:100px">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list" id="Item_list">
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" class="text-right">Total Quantity</td>
+                                    <td>
+                                        <input class="form-control" type="text" style="border:1px solid #ddd !important;" id="TotalQtyID">
+                                    </td>
+                                    <td class="text-right" style="padding-left:0px; padding-right:0px;">Total Amount</td>
+                                    <td>
+                                        <input class="form-control" type="text" style="border:1px solid #ddd !important;" id="TotalAmountID">
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        debugger
+        var VoucherNo = localStorage.getItem('MaxVoucherNo');
+        if (VoucherNo == null || VoucherNo == "") {
+
+            $('#vouchernoID').val("0");
+        }
+        else {
+            $('#vouchernoID').val(VoucherNo);
+        }
+    });
+
+    $(document).ready(function () {
+        set_MainHeaderName();
+        debugger
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var index = (mode).indexOf('&');
+        var trkey = mode.substring(0, index);
+        var cccd = localStorage.getItem('CCCD');
+        $.ajax({
+            async: false,
+            url: URLPowerAPI + '/api/PBXMLConsumption/GetPBXMLConsumption',
+            type: 'GET',
+            dataType: 'json',
+            contentType: 'application/json ; charset = utf-8',
+            data:
+            {
+                cccd: cccd,
+                trkey: mode
+            },
+            success: function (data, textStatus, xhr,) {
+                localStorage.setItem('helllo', JSON.stringify(data));
+                localStorage.setItem('new1', JSON.stringify(data));
+
+                var Obj = data.ALLINVENTORYENTRIESLIST;
+                Get_global(data, Obj);
+
+                var strResult;
+                var dataobj = data;
+                var voucherno = dataobj.VOUCHERNUMBER;
+                $("#vouchernoID").val(voucherno);
+
+                var date = dataobj.DATE;
+                var year = date.substring(0, 4);
+                var mon = date.substring(4, 6);
+                var day = date.substring(6, 8);
+
+                var date1 = day + '-' + mon + '-' + year;
+                $('#voucherDateID').val(date1);
+
+                var naration = dataobj.NARRATION;
+                $("#narrationId").val(naration);
+
+                $("#accID").append($("<option></option>").val(dataobj.VOUCHERNUMBER).html(dataobj.PARTYNAME));
+
+                var amounttot = 0;
+                var listobj = dataobj.ALLINVENTORYENTRIESLIST;
+                var count = listobj.length;
+                Set_Table(listobj);
+            }
+
+        });
+        $("#savebtnid").hide();
+        $("#updatebtnID").show();
+        $("#deletebtnID").show();
+    });
+
+    function Set_Table() {
+        debugger
+        //alert(JSON.stringify(obj1));
+        var html = '';
+        obj1.forEach((item, index) => {
+
+            html += `<tr>
+                             <td> ${++index}</td>
+                             <td>  ${item.STOCKITEMNAME} </td>
+                             <td>  ${item.ACTUALQTY} </td>
+                             <td>  ${item.BILLEDQTY} </td>
+                             <td>  ${item.RATE} </td>
+                             <td></td>
+                             <td>  ${item.AMOUNT} </td>
+                             <td>  ${item.DISCOUNT} </td>
+                             <td>
+                             <button class="btn btn-sm btn-info" onclick="Edit_Led('${item.STOCKITEMNAME}');">Edit</button>
+                             <button class="btn btn-sm btn-danger">Delete</button>
+                             </td>
+                       </tr>`;
+        });
+        $('#Item_list').html(html);
+        var table = document.getElementById("Item_list"),
+            sumVal1 = 0;
+        for (var i = 0; i < table.rows.length; i++) {
+            sumVal1 = sumVal1 + parseFloat(table.rows[i].cells[6].innerHTML);
+        }
+        data = sumVal1.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        $('#TotalAmountID').val(data);
+    }
+    var data1;
+    var obj1;
+    function Get_global(value, value1) {
+        data1 = value;
+        obj1 = value1;
+    }
+    //var cccd = localStorage.getItem('CCAC');
+    //$.get(URLPowerAPI + '/api/PBXMLInvoice/GetPBXMLInvoice' + "?cccd=" + cccd+"&trkey="+trkey,
+    //    function (data, textStatus, jqXHR) {
+    //        $.each(data, function (index, value) {
+    //            $("#Particular_ID").append($("<option></option>").val(value.ATTDSRL).html(value.NAME));
+    //        });
+    //    });
+    //$.get(URLPowerAPI + '/api/PBXMLVAttendence/GetAllPBXMLVAttendence' + "?cccd=" + cccd,
+    //    function (data, textStatus, jqXHR) {
+    //        $.each(data, function (index, value) {
+    //            $("#AttproID").append($("<option></option>").val(value.AttendanceId).html(value.ATTENDANCETYPE));
+    //        });
+    //    });
+    var val_no;
+    function Edit_Led(Value) {
+        debugger
+        $('#AddItem_ID').css("display", "block");
+        $('#AddbtnID').css("display", "none");
+        $('#UpdateID').css("display", "block");
+        obj1.forEach((item, index) => {
+            if (Value == item.STOCKITEMNAME) {
+                $("#naItID").append($("<option selected ></option>").val(item.STOCKSRL).html(item.STOCKITEMNAME));
+                $('#ActualQtyID').val(item.ACTUALQTY);
+                $('#BillqtyID').val(item.BILLEDQTY);
+                $('#RateID').val(item.RATE);
+                $('#perID').val();
+                $('#AmmID').val(item.AMOUNT);
+                $('#diskID').val(item.DISCOUNT);
+                val_no = item.STOCKSRL;
+            }
+        });
+    }
+    function Delete_Led() {
+
+    }
+    //function Add_Att() {
+
+    //}
+    //function getval() {
+    //    var bb = $('#accID option:selected').text();
+    //}
+    function Add_Led() {
+        $('#AddItem_ID').css("display", "block");
+        $('#donebtnid').css("display", "block");
+        $('#itembtnid').css("display", "none");
+        $('#UpdateID').css("display", "none");
+        $('#Add_btn').css("display", "block");
+        $("#Particular_ID").val('');
+        $('#Amnt_ID').val('');
+    }
+    function Hide_Led() {
+        var x = document.getElementById("AddItem_ID");
+        var y = document.getElementById("donebtnid");
+        var z = document.getElementById("itembtnid");
+        if (x.style.display === "") {
+            x.style.display = "block";
+        }
+        else {
+            x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "block";
+        }
+    }
+
+    $("#UpdateID").click(function () {
+        debugger
+        Value = val_no;
+        obj1.forEach((item, index) => {
+            if (Value == item.STOCKSRL) {
+                item.STOCKITEMNAME = $('#naItID option:selected').text();
+                item.ACTUALQTY = $('#ActualQtyID').val();
+                item.BILLEDQTY = $('#BillqtyID').val();
+                item.RATE = $('#RateID').val();
+                //item = $('#perID').val();
+                item.AMOUNT = $('#AmmID').val();
+                item.DISCOUNT = $('#diskID').val();
+            }
+
+        });
+        Set_Table();
+    });
+    function edit_record() {
+        debugger
+        data1.VOUCHERNUMBER = $('#vouchernoID').val();
+        data1.PARTYLEDGERNAME = $('#accID option:selected').text();
+        data1.EFFECTIVEDATE = $('#voucherDateID').val();
+        data1.NARRATION = $('#narrationId').val();
+        data1.ALLLEDGERENTRIESLIST = obj1;
+        datas = JSON.stringify(data1);
+        $.ajax({
+
+            url: 'https://www.powerbooks.in/powerapi/api/PBXMLAccounting/EditPBXMLAccounting',
+            type: 'POST',
+            dataType: 'JSON',
+            contentType: 'application/json ; charset = utf-8',
+            data: datas,
+            success: function () {
+                alert('data updated ')
+                window.location.href = 'LLLL-AV-CO-20.shtml';
+
+            }
+        });
+    }
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Distribution</span> - Inventory Voucher - Stock Transfers');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Distribution</a><span class="breadcrumb-item active">Inventory Voucher / Stock Transfers</span>');
+    };
+</script>

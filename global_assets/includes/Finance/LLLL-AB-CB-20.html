@@ -1,0 +1,164 @@
+﻿	
+                        <div class="row justify-content-center">
+                    <!-- /content area -->
+                    
+
+        <script>
+            function abs(amount) {
+
+
+                var amount1;
+                if (amount < 0) {
+                    amount1 = amount * -1;
+                }
+                else {
+                    amount1 = amount;
+                }
+                return amount1;
+
+            };
+            function DrCrCashBankFunction(Clsamount) {
+
+                debugger
+                var drcr;
+                if (Clsamount <= 0) {
+                    Clsdrcr = 'Cr';
+                }
+                else {
+                    Clsdrcr = 'Dr';
+                }
+                return Clsdrcr;
+
+            };
+            function DrCrCashBnkClsFunction(Clsamount) {
+
+                debugger
+                var drcr;
+                if (Clsamount < 0) {
+                    Clsdrcr = 'Cr';
+                }
+                else {
+                    Clsdrcr = 'Dr';
+                }
+                return Clsdrcr;
+
+            };
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                getallfunction();
+
+
+            });
+        </script>
+
+
+        <script>
+            /*search date function*/
+            function functnfrom() {
+                var fromdate = document.getElementById("myTextarea").value;
+                var fdate = fromdate.replace(/[-,-]/g, "");
+                return fdate
+            };
+
+            function functnto() {
+                var todate = document.getElementById("myTextarea1").value;
+                var tdate = todate.replace(/[-,-]/g, "");
+                return tdate
+            };
+        </script>
+
+        <!--local stroge date function-->
+        <script type="text/javascript">
+
+            function getallfunction() {
+                debugger
+                const from = document.getElementById("myTextarea").value;
+                const to = document.getElementById("myTextarea1").value;
+                var urlfrom1 = localStorage.getItem('Fromdate');
+                var urlto1 = localStorage.getItem('Todate');
+                var urlfrom;
+                var urlto;
+                if (from == "" && to == "") {
+                    $('#myTextarea').val(urlfrom1);
+                    $('#myTextarea1').val(urlto1)
+                    urlfrom = functnfrom();
+                    urlto = functnto();
+                }
+                else {
+                    urlfrom = functnfrom();
+                    urlto = functnto();
+                }
+                var cccd = localStorage.getItem('CCCD');
+
+
+
+                $.ajax({
+                    async: false,
+                    url: URLPowerAPI+'/api/PBXMLVCashBankBook/GetAllCashBankBook',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json ; charset = utf-8',
+                    //data: JSON.stringify(groupname),
+                    data:
+                    {
+                        cccd: cccd,
+                        from: urlfrom,
+                        to: urlto,
+                        sessid: "shital"
+                    },
+
+                    success: function (data, textStatus, xhr) {
+                        //alert(JSON.stringify(data));
+
+                        var strResult;
+                        var DebitTotal = 0;
+                        var Credittotal = 0;
+                        var Optotal = 0;
+                        var clstotal = 0;
+                        $.each(data, function (index, group) {
+                            strResult += "<tr scope='row'><th><a href=TrialBalSubGrp.html?&GROUP=" + group.AccNo + "&from=" + urlfrom + "&to=" + urlto + "> " + group.GROUPNAME + "</a></th><td>"
+                                + parseFloat(abs(group.OpDrAmt - group.OpCrAmt)).toFixed(2) + "</td><td>"
+                                + DrCrCashBankFunction(group.OpDrAmt - group.OpCrAmt) + "</td><td>"
+                                + parseFloat(abs(group.TotDrAmt)).toFixed(2) + "</td><td>"
+                                + parseFloat(abs(group.TotCrAmt)).toFixed(2) + "</td><td>"
+                                + parseFloat(abs(group.closebalance)).toFixed(2) + "</td><td>"
+                                + DrCrCashBnkClsFunction(group.OpDrAmt - group.OpCrAmt + group.TotDrAmt - group.TotCrAmt) + "</td><tr>";
+
+                            DebitTotal = DebitTotal + parseFloat(group.TotDrAmt);
+                            Credittotal = Credittotal + parseFloat(group.TotCrAmt);
+
+                            Optotal = Optotal + parseFloat(group.OpDrAmt - group.OpCrAmt);
+                            clstotal = clstotal + parseFloat(group.closebalance);
+                            //alert(clstotal);
+                        });
+                        $("#Cashbankview").html(strResult);
+
+
+                        DebitTotal = abs(DebitTotal)
+                        $("#DebitId").html(DebitTotal);
+
+                        Credittotal = abs(Credittotal)
+                        $("#CreditId").html(Credittotal);
+
+                        var drcrop = DrCrCashBankFunction(Optotal)
+                        Optotal = abs(Optotal).toFixed(2);
+                        $("#OpTotalId").html(Optotal);
+                        $("#drcropid").html(drcrop);
+
+
+                        var drcrcls = DrCrCashBnkClsFunction(clstotal)
+                        clstotal = abs(clstotal).toFixed(2);
+                        $("#ClsTotalId").html(clstotal);
+                        $("#drcrclsid").html(drcrcls);
+
+                    }
+
+                });
+            }
+        </script>
+
+</body>
+</html>

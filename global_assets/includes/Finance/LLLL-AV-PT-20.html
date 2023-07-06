@@ -1,0 +1,386 @@
+﻿
+                        <div class="row justify-content-center">
+
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-xs-2">
+                                                <h4><span class="card-title">Payment : Home</span></h4>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="deletebtnID">Delete</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="updatebtnID">Update</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Form layout-->
+                                    <div class="card-body">
+                                        <div class="row">
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group row offset-1">
+                                                    <label class="col-lg-4 col-form-label">No&nbsp;:</label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="vouchernoID">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group row offset-1">
+                                                    <label class="col-lg-4 col-form-label">Cost center&nbsp;:</label>
+                                                    <div class="col-lg-6">
+                                                        <select class="form-control" id="costcenetelistID">
+                                                            <option value="Select" selected>--select--</option>
+                                                            <option value="Select1">Cash</option>
+                                                            <option value="Select1">Salary Payable</option>
+                                                            <option value="Select1">State Bank of India</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group row offset-1">
+                                                    <label class="col-lg-4 col-form-label">Account&nbsp;:</label>
+                                                    <div class="col-lg-6">
+                                                        <select class="form-control" id="accID">
+                                                            <option value="Select" selected>--select--</option>
+                                                            <option value="Select1">Not Applicable</option>
+                                                            <option value="Select1">PRIMARY</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group row offset-1">
+                                                    <label class="col-lg-4 col-form-label">Date&nbsp;:</label>
+                                                    <div class="input-group col-lg-6">
+                                                        <span class="input-group-prepend">
+                                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                                        </span>
+                                                        <input type="text" class="form-control daterange-single" id="dateID">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-6">
+
+                                                <div class="form-group row offset-1">
+                                                    <label class="col-lg-4 col-form-label">Current Balance&nbsp;:</label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="CurrentBalancelistID">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group row offset-1">
+                                                    <label class="col-lg-4 col-form-label">Narration&nbsp;:</label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="narrationId">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <hr class="my-3">
+
+                                        <div class="row" style="border-top: 0px solid black; margin: 0px; height: 50px;">
+                                            <div class="col-md-2 offset-md-10" style="padding:3px;">
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="donebtnid">Done</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="ledgeerbtnid">Add ledger</a>
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="table-responsive">
+                                            <table class="table align-items-center table-flush">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th scope="col" class="sort">Row No</th>
+                                                        <th scope="col" class="sort"> Particulars</th>
+                                                        <th scope="col" class="sort"> Amount</th>
+                                                        <th scope="col" class="sort">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="list" id="exam">
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+
+
+                                        <hr style="color:black; margin-top:0px;" />
+                                        <div class="row">
+                                            <div class="col-md-7 offset-5">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <label>Total Amount: </label>
+                                                    </div>
+                                                    <div class="col-md-4 group-">
+                                                        <input type="text" id="opbalId1">
+                                                    </div>
+                                                    <div class="col-md-4" style="padding-right:0px;padding-Left:0px;">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                       
+                <!-- MOdals Code IF there's any -->
+                <!-- /MOdals Code IF there's any -->
+				
+				
+                <script>
+                    function abs(amount) {
+                        debugger
+
+                        var amount1;
+                        if (amount < 0) {
+                            amount1 = amount * -1;
+                        }
+                        else {
+                            amount1 = amount;
+                        }
+                        return amount1;
+
+                    };
+                </script>
+                <script>
+                    $(document).ready(function () {
+                        debugger
+                        //var url1 = window.location.href;
+                        //var arr = url1.split('=');
+                        //console.log(url1.length)
+
+                        //if (arr.length < 1) {
+                        //    var xyz = localStorage.getItem('MaxVoucherNo');
+                        //    $('#vouchernoID').val(xyz);
+                        //}
+
+                        var VoucherNo = localStorage.getItem('MaxVoucherNo');
+                        if (VoucherNo == null || VoucherNo == "") {
+
+                            $('#vouchernoID').val("0");
+                        }
+                        else {
+                            $('#vouchernoID').val(VoucherNo);
+                        }
+
+
+                        alert('xyz' + VoucherNo);
+                    });
+                </script>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+
+
+                        debugger
+                        var url1 = window.location.href;
+                        var mode = url1.split("=")[1];
+                        var index = (mode).indexOf('&');
+                        var trkey = mode.substring(0, index);
+                        alert("Ssaws" + trkey);
+
+
+
+                        var cccd = localStorage.getItem('CCCD');
+                        //var costceneter = $("#costcenetelistID option:selected").text();
+
+
+                        $.ajax({
+                            async: false,
+                            url: URLPowerAPI+'/api/PBXMLAccounting/GetPBXMLAccounting',
+                            type: 'GET',
+                            dataType: 'json',
+                            contentType: 'application/json ; charset = utf-8',
+
+                            data:
+                            {
+                                cccd: cccd,
+                                trkey: trkey
+
+                            },
+
+                            success: function (data, textStatus, xhr) {
+                                // alert(JSON.stringify(data));
+
+                                var strResult;
+                                var dataobj = data;
+                                //alert(JSON.stringify(dataobj));
+                                // $('#costcenetelistID option:selected').text(dataobj.costceneter);
+                                var voucherno = dataobj.VOUCHERNUMBER;
+                                $("#vouchernoID").val(voucherno);
+                                var ledgerlist = dataobj.ALLLEDGERENTRIESLIST;
+                                alert(JSON.stringify(ledgerlist.LEDGERNAME));
+                                $('#accID option:selected').val(ledgerlist.LEDGERNAME);
+
+                                var date = dataobj.DATE;
+                                var year = date.substring(0, 4);
+                                var mon = date.substring(4, 6);
+                                var day = date.substring(6, 8); 1
+                                year = year + "-";
+                                mon = mon + "-";
+                                var date1 = year + mon + day;
+                                //alert(date1 + "date");
+                                $('#voucherDateID').val(date1);
+
+                                var naration = dataobj.NARRATION;
+                                $("#narrationId").val(naration);
+
+                                //alert(newclsbal);
+                                var amounttot = 0;
+                                var listobj = dataobj.ALLLEDGERENTRIESLIST;
+                                var count = listobj.length;
+                                //  alert(count + "count");
+
+                                $.each(listobj, function (index, group) {
+                                    if (group.LEDSRL < count) {
+
+
+                                        strResult += "<tr scope='row'><th ><a href=TrialBalLedger.html?Accno=" + group.Accno + "> " + group.LEDSRL + "</a></th><td>"
+                                            + group.LEDGERNAME + "</td><td>"
+                                            + parseFloat(abs(group.AMOUNT)).toFixed(2) + "</td><td>"
+                                            + group.LEDGERNAME + "</td><tr>";
+
+                                        //alert(group.AMOUNT);
+                                        // $("#accID").append($("<option></option>").val(value.CostCd).html(value.COSTCENTRE));
+                                        amounttot = parseFloat(amounttot) + parseFloat(group.AMOUNT);
+                                        //alert(amounttot);
+                                        //  debittotal = debittotal + group.CrAmt;
+                                    }
+
+                                });
+                                $("#exam").html(strResult);
+                                var amounttot1 = parseFloat(abs(amounttot)).toFixed(2);
+
+                                $("#opbalId1").val(amounttot1);
+
+                            }
+
+                        });
+                    });
+                </script>
+
+
+                <!--dropdown value-->
+                <script type="text/javascript">
+                    var cccd = localStorage.getItem('CCCD');
+                    $(function () {
+                        $.ajax
+                            ({
+
+                                url: URLPowerAPI+'/api/PBXMLVCostCenter/GetAllPBXMLVCostCenter',
+                                type: 'GET',
+                                dataType: 'json',
+
+
+                                data:
+                                {
+                                    cccd: cccd
+
+                                },
+
+
+                                success: function (res) {
+                                    //alert("Data inside ajax...!!!")
+
+                                    /* $('#costcenetelistID option:selected').text(res.COSTCENTRE);*/
+                                    $.each(res, function (index, value) {
+                                        $("#costcenetelistID").append($("<option></option>").val(value.CostCd).html(value.COSTCENTRE));
+
+                                    });
+
+
+                                }
+
+
+
+
+                            }
+
+                            );
+
+                    });
+
+
+
+                </script>
+
+
+                <script type="text/javascript">
+
+                    var cccd = localStorage.getItem('CCCD');
+                    $(function () {
+                        debugger
+                        $.ajax
+                            ({
+
+                                url: URLPowerAPI+'/api/AccMst/GetAllBnkCashVoucher',
+                                type: 'GET',
+                                dataType: 'json',
+
+                                data:
+                                {
+                                    cccd: cccd
+
+
+                                },
+
+
+                                success: function (res) {
+                                    /*alert("Data inside ajax...!!!")*/
+                                    /*$('#accID option:selected').text(res.LEDGERNAME);*/
+                                    /* alert(res.LEDGERNAME)+"abcaaaaa";*/
+                                    $.each(res, function (index, value) {
+                                        $("#accID").append($("<option></option>").val(value.AccNo).html(value.LEDGERNAME));
+
+                                    });
+
+
+                                }
+
+
+
+
+                            }
+
+                            );
+
+                    });
+
+
+
+                </script>
+                <script>
+
+                    $(document).ready(function () {
+
+                        $('#content').load("Sidebar.html");
+
+                    });</script>

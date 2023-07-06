@@ -1,0 +1,445 @@
+<div class="row justify-content-center">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-xs-2">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" id="deletebtnID" style="display: none; margin-right: 8px;">Delete</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" id="updatebtnID" style="display: none; margin-right: 8px;">Update</a>
+                                                <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Form layout-->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <!--1st column started-->
+                                            
+                                            <div class="col-lg-6">
+                                                <div class="collapse show">
+                                                    <form action="#">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Types Of Unit&nbsp;:</label>
+                                                            <div class="col-lg-5">
+                                                                <select class="form-control " id="UOMUnitTypID" >
+                                                                    <option value="Select" selected>--Select--</option>
+                                                                    <option value="1">Simple</option>
+                                                                    <option value="1">Compound</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Symbol&nbsp;:</label>
+                                                            <div class="col-lg-5">
+                                                                <input type="text" class="form-control" id="UOMSymbolId">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Unit Quantity Code&nbsp;:</label>
+                                                            <div class="col-lg-5">
+                                                                <select class="form-control " id="UOMUnitQntyCodeID">
+                                                                    <option value="-1">Not Applicable</option>
+                                                                    <option>BAG-BAGS</option>
+                                                                    <option>BAL-BALE</option>
+                                                                    <option>BDL-BUNDELS</option>
+                                                                    <option>BKL-BUCKLES</option>
+                                                                    <option>BOU-BILLION OF UNITS</option>
+                                                                    <option>BOX-BOX</option>
+                                                                    <option>BTL-BOTTLES</option>
+                                                                    <option>BUN-BUNCHES</option>
+                                                                    <option>CAN-CANS</option>
+                                                                    <option>CBM-CUBIC METERS</option>
+                                                                    <option>CCM-CUBIC CENTIMETERS</option>
+                                                                    <option>CMS-CENTIMETERS</option>
+                                                                    <option>CTN-CARTONS</option>
+                                                                    <option>DOZ-DOZENS</option>
+                                                                    <option>DRM-DRUMS</option>
+                                                                    <option>GGK-GREAT GROSS</option>
+                                                                    <option>GMS-GRAMES</option>
+                                                                    <option>GRS-GROSS</option>
+                                                                    <option>GYD-GROSS YARDS</option>
+                                                                    <option>KGS-KILOGRAMS</option>
+                                                                    <option>KLR-KILOLITRE</option>
+                                                                    <option>KME-KILOMETRE</option>
+                                                                    <option>MLT-MILILITRE</option>
+                                                                    <option>MTR-METERS</option>
+                                                                    <option>MTS-METRIC TON</option>
+                                                                    <option>NOS-NUMBERS</option>
+                                                                    <option>OTH-OTHERS</option>
+                                                                    <option>PAC-PACKS</option>
+                                                                    <option>PCS-PIECES</option>
+                                                                    <option>PRS-PAIRS</option>
+                                                                    <option>QTL-QUINTAL</option>
+                                                                    <option>ROL-ROLLS</option>
+                                                                    <option>SET-SETS</option>
+                                                                    <option>SQF-SQUARE FEET</option>
+                                                                    <option>SQM-SQUARE METERS</option>
+                                                                    <option>SQY-SQUARE YARDS</option>
+                                                                    <option>TBS-TABLETS</option>
+                                                                    <option>TGM-TEN GROSS</option>
+                                                                    <option>THD-THOUSAND</option>
+                                                                    <option>TON -TONNES</option>
+                                                                    <option>TUB-TUBES</option>
+                                                                    <option>UGS-US GALLONS</option>
+                                                                    <option>UNT-UNITS</option>
+                                                                    <option>YDS-YARDS</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        <!--2nd column started-->
+                                        <div class="col-lg-6">
+                                            <div class="collapse show">
+                                                    <form action="#">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Formal Name&nbsp;:</label>
+                                                            <div class="col-lg-5">
+                                                                <input type="text" class="form-control" id="UOMFormalNameId">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-5 offset-1 col-form-label">Number Of Decimal Places&nbsp;:</label>
+                                                            <div class="col-lg-5">
+                                                                <input type="text" class="form-control" id="UOMNoOfDecPlaceId">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                 
+
+            
+
+                <script>
+
+                    function showDiv3(divId3, div2, element) {
+                        document.getElementById(divId3).style.display = element.value == 3 ? 'block' : 'none';
+                        document.getElementById(divId3).style.display = element.value == 2 ? 'none' : 'block';
+                        document.getElementById(div2).style.display = element.value == 3 ? 'none' : 'block';
+
+                    }
+                </script>
+                <!--dropdown list-->
+
+                <script type="text/javascript">
+                    $(function () {
+                        var cccd = localStorage.getItem("CCCD");
+                        debugger
+                        $.ajax({
+                            type: "GET",
+                            url: URLPowerAPI+"/api/PBXMLVUnit/GetAllPBXMLVUnit",
+                            dataType: "json",
+                            contentType: "application/json",
+                            data:
+                            {
+                                cccd: cccd
+                            },
+
+                            beforeSend: function () {
+                                $("#loader1").show();
+                            },
+                            success: function (res) {
+                                $("#loader1").hide();
+                                $.each(res, function (data, value) {
+
+                                    $("#FirstUtId").append($("<option></option>").val(value.SrlNo).html(value.NAME));
+                                    $("#secondUtId").append($("<option></option>").val(value.SrlNo).html(value.NAME));
+                                })
+                            }
+
+                        });
+
+                    });
+
+                </script>
+
+
+
+                <!--add edit code-->
+
+
+                <script>
+                    function Unitfunction() {
+                        debugger
+                        var url1 = window.location.href;
+                        var arr = url1.split('=');
+                        console.log(url1.length)
+
+                        if (arr.length > 1) {
+                            var mode = url1.split("=")[2];
+                            var group1 = url1.split("=")[1];
+                            var index = (group1).indexOf('&');
+                            var group = group1.substring(0, index);
+
+                        }
+                        var urls = window.location.href;
+                        // var cccd = localStorage.getItem('CCAC');
+                        var cccd = localStorage.getItem('CCAC');
+
+
+
+
+                        var unit, baseunit, ADDITIONALUNITS, GSTREPUOM;
+                        var utype = $("#UOMUnitTypID option:selected").text();
+                        if (utype == "Compound") {
+                            unit = $("#FirstUtId option:selected").text() + " " + "Of" + " " + $("#ConversionId").val() + " " + $("#secondUtId option:selected").text();
+
+
+                            baseunit = $("#FirstUtId option:selected").text();
+                            ADDITIONALUNITS = $("#secondUtId option:selected").text();
+                            GSTREPUOM = "";
+                        }
+                        else {
+                            unit = $("#UOMUnitTypID option:selected").text();
+
+
+                            baseunit = "";
+                            ADDITIONALUNITS = "";
+                            GSTREPUOM = $("#UOMUnitQntyCodeID option:selected").text();
+                        }
+
+
+
+
+                        var CurrentDate = new Date();
+                        var curndate = CurrentDate.toISOString().replace('Z', '');
+                        var status = "A";
+
+
+                        //storesession value
+                        var UId;
+                        var Username;
+                        var Createdsystem;
+                        var Createdate;
+
+                        if (mode == 'edit') {
+                            group = group,
+                                UId = sessionStorage.getItem('uid');
+                            Username = sessionStorage.getItem('username');
+                            Createdsystem = sessionStorage.getItem('createdsystem');
+                            Createdate = sessionStorage.getItem('createddate');
+                        }
+                        else {
+                            group = localStorage.getItem('MaxSrlNo');
+                            UId = localStorage.getItem('UID');
+                            Username = localStorage.getItem('UName');
+                            Createdsystem = 'PowerSuit';
+                            Createdate = curndate;
+                        }
+
+
+
+                        /*var  abc =$()*/
+                        // alert("in parameters");
+
+                        var parameter =
+                        {
+                            SrlNo: group,
+                            UNIT: unit,
+                            NAME: unit,
+                            GSTREPUOM: GSTREPUOM,
+                            ORIGINALNAME: $("#UOMFormalNameId").val(),
+                            DECIMALPLACES: $("#UOMNoOfDecPlaceId").val(),
+                            BASEUNITS: baseunit,
+                            ADDITIONALUNITS: ADDITIONALUNITS,
+
+                            CCCD: cccd,
+                            STATUS: status,
+                            CREATEDSYSTEM: Createdsystem,
+                            LASTUPDATEDSYSTEM: 'PowerSuit',
+                            UID: UId,
+                            USERNAME: Username,
+                            LUID: localStorage.getItem('UID'),
+                            LUSERNAME: localStorage.getItem('UName'),
+                            CREATEDDATE: Createdate,
+                            LASTUPDATEDDATE: curndate
+                        }
+                        //if (NAME == "Compound") {
+                        //    UNIT: Funit + "Of" + Sunit;
+                        //    NAME: Funit + "Of" + Sunit;
+                        //    BASEUNITS: Funit;
+                        //    ADDITIONALUNITS: Sunit;
+                        //}
+                        //alert(JSON.stringify(parameter));
+                        return parameter;
+                        // alert(NAME + "name");
+
+                    }
+
+                    $("#savebtnid").click(function () {
+
+                        // alert("ghggg");
+                        var addUnitcatparameter = Unitfunction();
+                        // alert(addcostcatparameter + "json");
+                        debugger
+                        $.ajax
+                            ({
+                                type: 'POST',
+                                url: URLPowerAPI+'/api/PBXMLUnit/AddPBXMLUnit',
+                                dataType: 'JSON',
+                                data: JSON.stringify(addUnitcatparameter),
+                                contentType: 'application/json ; charset = utf-8',
+                                beforeSend: function () {
+                                    $("#loader1").show();
+                                },
+                                success: function (data, textStatus, xhr) {
+
+                                    alert(' Added successfully');
+                                    $("#loader1").hide();
+                                    window.location.href = "LLLL-MP-UN-50.shtml";
+                                },
+                                error: function (xhr, textStatus, errorThrown) {
+                                    alert("You entered some invalid fields...! Fill the details again...");
+                                }
+                            });
+
+                        return;
+
+                    });
+
+                    $("#updatebtnID").click(function () {
+
+                        var addUnitcatparameter = Unitfunction();
+                        $.ajax
+                            ({
+                                type: 'POST',
+                                url: URLPowerAPI+'/api/PBXMLUnit/EditPBXMLUnit',
+                                dataType: 'JSON',
+                                data: JSON.stringify(addUnitcatparameter),
+                                contentType: 'application/json ; charset = utf-8',
+                                beforeSend: function () {
+                                    $("#loader1").show();
+                                },
+                                success: function (data, textStatus, xhr) {
+                                    alert('Updated successfully');
+                                    $("#loader1").hide();
+                                    window.location.href = "LLLL-MP-UN-50.shtml";
+                                },
+                                error: function (xhr, textStatus, errorThrown) {
+                                    alert("You entered some invalid fields...! Fill the details again...");
+                                }
+                            });
+                        return;
+                    });
+
+
+                </script>
+
+
+                <!--GET API-->
+                <script>
+                    $(document).ready(function () {
+                        debugger
+                        set_MainHeaderName();
+                        var url1 = window.location.href;
+                        var mode = url1.split("=")[2];
+                        var SrlNo1 = url1.split("=")[1];
+                        var index = (SrlNo1).indexOf('&');
+                        var SrlNo = SrlNo1.substring(0, index);
+                        var cccd = localStorage.getItem('CCCD');
+                        // alert(mode);
+                        //alert(Id);
+
+                        if (mode == 'edit') {
+                            $.ajax({
+                                type: 'GET',
+                                url: URLPowerAPI+'/api/PBXMLUnit/GetPBXMLUnitById',
+                                dataType: 'JSON',
+                                contentType: 'application/json ; charset = utf-8',
+                                //data: JSON.stringify(groupname),
+                                data: {
+                                    cccd: cccd,
+                                    SrlNo: SrlNo
+                                },
+                                beforeSend: function () {
+                                    $("#loader1").show();
+                                },
+                                contentType: 'application/json ; charset = utf-8',
+                                success: function (data) {
+                                    $("#loader1").hide();
+                                    ObjUnitOfMeasure = data;
+                                    //alert('jnjnjn' + ObjUnitOfMeasure);
+
+
+                                    //alert(JSON.stringify(ObjUnitOfMeasure));
+                                    $('#UOMUnitTypID option:selected').text(ObjUnitOfMeasure.UNIT);
+                                    $("#UOMSymbolId").val(ObjUnitOfMeasure.NAME);
+                                    $('#UOMUnitQntyCodeID option:selected').text(ObjUnitOfMeasure.GSTREPUOM);
+                                    // alert(data.NAME);
+                                    $("#UOMFormalNameId").val(ObjUnitOfMeasure.ORIGINALNAME);
+                                    $('#UnderId option:selected').text(ObjUnitOfMeasure.PARENT);
+                                    $("#UOMNoOfDecPlaceId").val(ObjUnitOfMeasure.DECIMALPLACES);
+
+                                    sessionStorage.setItem('uid', ObjUnitOfMeasure.UID);
+                                    sessionStorage.setItem('username', ObjUnitOfMeasure.USERNAME);
+                                    sessionStorage.setItem('createdsystem', ObjUnitOfMeasure.CREATEDSYSTEM);
+                                    sessionStorage.setItem('createddate', ObjUnitOfMeasure.CREATEDDATE);
+                                    sessionStorage.setItem('lastupdatedate', ObjUnitOfMeasure.LASTUPDATEDDATE);
+                                },
+
+                            });
+                        }
+
+                        $("#deletebtnID").show();
+                        $("#updatebtnID").show();
+                        $("#savebtnid").hide();
+
+
+
+
+                        $("#deletebtnID").click(function () {
+                            var urls = window.location.href;
+                            debugger
+                            //alert(urls);
+                            var url1 = window.location.href;
+                            var mode = url1.split("=")[2];
+                            var SrlNo1 = url1.split("=")[1];
+                            var index = (SrlNo1).indexOf('&');
+                            var SrlNo = SrlNo1.substring(0, index);
+                            var cccd = localStorage.getItem('CCCD');
+
+                            $.ajax({
+                                url: URLPowerAPI+'/api/PBXMLUnit/DeletePBXMLUnit',
+                                type: 'GET',
+                                dataType: 'JSON',
+                                data: {
+                                    cccd: cccd,
+                                    SrlNo: SrlNo
+
+                                },
+                                beforeSend: function () {
+                                    $("#loader1").show();
+                                },
+                                contentType: 'application/json ; charset = utf-8',
+                                success: function (data, textStatus, xhr) {
+                                    alert(" Deleted successfully");
+                                    $("#loader1").hide();
+                                    window.location.href = "LLLL-MP-UN-50.shtml";
+
+                                },
+                                error: function (xhr, textStatus, errorThrown) {
+                                    alert("You entered wrong password...! Fill the details again...");
+                                }
+                            });
+                        });
+                    });
+
+                    function set_MainHeaderName() {
+                        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Payroll Info - Units');
+                        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Payroll Info / Units</span>');
+                    };
+                </script>
+
+

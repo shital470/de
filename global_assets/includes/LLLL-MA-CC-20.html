@@ -1,0 +1,565 @@
+
+<div class="row justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-2">
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;">Cancel</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" id="deletebtnID">Delete</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px; display:none;" id="updatebtnID">Update</a>
+                        <a href="#!" class="btn btn-sm btn-primary float-right" style="margin-right:8px;" id="savebtnid">Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Form layout-->
+
+            <div class="card-body">
+                <div class="row">
+                    <!--1st column started-->
+
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Center Name&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" id="Center-username">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Category&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="CategoryValueId">
+                                            <option value="Select" selected>--Select--</option>
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Show Opening Balance for Revenue Items in Reports&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="RevenueItemsId" id="YesRevenueItemsId">
+                                            <label class="custom-control-label" for="YesRevenueItemsId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="RevenueItemsId" id="NoRevenueItemsId">
+                                            <label class="custom-control-label" for="NoRevenueItemsId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Email&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <input type="email" class="form-control" id="EmailId">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--2nd column started-->
+                    <div class="col-lg-6">
+                        <div class="collapse show">
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Under&nbsp;:</label>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="UnderValueId">
+                                            <option value="Select" selected>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Provide Bank Detailed &nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="BankDetailedId" id="YesBankDetailedId" data-toggle="modal" data-target="#ProvideBankDetails_model">
+                                            <label class="custom-control-label" for="YesBankDetailedId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="BankDetailedId" id="NoBankDetailedId">
+                                            <label class="custom-control-label" for="NoBankDetailedId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-5 offset-1 col-form-label">Use for Job Costing&nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="JobCostingId" id="YesJobCostingId">
+                                            <label class="custom-control-label" for="YesJobCostingId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="JobCostingId" id="NoJobCostingId" >
+                                            <label class="custom-control-label" for="NoJobCostingId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row" id="EmpId" style="display:none;">
+                                    <label class="col-lg-5 offset-1 col-form-label">Use As Employee &nbsp;:</label>
+                                    <div class="col-lg-5 col-form-label">
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="EmployeegId" id="YesEmployeegId">
+                                            <label class="custom-control-label" for="YesJobCostingId">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="EmployeegId" id="NoEmployeegId">
+                                            <label class="custom-control-label" for="NoJobCostingId">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Provide Bank Details PopUp Model-->
+<div id="ProvideBankDetails_model" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row alert-info alert center" style="padding:0.4rem 0.4rem !important;">
+                                <label class="col-lg-6 col-form-label">Provide Bank Details for</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="BankDetailsID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-lg-6 col-form-label">Transaction Type:</label>
+                                <div class="col-lg-6">
+                                    <select class="form-control">
+                                        <option selected="selected" value="Select">---Select---</option>
+                                        <option value="ATM">ATM</option>
+                                        <option value="Card">Card</option>
+                                        <option value="Cheque">Cheque</option>
+                                        <option value="ECS">ECS</option>
+                                        <option value="Electronic Cheque">Electronic Cheque</option>
+                                        <option value="Electronic DD/PO">Electronic DD/PO</option>
+                                        <option value="E-Fund Transfer">E-Fund Transfer</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross2 font-size-base mr-1"></i> Close</button>
+                <button class="btn btn-primary"><i class="icon-checkmark3 font-size-base mr-1"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--popup script-->
+
+
+<script>
+    $(document).ready(function () {
+        debugger
+        set_MainHeaderName();
+
+    });</script>
+
+<script>
+
+    $("#NoJobCostingId").click(function () {
+        $("#EmpId").show();
+    })
+    $("#YesJobCostingId").click(function () {
+        $("#EmpId").hide();
+    })
+</script>
+<!--popup script-->
+<!--forth pop up model javascript-->
+<script>
+    var CostCenFirstModal = document.getElementById("CostCenFirstModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("YesBankDetailedId");
+
+    // Get the <span> element that closes the modal
+    var CostCenFirstspan = document.getElementsByClassName("CostCenFirstModclosecls")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+        CostCenFirstModal.style.display = "block";
+    }
+    // When the user clicks on <span> (x), close the modal
+    CostCenFirstspan.onclick = function () {
+        CostCenFirstModal.style.display = "none";
+    }
+
+</script>
+
+<!--drop doen list-->
+<script type="text/javascript">
+    $(function () {
+        debugger
+        var cccd = localStorage.getItem('CCAC');
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/PBXMLVCostCategory/GetAllPBXMLVCostCategories',
+                type: 'GET',
+                dataType: 'json',
+                data:
+                {
+                    cccd: cccd
+
+                },
+             
+                success: function (res) {
+                    // alert("Data inside ajax2222...!!!")
+                  
+
+                    $.each(res, function (index, value) {
+                        $("#CategoryValueId").append($("<option></option>").val(value.CostCatNo).html(value.CostCatNm));
+
+                    });
+
+
+                }
+            }
+
+            );
+
+    });
+
+
+
+</script>
+<script type="text/javascript">
+    $(function () {
+        var cccd = localStorage.getItem('CCCD');
+        $.ajax
+            ({
+
+                url: URLPowerAPI + '/api/PBXMLVCostCenter/GetAllPBXMLVCostCenter',
+                type: 'GET',
+                dataType: 'json',
+                data:
+                {
+                    cccd: cccd
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+
+                success: function (res) {
+                    //alert("Data inside ajax...!!!")
+                    $("#loader1").hide();
+
+                    $.each(res, function (index, value) {
+                        $("#UnderValueId").append($("<option></option>").val(value.CostCd).html(value.COSTCENTRE));
+
+                    });
+
+
+                }
+
+
+
+
+            }
+
+            );
+
+    });
+
+
+
+</script>
+
+<!--<script>
+    $(document).ready(function () {
+        debugger
+        costcatfunction();
+
+
+    });
+</script>-->
+
+<script>
+    function costcatfunction() {
+        debugger
+        var url1 = window.location.href;
+        var arr = url1.split('=');
+        console.log(url1.length)
+
+        if (arr.length > 1) {
+            var mode = url1.split("=")[2];
+            var CostCd1 = url1.split("=")[1];
+            var index = (CostCd1).indexOf('&');
+            var CostCd = CostCd1.substring(0, index);
+
+        }
+        var urls = window.location.href;
+        var cccd = localStorage.getItem('CCAC');
+
+        if ($("#YesRevenueItemsId").prop("checked")) {
+            var Revenue = "Yes"
+        }
+        else {
+            var Revenue = "No"
+        }
+
+
+        if ($("#YesJobCostingId").prop("checked")) {
+            var JobCosting = "Yes"
+        }
+        else {
+            var JobCosting = "No"
+        }
+        var isemployee = 'No';
+        var category = $("#CategoryValueId option:selected").text();
+        var parent = $("#UnderValueId option:selected").text();
+        var CurrentDate = new Date();
+        var curndate = CurrentDate.toISOString().replace('Z', '');
+        var status = "A";
+
+
+        //storesession value
+        var UId;
+        var Username;
+        var Createdsystem;
+        var Createdate;
+
+        if (mode == 'edit') {
+            CostCd = CostCd,
+                UId = sessionStorage.getItem('uid');
+            Username = sessionStorage.getItem('username');
+            Createdsystem = sessionStorage.getItem('createdsystem');
+            Createdate = sessionStorage.getItem('createddate');
+        }
+        else {
+            CostCd = localStorage.getItem('MaxCostCenetrNo');
+            UId = localStorage.getItem('UID');
+            Username = localStorage.getItem('UName');
+            Createdsystem = 'PowerSuit';
+            Createdate = curndate;
+        }
+
+
+        /*var  abc =$()*/
+        // alert("in parameters");
+
+        var parameter =
+        {
+            CostCd: CostCd,
+            NAME: $("#Center-username").val(),
+            //EMAILID: $("#emailid").val(),
+            REVENUELEDFOROPBAL: Revenue,
+            FORJOBCOSTING: JobCosting,
+            ISEMPLOYEEGROUP: isemployee,
+            CATEGORY: category,
+            PARENT: parent,
+            CCCD: cccd,
+            STATUS: status,
+            CREATEDSYSTEM: Createdsystem,
+            LASTUPDATEDSYSTEM: 'PowerSuit',
+            UID: UId,
+            USERNAME: Username,
+            LUID: localStorage.getItem('UID'),
+            LUSERNAME: localStorage.getItem('UName'),
+            CREATEDDATE: Createdate,
+            LASTUPDATEDDATE: curndate
+        }
+        //alert(JSON.stringify(parameter));
+        return parameter;
+        // alert(NAME + "name");
+
+    }
+
+    $("#savebtnid").click(function () {
+
+        // alert("ghggg");
+        var addcostcatparameter = costcatfunction();
+        // alert(addcostcatparameter + "json");
+        debugger
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLCostCenter/AddPBXMLCostCenter',
+                dataType: 'JSON',
+                data: JSON.stringify(addcostcatparameter),
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data, textStatus, xhr) {
+
+                    alert('Registered successfully');
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MA-CC-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+
+        return;
+
+    });
+
+    $("#updatebtnID").click(function () {
+
+        var addcostcatparameter = costcatfunction();
+        $.ajax
+            ({
+                type: 'POST',
+                url: URLPowerAPI + '/api/PBXMLCostCenter/EditPBXMLCostCentre',
+                dataType: 'JSON',
+                data: JSON.stringify(addcostcatparameter),
+                contentType: 'application/json ; charset = utf-8',
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data, textStatus, xhr) {
+                    alert('Updated successfully');
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MA-CC-50.shtml";
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered some invalid fields...! Fill the details again...");
+                }
+            });
+        return;
+    });
+
+
+</script>
+
+
+
+<!--GET by id API-->
+<script>
+    $(document).ready(function () {
+        debugger
+        var url1 = window.location.href;
+        var mode = url1.split("=")[2];
+        var CostCd1 = url1.split("=")[1];
+        var index = (CostCd1).indexOf("&");
+        var CostCd = CostCd1.substring(0, index);
+        //alert(CostCd);
+
+        if (mode == 'edit') {
+            $.ajax({
+                type: 'GET',
+                url: URLPowerAPI + '/api/PBXMLCostCenter/GetPBXMLCostCentreById',
+                dataType: 'JSON',
+                contentType: 'application/json ; charset = utf-8',
+                //data: JSON.stringify(groupname),
+                data: {
+                    cccd: localStorage.getItem('CCAC'),
+                    CostCd: CostCd
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                success: function (data) {
+                    CostCenter = data;
+                    $("#loader1").hide();
+
+                    $("#Center-username").val(CostCenter.NAME);
+                    $("#EmailId").val(CostCenter.EMAILID);
+
+                    $('#CategoryValueId option:selected').text(CostCenter.CATEGORY);
+
+                    $('#UnderValueId option:selected').text(CostCenter.PARENT);
+
+                    if (CostCenter.REVENUELEDFOROPBAL == 'Yes') {
+                        $("#YesRevenueItemsId").attr('checked', 'checked');
+                    } else {
+                        $("#NoRevenueItemsId").attr('checked', 'checked');
+                    }
+                    if (CostCenter.FORJOBCOSTING == 'Yes') {
+                        $("#YesJobCostingId").attr('checked', 'checked');
+                    } else {
+                        $("#NoJobCostingId").attr('checked', 'checked');
+                    }
+
+                    //store data into session
+                    sessionStorage.setItem('uid', CostCenter.UID);
+                    sessionStorage.setItem('username', CostCenter.USERNAME);
+                    sessionStorage.setItem('createdsystem', CostCenter.CREATEDSYSTEM);
+                    sessionStorage.setItem('createddate', CostCenter.CREATEDDATE);
+                    sessionStorage.setItem('lastupdatedate', CostCenter.LASTUPDATEDDATE);
+
+
+
+                },
+
+            });
+        }
+        $("#deletebtnID").show();
+        $("#updatebtnID").show();
+        $("#savebtnid").hide();
+
+        //delete function
+
+        $("#deletebtnID").click(function () {
+            debugger
+            var urls = window.location.href;
+            debugger
+            //alert(urls);
+            var cccd = localStorage.getItem('CCCD');
+            var CatCenter = CostCd;
+
+            $.ajax({
+                url: URLPowerAPI + '/api/PBXMLCostCenter/DeletePBXMLCostCentre',
+                type: 'GET',
+                dataType: 'JSON',
+                data: {
+                    cccd: cccd,
+                    CostCd: CatCenter
+
+                },
+                beforeSend: function () {
+                    $("#loader1").show();
+                },
+                contentType: 'application/json ; charset = utf-8',
+                success: function (data, textStatus, xhr) {
+                    alert("Deleted successfully");
+                    $("#loader1").hide();
+                    window.location.href = "LLLL-MA-CC-50.shtml";
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("You entered wrong password...! Fill the details again...");
+                }
+            });
+        });
+
+    });
+
+    function set_MainHeaderName() {
+        $('#MainPHead_Name').html('<i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold" id="main_id">Master</span> - Account Info - Cost Center');
+        $('#MainPHead_Name1').html('<a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Master</a><span class="breadcrumb-item active">Account Info / Cost Center</span>');
+    };
+</script>
+
+<!--dropdownscript-->
